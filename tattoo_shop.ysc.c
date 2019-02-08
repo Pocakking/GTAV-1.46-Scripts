@@ -54796,7 +54796,7 @@ void func_261(var uParam0)
 	{
 		if (CAM::DOES_CAM_EXIST((*uParam0)[iVar0 /*12*/]))
 		{
-			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], 0);
+			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], false);
 		}
 		iVar0++;
 	}
@@ -56124,7 +56124,7 @@ void func_265()
 	CAM::SET_CAM_NEAR_CLIP(Local_102.f_50[0 /*12*/], 0.7f);
 	if (!Local_102.f_50[0 /*12*/].f_11)
 	{
-		CAM::SET_CAM_ACTIVE(Local_102.f_50[0 /*12*/], 1);
+		CAM::SET_CAM_ACTIVE(Local_102.f_50[0 /*12*/], true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		Local_102.f_50[0 /*12*/].f_11 = 1;
 		func_174(1, 1, 1, 0);
@@ -112357,20 +112357,20 @@ int func_672(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_673(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_673(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -119310,7 +119310,7 @@ void func_788()
 						{
 							Local_102.f_157.f_10 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 						}
-						CAM::SET_CAM_ACTIVE(Local_102.f_157.f_10, 1);
+						CAM::SET_CAM_ACTIVE(Local_102.f_157.f_10, true);
 						if (iLocal_101 == 22)
 						{
 							CAM::PLAY_SYNCHRONIZED_CAM_ANIM(Local_102.f_157.f_10, iLocal_193, "shop_ig_4_b_cam", sLocal_187);
@@ -119456,7 +119456,7 @@ void func_788()
 					{
 						if (CAM::IS_CAM_ACTIVE(Local_102.f_157.f_10))
 						{
-							CAM::SET_CAM_ACTIVE(Local_102.f_157.f_10, 0);
+							CAM::SET_CAM_ACTIVE(Local_102.f_157.f_10, false);
 						}
 						CAM::DESTROY_CAM(Local_102.f_157.f_10, 0);
 					}
@@ -120403,8 +120403,8 @@ void func_817()
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(Local_102.f_42.f_1);
 				Local_102.f_42.f_7 = 0;
 				Local_102.f_42.f_6 = 1;
-				AI::TASK_PLAY_ANIM_ADVANCED(Local_102.f_42, sLocal_188, "customer_loop", func_822(iLocal_101, Local_102), vLocal_210, 4f, -1f, -1, 7689, 0f, 2, 0);
-				AI::TASK_PLAY_ANIM_ADVANCED(Local_102.f_12, sLocal_188, "tattooist_loop", func_822(iLocal_101, Local_102), vLocal_210, 4f, -1f, -1, 7689, 0f, 2, 0);
+				AI::TASK_PLAY_ANIM_ADVANCED(Local_102.f_42, sLocal_188, "customer_loop", func_822(iLocal_101, Local_102), vLocal_210, 4f, -1f, -1, 7689, 0, 2, 0);
+				AI::TASK_PLAY_ANIM_ADVANCED(Local_102.f_12, sLocal_188, "tattooist_loop", func_822(iLocal_101, Local_102), vLocal_210, 4f, -1f, -1, 7689, 0, 2, 0);
 				ENTITY::FREEZE_ENTITY_POSITION(Local_102.f_42, true);
 				if (iLocal_101 != 22)
 				{

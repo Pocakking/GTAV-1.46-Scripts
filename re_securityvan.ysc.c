@@ -1731,11 +1731,11 @@ void func_24(vector3 vParam0, bool bParam1)
 		{
 			if (bLocal_79)
 			{
-				vParam0 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(iLocal_50, 0f, -3.3f, 0f), 1067030938, 1069547520) };
+				vParam0 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(iLocal_50, 0f, -3.3f, 0f), 1.2f, 1.5f) };
 			}
 			else
 			{
-				vParam0 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_49[iLocal_96], false), 1067030938, 1069547520) };
+				vParam0 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_49[iLocal_96], false), 1.2f, 1.5f) };
 			}
 		}
 		GAMEPLAY::SET_BIT(&iLocal_104, 3);
@@ -3868,12 +3868,12 @@ void func_71(int iParam0, bool bParam1)
 						AI::OPEN_SEQUENCE_TASK(&iVar6);
 						if (func_66() || func_32(vLocal_293))
 						{
-							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar3[iVar4 /*3*/], PLAYER::PLAYER_PED_ID(), 2f, false, 0.5f, 1082130432, true, 0, 0, -957453492, 20000);
+							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar3[iVar4 /*3*/], PLAYER::PLAYER_PED_ID(), 2f, false, 0.5f, 4f, true, 0, 0, -957453492, 20000);
 							AI::TASK_AIM_GUN_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 1);
 						}
 						else
 						{
-							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_COORD(0, vVar3[iVar4 /*3*/], vLocal_293, 2f, false, 1056964608, 1082130432, 1, 0, 0, -957453492);
+							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_COORD(0, vVar3[iVar4 /*3*/], vLocal_293, 2f, false, 0.5f, 4f, 1, 0, 0, -957453492);
 							AI::TASK_AIM_GUN_AT_COORD(0, vLocal_293, -1, 1, 0);
 						}
 						AI::CLOSE_SEQUENCE_TASK(iVar6);
@@ -3929,11 +3929,11 @@ void func_73(int iParam0)
 						{
 							if (bLocal_80)
 							{
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 2f, -1, 0.25f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 2f, -1, 1048576000, 0, 1193033728);
 							}
 							else
 							{
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 1f, -1, 0.25f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 1f, -1, 1048576000, 0, 1193033728);
 							}
 							iLocal_48++;
 						}
@@ -3947,7 +3947,7 @@ void func_73(int iParam0)
 					{
 						if (OBJECT::DOES_PICKUP_EXIST(iLocal_103))
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 2f, -1, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, OBJECT::GET_PICKUP_COORDS(iLocal_103), 2f, -1, 1048576000, 0, 1193033728);
 							iLocal_48++;
 						}
 						else
@@ -4439,7 +4439,7 @@ void func_80()
 		{
 			if (!PED::IS_PED_INJURED(iLocal_49[iVar1]) && AI::GET_SCRIPT_TASK_STATUS(iLocal_49[iVar1], 242628503) != 1)
 			{
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar1], 2, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar1], 2, true);
 				AI::OPEN_SEQUENCE_TASK(&iVar2);
 				AI::TASK_SHUFFLE_TO_NEXT_VEHICLE_SEAT(0, iLocal_50, 0);
 				AI::TASK_VEHICLE_MISSION_PED_TARGET(0, iLocal_50, PLAYER::PLAYER_PED_ID(), 8, 50f, 786484, 100f, 5f, 1);
@@ -4546,8 +4546,8 @@ void func_84()
 					if (!PED::IS_PED_INJURED(iLocal_49[iVar0]))
 					{
 						PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49[iVar0], 17, true);
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 128, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 16, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 128, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 16, true);
 						PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49[iVar0], 1, false);
 						AI::OPEN_SEQUENCE_TASK(&iVar1);
 						if (PED::IS_PED_IN_ANY_VEHICLE(iLocal_49[iVar0], 1))
@@ -4744,7 +4744,7 @@ void func_87()
 				func_62(7);
 			}
 		}
-		if ((ENTITY::IS_ENTITY_DEAD(iLocal_51, 0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_51, 0)) || (!ENTITY::IS_ENTITY_UPRIGHT(iLocal_51, 1119092736) && !PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), iLocal_51, 1)))
+		if ((ENTITY::IS_ENTITY_DEAD(iLocal_51, 0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_51, 0)) || (!ENTITY::IS_ENTITY_UPRIGHT(iLocal_51, 90f) && !PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), iLocal_51, 1)))
 		{
 			if (!func_74(iLocal_51))
 			{
@@ -7381,7 +7381,7 @@ void func_154()
 	VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(iLocal_50, 1084227584);
 	VEHICLE::SET_VEHICLE_DOORS_LOCKED(iLocal_50, 3);
 	ENTITY::SET_ENTITY_PROOFS(iLocal_53, false, true, true, true, true, true, 0, false);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_50, 1, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_50, 1, 0);
 	ENTITY::SET_ENTITY_HEALTH(iLocal_50, 700, 0);
 	VEHICLE::SET_VEHICLE_AUTOMATICALLY_ATTACHES(iLocal_50, false, 0);
 	ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iLocal_50, true, 1);
@@ -7412,11 +7412,11 @@ void func_154()
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49[iVar0], 6, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49[iVar0], 8, false);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49[iVar0], 10, true);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 512, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 512, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_49[iVar0], 118, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 128, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49[iVar0], 128, true);
 		PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iLocal_49[iVar0], 0);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_49[iVar0], 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_49[iVar0], 1, 0);
 		PED::SET_PED_GET_OUT_UPSIDE_DOWN_VEHICLE(iLocal_49[iVar0], 1);
 		PED::SET_PED_PLAYS_HEAD_ON_HORN_ANIM_WHEN_DIES_IN_VEHICLE(iLocal_49[iVar0], 1);
 		WEAPON::GIVE_WEAPON_TO_PED(iLocal_49[iVar0], joaat("weapon_pistol"), -1, false, true);

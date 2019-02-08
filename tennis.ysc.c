@@ -11729,7 +11729,7 @@ void func_196(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, i
 					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 					AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 					PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, true, 0, 0);
-					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0f, 1, 0);
+					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0, 1, 0);
 				}
 				CAM::_0xC819F3CBB62BF692(1, 0, 3, 0);
 				if ((func_48(uParam2) == 0 && uParam2->f_7[iParam4 /*8*/].f_7 > (func_716(uParam2) / 2)) || (func_48(uParam2) != 0 && uParam2->f_7[iParam4 /*8*/].f_1[0] > uParam2->f_7[iParam5 /*8*/].f_1[0]))
@@ -16579,7 +16579,7 @@ void func_342(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_346(uParam0, func_345(uParam0) + 1);
 			}
@@ -16590,7 +16590,7 @@ void func_342(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 			}
 			else
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 				func_346(uParam0, func_345(uParam0) + 1);
 			}
 			sVar8 = func_25(func_916(uParam0), "mini@tennis", "mini@tennis@female");
@@ -16781,11 +16781,11 @@ void func_354(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_346(uParam0, func_345(uParam0) + 1);
 			}
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 			func_346(uParam0, func_345(uParam0) + 1);
 			AI::TASK_PLAY_ANIM(0, "mini@tennis", "idle_2_serve", 8f, -8f, -1, 0, 0f, 0, 0, 0);
 			func_346(uParam0, func_345(uParam0) + 1);
@@ -17856,7 +17856,7 @@ void func_399(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, i
 		}
 		uParam2->f_3 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 		CAM::PLAY_SYNCHRONIZED_CAM_ANIM(uParam2->f_3, uParam2->f_969, &(uParam2->f_1025), &(uParam2->f_1001));
-		CAM::SET_CAM_ACTIVE(uParam2->f_3, 1);
+		CAM::SET_CAM_ACTIVE(uParam2->f_3, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		if (iVar0 == 0)
 		{
@@ -20870,7 +20870,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 					vVar1 = { -3.1146f, 0f, (-163.8843f + fVar11) };
 					vVar2 = { vVar5 + vVar7 };
 					vVar3 = { -3.1146f, 0f, (-163.8843f + fVar11) };
-					CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 					CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 					CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 5000, 1, 1, 2);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -20931,7 +20931,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -4.934f, 0f, (-18.213f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -4.934f, 0f, (-18.213f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 1700, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -20963,7 +20963,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -11.2307f, 0f, (-167.622f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -11.2307f, 0f, (-167.622f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 3660, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -20991,7 +20991,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -7.5662f, 0f, (-57.8045f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -7.5662f, 0f, (-57.8045f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 7792, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -21033,7 +21033,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -12.4513f, 0f, (-144.8952f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -12.4513f, 0f, (-144.8952f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 7231, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -21076,7 +21076,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -1.9039f, 0f, (-28.42416f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -1.9039f, 0f, (-27.14636f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 2096, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -21129,7 +21129,7 @@ int func_491(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, in
 				vVar1 = { -4.3693f, 0f, (-330.2797f + fVar11) };
 				vVar2 = { vVar5 + vVar7 };
 				vVar3 = { -4.3693f, 0f, (-331.6908f + fVar11) };
-				CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar0, vVar1, 34f, 0, 1, 1, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_3, vVar2, vVar3, 34f, 6500, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -51810,7 +51810,7 @@ void func_720(var uParam0, vector3 vParam1)
 	{
 		if (!func_733(uParam0))
 		{
-			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1f, 0, 0, 0, 1);
+			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1065353216, 0, 0, 0, 1);
 			UI::GET_HUD_COLOUR(12, &iVar0, &iVar1, &iVar2, &uVar3);
 			GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(uParam0->f_23, (SYSTEM::TO_FLOAT(iVar0) / 255f), (SYSTEM::TO_FLOAT(iVar1) / 255f), (SYSTEM::TO_FLOAT(iVar2) / 255f), 0);
 			uVar3 = uVar3;
@@ -52601,10 +52601,10 @@ void func_753(var uParam0, int iParam1)
 			AI::CLEAR_SEQUENCE_TASK(&iVar6);
 			AI::OPEN_SEQUENCE_TASK(&iVar6);
 			AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 0, 2);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 0.25f, 0, 123f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 1048576000, 0, 123f);
 			AI::TASK_ACHIEVE_HEADING(0, fVar5, 0);
 			AI::TASK_PLAY_ANIM(0, "misscommon@response", func_25(GAMEPLAY::GET_RANDOM_FLOAT_IN_RANGE(0f, 1f) < 0.5f, "screw_you", "bring_it_on"), 8f, -8f, -1, 0, 0f, 0, 0, 0);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1134.478f, -1577.908f, 3.431f, 1f, 20000, 0.25f, 0, (fVar5 + 180f));
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1134.478f, -1577.908f, 3.431f, 1f, 20000, 1048576000, 0, (fVar5 + 180f));
 			AI::CLOSE_SEQUENCE_TASK(iVar6);
 			AI::TASK_PERFORM_SEQUENCE(uParam0->f_109, iVar6);
 			AI::CLEAR_SEQUENCE_TASK(&iVar6);
@@ -54069,7 +54069,7 @@ void func_782(var uParam0, var uParam1)
 		if (AI::GET_SCRIPT_TASK_STATUS(func_1145(uParam0), 713668775) != 1 && AI::GET_SCRIPT_TASK_STATUS(func_1145(uParam0), 242628503) != 1)
 		{
 			vVar0 = { uParam0->f_37 - uParam1->f_29 * Vector(0.93f, 0.93f, 0.93f) };
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_1145(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_1145(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 1048576000, 0, 1193033728);
 			func_347(uParam0, 2048);
 			func_587("FAR_FROM_COURT", -1);
 		}
@@ -54993,7 +54993,7 @@ void func_821(var uParam0, var uParam1)
 				vVar1 = { -13.2626f, -0.1123f, (-166.5036f + fVar7) };
 				vVar2 = { vVar4 + vVar6 };
 				vVar3 = { -13.2626f, -0.1123f, (-178.2582f + fVar7) };
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar0, vVar1, 34f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar2, vVar3, 34f, 10792, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -55011,7 +55011,7 @@ void func_821(var uParam0, var uParam1)
 				vVar1 = { -3.6658f, 0f, (-342.1881f + fVar7) };
 				vVar2 = { vVar4 + vVar6 };
 				vVar3 = { -3.6658f, 0f, (-342.1881f + fVar7) };
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar0, vVar1, 34f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar2, vVar3, 34f, 8891, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -55029,7 +55029,7 @@ void func_821(var uParam0, var uParam1)
 				vVar1 = { -3.4082f, 0f, (-62.99898f + fVar7) };
 				vVar2 = { vVar4 + vVar6 };
 				vVar3 = { -3.4082f, 0f, (-69.99898f + fVar7) };
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar0, vVar1, 34f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar2, vVar3, 34f, 11233, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -55056,7 +55056,7 @@ void func_821(var uParam0, var uParam1)
 				vVar1 = { -2.8891f, 0f, (-155.6895f + fVar7) };
 				vVar2 = { vVar4 + vVar6 };
 				vVar3 = { -2.8891f, 0f, (-155.6895f + fVar7) };
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar0, vVar1, 34f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar2, vVar3, 34f, 10660, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -55074,7 +55074,7 @@ void func_821(var uParam0, var uParam1)
 				vVar1 = { 9.548f, 0f, (-133.6899f + fVar7) };
 				vVar2 = { vVar4 + vVar6 };
 				vVar3 = { 9.548f, 0f, (-133.6899f + fVar7) };
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar0, vVar1, 34f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam1->f_3, vVar2, vVar3, 34f, 10429, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -55106,7 +55106,7 @@ void func_822(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(*uParam1) || !CAM::IS_CAM_RENDERING(*uParam1))
 			{
-				CAM::SET_CAM_ACTIVE(*uParam1, 1);
+				CAM::SET_CAM_ACTIVE(*uParam1, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_403(0);
 			}
@@ -55121,7 +55121,7 @@ void func_822(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(uParam1->f_1) || !CAM::IS_CAM_RENDERING(uParam1->f_1))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_1, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_1, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_403(0);
 			}
@@ -55164,14 +55164,14 @@ void func_822(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(uParam1->f_2) || !CAM::IS_CAM_RENDERING(uParam1->f_2))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_2, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_2, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_403(0);
 			}
 			break;
 		
 		case 3:
-			CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+			CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			break;
 		
@@ -55179,7 +55179,7 @@ void func_822(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			func_823(uParam1, &(uParam0->f_1658), &(uParam0->f_189.f_29));
 			if (!CAM::IS_CAM_ACTIVE(uParam1->f_3) || !CAM::IS_CAM_RENDERING(uParam1->f_3))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			break;
@@ -55187,7 +55187,7 @@ void func_822(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 		case 6:
 			if (!CAM::IS_CAM_ACTIVE(uParam1->f_3) || !CAM::IS_CAM_RENDERING(uParam1->f_3))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			if ((func_188(&(uParam1->f_4)) * 1000f) > 3500f)
@@ -59589,7 +59589,7 @@ void func_918(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, i
 		CAM::DESTROY_CAM(uParam0->f_3, 0);
 	}
 	uParam0->f_3 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+	CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 	if (func_743())
 	{
 		CAM::PLAY_SYNCHRONIZED_CAM_ANIM(uParam0->f_3, uParam2->f_969, "tennis_ig_intro_alt1_cam", "mini@tennisintro_alt1");
@@ -94210,20 +94210,20 @@ int func_1091(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_1092(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_1092(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}

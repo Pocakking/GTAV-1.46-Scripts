@@ -171,8 +171,8 @@
 	int iLocal_169 = 0;
 	int iLocal_170 = 0;
 	int iLocal_171 = 0;
-	var uLocal_172 = 0;
-	var uLocal_173 = 0;
+	int iLocal_172 = 0;
+	int iLocal_173 = 0;
 	struct<14> Local_174 = { 0, 3, 0, 0, 0, 0, 0, 1092616192, 1101004800, 0, 0, 0, 0, 0 } ;
 	var uLocal_175 = 0;
 	var uLocal_176 = 0;
@@ -11555,7 +11555,7 @@ void func_128()
 					CAM::_0x2A2173E46DAECD12(0, 1);
 				}
 				GRAPHICS::ENABLE_MOVIE_SUBTITLES(1);
-				CAM::SET_CAM_ACTIVE(iLocal_2276, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_2276, true);
 				UI::DISPLAY_RADAR(false);
 				UI::DISPLAY_HUD(false);
 			}
@@ -21082,7 +21082,7 @@ void func_310()
 				ENTITY::FREEZE_ENTITY_POSITION(Local_414[1 /*10*/], true);
 				AI::CLEAR_PED_TASKS(iLocal_413[3]);
 				PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iLocal_413[3], 16);
-				AI::TASK_PLAY_ANIM_ADVANCED(iLocal_413[3], "amb@prop_human_seat_computer@male@base", "base", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1025, 0f, 2, 0);
+				AI::TASK_PLAY_ANIM_ADVANCED(iLocal_413[3], "amb@prop_human_seat_computer@male@base", "base", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1025, 0, 2, 0);
 				PED::_0x2208438012482A1A(iLocal_413[3], 0, 0);
 				if (AUDIO::IS_AMBIENT_SPEECH_PLAYING(iLocal_413[3]))
 				{
@@ -21114,8 +21114,8 @@ void func_310()
 				{
 					UNK1::_0x293220DA1B46CEBC(2f, 5f, 3);
 					AI::OPEN_SEQUENCE_TASK(&iLocal_169);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, "AMB@PROP_HUMAN_SEAT_COMPUTER@MALE@IDLE_B", "IDLE_E", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1024, 0f, 2, 0);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, "amb@prop_human_seat_computer@male@base", "base", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1025, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, "AMB@PROP_HUMAN_SEAT_COMPUTER@MALE@IDLE_B", "IDLE_E", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1024, 0, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, "amb@prop_human_seat_computer@male@base", "base", -1060.36f, -244.96f, 43.52f, 0f, 0f, -62.4524f, 1000f, -8f, -1, 1025, 0, 2, 0);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_169);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_413[3], iLocal_169);
 					AI::CLEAR_SEQUENCE_TASK(&iLocal_169);
@@ -21339,7 +21339,7 @@ void func_315()
 					ENTITY::FREEZE_ENTITY_POSITION(Local_414[29 /*10*/], true);
 				}
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0, 1, 0);
 				AUDIO::START_AUDIO_SCENE("LESTER_1A_LEAVE_OFFICE");
 				iLocal_2226++;
 			}
@@ -21501,18 +21501,18 @@ void func_318()
 				fLocal_2251 = (fLocal_2251 + SYSTEM::TIMESTEP());
 			}
 		}
-		if (!GRAPHICS::_0x768FF8961BA904D6(uLocal_172))
+		if (!GRAPHICS::_0x768FF8961BA904D6(iLocal_172))
 		{
 			if (CONTROLS::IS_CONTROL_JUST_PRESSED(2, 201) || CONTROLS::IS_CONTROL_JUST_PRESSED(2, 237))
 			{
 				GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(iLocal_171, "SET_INPUT_EVENT");
 				GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION_PARAMETER_INT(16);
-				uLocal_172 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
+				iLocal_172 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
 			}
 		}
 		else
 		{
-			iVar1 = GRAPHICS::_0x2DE7EFA66B906036(uLocal_172);
+			iVar1 = GRAPHICS::_0x2DE7EFA66B906036(iLocal_172);
 			if (iLocal_2239 == 0 && fLocal_2251 >= 0.25f)
 			{
 				UI::CLEAR_HELP(1);
@@ -21521,9 +21521,9 @@ void func_318()
 			AUDIO::PLAY_SOUND_FRONTEND(-1, "COMPUTERS_MOUSE_CLICK", 0, true);
 			func_439(389, 1, 0);
 		}
-		if (GRAPHICS::_0x768FF8961BA904D6(uLocal_173))
+		if (GRAPHICS::_0x768FF8961BA904D6(iLocal_173))
 		{
-			iVar8 = GRAPHICS::_0x2DE7EFA66B906036(uLocal_173);
+			iVar8 = GRAPHICS::_0x2DE7EFA66B906036(iLocal_173);
 			if (iVar8 != -1)
 			{
 				iLocal_2242 = iVar8;
@@ -21917,10 +21917,10 @@ void func_318()
 					break;
 				
 				case 60:
-					if (!GRAPHICS::_0x768FF8961BA904D6(uLocal_173))
+					if (!GRAPHICS::_0x768FF8961BA904D6(iLocal_173))
 					{
 						GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(iLocal_171, "LAST_POPUP_CLOSED");
-						uLocal_173 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
+						iLocal_173 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
 					}
 					break;
 				
@@ -51390,7 +51390,7 @@ void func_455()
 					CAM::_0x5D7B620DAE436138(-0.02f);
 					CAM::_0xC92717EF615B6704(0.1f);
 				}
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), 125.9931f, -221.0858f, 53.5578f, 1f, -1, 0.25f, 0, 193.8799f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), 125.9931f, -221.0858f, 53.5578f, 1f, -1, 1048576000, 0, 193.8799f);
 				iLocal_2226++;
 			}
 			break;
@@ -51498,7 +51498,7 @@ void func_455()
 				func_71(0, 1, 0, 0, 0);
 				func_515(16, 0);
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0, 1, 0);
 				PLAYER::SET_ALL_RANDOM_PEDS_FLEE(PLAYER::PLAYER_ID(), 0);
 				if (CAM::IS_SCREEN_FADED_OUT())
 				{
@@ -51664,7 +51664,7 @@ void func_455()
 				if (iLocal_383 < 2 && GAMEPLAY::GET_GAME_TIMER() > iLocal_384)
 				{
 					func_311(&uLocal_186, 8, iLocal_413[2], "Lester", 0, 1);
-					AUDIO::PLAY_PAIN(iLocal_413[2], 19, 0, 0);
+					AUDIO::PLAY_PAIN(iLocal_413[2], 19, 0f, 0);
 					iLocal_384 = (GAMEPLAY::GET_GAME_TIMER() + GAMEPLAY::GET_RANDOM_INT_IN_RANGE(1000, 5000));
 					iLocal_383++;
 				}
@@ -54631,7 +54631,7 @@ void func_526()
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 1000, 0, 1, 0);
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 				UNK1::_0x81CBAE94390F9F89();
 				UNK1::_0x293220DA1B46CEBC(0f, 6f, 3);
@@ -54652,7 +54652,7 @@ void func_526()
 					func_527(&(Local_414[0 /*10*/]), iLocal_412[0], "Lester_1_INT_LeadIn_loop_wChair", "MissLester1ALeadInOut", 1000f, -8f, 1);
 					PED::SET_SYNCHRONIZED_SCENE_LOOPED(iLocal_412[0], true);
 				}
-				AUDIO::PLAY_PAIN(iLocal_413[2], 19, 0, 0);
+				AUDIO::PLAY_PAIN(iLocal_413[2], 19, 0f, 0);
 				PLAYER::SET_ALL_RANDOM_PEDS_FLEE(PLAYER::PLAYER_ID(), 0);
 				iLocal_372 = 0;
 				PLAYER::SET_WANTED_LEVEL_MULTIPLIER(1f);
@@ -57913,7 +57913,7 @@ void func_563()
 					func_43(func_564(16, 0), 0);
 					PLAYER::SET_WANTED_LEVEL_MULTIPLIER(1f);
 					PLAYER::SET_MAX_WANTED_LEVEL(5);
-					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 3000, 0f, 1, 0);
+					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 3000, 0, 1, 0);
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 					break;
@@ -91248,20 +91248,20 @@ int func_705(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_706(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_706(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -124139,11 +124139,11 @@ void func_811()
 					if (!iLocal_388)
 					{
 						AI::OPEN_SEQUENCE_TASK(&iLocal_169);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_153, vLocal_154, 8f, -8f, -1, 0, 0, 2, 0);
 						AI::SET_SEQUENCE_TO_REPEAT(iLocal_169, 1);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_169);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_413[5], iLocal_169);
@@ -124176,11 +124176,11 @@ void func_811()
 					if (!iLocal_389)
 					{
 						AI::OPEN_SEQUENCE_TASK(&iLocal_169);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_c", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0f, 2, 0);
-						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_c", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_a", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(0, &cLocal_55, "idle_b", vLocal_155, vLocal_156, 8f, -8f, -1, 0, 0, 2, 0);
 						AI::SET_SEQUENCE_TO_REPEAT(iLocal_169, 1);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_169);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_413[6], iLocal_169);

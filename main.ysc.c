@@ -66031,20 +66031,20 @@ int func_362(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_363(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_363(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -121742,7 +121742,7 @@ var func_1051(bool bParam0, bool bParam1)
 			{
 				if (CAM::IS_CAM_ACTIVE(Global_2458648))
 				{
-					CAM::SET_CAM_ACTIVE(Global_2458648, 0);
+					CAM::SET_CAM_ACTIVE(Global_2458648, false);
 				}
 				CAM::DESTROY_CAM(Global_2458648, 1);
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 1, 0);
@@ -151733,10 +151733,10 @@ int func_1768()
 
 int func_1769()
 {
-	var uVar0;
+	int iVar0;
 	
-	uVar0 = UI::GET_CURRENT_WEBSITE_ID();
-	return uVar0;
+	iVar0 = UI::GET_CURRENT_WEBSITE_ID();
+	return iVar0;
 }
 
 int func_1770()

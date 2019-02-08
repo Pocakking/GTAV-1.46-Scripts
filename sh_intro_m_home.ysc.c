@@ -581,7 +581,7 @@ void func_2()
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				if (CAM::DOES_CAM_EXIST(iLocal_46))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_46, 0);
+					CAM::SET_CAM_ACTIVE(iLocal_46, false);
 					CAM::DESTROY_CAM(iLocal_46, 0);
 				}
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -33315,7 +33315,7 @@ void func_223()
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 			if (CAM::DOES_CAM_EXIST(iLocal_46))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_46, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_46, false);
 				CAM::DESTROY_CAM(iLocal_46, 0);
 			}
 			STREAMING::NEW_LOAD_SCENE_STOP();

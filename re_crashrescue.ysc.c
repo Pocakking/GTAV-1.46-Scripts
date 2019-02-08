@@ -46,7 +46,7 @@
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	int iLocal_46 = 0;
-	var uLocal_47 = 0;
+	int iLocal_47 = 0;
 	vector3 vLocal_48 = { 0f, 0f, 0f };
 	int iLocal_49 = 0;
 	int iLocal_50 = 0;
@@ -325,7 +325,7 @@ void __EntryFunction__()
 	iLocal_41 = 49;
 	iLocal_42 = 64;
 	iLocal_46 = UI::_0x4A9923385BDB9DAD();
-	uLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	iLocal_246 = joaat("a_m_m_eastsa_02");
 	iLocal_247 = joaat("ig_talina");
 	iLocal_248 = joaat("emperor");
@@ -1183,7 +1183,7 @@ void func_20()
 					iLocal_75 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 					CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_75, iLocal_259, "HELPING_FRIEND_INSIDE_CAM", sLocal_257);
 					PED::SET_SYNCHRONIZED_SCENE_PHASE(iLocal_259, fLocal_267);
-					CAM::SET_CAM_ACTIVE(iLocal_75, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_75, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					iLocal_53 = 4;
 				}
@@ -1200,7 +1200,7 @@ void func_20()
 			if ((PED::IS_SYNCHRONIZED_SCENE_RUNNING(iLocal_259) && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_259) >= fLocal_268) || func_57())
 			{
 				PLAYER::CLEAR_PLAYER_WANTED_LEVEL(PLAYER::PLAYER_ID());
-				CAM::SET_CAM_ACTIVE(iLocal_75, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_75, false);
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				CAM::DESTROY_CAM(iLocal_75, 0);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -32575,7 +32575,7 @@ void func_230()
 				iLocal_258 = PED::CREATE_SYNCHRONIZED_SCENE(vLocal_72, vLocal_73, 2);
 				iLocal_74 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 				CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_74, iLocal_258, "HELPING_VICTIM_TO_FEET_CAM", sLocal_251);
-				CAM::SET_CAM_ACTIVE(iLocal_74, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_74, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				if (func_233())
 				{
@@ -33547,7 +33547,7 @@ void func_255()
 		}
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_67, true);
 		ENTITY::SET_ENTITY_HEALTH(iLocal_67, 115, 0);
-		PED::SET_PED_DIES_WHEN_INJURED(iLocal_67, 1);
+		PED::SET_PED_DIES_WHEN_INJURED(iLocal_67, true);
 		PED::SET_PED_KEEP_TASK(iLocal_67, true);
 		PED::SET_PED_DIES_IN_VEHICLE(iLocal_67, 1);
 		PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(iLocal_67, 0);
@@ -33564,7 +33564,7 @@ void func_255()
 		PED::APPLY_PED_BLOOD(iLocal_69, 3, 0f, 0f, 0f, "wound_sheet");
 		GAMEPLAY::SHOOT_SINGLE_BULLET_BETWEEN_COORDS(vLocal_57.x, (vLocal_57.y + 0.1f), (vLocal_57.z + 0.1f), vLocal_57.x, (vLocal_57.y - 0.1f), (vLocal_57.z - 0.1f), 1, 1, joaat("weapon_assaultrifle"), 0, 1, 1, -1082130432);
 		PED::SET_PED_CONFIG_FLAG(iLocal_69, 227, true);
-		AI::TASK_PLAY_ANIM_ADVANCED(iLocal_69, sLocal_252, "dead_ped", 1935.53f, 6291.888f, 41.144f, 0f, 0f, -28.44f, 1000f, -1000f, -1, 2102272, 0f, 2, 0);
+		AI::TASK_PLAY_ANIM_ADVANCED(iLocal_69, sLocal_252, "dead_ped", 1935.53f, 6291.888f, 41.144f, 0f, 0f, -28.44f, 1000f, -1000f, -1, 2102272, 0, 2, 0);
 		ENTITY::SET_ENTITY_HEALTH(iLocal_69, 0, 0);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iLocal_246);
 		if (func_2() == 0)

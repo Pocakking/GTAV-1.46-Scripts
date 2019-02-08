@@ -181,7 +181,7 @@ void __EntryFunction__()
 							{
 								SYSTEM::WAIT(0);
 							}
-							else if (ENTITY::IS_ENTITY_STATIC(iLocal_35) && ENTITY::IS_ENTITY_UPRIGHT(iLocal_35, 1119092736))
+							else if (ENTITY::IS_ENTITY_STATIC(iLocal_35) && ENTITY::IS_ENTITY_UPRIGHT(iLocal_35, 90f))
 							{
 								if (func_43() || Global_25519[iLocal_41 /*11*/].f_5)
 								{
@@ -411,7 +411,7 @@ void func_4()
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		if (CAM::IS_CAM_ACTIVE(iLocal_62))
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_62, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_62, false);
 		}
 		CAM::DESTROY_CAM(iLocal_62, 0);
 		CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -928,7 +928,7 @@ void func_24()
 	{
 		iLocal_62 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", vLocal_63, vLocal_64, fVar0, 0, 2);
 		CAM::SET_CAM_FAR_CLIP(iLocal_62, 100f);
-		CAM::SET_CAM_ACTIVE(iLocal_62, 1);
+		CAM::SET_CAM_ACTIVE(iLocal_62, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		if (ENTITY::DOES_ENTITY_EXIST(iLocal_37))
 		{

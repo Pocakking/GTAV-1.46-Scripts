@@ -5236,7 +5236,7 @@ void func_143(int iParam0, int iParam1, int iParam2)
 void func_144(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 int func_145(var uParam0)
@@ -5684,7 +5684,7 @@ int func_155()
 	return 1;
 }
 
-var func_156(int iParam0, int iParam1)
+char* func_156(int iParam0, int iParam1)
 {
 	var uVar0;
 	
@@ -9238,7 +9238,7 @@ int func_296(int iParam0, var uParam1)
 			{
 				if (!VEHICLE::IS_THIS_MODEL_A_TRAIN(ENTITY::GET_ENTITY_MODEL(iParam0)))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, 1);
 					*uParam1 = 1;
 				}
 			}

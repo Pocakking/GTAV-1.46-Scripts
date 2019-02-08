@@ -2455,7 +2455,7 @@ int func_1()
 				VEHICLE::SET_VEHICLE_FIXED(Local_45.f_1);
 				func_357();
 				iLocal_1738 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, 1702.487f, 3279.545f, 41.9968f, -2.9399f, 0f, 110.4428f, 45.0218f, 1, 2);
-				CAM::SET_CAM_ACTIVE(Local_2067.f_2858, 0);
+				CAM::SET_CAM_ACTIVE(Local_2067.f_2858, false);
 				Local_1982.f_6 = 9;
 			}
 			else if (func_356(1000))
@@ -14047,7 +14047,7 @@ void func_357()
 		if (CAM::IS_CAM_ACTIVE(iLocal_1738))
 		{
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
-			CAM::SET_CAM_ACTIVE(iLocal_1738, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_1738, false);
 		}
 		CAM::DESTROY_CAM(iLocal_1738, 0);
 	}

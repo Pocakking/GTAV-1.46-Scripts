@@ -889,12 +889,12 @@ void func_10()
 		AI::CLEAR_PED_TASKS(Local_298.f_9);
 		PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(Local_298.f_9, 1);
 		PED::SET_PED_COMBAT_ATTRIBUTES(Local_298.f_9, 5, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 64, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 128, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 2, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 8, 1);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 1, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 32, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 64, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 128, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 2, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 8, true);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 1, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 32, false);
 		PED::SET_PED_MAX_MOVE_BLEND_RATIO(Local_298.f_9, 2f);
 		if (func_18(Local_298.f_9, 1785177548))
 		{
@@ -1029,12 +1029,12 @@ int func_18(int iParam0, int iParam1)
 	return 0;
 }
 
-void func_19(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_19(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -1549,7 +1549,7 @@ void func_47(bool bParam0)
 	{
 		PED::SET_PED_KEEP_TASK(Local_298.f_9, true);
 		ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(Local_298.f_9, false, 1);
-		AUDIO::STOP_PED_SPEAKING(Local_298.f_9, 0);
+		AUDIO::STOP_PED_SPEAKING(Local_298.f_9, false);
 	}
 	func_11(&(Local_298.f_9), bParam0);
 	iVar0 = 0;
@@ -31164,28 +31164,28 @@ void func_216(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_217(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_219(iParam0, &Var0);
-		MemCopy(&cVar1, {func_214(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_218(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_214(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_218(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_218(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_218(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -35869,18 +35869,18 @@ void func_277(int iParam0)
 					}
 					if (func_274(Local_297[iParam0 /*19*/].f_17, GAMEPLAY::GET_RANDOM_INT_IN_RANGE(iVar0, iVar1)))
 					{
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 64, 0);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 128, 0);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 2, 0);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 8, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 1, 0);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 32, 0);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 4, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 64, false);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 128, false);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 2, false);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 8, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 1, false);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 32, false);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 4, true);
 						PED::SET_PED_COMBAT_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 5, false);
 						PED::SET_PED_COMBAT_ATTRIBUTES(Local_297[iParam0 /*19*/].f_9, 17, true);
 						if (iParam0 != 3)
 						{
-							AUDIO::STOP_PED_SPEAKING(Local_297[iParam0 /*19*/].f_9, 0);
+							AUDIO::STOP_PED_SPEAKING(Local_297[iParam0 /*19*/].f_9, false);
 						}
 						if (func_278(iParam0))
 						{
@@ -38147,7 +38147,7 @@ void func_327()
 					AI::OPEN_SEQUENCE_TASK(&iLocal_129);
 					if (SYSTEM::VDIST(ENTITY::GET_ENTITY_COORDS(Local_298.f_9, true), vLocal_321) >= 10f)
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_321, 1f, 20000, 2f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_321, 1f, 20000, 2f, 0, 1193033728);
 					}
 					else
 					{
@@ -38260,13 +38260,13 @@ void func_327()
 					break;
 				
 				case 22:
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 64, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 128, 0);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 64, false);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 128, false);
 					PED::SET_PED_COMBAT_ATTRIBUTES(Local_298.f_9, 5, false);
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 2, 1);
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 8, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 1, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 32, 0);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 2, true);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 8, false);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 1, false);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_298.f_9, 32, false);
 					if (func_51(Local_300))
 					{
 						if ((!PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), Local_300, 0) && func_288(Local_300, Local_300.f_2, 3f)) && func_328(ENTITY::GET_ENTITY_HEADING(Local_300), Local_300.f_5, 20f))
@@ -56510,11 +56510,11 @@ void func_623()
 	{
 		PED::SET_PED_CAN_BE_TARGETTED(Local_298.f_9, true);
 		ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(Local_298.f_9, true);
-		PED::SET_PED_DIES_WHEN_INJURED(Local_298.f_9, 1);
+		PED::SET_PED_DIES_WHEN_INJURED(Local_298.f_9, true);
 		PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(Local_298.f_9, 1);
 		PED::SET_PED_CONFIG_FLAG(Local_298.f_9, 42, true);
 		PED::SET_PED_CONFIG_FLAG(Local_298.f_9, 259, true);
-		AUDIO::STOP_PED_SPEAKING(Local_298.f_9, 1);
+		AUDIO::STOP_PED_SPEAKING(Local_298.f_9, true);
 		PED::SET_PED_LOD_MULTIPLIER(Local_298.f_9, 4f);
 		if (PED::IS_PED_IN_GROUP(Local_298.f_9))
 		{
@@ -56580,7 +56580,7 @@ void func_623()
 	{
 		if (func_27(Local_297[iVar0 /*19*/].f_9))
 		{
-			PED::SET_PED_DIES_WHEN_INJURED(Local_297[iVar0 /*19*/].f_9, 1);
+			PED::SET_PED_DIES_WHEN_INJURED(Local_297[iVar0 /*19*/].f_9, true);
 			PED::SET_PED_CONFIG_FLAG(Local_297[iVar0 /*19*/].f_9, 42, true);
 			PED::SET_PED_CAN_USE_AUTO_CONVERSATION_LOOKAT(Local_297[iVar0 /*19*/].f_9, 1);
 			if (PED::IS_PED_IN_GROUP(Local_297[iVar0 /*19*/].f_9))
@@ -56589,12 +56589,12 @@ void func_623()
 			}
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_297[iVar0 /*19*/].f_9, iLocal_127);
 			PED::SET_PED_TO_INFORM_RESPECTED_FRIENDS(Local_297[iVar0 /*19*/].f_9, 10f, 5);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 64, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 128, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 2, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 1, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 32, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 4, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 64, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 128, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 2, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 1, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 32, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 4, true);
 			PED::SET_PED_COMBAT_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 5, false);
 			PED::SET_PED_COMBAT_ATTRIBUTES(Local_297[iVar0 /*19*/].f_9, 17, true);
 			PED::SET_PED_COMBAT_MOVEMENT(Local_297[iVar0 /*19*/].f_9, 1);

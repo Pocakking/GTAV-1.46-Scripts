@@ -818,7 +818,7 @@ void func_8()
 				{
 					AI::CLEAR_SEQUENCE_TASK(&iVar2);
 					AI::OPEN_SEQUENCE_TASK(&iVar2);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, Local_262.f_26[0 /*3*/], 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, Local_262.f_26[0 /*3*/], 1f, 20000, 1048576000, 0, 1193033728);
 					AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 0);
 					if (AI::DOES_SCENARIO_EXIST_IN_AREA(Local_260.f_29, 4f, 1))
 					{
@@ -4113,8 +4113,8 @@ int func_133(var uParam0, var uParam1, var uParam2, var uParam3)
 								AI::CLEAR_SEQUENCE_TASK(&iVar0);
 								AI::OPEN_SEQUENCE_TASK(&iVar0);
 								AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -98.0071f, -851.2611f, 40.9833f, 1f, 30000, 0.25f, 0, 40000f);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -83.1601f, -835.3889f, 39.5744f, 1f, 20000, 0.25f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -98.0071f, -851.2611f, 40.9833f, 1f, 30000, 1048576000, 0, 1193033728);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -83.1601f, -835.3889f, 39.5744f, 1f, 20000, 1048576000, 0, 1193033728);
 								AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_STAND_MOBILE", 0, 0);
 								AI::CLOSE_SEQUENCE_TASK(iVar0);
 								AI::TASK_PERFORM_SEQUENCE((*uParam1)[2], iVar0);
@@ -4292,9 +4292,9 @@ void func_134(var uParam0, var uParam1, vector3 vParam2)
 				AI::CLEAR_SEQUENCE_TASK(&iVar3);
 				AI::OPEN_SEQUENCE_TASK(&iVar3);
 				AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 1048576000, 0, 1193033728);
 				AI::TASK_USE_NEAREST_SCENARIO_TO_COORD(0, vVar4, 5f, 0);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam2, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam2, 1f, 20000, 1048576000, 0, 1193033728);
 				AI::CLOSE_SEQUENCE_TASK(iVar3);
 				AI::TASK_PERFORM_SEQUENCE(*uParam1, iVar3);
 			}
@@ -4303,9 +4303,9 @@ void func_134(var uParam0, var uParam1, vector3 vParam2)
 				AI::CLEAR_SEQUENCE_TASK(&iVar3);
 				AI::OPEN_SEQUENCE_TASK(&iVar3);
 				AI::TASK_LEAVE_VEHICLE(0, *uParam0, iVar2);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4, 1f, 20000, 1048576000, 0, 1193033728);
 				AI::TASK_USE_NEAREST_SCENARIO_TO_COORD(0, vVar4, 5f, 0);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam2, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam2, 1f, 20000, 1048576000, 0, 1193033728);
 				AI::CLOSE_SEQUENCE_TASK(iVar3);
 				AI::TASK_PERFORM_SEQUENCE(*uParam1, iVar3);
 			}
@@ -5146,8 +5146,8 @@ void func_167(var uParam0, var uParam1)
 {
 	if (VEHICLE::IS_VEHICLE_DRIVEABLE(uParam0->f_4, 0))
 	{
-		uParam1->f_88 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_ojtaxi_hotbox_door", uParam0->f_4, 0f, -0.15f, 0.2f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
-		uParam1->f_89 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_ojtaxi_hotbox_window", uParam0->f_4, 0f, -0.15f, 0.6f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+		uParam1->f_88 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_ojtaxi_hotbox_door", uParam0->f_4, 0f, -0.15f, 0.2f, 0f, 0f, 0f, 1f, 0, 0, 0);
+		uParam1->f_89 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_ojtaxi_hotbox_window", uParam0->f_4, 0f, -0.15f, 0.6f, 0f, 0f, 0f, 1f, 0, 0, 0);
 	}
 	GRAPHICS::_0x8CDE909A0370BB3A(1);
 }
@@ -5854,17 +5854,17 @@ int func_198(var uParam0, var uParam1)
 							{
 								if (!PED::IS_PED_IN_ANY_VEHICLE((*uParam1)[2], 0))
 								{
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[2], func_40(uParam0->f_11, 0f, 0.5f, 0.5f, 0f), 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[2], func_40(uParam0->f_11, 0f, 0.5f, 0.5f, 0f), 1f, 20000, 1048576000, 0, 1193033728);
 									iLocal_238 = 2;
 								}
 								if (!PED::IS_PED_IN_ANY_VEHICLE((*uParam1)[1], 0))
 								{
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[1], func_40(uParam0->f_11, 0f, 0.5f, 0.5f, 0f), 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[1], func_40(uParam0->f_11, 0f, 0.5f, 0.5f, 0f), 1f, 20000, 1048576000, 0, 1193033728);
 									iLocal_238 = 1;
 								}
 								if (!PED::IS_PED_IN_ANY_VEHICLE((*uParam1)[0], 0))
 								{
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[0], uParam0->f_11, 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*uParam1)[0], uParam0->f_11, 1f, 20000, 1048576000, 0, 1193033728);
 									iLocal_238 = 0;
 								}
 								UI::REMOVE_BLIP(&(uParam0->f_8));
@@ -9092,7 +9092,7 @@ void func_305(var uParam0, int iParam1, bool bParam2)
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam0->f_3, false);
 		ENTITY::CLEAR_ENTITY_LAST_DAMAGE_ENTITY(uParam0->f_3);
-		PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 3, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 3, false);
 		PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->f_3, 17, true);
 		AI::CLEAR_PED_TASKS(uParam0->f_3);
 		if ((func_110(uParam0->f_3, uParam0->f_29, 1) <= 200f && !func_115(uParam0->f_29)) && !bParam2)
@@ -9101,8 +9101,8 @@ void func_305(var uParam0, int iParam1, bool bParam2)
 		}
 		else
 		{
-			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 1024, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 131072, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 1024, true);
+			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 131072, true);
 			AI::OPEN_SEQUENCE_TASK(&iVar0);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 0, iParam1);
 			if (uParam0->f_415 == 8)
@@ -9152,7 +9152,7 @@ void func_306(var uParam0)
 			AI::OPEN_SEQUENCE_TASK(&iVar0);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 			AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 0);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_29, 1f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_29, 1f, -1, 1048576000, 0, 1193033728);
 			if (uParam0->f_411 == 2)
 			{
 				AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_AA_SMOKE", 0, 0);
@@ -9160,7 +9160,7 @@ void func_306(var uParam0)
 			else if (uParam0->f_411 == 0)
 			{
 				AI::TASK_CLIMB_LADDER(0, 1);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 813.9421f, 1172.681f, 329.7988f, 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 813.9421f, 1172.681f, 329.7988f, 1f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_ACHIEVE_HEADING(0, 151.7794f, 0);
 				AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_SMOKING_POT", 0, 0);
 			}

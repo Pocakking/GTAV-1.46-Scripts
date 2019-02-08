@@ -3005,7 +3005,7 @@ int func_104()
 		GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionIn", 0, 1);
 		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 1115815936, 0, 2);
 		CAM::SET_CAM_FOV(Global_2449169.f_2844.f_19, fVar1);
-		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, 1);
+		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, iVar2, 1, 1, 0);
 		if (Global_2449169.f_2844.f_26)
 		{
@@ -36624,20 +36624,20 @@ int func_284(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_285(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_285(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -92353,7 +92353,7 @@ void func_451(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 										vVar9.z = (vVar9.z + 90f);
 										uParam0->f_437 = PED::CREATE_SYNCHRONIZED_SCENE(vVar8, vVar9, 2);
 										vVar10 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(&Var1, &cVar2, vVar8, vVar9, 0, 2) };
-										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&Var1, &cVar2, vVar8, vVar9, 0, 2) };
+										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&Var1, &cVar2, vVar8, vVar9, 0f, 2) };
 										if (ENTITY::DOES_ENTITY_EXIST(*uParam1))
 										{
 											if (!ENTITY::IS_ENTITY_DEAD(*uParam1, 0))
@@ -93368,7 +93368,7 @@ void func_467(int iParam0, bool bParam1, char* sParam2, bool bParam3)
 	func_475(iParam0);
 	if (CAM::DOES_CAM_EXIST(iParam0->f_1210))
 	{
-		CAM::SET_CAM_ACTIVE(iParam0->f_1210, 0);
+		CAM::SET_CAM_ACTIVE(iParam0->f_1210, false);
 		CAM::DESTROY_CAM(iParam0->f_1210, 0);
 	}
 	iVar0 = 0;
@@ -122099,7 +122099,7 @@ void func_1074(var uParam0, var uParam1)
 		case 1:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_41[0 /*3*/], uParam1->f_41[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_48[0 /*3*/], uParam1->f_48[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -122115,7 +122115,7 @@ void func_1074(var uParam0, var uParam1)
 		case 0:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_55[0 /*3*/], uParam1->f_55[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_62[0 /*3*/], uParam1->f_62[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -122131,7 +122131,7 @@ void func_1074(var uParam0, var uParam1)
 		case 2:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_69[0 /*3*/], uParam1->f_69[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_76[0 /*3*/], uParam1->f_76[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -122147,7 +122147,7 @@ void func_1074(var uParam0, var uParam1)
 		case 3:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_83[0 /*3*/], uParam1->f_83[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_90[0 /*3*/], uParam1->f_90[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -122160,7 +122160,7 @@ void func_1074(var uParam0, var uParam1)
 		case 4:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_97[0 /*3*/], uParam1->f_97[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_104[0 /*3*/], uParam1->f_104[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -122173,7 +122173,7 @@ void func_1074(var uParam0, var uParam1)
 		case 5:
 			if (GAMEPLAY::GET_GAME_TIMER() > func_1077(uParam0))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_13, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_13, true);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_111[0 /*3*/], uParam1->f_111[1 /*3*/], 50f, 0, 0, 0, 2);
 				CAM::SET_CAM_PARAMS(uParam0->f_13, uParam1->f_118[0 /*3*/], uParam1->f_118[1 /*3*/], 50f, 10000, 0, 0, 2);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -125370,7 +125370,7 @@ void func_1142(var uParam0, var uParam1, var uParam2, int iParam3, var uParam4)
 {
 	WEAPON::SET_CURRENT_PED_WEAPON(iLocal_99, joaat("weapon_unarmed"), false);
 	AI::TASK_SWAP_WEAPON(iLocal_99, 1);
-	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, 0);
+	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, false);
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 60);
 	PLAYER::SET_PLAYER_INVINCIBLE(PLAYER::PLAYER_ID(), 1);
 	PLAYER::SET_PLAYER_LOCKON(PLAYER::PLAYER_ID(), 0);
@@ -141055,7 +141055,7 @@ void func_1362(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, 
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_99, 0))
 	{
-		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, 1);
+		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, true);
 		PED::SET_PED_CAN_BE_TARGETTED(iLocal_99, true);
 		ENTITY::FREEZE_ENTITY_POSITION(iLocal_99, false);
 	}
@@ -144119,11 +144119,11 @@ bool func_1509()
 	return Global_2448386.f_11;
 }
 
-void func_1510(float fParam0)
+void func_1510(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }
@@ -144141,11 +144141,11 @@ void func_1512()
 	func_1513(-1f);
 }
 
-void func_1513(float fParam0)
+void func_1513(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }

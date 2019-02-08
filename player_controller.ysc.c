@@ -35697,7 +35697,7 @@ void func_198(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(5, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35774,7 +35774,7 @@ void func_201(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(5, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35799,7 +35799,7 @@ void func_202(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35825,7 +35825,7 @@ void func_203(var uParam0, var uParam1, vector3 vParam2, float fParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0) && STREAMING::HAS_MODEL_LOADED(iVar1))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar0, vParam2, fParam3, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35878,7 +35878,7 @@ void func_205(var uParam0, var uParam1, vector3 vParam2, float fParam3, bool bPa
 	if (STREAMING::HAS_MODEL_LOADED(iVar0) && STREAMING::HAS_MODEL_LOADED(iVar1))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar1, vParam2, fParam3, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar1);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35922,7 +35922,7 @@ void func_206(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -35996,7 +35996,7 @@ void func_208(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -36029,7 +36029,7 @@ void func_209(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
 		ROPE::ACTIVATE_PHYSICS(*uParam0);
@@ -36066,7 +36066,7 @@ void func_210(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
 		ROPE::ACTIVATE_PHYSICS(*uParam0);
@@ -77099,20 +77099,20 @@ int func_488(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_489(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_489(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}

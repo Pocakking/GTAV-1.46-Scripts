@@ -2384,7 +2384,7 @@ void func_40()
 		}
 		else
 		{
-			vLocal_146 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_61, true), 1067030938, 1069547520) };
+			vLocal_146 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_61, true), 1.2f, 1.5f) };
 		}
 		iLocal_151 = OBJECT::CREATE_PICKUP(joaat("pickup_money_wallet"), vLocal_146, iLocal_120, iLocal_152, 1, iLocal_77);
 		iLocal_65 = func_147(iLocal_151);
@@ -2918,7 +2918,7 @@ void func_55()
 					{
 						AI::CLEAR_PED_TASKS(iLocal_60);
 						AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 1193033728);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
 						AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
@@ -2954,7 +2954,7 @@ void func_55()
 								{
 									AI::CLEAR_PED_TASKS(iLocal_60);
 									AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 1193033728);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 									AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
 									AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
@@ -2965,7 +2965,7 @@ void func_55()
 							{
 								AI::CLEAR_PED_TASKS(iLocal_60);
 								AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_151), 1f, 20000, 0.25f, 0, 1193033728);
 								AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 								AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
 								AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
@@ -3367,7 +3367,7 @@ void func_57()
 							AI::CLEAR_PED_TASKS_IMMEDIATELY(iLocal_60);
 							AI::TASK_SYNCHRONIZED_SCENE(iLocal_60, iLocal_107, cLocal_321, sLocal_323, 1000f, -8f, 0, 0, 1148846080, 0);
 						}
-						CAM::SET_CAM_ACTIVE(iLocal_108, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_108, true);
 						CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 						func_42(&uLocal_154, cLocal_85, sLocal_97, 4, 0, 0, 0);
 						SYSTEM::SETTIMERA(0);
@@ -3381,7 +3381,7 @@ void func_57()
 					{
 						PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 						CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
-						CAM::SET_CAM_ACTIVE(iLocal_108, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_108, false);
 						CAM::DESTROY_CAM(iLocal_108, 0);
 						func_92();
 						if (!PED::IS_PED_INJURED(iLocal_60))
@@ -3399,7 +3399,7 @@ void func_57()
 								if (func_91(vVar1.z, 0f, 90f))
 								{
 									AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 38.2412f, -992.2134f, 28.4317f, 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 38.2412f, -992.2134f, 28.4317f, 1f, 20000, 1048576000, 0, 1193033728);
 									AI::TASK_WANDER_STANDARD(0, ENTITY::GET_ENTITY_HEADING(iLocal_60), 1);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 									AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
@@ -3408,7 +3408,7 @@ void func_57()
 								else
 								{
 									AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 58.803f, -1067.711f, 28.4411f, 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 58.803f, -1067.711f, 28.4411f, 1f, 20000, 1048576000, 0, 1193033728);
 									AI::TASK_WANDER_STANDARD(0, ENTITY::GET_ENTITY_HEADING(iLocal_60), 1);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 									AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
@@ -4742,7 +4742,7 @@ void func_92()
 	int iVar0;
 	
 	iVar0 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0.5f, -1f, 0.5f), 0f, 0f, ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), 65f, 1, 2);
-	CAM::SET_CAM_ACTIVE(iVar0, 1);
+	CAM::SET_CAM_ACTIVE(iVar0, true);
 }
 
 int func_93(int iParam0)
@@ -6236,9 +6236,9 @@ void func_143()
 		{
 			if (iLocal_45 == 2)
 			{
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 128, 1);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 2, 1);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 1, 0);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 128, true);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 2, true);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 1, false);
 				AI::TASK_SMART_FLEE_PED(iLocal_61, PLAYER::PLAYER_PED_ID(), 250f, -1, 0, 0);
 			}
 			PED::SET_PED_KEEP_TASK(iLocal_61, true);
@@ -6735,7 +6735,7 @@ void func_156()
 					}
 					else
 					{
-						AUDIO::STOP_PED_SPEAKING(iLocal_60, 1);
+						AUDIO::STOP_PED_SPEAKING(iLocal_60, true);
 						func_42(&uLocal_154, cLocal_85, sLocal_88, 4, 0, 0, 0);
 						AI::OPEN_SEQUENCE_TASK(&iLocal_103);
 						AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 7000, 0, 2);
@@ -6867,7 +6867,7 @@ void func_160()
 						{
 							AI::OPEN_SEQUENCE_TASK(&iLocal_103);
 							AI::TASK_LOOK_AT_ENTITY(0, iLocal_61, 16000, 0, 2);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_79, 1f, 20000, fVar0, 4, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_79, 1f, 20000, fVar0, 4, 1193033728);
 							AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 							AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
 							AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
@@ -6876,7 +6876,7 @@ void func_160()
 						AI::OPEN_SEQUENCE_TASK(&iLocal_103);
 						AI::TASK_LOOK_AT_ENTITY(0, iLocal_60, -1, 0, 2);
 						AI::TASK_PLAY_ANIM(0, "AMB@PROP_HUMAN_SEAT_CHAIR@MALE@GENERIC@EXIT", "exit_forward", 1000f, -1000f, -1, 512, 0f, 0, 0, 0);
-						AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vLocal_79, iLocal_60, 1f, false, 1.5f, 1082130432, true, 0, 0, -957453492, 20000);
+						AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vLocal_79, iLocal_60, 1f, false, 1.5f, 4f, true, 0, 0, -957453492, 20000);
 						AI::TASK_AIM_GUN_AT_ENTITY(0, iLocal_60, -1, 1);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_61, iLocal_103);
@@ -6935,7 +6935,7 @@ void func_160()
 					AI::TASK_PERFORM_SEQUENCE(iLocal_60, iLocal_103);
 					AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
 					func_163();
-					iLocal_151 = OBJECT::CREATE_PICKUP(joaat("pickup_money_purse"), OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(iLocal_60, 0f, 2.5f, 0f), 1067030938, 1069547520), iLocal_120, iLocal_152, 1, iLocal_77);
+					iLocal_151 = OBJECT::CREATE_PICKUP(joaat("pickup_money_purse"), OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(iLocal_60, 0f, 2.5f, 0f), 1.2f, 1.5f), iLocal_120, iLocal_152, 1, iLocal_77);
 					bLocal_109 = true;
 				}
 			}
@@ -6956,7 +6956,7 @@ void func_160()
 						{
 							AI::CLEAR_PED_TASKS(iLocal_61);
 							AI::OPEN_SEQUENCE_TASK(&iLocal_103);
-							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vLocal_626, iLocal_60, 2f, false, 0.1f, 1082130432, true, 0, 0, -957453492, 20000);
+							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vLocal_626, iLocal_60, 2f, false, 0.1f, 4f, true, 0, 0, -957453492, 20000);
 							AI::CLOSE_SEQUENCE_TASK(iLocal_103);
 							AI::TASK_PERFORM_SEQUENCE(iLocal_61, iLocal_103);
 							AI::CLEAR_SEQUENCE_TASK(&iLocal_103);
@@ -9407,10 +9407,10 @@ void func_206()
 	iLocal_60 = PED::CREATE_PED(26, iLocal_75, vLocal_67, fLocal_69, 1, true);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_60, true);
 	PED::SET_PED_CAN_BE_TARGETTED(iLocal_60, false);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 8, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 512, 1);
-	AUDIO::STOP_PED_SPEAKING(iLocal_60, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 8, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_60, 512, true);
+	AUDIO::STOP_PED_SPEAKING(iLocal_60, true);
 	PED::_0x570389D1C3DE3C6B(iLocal_60);
 	PED::SET_PED_MONEY(iLocal_60, 0);
 	ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_60, true);
@@ -9432,17 +9432,17 @@ void func_206()
 	iLocal_61 = PED::CREATE_PED(26, iLocal_76, vLocal_68, fLocal_72, 1, true);
 	ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iLocal_61, true, 1);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_61, true);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_61, 1, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_61, 1, 0);
 	WEAPON::GIVE_WEAPON_TO_PED(iLocal_61, joaat("weapon_pistol"), -1, true, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_61, 13, false);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_61, 17, false);
-	PED::SET_PED_DIES_WHEN_INJURED(iLocal_61, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iLocal_61, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_61, 42, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_61, 137, true);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 2, 0);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 2, false);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_61, iLocal_78);
-	AUDIO::STOP_PED_SPEAKING(iLocal_61, 1);
+	AUDIO::STOP_PED_SPEAKING(iLocal_61, true);
 	if (!GAMEPLAY::IS_STRING_NULL(sLocal_102))
 	{
 		AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_60, sLocal_102);
@@ -9471,7 +9471,7 @@ void func_206()
 	func_208(&uLocal_154, 2, iLocal_60, sLocal_99, 0, 1);
 	if (iLocal_45 == 2)
 	{
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 1, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_61, 1, false);
 	}
 	if (iLocal_80 == 1 || iLocal_80 == 4)
 	{
@@ -9495,14 +9495,14 @@ void func_207()
 	vector3 vVar0;
 	
 	ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_61, PED::GET_ANIM_INITIAL_OFFSET_POSITION(cLocal_319, sLocal_325, vLocal_331, vLocal_332, 0, 2), 0, 0, 1);
-	vVar0 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(cLocal_319, sLocal_325, vLocal_331, vLocal_332, 0, 2) };
+	vVar0 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(cLocal_319, sLocal_325, vLocal_331, vLocal_332, 0f, 2) };
 	if (vVar0.z < 0f)
 	{
 		vVar0.z = (vVar0.z + 360f);
 	}
 	ENTITY::SET_ENTITY_HEADING(iLocal_61, vVar0.z);
 	ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_60, PED::GET_ANIM_INITIAL_OFFSET_POSITION(cLocal_319, sLocal_326, vLocal_331, vLocal_332, 0, 2), 0, 0, 1);
-	vVar0 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(cLocal_319, sLocal_326, vLocal_331, vLocal_332, 0, 2) };
+	vVar0 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(cLocal_319, sLocal_326, vLocal_331, vLocal_332, 0f, 2) };
 	if (vVar0.z < 0f)
 	{
 		vVar0.z = (vVar0.z + 360f);

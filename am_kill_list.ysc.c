@@ -22590,10 +22590,10 @@ int func_621()
 	return 0;
 }
 
-int func_622(char* sParam0, int iParam1, int iParam2)
+int func_622(char* sParam0, char* sParam1, int iParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
@@ -26625,10 +26625,10 @@ void func_701(int iParam0)
 	}
 }
 
-void func_702(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_702(char* sParam0, char* sParam1, int iParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam3);
 }
@@ -27254,10 +27254,10 @@ void func_706(bool bParam0)
 	CONTROLS::DISABLE_CONTROL_ACTION(0, 257, 1);
 }
 
-void func_707(char* sParam0, int iParam1, int iParam2)
+void func_707(char* sParam0, char* sParam1, int iParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam2);
 }
 
@@ -27300,10 +27300,10 @@ int func_708(int iParam0, int iParam1)
 	return iVar3;
 }
 
-int func_709(char* sParam0, int iParam1)
+int func_709(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 

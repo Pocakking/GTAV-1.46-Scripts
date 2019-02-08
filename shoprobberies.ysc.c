@@ -2945,7 +2945,7 @@ void func_66()
 				CAM::SET_CAM_ROT(iLocal_118, Local_66.f_102.f_3, 2);
 				CAM::SET_CAM_FOV(iLocal_118, 35f);
 				CAM::SHAKE_CAM(iLocal_118, "HAND_SHAKE", 0.1f);
-				CAM::SET_CAM_ACTIVE(iLocal_118, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_118, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				if (PLAYER::IS_PLAYER_CONTROL_ON(PLAYER::PLAYER_ID()))
 				{
@@ -9180,7 +9180,7 @@ void func_191()
 				CAM::POINT_CAM_AT_ENTITY(iLocal_102, PLAYER::PLAYER_PED_ID(), -0.0129f, 0.0927f, 0.3008f, 1);
 				CAM::SET_CAM_FOV(iLocal_102, 35f);
 				CAM::SHAKE_CAM(iLocal_102, "HAND_SHAKE", 0.1f);
-				CAM::SET_CAM_ACTIVE(iLocal_102, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_102, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			iLocal_101 = 3;
@@ -9284,7 +9284,7 @@ void func_191()
 		case 6:
 			if (CAM::IS_SCREEN_FADED_OUT())
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_103, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_103, false);
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 				{

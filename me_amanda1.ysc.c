@@ -50,7 +50,7 @@
 	var uLocal_48 = 0;
 	var uLocal_49 = 0;
 	int iLocal_50 = 0;
-	var uLocal_51 = 0;
+	int iLocal_51 = 0;
 	struct<4> Local_52[10];
 	bool bLocal_53 = 0;
 	var uLocal_54 = 0;
@@ -384,7 +384,7 @@ void __EntryFunction__()
 	iLocal_45 = 49;
 	iLocal_46 = 64;
 	iLocal_50 = UI::_0x4A9923385BDB9DAD();
-	uLocal_51 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_51 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	vLocal_222 = { -836.87f, -153.92f, 34.77f };
 	vLocal_223 = { -1f, -2f, 114f };
 	sLocal_224 = "stand_loop_cop";
@@ -1687,7 +1687,7 @@ void func_35()
 				iLocal_334 = -1;
 				func_67(0f, 0f, 0f, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0);
 				iLocal_247 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", -1392.254f, 367.9411f, 75.0046f, -44.2648f, 0f, -119.873f, 48.4f, 0, 2);
-				CAM::SET_CAM_ACTIVE(iLocal_247, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_247, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				if (func_8(iVar0))
 				{
@@ -1706,9 +1706,9 @@ void func_35()
 				{
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(PLAYER::PLAYER_PED_ID(), iLocal_296, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar2);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 1048576000, 0, 1193033728);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_239, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_239, 1f, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar2);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_296, iVar2);
 					AI::CLEAR_SEQUENCE_TASK(&iVar2);
@@ -1754,7 +1754,7 @@ void func_35()
 							AI::OPEN_SEQUENCE_TASK(&iVar3);
 							AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 							AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 2000);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_239, 1f, 20000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_239, 1f, 20000, 1048576000, 0, 1193033728);
 							AI::CLOSE_SEQUENCE_TASK(iVar3);
 							AI::TASK_PERFORM_SEQUENCE(iLocal_296, iVar3);
 							AI::CLEAR_SEQUENCE_TASK(&iVar3);
@@ -30786,7 +30786,7 @@ void func_190()
 				iLocal_334 = -1;
 				func_67(0f, 0f, 0f, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0);
 				iLocal_247 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", -840.7f, 185.3f, 78.4f, -14f, 0f, -110.4f, 48.4f, 0, 2);
-				CAM::SET_CAM_ACTIVE(iLocal_247, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_247, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				if (func_8(iVar0))
 				{
@@ -30816,7 +30816,7 @@ void func_190()
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(PLAYER::PLAYER_PED_ID(), iLocal_296, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar3);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_238, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_238, 1f, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar3);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_296, iVar3);
 					AI::CLEAR_SEQUENCE_TASK(&iVar3);
@@ -30864,7 +30864,7 @@ void func_190()
 							AI::OPEN_SEQUENCE_TASK(&iVar4);
 							AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 							AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 2000);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_238, 1f, 20000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_238, 1f, 20000, 1048576000, 0, 1193033728);
 							AI::CLOSE_SEQUENCE_TASK(iVar4);
 							AI::TASK_PERFORM_SEQUENCE(iLocal_296, iVar4);
 							AI::CLEAR_SEQUENCE_TASK(&iVar4);
@@ -32944,7 +32944,7 @@ void func_258()
 		{
 			if (!func_5(iLocal_302) == joaat("weapon_pistol"))
 			{
-				PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, 1);
+				PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, true);
 				WEAPON::GIVE_WEAPON_TO_PED(iLocal_302, joaat("weapon_pistol"), -1, false, true);
 			}
 			if (!PED::IS_PED_IN_COMBAT(iLocal_302, 0))
@@ -33044,7 +33044,7 @@ void func_263(bool bParam0)
 	{
 		if (!func_5(iLocal_302) == joaat("weapon_pistol"))
 		{
-			PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, 1);
+			PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, true);
 			WEAPON::GIVE_WEAPON_TO_PED(iLocal_302, joaat("weapon_pistol"), -1, false, true);
 		}
 		if (bParam0)
@@ -34035,7 +34035,7 @@ void func_296()
 				if (!PED::IS_PED_IN_COMBAT(iLocal_302, 0) && !func_51(iLocal_302, 1392476864))
 				{
 					func_231();
-					PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, 1);
+					PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, true);
 					WEAPON::GIVE_WEAPON_TO_PED(iLocal_302, joaat("weapon_pistol"), -1, false, true);
 					if (bVar0)
 					{
@@ -43232,7 +43232,7 @@ void func_425()
 		{
 			iLocal_302 = PED::CREATE_PED(6, iLocal_303, vLocal_304, fLocal_305, 1, true);
 			func_63(&uLocal_55, 6, iLocal_302, "MEAmandaCop", 1, 1);
-			PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, 0);
+			PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_302, false);
 			PED::SET_PED_PROP_INDEX(iLocal_302, 1, 0, 0, false);
 			PED::SET_PED_ACCURACY(iLocal_302, 25);
 			ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_302, vLocal_304, 0, 0, 1);
@@ -43471,12 +43471,12 @@ void func_431()
 	}
 }
 
-void func_432(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_432(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

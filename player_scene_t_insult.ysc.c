@@ -1013,7 +1013,7 @@ void func_20(int iParam0, int iParam1)
 								fVar3 = 2f;
 								iVar4 = -530524;
 							}
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vLocal_243 + vLocal_246[iParam1 /*3*/], fVar3, -1, (fLocal_248[iParam1] * 0.1f), 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vLocal_243 + vLocal_246[iParam1 /*3*/], fVar3, -1, (fLocal_248[iParam1] * 0.1f), 0, 1193033728);
 							PED::FORCE_PED_MOTION_STATE(iParam0, iVar4, false, 0, 0);
 							PED::_0x2208438012482A1A(iParam0, 0, 0);
 							iLocal_234[iParam1] = 1;
@@ -1035,7 +1035,7 @@ void func_20(int iParam0, int iParam1)
 						{
 							PED::SET_PED_MOVEMENT_CLIPSET(iParam0, &(Local_316[iParam1 /*16*/]), 1048576000);
 						}
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vLocal_243 + vLocal_246[iParam1 /*3*/], 1f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vLocal_243 + vLocal_246[iParam1 /*3*/], 1f, -1, 1048576000, 0, 1193033728);
 						iLocal_234[iParam1] = 1;
 					}
 					else
@@ -2037,7 +2037,7 @@ void func_41()
 			ENTITY::SET_ENTITY_ROTATION(iLocal_239[iVar0], Vector((fLocal_244 + fLocal_247[iVar0]), 0f, 0f) + vLocal_242[iVar0 /*3*/], 2, 1);
 			if (!GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&(Local_311[iVar0 /*16*/])))
 			{
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_239[iVar0], &(Local_311[iVar0 /*16*/]), &Local_297, 8f, 1, 0, 0, 0, 0);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_239[iVar0], &(Local_311[iVar0 /*16*/]), &Local_297, 8f, 1, 0, 0, 0f, 0);
 			}
 		}
 		iVar0++;

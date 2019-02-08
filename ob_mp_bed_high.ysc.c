@@ -888,7 +888,7 @@ void func_1()
 				func_236(1, 1, 1, 0, 0);
 				func_235();
 				vLocal_354 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_345, func_234(bLocal_357), vLocal_358, vLocal_359, 0, 2) };
-				vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_345, func_234(bLocal_357), vLocal_358, vLocal_359, 0, 2) };
+				vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_345, func_234(bLocal_357), vLocal_358, vLocal_359, 0f, 2) };
 				fLocal_334 = vVar3.z;
 				AI::TASK_GO_STRAIGHT_TO_COORD(PLAYER::PLAYER_PED_ID(), vLocal_354, 1f, 5000, fLocal_334, 0.05f);
 				if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() == 4)
@@ -37098,20 +37098,20 @@ int func_154(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_155(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_155(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}

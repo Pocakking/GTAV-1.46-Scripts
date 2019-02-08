@@ -691,7 +691,7 @@ void func_13()
 			fVar3 = ENTITY::GET_ENTITY_HEADING(iLocal_67);
 			vVar1 = { 0f, 500f, 50f };
 			vVar2 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(vVar0, fVar3, vVar1) };
-			AI::TASK_HELI_MISSION(iLocal_68, iLocal_67, 0, 0, vVar2, 4, 50f, -1f, 0f, 100, 50, -1082130432, 0);
+			AI::TASK_HELI_MISSION(iLocal_68, iLocal_67, 0, 0, vVar2, 4, 50f, -1f, 0f, 100, 50, -1f, 0);
 		}
 	}
 	if (bLocal_73)

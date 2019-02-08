@@ -567,7 +567,7 @@ void func_1()
 					if ((GAMEPLAY::GET_GAME_TIMER() - iLocal_240) > 1000)
 					{
 						vVar1 = { 0f, 0f, (ENTITY::GET_ENTITY_HEADING(iLocal_53) * 3f) };
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_53, vVar1, 2f, -1, 1f, 1024, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_53, vVar1, 2f, -1, 1f, 1024, 1193033728);
 						iLocal_50 = 3;
 					}
 					break;
@@ -1485,7 +1485,7 @@ void func_12()
 							GRAPHICS::DRAW_DEBUG_TEXT_2D("criminal_thanks 0", 0.02f, 0.1f, 0f, 0, 0, 255, 255);
 							if (ENTITY::IS_ENTITY_AT_ENTITY(iLocal_53, PLAYER::PLAYER_PED_ID(), 75f, 75f, 75f, 0, 1, 0))
 							{
-								AUDIO::STOP_PED_SPEAKING(iLocal_53, 1);
+								AUDIO::STOP_PED_SPEAKING(iLocal_53, true);
 								iLocal_241 = 3;
 							}
 							break;
@@ -1501,7 +1501,7 @@ void func_12()
 								AI::CLEAR_PED_TASKS(iLocal_53);
 								AI::OPEN_SEQUENCE_TASK(&iLocal_67);
 								AI::TASK_LOOK_AT_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 1000, 0, 2);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 2f, -1, 3f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 2f, -1, 3f, 0, 1193033728);
 								AI::CLOSE_SEQUENCE_TASK(iLocal_67);
 								AI::TASK_PERFORM_SEQUENCE(iLocal_53, iLocal_67);
 								AI::CLEAR_SEQUENCE_TASK(&iLocal_67);
@@ -1522,7 +1522,7 @@ void func_12()
 							{
 								AI::OPEN_SEQUENCE_TASK(&iLocal_67);
 								AI::TASK_LOOK_AT_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 1000, 0, 2);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 2f, -1, 3f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_52, false), 2f, -1, 3f, 0, 1193033728);
 								AI::CLOSE_SEQUENCE_TASK(iLocal_67);
 								AI::TASK_PERFORM_SEQUENCE(iLocal_53, iLocal_67);
 								AI::CLEAR_SEQUENCE_TASK(&iLocal_67);
@@ -3415,7 +3415,7 @@ void func_60(int iParam0)
 			AI::TASK_PERFORM_SEQUENCE(iLocal_52, iLocal_67);
 			AI::CLEAR_SEQUENCE_TASK(&iLocal_67);
 			PED::SET_PED_KEEP_TASK(iLocal_52, true);
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_52, 1, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_52, 1, 0);
 			if (VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_55, 0))
 			{
 				VEHICLE::SET_VEHICLE_DOORS_LOCKED(iLocal_55, 1);
@@ -3451,7 +3451,7 @@ void func_61()
 			AI::TASK_PERFORM_SEQUENCE(iLocal_54, iLocal_67);
 			AI::CLEAR_SEQUENCE_TASK(&iLocal_67);
 			PED::SET_PED_KEEP_TASK(iLocal_54, true);
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_54, 1, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_54, 1, 0);
 		}
 	}
 }
@@ -4866,14 +4866,14 @@ int func_104()
 	{
 		iLocal_52 = PED::CREATE_PED(6, iVar0, vVar2, fVar4, 1, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_52, 294, true);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_52, 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_52, 1, 0);
 		WEAPON::REMOVE_ALL_PED_WEAPONS(iLocal_52, 1);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_52, true);
 		func_106(&uLocal_72, 1, iLocal_52, "ArrestCop", 0, 1);
 		ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iLocal_52, true, 1);
 		PED::SET_PED_TARGET_LOSS_RESPONSE(iLocal_52, 1);
 		iLocal_53 = PED::CREATE_PED(26, iVar1, vVar3, fVar5, 1, true);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_53, 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_53, 1, 0);
 		PED::SET_PED_CONFIG_FLAG(iLocal_53, 42, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_53, 281, true);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_53, true);
@@ -4954,8 +4954,8 @@ void func_105()
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_53, 6, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_53, 1, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_53, 11, false);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 1, 0);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 1, false);
 	PED::ADD_RELATIONSHIP_GROUP("RE_ARREST_COP", &iLocal_65);
 	PED::ADD_RELATIONSHIP_GROUP("RE_ARREST_CRIM", &iLocal_66);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_52, iLocal_65);

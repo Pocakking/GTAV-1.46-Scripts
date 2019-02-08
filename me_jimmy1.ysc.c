@@ -65,7 +65,7 @@
 	var uLocal_63 = 0;
 	var uLocal_64 = 0;
 	int iLocal_65 = 0;
-	var uLocal_66 = 0;
+	int iLocal_66 = 0;
 	var uLocal_67 = 16;
 	var uLocal_68 = 0;
 	var uLocal_69 = 0;
@@ -377,7 +377,7 @@ void __EntryFunction__()
 	iLocal_59 = 49;
 	iLocal_60 = 64;
 	iLocal_65 = UI::_0x4A9923385BDB9DAD();
-	uLocal_66 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_66 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	sLocal_232 = "missmej1ig_1";
 	sLocal_235 = "seat_pside_r";
 	iLocal_236 = 115;
@@ -2445,9 +2445,9 @@ void func_62()
 				{
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(PLAYER::PLAYER_PED_ID(), iLocal_299, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar1);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 1048576000, 0, 1193033728);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar1);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_299, iVar1);
 					AI::CLEAR_SEQUENCE_TASK(&iVar1);
@@ -2472,7 +2472,7 @@ void func_62()
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(PLAYER::PLAYER_PED_ID(), iLocal_299, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar2);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar2);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_299, iVar2);
 					AI::CLEAR_SEQUENCE_TASK(&iVar2);
@@ -2518,7 +2518,7 @@ void func_62()
 						AI::TASK_PAUSE(0, 6500);
 						AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 						AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_250, 1f, 20000, 1048576000, 0, 1193033728);
 						AI::CLOSE_SEQUENCE_TASK(iVar3);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_299, iVar3);
 						AI::CLEAR_SEQUENCE_TASK(&iVar3);
@@ -31116,9 +31116,9 @@ void func_205()
 					func_206(vLocal_325, vLocal_326, fLocal_327, vLocal_328, fLocal_329, func_214(), 1, 1, 1, 0, 0);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(PLAYER::PLAYER_PED_ID(), iLocal_299, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar1);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 2f, 20000, 1048576000, 0, 1193033728);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_249, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_249, 1f, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar1);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_299, iVar1);
 					AI::CLEAR_SEQUENCE_TASK(&iVar1);
@@ -31172,7 +31172,7 @@ void func_205()
 						AI::TASK_PAUSE(0, 6500);
 						AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 						AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_249, 1f, 20000, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_249, 1f, 20000, 1048576000, 0, 1193033728);
 						AI::CLOSE_SEQUENCE_TASK(iVar2);
 						AI::TASK_PERFORM_SEQUENCE(iLocal_299, iVar2);
 						AI::CLEAR_SEQUENCE_TASK(&iVar2);
@@ -40544,9 +40544,9 @@ void func_389()
 					PED::SET_PED_COMPONENT_VARIATION(iLocal_301[iVar0], 4, iVar0, iVar0, 0);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_301[iVar0], true);
 					ENTITY::SET_ENTITY_VISIBLE(iLocal_301[iVar0], false, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 2, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 128, 0);
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 65536, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 2, false);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 128, false);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_301[iVar0], 65536, true);
 					PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_301[iVar0], 17, true);
 					ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_301[iVar0], true);
 					if (iVar0 == 0)
@@ -40799,12 +40799,12 @@ void func_395()
 	}
 }
 
-void func_396(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_396(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

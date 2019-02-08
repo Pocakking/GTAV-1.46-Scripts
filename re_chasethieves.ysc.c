@@ -1696,7 +1696,7 @@ void func_33()
 						GAMEPLAY::CLEAR_AREA_OF_VEHICLES(vVar0, 5f, 0, 0, 0, 0, false, 0);
 						GAMEPLAY::CLEAR_AREA(vVar0, 2f, 1, 0, 0, false);
 						GAMEPLAY::CLEAR_AREA(PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_169, sLocal_171, vVar0, vVar1, 0, 2), 2f, 1, 0, 0, false);
-						CAM::SET_CAM_ACTIVE(iLocal_151, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_151, true);
 						CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 						switch (func_12())
 						{
@@ -31838,8 +31838,8 @@ void func_224(int iParam0)
 	if (func_1(iParam0))
 	{
 		PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 1, true);
-		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 512, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 512, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, true);
 		PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iParam0, 1);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 42, false);
 		ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iParam0, false, 1);
@@ -32320,7 +32320,7 @@ void func_240()
 			AI::OPEN_SEQUENCE_TASK(&iLocal_136);
 			if (!ENTITY::IS_ENTITY_AT_COORD(iLocal_83, vLocal_131, 1f, 1f, 2f, false, true, 0))
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_131, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_131, 1f, 20000, 1048576000, 0, 1193033728);
 			}
 			AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_STAND_MOBILE", 0, 1);
 			AI::CLOSE_SEQUENCE_TASK(iLocal_136);
@@ -32343,7 +32343,7 @@ void func_240()
 				AI::OPEN_SEQUENCE_TASK(&iLocal_136);
 				if (!ENTITY::IS_ENTITY_AT_COORD(iLocal_83, OBJECT::GET_PICKUP_COORDS(iLocal_520), 1f, 1f, 2f, false, true, 0))
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_520), 2f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_520), 2f, 20000, 1048576000, 0, 1193033728);
 				}
 				AI::TASK_TURN_PED_TO_FACE_COORD(0, OBJECT::GET_PICKUP_COORDS(iLocal_520), 0);
 				AI::TASK_PLAY_ANIM(0, sLocal_521, "pickup_low", 8f, -8f, -1, 0, 0f, 0, 0, 0);
@@ -32380,7 +32380,7 @@ void func_242()
 	}
 	else if (func_292())
 	{
-		vLocal_176 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_78, false), 1067030938, 1069547520) };
+		vLocal_176 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_78, false), 1.2f, 1.5f) };
 		GAMEPLAY::SET_BIT(&iLocal_163, 3);
 		GAMEPLAY::SET_BIT(&iLocal_163, 4);
 		GAMEPLAY::SET_BIT(&iLocal_163, 1);
@@ -34314,7 +34314,7 @@ void func_297()
 					{
 						AI::TASK_LOOK_AT_ENTITY(0, iLocal_86, -1, 2048, 2);
 					}
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_131, 2f, 20000, 2f, 8192, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_131, 2f, 20000, 2f, 8192, 1193033728);
 					AI::TASK_PLAY_ANIM(0, sLocal_518, sLocal_519, 8f, -8f, -1, 0, 0f, 0, 0, 0);
 				}
 				AI::CLOSE_SEQUENCE_TASK(iLocal_136);
@@ -35880,7 +35880,7 @@ void func_329()
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_83, 1, false);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_83, true);
 	PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iLocal_83, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_83, 128, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_83, 128, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_83, 285, true);
 	AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_83, "S_M_Y_BusBoy_01_WHITE_MINI_01");
 	if (!func_81(vLocal_134))
@@ -35988,10 +35988,10 @@ void func_329()
 		VEHICLE::SET_VEHICLE_DOOR_OPEN(iLocal_86, 1, 0, 0);
 	}
 	ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_78, PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_512, sLocal_514, vLocal_173, vLocal_174, 0, 2), 0, 0, 1);
-	vLocal_175 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_512, sLocal_514, vLocal_173, vLocal_174, 0, 2) };
+	vLocal_175 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_512, sLocal_514, vLocal_173, vLocal_174, 0f, 2) };
 	ENTITY::SET_ENTITY_HEADING(iLocal_78, vLocal_175.z);
 	ENTITY::SET_ENTITY_COORDS_NO_OFFSET(iLocal_83, PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_512, sLocal_513, vLocal_173, vLocal_174, 0, 2), 0, 0, 1);
-	vLocal_175 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_512, sLocal_513, vLocal_173, vLocal_174, 0, 2) };
+	vLocal_175 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_512, sLocal_513, vLocal_173, vLocal_174, 0f, 2) };
 	ENTITY::SET_ENTITY_HEADING(iLocal_83, vLocal_175.z);
 	AI::TASK_PLAY_ANIM(iLocal_78, sLocal_512, sLocal_514, 1000f, -1000f, -1, 9, 0f, 0, 0, 0);
 	AI::TASK_PLAY_ANIM(iLocal_83, sLocal_512, sLocal_513, 1000f, -1000f, -1, 9, 0f, 0, 0, 0);
@@ -36033,10 +36033,10 @@ void func_330(int iParam0)
 		PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 13, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 3, false);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, true);
-		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 128, 1);
-		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 512, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 128, true);
+		PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 512, true);
 		PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iParam0, 0);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 1, 0);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 42, true);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 36, true);
 		PED::SET_PED_CONFIG_FLAG(iParam0, 101, true);

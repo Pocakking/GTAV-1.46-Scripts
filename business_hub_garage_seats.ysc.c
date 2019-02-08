@@ -529,7 +529,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			vVar2 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
-			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			iVar4 = vVar3.z;
 			fVar5 = 0.05f;
 			if (uParam0->f_141.f_8 == 1)
@@ -546,7 +546,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			iVar6 = AI::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), 2106541073);
-			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			fVar8 = vVar7.z;
 			if ((iVar6 != 1 && iVar6 != 0) || func_34(ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), fVar8, 5f))
 			{
@@ -1225,7 +1225,7 @@ void func_35(var uParam0)
 			func_39();
 			if (WEAPON::GET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), &iVar0, 1) && iVar0 != joaat("weapon_unarmed"))
 			{
-				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 1);
+				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), true);
 			}
 			CONTROLS::DISABLE_CONTROL_ACTION(0, 37, 1);
 			func_37(1);
@@ -1296,7 +1296,7 @@ void func_41(int iParam0)
 	}
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	}
 	Global_15822 = 5;
 	if (iParam0 == 1)
@@ -2261,7 +2261,7 @@ int func_82(int iParam0, var uParam1)
 			{
 				if (!VEHICLE::IS_THIS_MODEL_A_TRAIN(ENTITY::GET_ENTITY_MODEL(iParam0)))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, 1);
 					*uParam1 = 1;
 				}
 			}

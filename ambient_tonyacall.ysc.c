@@ -354,8 +354,8 @@ int func_1()
 					AI::CLEAR_SEQUENCE_TASK(&uVar2);
 					AI::OPEN_SEQUENCE_TASK(&uVar2);
 					AI::TASK_ACHIEVE_HEADING(0, fLocal_50, 0);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@enter", "enter", 4f, -4f, -1, 0, 0, 0, 0, 0);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@base", "base", 4f, -4f, -1, 1, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@enter", "enter", 4f, -4f, -1, 0, 0f, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@base", "base", 4f, -4f, -1, 1, 0f, 0, 0, 0);
 					AI::CLOSE_SEQUENCE_TASK(uVar2);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_38, uVar2);
 					AI::CLEAR_SEQUENCE_TASK(&uVar2);
@@ -407,7 +407,7 @@ int func_1()
 				{
 					AI::CLEAR_SEQUENCE_TASK(&uVar2);
 					AI::OPEN_SEQUENCE_TASK(&uVar2);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@exit", "exit", 4f, -4f, -1, 0, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_stand_mobile@female@standing@call@exit", "exit", 4f, -4f, -1, 0, 0f, 0, 0, 0);
 					AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_SMOKING", -1, 1);
 					AI::CLOSE_SEQUENCE_TASK(uVar2);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_38, uVar2);

@@ -9844,7 +9844,7 @@ int func_182(bool bParam0)
 		PED::SET_PED_NAME_DEBUG(Local_28[1 /*110*/], &(Local_28[1 /*110*/].f_1));
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_28[1 /*110*/], true);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_28[1 /*110*/], iLocal_1254);
-		AUDIO::STOP_PED_SPEAKING(Local_28[1 /*110*/], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_28[1 /*110*/], true);
 		func_172(Local_28[1 /*110*/], 20f, 5f, 90f, -90f, 90f);
 		PED::SET_PED_HEARING_RANGE(Local_28[1 /*110*/], 50f);
 		StringCopy(&(Local_28[1 /*110*/].f_1), "foreman2(rear)", 16);
@@ -9860,7 +9860,7 @@ int func_182(bool bParam0)
 		PED::SET_PED_NAME_DEBUG(Local_28[0 /*110*/], &(Local_28[0 /*110*/].f_1));
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_28[0 /*110*/], true);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_28[0 /*110*/], iLocal_1254);
-		AUDIO::STOP_PED_SPEAKING(Local_28[0 /*110*/], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_28[0 /*110*/], true);
 		func_172(Local_28[0 /*110*/], 17.5f, 10f, 120f, -90f, 90f);
 		PED::SET_PED_HEARING_RANGE(Local_28[0 /*110*/], 50f);
 		StringCopy(&(Local_28[0 /*110*/].f_1), "foreman1(front)", 16);
@@ -9874,7 +9874,7 @@ int func_182(bool bParam0)
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_28[2 /*110*/], true);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_28[2 /*110*/], iLocal_1254);
 		func_172(Local_28[2 /*110*/], 20f, 5f, 90f, -90f, 90f);
-		AUDIO::STOP_PED_SPEAKING(Local_28[2 /*110*/], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_28[2 /*110*/], true);
 		PED::SET_PED_HEARING_RANGE(Local_28[2 /*110*/], 50f);
 		StringCopy(&(Local_28[2 /*110*/].f_1), "front 1", 16);
 		Local_28[2 /*110*/].f_86 = 0;
@@ -9888,7 +9888,7 @@ int func_182(bool bParam0)
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_28[3 /*110*/], iLocal_1254);
 		PED::SET_PED_HEARING_RANGE(Local_28[3 /*110*/], 50f);
 		func_172(Local_28[3 /*110*/], 20f, 5f, 90f, -90f, 90f);
-		AUDIO::STOP_PED_SPEAKING(Local_28[3 /*110*/], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_28[3 /*110*/], true);
 		StringCopy(&(Local_28[3 /*110*/].f_1), "front 2", 16);
 		Local_28[3 /*110*/].f_86 = 0;
 		Local_28[3 /*110*/].f_87 = 0;
@@ -12404,7 +12404,7 @@ void func_240(var uParam0)
 			case 2:
 				if (AUDIO::PREPARE_ALARM(&cLocal_49))
 				{
-					AUDIO::START_ALARM(&cLocal_49, 0);
+					AUDIO::START_ALARM(&cLocal_49, false);
 					func_243(&cLocal_1082, vLocal_58, 30f, -1, 500, 1, 0);
 					StringCopy(&cLocal_1082, "", 32);
 					func_238(uParam0, 3, 5000);
@@ -13230,7 +13230,7 @@ void func_256(int iParam0)
 						}
 						else if ((!func_183(*iParam0, 713668775, 1) || func_257(*iParam0)) || iVar1)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, iParam0->f_43, 1f, -1, 3f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, iParam0->f_43, 1f, -1, 3f, 0, 1193033728);
 						}
 					}
 					break;
@@ -13457,7 +13457,7 @@ void func_258(var uParam0)
 						}
 						else if ((!func_183(*uParam0, 713668775, 1) || func_257(*uParam0)) || iVar3)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*uParam0, uParam0->f_43, 1f, -1, 3f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*uParam0, uParam0->f_43, 1f, -1, 3f, 0, 1193033728);
 						}
 					}
 					break;
@@ -13630,7 +13630,7 @@ void func_258(var uParam0)
 			}
 			else if ((!func_183(*uParam0, 1805844857, 1) && !func_183(*uParam0, 713668775, 1)) || func_257(*uParam0))
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*uParam0, 177.7484f, -3240.897f, 4.6079f, 3f, -1, 0.25f, 1, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*uParam0, 177.7484f, -3240.897f, 4.6079f, 3f, -1, 1048576000, 1, 1193033728);
 			}
 			break;
 		

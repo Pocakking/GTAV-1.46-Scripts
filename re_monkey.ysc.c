@@ -2581,8 +2581,8 @@ void func_66()
 				break;
 			
 			case 4:
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 8, 1);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 32, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 8, true);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 32, true);
 				AI::OPEN_SEQUENCE_TASK(&iLocal_68);
 				AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 800);
 				AI::TASK_SMART_FLEE_PED(0, PLAYER::PLAYER_PED_ID(), 9999f, -1, 1, 0);
@@ -2814,7 +2814,7 @@ void func_73()
 {
 	if (iLocal_60 == 0)
 	{
-		iLocal_60 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY(sLocal_61, iLocal_58[0], vLocal_66, vLocal_66, 1065353216, 0, 0, 0);
+		iLocal_60 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY(sLocal_61, iLocal_58[0], vLocal_66, vLocal_66, 1f, 0, 0, 0);
 		GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iLocal_60, 1f, 1f, 1f, 0);
 		GRAPHICS::SET_PARTICLE_FX_LOOPED_ALPHA(iLocal_60, 0.2f);
 	}

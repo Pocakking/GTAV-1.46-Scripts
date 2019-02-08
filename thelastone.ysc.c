@@ -30311,28 +30311,28 @@ void func_175(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_176(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_178(iParam0, &Var0);
-		MemCopy(&cVar1, {func_173(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_177(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_173(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_177(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_177(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_177(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -40655,12 +40655,12 @@ void func_341(bool bParam0)
 	func_237(1, 1, 0, 0, 0);
 }
 
-void func_342(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_342(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -41138,8 +41138,8 @@ int func_364()
 		PED::SET_PED_COMPONENT_VARIATION(Local_48.f_2, 8, 0, 0, 0);
 		PED::SET_PED_CONFIG_FLAG(Local_48.f_2, 185, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(Local_48.f_2, 46, true);
-		AUDIO::STOP_PED_SPEAKING(Local_48.f_2, 1);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(Local_48.f_2, 1);
+		AUDIO::STOP_PED_SPEAKING(Local_48.f_2, true);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(Local_48.f_2, true);
 		PED::SET_PED_TARGET_LOSS_RESPONSE(Local_48.f_2, 1);
 		func_232(&uLocal_199, 3, Local_48.f_2, "ORLEANS", 0, 1);
 		func_363(Local_48.f_2, 0);
@@ -42478,7 +42478,7 @@ void func_402()
 			PED::SET_PED_TARGET_LOSS_RESPONSE(Local_59[iVar0 /*16*/], 1);
 			AI::TASK_WANDER_IN_AREA(Local_59[iVar0 /*16*/], Local_59[iVar0 /*16*/].f_11, 15f, 1077936128, 1086324736);
 			PED::SET_PED_COMBAT_ATTRIBUTES(Local_59[iVar0 /*16*/], 46, true);
-			WEAPON::GIVE_DELAYED_WEAPON_TO_PED(Local_59[iVar0 /*16*/], joaat("weapon_cougar"), -1, 1);
+			WEAPON::GIVE_DELAYED_WEAPON_TO_PED(Local_59[iVar0 /*16*/], joaat("weapon_cougar"), -1, true);
 			Local_59[iVar0 /*16*/].f_1 = 1;
 			Local_59[iVar0 /*16*/].f_2 = 0;
 		}

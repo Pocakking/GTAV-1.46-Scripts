@@ -3975,7 +3975,7 @@ void func_113(int iParam0, var uParam1, bool bParam2, int iParam3)
 	}
 	GAMEPLAY::SET_BIT(&(uParam1->f_1), 3);
 	GAMEPLAY::SET_BIT(&(uParam1->f_1), 4);
-	vVar0 = { OBJECT::GET_SAFE_PICKUP_COORDS(uParam1->f_2, 1067030938, 1069547520) };
+	vVar0 = { OBJECT::GET_SAFE_PICKUP_COORDS(uParam1->f_2, 1.2f, 1.5f) };
 	uParam1->f_6 = OBJECT::CREATE_PICKUP(joaat("pickup_money_variable"), vVar0, uParam1->f_1, *uParam1, 1, 0);
 	if (bParam2)
 	{
@@ -5085,7 +5085,7 @@ void func_149(var uParam0, int iParam1, bool bParam2)
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam0->f_3, false);
 		ENTITY::CLEAR_ENTITY_LAST_DAMAGE_ENTITY(uParam0->f_3);
-		PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 3, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 3, false);
 		PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->f_3, 17, true);
 		AI::CLEAR_PED_TASKS(uParam0->f_3);
 		if ((func_322(uParam0->f_3, uParam0->f_29, 1) <= 200f && !func_150(uParam0->f_29)) && !bParam2)
@@ -5094,8 +5094,8 @@ void func_149(var uParam0, int iParam1, bool bParam2)
 		}
 		else
 		{
-			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 1024, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 131072, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 1024, true);
+			PED::SET_PED_FLEE_ATTRIBUTES(uParam0->f_3, 131072, true);
 			AI::OPEN_SEQUENCE_TASK(&iVar0);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 0, iParam1);
 			if (uParam0->f_415 == 8)
@@ -5203,7 +5203,7 @@ void func_156(var uParam0)
 			AI::OPEN_SEQUENCE_TASK(&iVar0);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
 			AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 0);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_29, 1f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_29, 1f, -1, 1048576000, 0, 1193033728);
 			if (uParam0->f_411 == 2)
 			{
 				AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_AA_SMOKE", 0, 0);
@@ -5211,7 +5211,7 @@ void func_156(var uParam0)
 			else if (uParam0->f_411 == 0)
 			{
 				AI::TASK_CLIMB_LADDER(0, 1);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 813.9421f, 1172.681f, 329.7988f, 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 813.9421f, 1172.681f, 329.7988f, 1f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_ACHIEVE_HEADING(0, 151.7794f, 0);
 				AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_SMOKING_POT", 0, 0);
 			}
@@ -6675,7 +6675,7 @@ int func_229(var uParam0, bool bParam1, float fParam2)
 			{
 				AI::CLEAR_SEQUENCE_TASK(&iVar3);
 				AI::OPEN_SEQUENCE_TASK(&iVar3);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_11, uParam0->f_6, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_11, uParam0->f_6, 20000, 1048576000, 0, 1193033728);
 				AI::TASK_TURN_PED_TO_FACE_ENTITY(0, uParam0->f_4, 0);
 				AI::CLOSE_SEQUENCE_TASK(iVar3);
 				AI::TASK_PERFORM_SEQUENCE(uParam0->f_3, iVar3);
@@ -6981,7 +6981,7 @@ int func_231(var uParam0)
 				func_235(uParam0, 1f, 1f, 1f, 0f, 0f, 0f, 1112014848);
 				CAM::SET_CAM_COORD(*uParam0, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_4, vVar0));
 				CAM::POINT_CAM_AT_ENTITY(*uParam0, uParam0->f_4, vVar1, 1);
-				CAM::SET_CAM_ACTIVE(*uParam0, 1);
+				CAM::SET_CAM_ACTIVE(*uParam0, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				PED::_0x2208438012482A1A(uParam0->f_3, 0, 0);
 				AI::TASK_ENTER_VEHICLE(uParam0->f_3, uParam0->f_4, 20000, uParam0->f_7, uParam0->f_6, 3, 0);
@@ -7271,7 +7271,7 @@ void func_244(var uParam0)
 					AI::OPEN_SEQUENCE_TASK(&iVar0);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, uParam0->f_4, 0);
 					AI::TASK_PLAY_ANIM(0, "misscommon@response", "screw_you", 8f, -8f, -1, 0, 0f, 0, 0, 0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_11, uParam0->f_6, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uParam0->f_11, uParam0->f_6, 20000, 1048576000, 0, 1193033728);
 					AI::CLOSE_SEQUENCE_TASK(iVar0);
 					AI::TASK_PERFORM_SEQUENCE(uParam0->f_3, iVar0);
 					func_323(uParam0, "Player abandoned passenger on pickup.", 8);

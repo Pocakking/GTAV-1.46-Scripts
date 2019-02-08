@@ -3652,7 +3652,7 @@ int func_136(int iParam0, int iParam1)
 	return uVar0;
 }
 
-void func_137(int iParam0, int iParam1, char[4] cParam2, char[4] cParam3, char[4] cParam4, int iParam5, var uParam6, var uParam7, var uParam8, int iParam9, var uParam10, var uParam11, var uParam12)
+void func_137(int iParam0, char* sParam1, char[4] cParam2, char[4] cParam3, char[4] cParam4, char[4] cParam5, var uParam6, var uParam7, var uParam8, char* sParam9, var uParam10, var uParam11, var uParam12)
 {
 	switch (iParam0)
 	{
@@ -3685,26 +3685,26 @@ void func_137(int iParam0, int iParam1, char[4] cParam2, char[4] cParam3, char[4
 		case 6:
 			if (func_152(PLAYER::PLAYER_ID(), iParam0))
 			{
-				func_140("HUB_PC_SH_2B", &iParam9);
+				func_140("HUB_PC_SH_2B", &sParam9);
 			}
 			else if (func_139(PLAYER::PLAYER_ID()))
 			{
-				func_138("HUB_PC_SH_2A", &iParam1, &iParam5);
+				func_138("HUB_PC_SH_2A", &sParam1, &cParam5);
 			}
 			else
 			{
-				func_138("HUB_PC_SH_2", &iParam1, &iParam5);
+				func_138("HUB_PC_SH_2", &sParam1, &cParam5);
 			}
 			break;
 	}
 	GAMEPLAY::SET_BIT(&iLocal_180, 12);
 }
 
-void func_138(char* sParam0, int iParam1, int iParam2)
+void func_138(char* sParam0, char* sParam1, char* sParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, true, -1);
 }
 
@@ -3717,10 +3717,10 @@ bool func_139(int iParam0)
 	return GAMEPLAY::IS_BIT_SET(Global_1589747[iParam0 /*790*/].f_273.f_115, 14);
 }
 
-void func_140(char* sParam0, int iParam1)
+void func_140(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, true, -1);
 }
 
@@ -116184,11 +116184,11 @@ int func_1448(int iParam0)
 
 float func_1449(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_45(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_45(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -134114,7 +134114,7 @@ void func_1566(var uParam0, int iParam1)
 		{
 			if (AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 			{
-				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 0);
+				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, false);
 			}
 		}
 	}
@@ -134346,7 +134346,7 @@ void func_1571(var uParam0, int iParam1, var uParam2, var uParam3)
 		{
 			if (!AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 			{
-				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 1);
+				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, true);
 			}
 		}
 	}
@@ -134354,7 +134354,7 @@ void func_1571(var uParam0, int iParam1, var uParam2, var uParam3)
 	{
 		if (AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 		{
-			AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 0);
+			AI::SET_SCENARIO_GROUP_ENABLED(sVar0, false);
 		}
 	}
 	if (func_1547(iParam1) == 9 && !GAMEPLAY::IS_BIT_SET(uParam0->f_22, 14))
@@ -163794,10 +163794,10 @@ void func_2202(bool bParam0)
 	}
 }
 
-int func_2203(char* sParam0, int iParam1)
+int func_2203(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
@@ -187296,8 +187296,8 @@ int func_2601(var uParam0, var uParam1)
 				if (ENTITY::DOES_ENTITY_EXIST(uParam1->f_126[1]) && !ENTITY::IS_ENTITY_DEAD(uParam1->f_126[1], 0))
 				{
 					AI::OPEN_SEQUENCE_TASK(&uVar2);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -8f, -1, 0, 0, 0, 0, 0);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -4f, -1, 0, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -8f, -1, 0, 0f, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -4f, -1, 0, 0f, 0, 0, 0);
 					AI::CLOSE_SEQUENCE_TASK(uVar2);
 					unk_0x8C33220C8D78CA0D(uParam1->f_126[1], uVar2);
 				}

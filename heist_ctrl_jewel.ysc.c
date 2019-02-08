@@ -2219,7 +2219,7 @@ void func_70(var uParam0, int iParam1, bool bParam2)
 		}
 		if (CAM::IS_CAM_ACTIVE(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 		}
 		CAM::DESTROY_CAM(*uParam0, iParam1);
 	}
@@ -4553,7 +4553,7 @@ void func_119(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3, int 
 	uParam0->f_23 = iParam8;
 	uParam0->f_19 = uParam7;
 	*uParam0 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_PARAMS(*uParam0, uParam0->f_1, uParam0->f_4, uParam0->f_7, 0, 1, 1, 2);
 	if (!bParam11)
 	{
@@ -5368,7 +5368,7 @@ void func_146()
 						ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), 261.7831f);
 						if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 						{
-							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 						}
 						PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
 					}
@@ -10323,7 +10323,7 @@ void func_195()
 										{
 											AI::OPEN_SEQUENCE_TASK(&iLocal_252);
 											AI::TASK_LEAVE_VEHICLE(0, iLocal_247, 0);
-											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 718.1777f, -976.126f, 23.9148f, 1f, 20000, 0.25f, 0, 40000f);
+											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 718.1777f, -976.126f, 23.9148f, 1f, 20000, 1048576000, 0, 1193033728);
 											AI::CLOSE_SEQUENCE_TASK(iLocal_252);
 											AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 											AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), iLocal_252);
@@ -10348,7 +10348,7 @@ void func_195()
 										{
 											AI::OPEN_SEQUENCE_TASK(&iLocal_253);
 											AI::TASK_LEAVE_VEHICLE(0, iLocal_247, 0);
-											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 718.1777f, -976.126f, 23.9148f, 1f, 20000, 0.25f, 0, 40000f);
+											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 718.1777f, -976.126f, 23.9148f, 1f, 20000, 1048576000, 0, 1193033728);
 											AI::CLOSE_SEQUENCE_TASK(iLocal_253);
 											AI::CLEAR_PED_TASKS(iLocal_245);
 											AI::TASK_PERFORM_SEQUENCE(iLocal_245, iLocal_253);
@@ -10443,11 +10443,11 @@ void func_195()
 						{
 							if (CAM::DOES_CAM_EXIST(iLocal_250))
 							{
-								CAM::SET_CAM_ACTIVE(iLocal_250, 0);
+								CAM::SET_CAM_ACTIVE(iLocal_250, false);
 							}
 							if (CAM::DOES_CAM_EXIST(iLocal_251))
 							{
-								CAM::SET_CAM_ACTIVE(iLocal_251, 0);
+								CAM::SET_CAM_ACTIVE(iLocal_251, false);
 							}
 							CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 							if (CAM::DOES_CAM_EXIST(iLocal_251))

@@ -2323,7 +2323,7 @@ void func_70(var uParam0, int iParam1, bool bParam2)
 		}
 		if (CAM::IS_CAM_ACTIVE(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 		}
 		CAM::DESTROY_CAM(*uParam0, iParam1);
 	}
@@ -4657,7 +4657,7 @@ void func_119(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3, int 
 	uParam0->f_23 = iParam8;
 	uParam0->f_19 = uParam7;
 	*uParam0 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_PARAMS(*uParam0, uParam0->f_1, uParam0->f_4, uParam0->f_7, 0, 1, 1, 2);
 	if (!bParam11)
 	{
@@ -5480,7 +5480,7 @@ void func_146()
 					vVar0 = { 1391.81f, 3614.606f, 37.97f };
 					GAMEPLAY::GET_GROUND_Z_FOR_3D_COORD(vVar0, &(vVar0.f_2), 0, 0);
 					AI::OPEN_SEQUENCE_TASK(&iVar1);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHEISTPALETOSCORE1LEADINOUT", "TRV_PUKING_LEADOUT", 1396.911f, 3603.942f, 38.925f, 0f, 0f, 108f, 1000f, -4f, -1, 0, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHEISTPALETOSCORE1LEADINOUT", "TRV_PUKING_LEADOUT", 1396.911f, 3603.942f, 38.925f, 0f, 0f, 108f, 1000f, -4f, -1, 0, 0, 2, 0);
 					AI::CLOSE_SEQUENCE_TASK(iVar1);
 					AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), iVar1);
 					PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);

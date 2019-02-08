@@ -126,7 +126,7 @@ void func_1()
 	{
 		SYSTEM::WAIT(0);
 	}
-	OBJECT::CREATE_PICKUP(iVar1, OBJECT::GET_SAFE_PICKUP_COORDS(vLocal_19, 1067030938, 1069547520), iVar2, iVar3, 0, iVar0);
+	OBJECT::CREATE_PICKUP(iVar1, OBJECT::GET_SAFE_PICKUP_COORDS(vLocal_19, 1.2f, 1.5f), iVar2, iVar3, 0, iVar0);
 }
 
 int func_2(int iParam0, int iParam1)

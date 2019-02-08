@@ -436,7 +436,7 @@ int func_2()
 				{
 					if (iLocal_313 == 0)
 					{
-						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 						GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iLocal_313, fLocal_314, fLocal_315, fLocal_316, 0);
 					}
 				}
@@ -452,7 +452,7 @@ int func_2()
 				{
 					if (iLocal_313 == 0)
 					{
-						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 						GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iLocal_313, fLocal_314, fLocal_315, fLocal_316, 0);
 					}
 				}
@@ -1000,7 +1000,7 @@ int func_20()
 				{
 					if (iLocal_313 == 0)
 					{
-						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 						GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iLocal_313, fLocal_314, fLocal_315, fLocal_316, 0);
 					}
 				}
@@ -1016,7 +1016,7 @@ int func_20()
 				{
 					if (iLocal_313 == 0)
 					{
-						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+						iLocal_313 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_lamgraff_paint_spray", iLocal_267, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 						GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iLocal_313, fLocal_314, fLocal_315, fLocal_316, 0);
 					}
 				}

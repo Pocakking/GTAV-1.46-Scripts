@@ -534,7 +534,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 0);
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
 	{
-		ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), 1);
+		ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), true);
 	}
 	GRAPHICS::REMOVE_PARTICLE_FX_IN_RANGE(uParam1->f_5, 4500f);
 	GRAPHICS::REMOVE_DECALS_IN_RANGE(uParam1->f_5, 4500f);
@@ -765,7 +765,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 						fVar21 = 1.5f;
 						vVar22 = { CAM::_GET_GAMEPLAY_CAM_COORDS() };
 						vVar23 = { PED::GET_PED_BONE_COORDS(PLAYER::PLAYER_PED_ID(), 31086, 0f, 0f, 0f) };
-						fVar24 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar22, vVar23, 1);
+						fVar24 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar22, vVar23, true);
 						fVar21 = func_21(fVar21, 0.001f, (fVar24 - 0.75f));
 						if (fVar21 < 0f)
 						{
@@ -808,7 +808,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 						CAM::_SET_GAMEPLAY_CAM_RAW_YAW(fVar26);
 						vVar31 = { CAM::_GET_GAMEPLAY_CAM_COORDS() };
 						vVar32 = { CAM::GET_GAMEPLAY_CAM_COORD() };
-						fVar33 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar31, vVar32, 1);
+						fVar33 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar31, vVar32, true);
 						iVar34 = SYSTEM::ROUND((fVar33 * 1000f));
 						uParam1->f_32 = 1;
 					}
@@ -835,7 +835,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 						
 						case -668482597:
 							PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, 1, 0, 0);
-							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0f, 1, 0);
+							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0, 1, 0);
 							if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != 4)
 							{
 								if (uParam1->f_31 == 999f)
@@ -864,7 +864,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 								CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(fVar36);
 								vVar41 = { CAM::_GET_GAMEPLAY_CAM_COORDS() };
 								vVar42 = { CAM::GET_GAMEPLAY_CAM_COORD() };
-								fVar43 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar41, vVar42, 1);
+								fVar43 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar41, vVar42, true);
 								iVar44 = SYSTEM::ROUND((fVar43 * 1000f));
 								CAM::RENDER_SCRIPT_CAMS(false, true, iVar44, 0, 0, 0);
 							}
@@ -947,7 +947,7 @@ void func_12(char* sParam0, var uParam1, char* sParam2)
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
 	{
 		PED::SET_PED_RESET_FLAG(PLAYER::PLAYER_PED_ID(), 77, bVar3);
-		ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), 0);
+		ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), false);
 	}
 	sParam0 = sParam0;
 }
@@ -1064,7 +1064,7 @@ int func_16(var uParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4,
 					}
 					CAM::_0x0FB82563989CF4FB(uParam0->f_3, uParam0->f_2, (uParam0->f_14 - uParam0->f_17), 2);
 					CAM::_0xD1B0F412F109EA5D(uParam0->f_3, iParam6);
-					CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				}
 				else
 				{
@@ -1205,7 +1205,7 @@ int func_23(char* sParam0, int iParam1, bool bParam2)
 			{
 				if (Global_15829 == 0)
 				{
-					AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+					AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 					Global_14513.f_1 = 3;
 					Global_15822 = 0;
 					Global_15823 = 1;
@@ -1392,7 +1392,7 @@ void func_24()
 		StringCopy(&(Global_14690[iVar0 /*6*/]), "", 24);
 		iVar0++;
 	}
-	AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+	AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	Global_15822 = 1;
 }
 
@@ -1551,14 +1551,14 @@ void func_32()
 	Global_16833 = 0;
 	if ((AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_14513.f_1 == 9) || Global_14512 == 1)
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_15822 = 6;
 		Global_14513.f_1 = 3;
 		return;
 	}
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(1);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(true);
 		Global_15822 = 6;
 		return;
 	}
@@ -1629,7 +1629,7 @@ void func_36(int iParam0)
 	}
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	}
 	Global_15822 = 5;
 	if (iParam0 == 1)
@@ -1752,7 +1752,7 @@ void func_40(var uParam0, int iParam1, int iParam2, char* sParam3, int iParam4, 
 void func_41(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 void func_42(int iParam0, var uParam1)
@@ -3087,7 +3087,7 @@ int func_97(int iParam0)
 	PED::SET_PED_RESET_FLAG(Local_43.f_1, 200, true);
 	PED::SET_PED_RESET_FLAG(Local_43.f_1, 46, true);
 	PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(Local_43.f_1, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(Local_43.f_1, 262144, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(Local_43.f_1, 262144, true);
 	AUDIO::SET_PED_IS_DRUNK(Local_43.f_1, 1);
 	return 1;
 }
@@ -3338,7 +3338,7 @@ bool func_110()
 	}
 	vVar0 = { ENTITY::GET_ENTITY_COORDS(Local_43.f_1, true) };
 	vVar1 = { ENTITY::GET_ENTITY_COORDS(Local_43.f_4, true) };
-	fVar2 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vVar1, 1);
+	fVar2 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vVar1, true);
 	return fVar2 < 7f;
 }
 
@@ -4139,7 +4139,7 @@ void func_127()
 	}
 	vVar0 = { ENTITY::GET_ENTITY_COORDS(Local_43.f_1, true) };
 	vVar1 = { ENTITY::GET_ENTITY_COORDS(Local_43.f_4, true) };
-	fVar2 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vVar1, 1);
+	fVar2 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vVar1, true);
 	if (fVar2 > 3f)
 	{
 		if (!func_97(Global_37058[iLocal_54 /*5*/].f_2))
@@ -4203,7 +4203,7 @@ void func_128()
 		PED::SET_PED_RESET_FLAG(Local_43.f_1, 200, false);
 		PED::SET_PED_RESET_FLAG(Local_43.f_1, 46, false);
 		PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(Local_43.f_1, 1);
-		PED::SET_PED_FLEE_ATTRIBUTES(Local_43.f_1, 262144, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(Local_43.f_1, 262144, false);
 		AUDIO::SET_PED_IS_DRUNK(Local_43.f_1, 0);
 	}
 	if (!bLocal_47)
@@ -4247,7 +4247,7 @@ void func_131(int iParam0)
 	PED::CLEAR_PED_ALTERNATE_MOVEMENT_ANIM(iParam0, 0, -8f);
 	PED::SET_PED_RESET_FLAG(iParam0, 200, false);
 	PED::SET_PED_CAN_PLAY_AMBIENT_ANIMS(iParam0, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 262144, 0);
+	PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 262144, false);
 	AUDIO::SET_PED_IS_DRUNK(iParam0, 0);
 }
 

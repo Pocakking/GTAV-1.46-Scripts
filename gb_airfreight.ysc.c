@@ -1598,9 +1598,9 @@ int func_68(int iParam0)
 			{
 				if (func_69(&(Local_276.f_31[iParam0 /*17*/]), 26, Local_276.f_31[iParam0 /*17*/].f_5, Local_276.f_31[iParam0 /*17*/].f_1, Local_276.f_31[iParam0 /*17*/].f_4, 1, 1, 1))
 				{
-					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(func_20(iParam0), 1, 0f);
+					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(func_20(iParam0), 1, 0);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(func_20(iParam0), true);
-					PED::SET_PED_DIES_WHEN_INJURED(func_20(iParam0), 1);
+					PED::SET_PED_DIES_WHEN_INJURED(func_20(iParam0), true);
 					if (iParam0 == 3)
 					{
 						WEAPON::GIVE_WEAPON_TO_PED(func_20(iParam0), Local_276.f_31[iParam0 /*17*/].f_12, 99999999, false, true);

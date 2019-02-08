@@ -148,7 +148,7 @@ void __EntryFunction__()
 		if (ENTITY::DOES_ENTITY_EXIST(iVar2[iVar0]))
 		{
 			ENTITY::FREEZE_ENTITY_POSITION(iVar2[iVar0], true);
-			ENTITY::SET_ENTITY_INVINCIBLE(iVar2[iVar0], 1);
+			ENTITY::SET_ENTITY_INVINCIBLE(iVar2[iVar0], true);
 		}
 		iVar0++;
 	}
@@ -710,9 +710,9 @@ bool func_10()
 	if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0))
 	{
 		iVar0 = PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0);
-		return ENTITY::IS_ENTITY_UPRIGHT(iVar0, 1119092736);
+		return ENTITY::IS_ENTITY_UPRIGHT(iVar0, 90f);
 	}
-	return ENTITY::IS_ENTITY_UPRIGHT(PLAYER::PLAYER_PED_ID(), 1119092736);
+	return ENTITY::IS_ENTITY_UPRIGHT(PLAYER::PLAYER_PED_ID(), 90f);
 }
 
 int func_11(var uParam0, char* sParam1, int iParam2)
@@ -737,7 +737,7 @@ void func_12(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 	UI::ADD_TEXT_COMPONENT_INTEGER(iParam1);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, 1, -1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, true, -1);
 }
 
 int func_13(var uParam0)
@@ -860,7 +860,7 @@ int func_20(var uParam0, char* sParam1)
 void func_21(char* sParam0)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, 1, -1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 1, true, -1);
 }
 
 void func_22(var uParam0)
@@ -1539,7 +1539,7 @@ bool func_56(int iParam0, bool bParam1, int iParam2, bool bParam3)
 		{
 			if (iParam2 == 0)
 			{
-				if (Global_33084[iParam0] && GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), Var3, 1) < 200f)
+				if (Global_33084[iParam0] && GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), Var3, true) < 200f)
 				{
 					bVar5 = false;
 					Global_1645162 = 1;
@@ -1779,7 +1779,7 @@ bool func_56(int iParam0, bool bParam1, int iParam2, bool bParam3)
 					break;
 				
 				case 3:
-					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var3, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), 1) < 250f)
+					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var3, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), true) < 250f)
 					{
 						uVar4 = OBJECT::_0xB48FCED898292E52(Var3, 25f, &(Var3.f_8[0 /*8*/]));
 						if (OBJECT::_0x52AF537A0C5B8AAD(uVar4))
@@ -3519,7 +3519,7 @@ bool func_63(int iParam0)
 	return Global_36117 == iParam0;
 }
 
-float func_64(int iParam0, vector3 vParam1, int iParam2)
+float func_64(int iParam0, vector3 vParam1, bool bParam2)
 {
 	vector3 vVar0;
 	
@@ -3531,7 +3531,7 @@ float func_64(int iParam0, vector3 vParam1, int iParam2)
 	{
 		vVar0 = { ENTITY::GET_ENTITY_COORDS(iParam0, false) };
 	}
-	return GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vParam1, iParam2);
+	return GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vParam1, bParam2);
 }
 
 bool func_65(int iParam0)

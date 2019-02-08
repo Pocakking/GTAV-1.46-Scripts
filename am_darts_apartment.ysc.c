@@ -2785,8 +2785,8 @@ void __EntryFunction__()
 												func_389(&(Var84[iVar14[iVar17] /*34*/]), 1, 1);
 												AI::CLEAR_SEQUENCE_TASK(&uVar49);
 												AI::OPEN_SEQUENCE_TASK(&uVar49);
-												AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_overlay", 8f, -8f, -1, 2, 0, 0, 0, 0);
-												AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_idle_a_down", 1000f, -8f, -1, 1, 0, 0, 0, 0);
+												AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_overlay", 8f, -8f, -1, 2, 0f, 0, 0, 0);
+												AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_idle_a_down", 1000f, -8f, -1, 1, 0f, 0, 0, 0);
 												AI::CLOSE_SEQUENCE_TASK(uVar49);
 												AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), uVar49);
 												func_388(&(Var84[iLocal_366 /*34*/].f_1), 1, 0);
@@ -3279,8 +3279,8 @@ void __EntryFunction__()
 											func_389(&(Var84[iVar14[iVar17] /*34*/]), 2, 0);
 											AI::CLEAR_SEQUENCE_TASK(&uVar49);
 											AI::OPEN_SEQUENCE_TASK(&uVar49);
-											AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_overlay", 8f, -8f, -1, 2, 0, 0, 0, 0);
-											AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_idle_a_down", 1000f, -8f, -1, 1, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_overlay", 8f, -8f, -1, 2, 0f, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(0, "anim@amb@clubhouse@mini@darts@", "throw_idle_a_down", 1000f, -8f, -1, 1, 0f, 0, 0, 0);
 											AI::CLOSE_SEQUENCE_TASK(uVar49);
 											AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), uVar49);
 											func_388(&(Var84[iLocal_366 /*34*/].f_1), 1, 0);
@@ -9964,11 +9964,11 @@ int func_154(var uParam0, var uParam1, int iParam2, int iParam3)
 			ENTITY::FREEZE_ENTITY_POSITION(uParam0->f_20, true);
 			if (PED::IS_PED_MALE(uParam0->f_20))
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			else
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			AI::TASK_LOOK_AT_COORD(uParam0->f_20, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_20, 0.7866f, 2.2904f, 0.7608f), -1, 2048, 2);
 			PED::_0x2208438012482A1A(uParam0->f_20, 0, 0);
@@ -43414,7 +43414,7 @@ void func_260(var uParam0)
 		{
 			if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 			{
-				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "anim@amb@clubhouse@mini@darts@", "outro", 8f, -8f, -1, 0, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "anim@amb@clubhouse@mini@darts@", "outro", 8f, -8f, -1, 0, 0f, 0, 0, 0);
 				func_871(uParam0, 26);
 			}
 		}
@@ -46038,7 +46038,7 @@ int func_369(var uParam0)
 	return 1;
 }
 
-void func_370(var uParam0, int iParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6)
+void func_370(var uParam0, char* sParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6)
 {
 	char* sVar0;
 	
@@ -46050,7 +46050,7 @@ void func_370(var uParam0, int iParam1, char* sParam2, char* sParam3, int iParam
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM(sParam2);
 	UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(sParam3);
@@ -47182,7 +47182,7 @@ void func_410(var uParam0, float fParam1)
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();
 }
 
-void func_411(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
+void func_411(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
 {
 	char* sVar0;
 	
@@ -47194,7 +47194,7 @@ void func_411(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	func_135(sParam2);
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();

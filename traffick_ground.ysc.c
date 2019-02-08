@@ -12326,7 +12326,7 @@ int func_146(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4)
 										{
 											iVar8 = 0;
 										}
-										AI::TASK_HELI_MISSION(VEHICLE::GET_PED_IN_VEHICLE_SEAT((*uParam1)[iVar2], -1, 0), (*uParam1)[iVar2], iVar8, PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 8, 100f, -1f, ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), 100, 50, -1082130432, 0);
+										AI::TASK_HELI_MISSION(VEHICLE::GET_PED_IN_VEHICLE_SEAT((*uParam1)[iVar2], -1, 0), (*uParam1)[iVar2], iVar8, PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 8, 100f, -1f, ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), 100, 50, -1f, 0);
 										PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, 1862763509, uParam1->f_36);
 										PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, uParam1->f_36, 1862763509);
 										func_362("bTaskedToWander = TRUE");
@@ -13783,7 +13783,7 @@ void func_179(var uParam0, int iParam1, var uParam2, var uParam3, var uParam4, v
 										PED::SET_PED_COMBAT_ATTRIBUTES(iVar9, 7, false);
 										if (*uParam8)
 										{
-											AI::TASK_HELI_MISSION(iVar9, (*uParam2)[iVar0], PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 6, 100f, -1f, ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), 50, 25, -1082130432, 0);
+											AI::TASK_HELI_MISSION(iVar9, (*uParam2)[iVar0], PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), 6, 100f, -1f, ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), 50, 25, -1f, 0);
 											if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
 											{
 												PED::SET_PED_ACCURACY(iVar9, 5);
@@ -15056,8 +15056,8 @@ int func_196(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, ch
 								AI::CLEAR_SEQUENCE_TASK(&iVar0);
 								AI::OPEN_SEQUENCE_TASK(&iVar0);
 								AI::TASK_ENTER_VEHICLE(0, uParam1->f_2, 20000, -1, 2f, 1, 0);
-								AI::TASK_HELI_MISSION(0, uParam1->f_2, 0, 0, uParam0->f_218[1 /*217*/].f_164, uParam0->f_218[1 /*217*/].f_164.f_1, (uParam0->f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
-								AI::TASK_HELI_MISSION(0, uParam1->f_2, 0, 0, (uParam0->f_218[1 /*217*/].f_164 + 500f), (uParam0->f_218[1 /*217*/].f_164.f_1 + 500f), (uParam0->f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
+								AI::TASK_HELI_MISSION(0, uParam1->f_2, 0, 0, uParam0->f_218[1 /*217*/].f_164, uParam0->f_218[1 /*217*/].f_164.f_1, (uParam0->f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
+								AI::TASK_HELI_MISSION(0, uParam1->f_2, 0, 0, (uParam0->f_218[1 /*217*/].f_164 + 500f), (uParam0->f_218[1 /*217*/].f_164.f_1 + 500f), (uParam0->f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
 								AI::CLOSE_SEQUENCE_TASK(iVar0);
 								if (!PED::IS_PED_INJURED(uParam1->f_10))
 								{
@@ -15675,7 +15675,7 @@ int func_197(var uParam0, int iParam1, vector3 vParam2, vector3 vParam3, var uPa
 			{
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
-			CAM::SET_CAM_ACTIVE(*uParam4, 1);
+			CAM::SET_CAM_ACTIVE(*uParam4, true);
 			if (!GAMEPLAY::IS_STRING_NULL(sParam5))
 			{
 				UI::CLEAR_PRINTS();
@@ -16666,7 +16666,7 @@ int func_226(var uParam0, var uParam1, var uParam2, var uParam3)
 						ENTITY::SET_ENTITY_VISIBLE(uParam1->f_6, true, 0);
 						if (!ENTITY::IS_ENTITY_DEAD(uParam1->f_6, 0))
 						{
-							ENTITY::PLAY_ENTITY_ANIM(uParam1->f_6, "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1f, 0, 1, 0, 0, 0);
+							ENTITY::PLAY_ENTITY_ANIM(uParam1->f_6, "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1f, 0, 1, 0, 0f, 0);
 						}
 						func_362("STARTING PLAYBACK ON SMUGGLERS PLANE");
 						*uParam2 = 4;
@@ -16685,7 +16685,7 @@ int func_226(var uParam0, var uParam1, var uParam2, var uParam3)
 					{
 						ENTITY::FREEZE_ENTITY_POSITION(uParam1->f_5, true);
 						uParam1->f_42 = 1;
-						ENTITY::PLAY_ENTITY_ANIM(uParam1->f_6, "p_cargo_chute_s_crumple", "p_cargo_chute_s", 0.5f, 0, 1, 0, 0, 0);
+						ENTITY::PLAY_ENTITY_ANIM(uParam1->f_6, "p_cargo_chute_s_crumple", "p_cargo_chute_s", 0.5f, 0, 1, 0, 0f, 0);
 						if (!func_37(&(uParam1->f_65)))
 						{
 							func_34(&(uParam1->f_65));
@@ -18968,7 +18968,7 @@ void func_268(var uParam0, var uParam1, var uParam2, int iParam3)
 								OBJECT::SET_ACTIVATE_OBJECT_PHYSICS_AS_SOON_AS_IT_IS_UNFROZEN(uParam1->f_7, 1);
 								if (!ENTITY::IS_ENTITY_DEAD(uParam1->f_8, 0))
 								{
-									ENTITY::PLAY_ENTITY_ANIM(uParam1->f_8, "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1f, 0, 1, 0, 0, 0);
+									ENTITY::PLAY_ENTITY_ANIM(uParam1->f_8, "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1f, 0, 1, 0, 0f, 0);
 								}
 								ENTITY::SET_ENTITY_LOD_DIST(uParam1->f_6, 500);
 								*uParam2 = 4;
@@ -20208,8 +20208,8 @@ int func_311()
 				{
 					AI::CLEAR_SEQUENCE_TASK(&iVar0);
 					AI::OPEN_SEQUENCE_TASK(&iVar0);
-					AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, Local_4101.f_218[1 /*217*/].f_164, Local_4101.f_218[1 /*217*/].f_164.f_1, (Local_4101.f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
-					AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, (Local_4101.f_218[1 /*217*/].f_164 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_1 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
+					AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, Local_4101.f_218[1 /*217*/].f_164, Local_4101.f_218[1 /*217*/].f_164.f_1, (Local_4101.f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
+					AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, (Local_4101.f_218[1 /*217*/].f_164 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_1 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
 					AI::CLOSE_SEQUENCE_TASK(iVar0);
 					if (!PED::IS_PED_INJURED(Local_5064.f_10))
 					{
@@ -20267,8 +20267,8 @@ int func_311()
 			{
 				AI::CLEAR_SEQUENCE_TASK(&iVar0);
 				AI::OPEN_SEQUENCE_TASK(&iVar0);
-				AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, Local_4101.f_218[1 /*217*/].f_164, Local_4101.f_218[1 /*217*/].f_164.f_1, (Local_4101.f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
-				AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, (Local_4101.f_218[1 /*217*/].f_164 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_1 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1082130432, 0);
+				AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, Local_4101.f_218[1 /*217*/].f_164, Local_4101.f_218[1 /*217*/].f_164.f_1, (Local_4101.f_218[1 /*217*/].f_164.f_2 + 50f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
+				AI::TASK_HELI_MISSION(0, Local_5064.f_2, 0, 0, (Local_4101.f_218[1 /*217*/].f_164 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_1 + 500f), (Local_4101.f_218[1 /*217*/].f_164.f_2 + 10f), 4, 40f, -1f, 0f, 60, 30, -1f, 0);
 				AI::CLOSE_SEQUENCE_TASK(iVar0);
 				if (!PED::IS_PED_INJURED(Local_5064.f_10))
 				{

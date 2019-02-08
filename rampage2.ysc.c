@@ -1006,12 +1006,12 @@ void func_9(int iParam0, bool bParam1)
 	AI::SET_PED_PATH_AVOID_FIRE(*iParam0, 1);
 	PED::SET_PED_SUFFERS_CRITICAL_HITS(*iParam0, 1);
 	PED::SET_PED_CAN_BE_TARGETED_WHEN_INJURED(*iParam0, 0);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 1, 0f);
-	PED::SET_PED_DIES_WHEN_INJURED(*iParam0, 1);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 1, 0);
+	PED::SET_PED_DIES_WHEN_INJURED(*iParam0, true);
 	AI::SET_PED_PATHS_WIDTH_PLANT(*iParam0, 0);
 	AI::SET_PED_PATH_PREFER_TO_AVOID_WATER(*iParam0, 1);
 	PED::SET_PED_MONEY(*iParam0, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 0, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 23, true);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(*iParam0, 1);
@@ -1704,12 +1704,12 @@ int func_37(int iParam0, vector3 vParam1, float fParam2, int iParam3)
 	ENTITY::SET_ENTITY_HEALTH(*iParam0, 120, 0);
 	PED::SET_PED_MAX_HEALTH(*iParam0, 120);
 	PED::SET_PED_CAN_BE_TARGETED_WHEN_INJURED(*iParam0, 0);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 1, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 1, 0);
 	ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(*iParam0, 1, 1862763509);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(*iParam0, false);
-	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 4, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 4, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 0, true);
 	bVar0 = true;
 	PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 11, bVar0);
@@ -1842,7 +1842,7 @@ void func_39(var uParam0, int iParam1, float fParam2)
 	if (func_16(iVar2))
 	{
 		PED::SET_PED_COMBAT_ATTRIBUTES(iVar2, 2, true);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iVar2, 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iVar2, 1, 0);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar2, bLocal_419);
 		if (Local_280 == 80)
 		{
@@ -2274,7 +2274,7 @@ void func_48(int iParam0, bool bParam1)
 		AI::SET_PED_PATH_CAN_DROP_FROM_HEIGHT(*iParam0, 1);
 	}
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(*iParam0, bParam1);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 0, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(*iParam0, 0, 0);
 	PED::SET_PED_CAN_BE_TARGETTED(*iParam0, false);
 	PED::SET_PED_CAN_BE_TARGETED_WITHOUT_LOS(*iParam0, 0);
 	func_23(iParam0);
@@ -4953,7 +4953,7 @@ void func_123(int iParam0)
 		return;
 	}
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, false);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0);
 	PED::SET_PED_CAN_BE_TARGETTED(iParam0, false);
 	func_126();
 	Local_277++;
@@ -7965,7 +7965,7 @@ void func_197()
 	int iVar0;
 	
 	iVar0 = 0;
-	PED::SET_PED_CAN_SWITCH_WEAPON(PLAYER::PLAYER_PED_ID(), 1);
+	PED::SET_PED_CAN_SWITCH_WEAPON(PLAYER::PLAYER_PED_ID(), true);
 	WEAPON::GIVE_WEAPON_TO_PED(PLAYER::PLAYER_PED_ID(), joaat("weapon_grenade"), 15, false, false);
 	iVar0 = 0;
 	while (iVar0 < Local_280.f_17)
@@ -8724,7 +8724,7 @@ void func_212(int iParam0, vector3 vParam1, bool bParam2)
 	AI::OPEN_SEQUENCE_TASK(&iVar0);
 	if (bParam2)
 	{
-		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam1, 2f, -1, 0.25f, 1, 40000f);
+		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam1, 2f, -1, 0.25f, 1, 1193033728);
 	}
 	else
 	{
@@ -9222,7 +9222,7 @@ void func_220()
 	}
 	if (CAM::DOES_CAM_EXIST(iVar0))
 	{
-		CAM::SET_CAM_ACTIVE(iVar0, 1);
+		CAM::SET_CAM_ACTIVE(iVar0, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		SYSTEM::WAIT(0);
 		CAM::_0xC819F3CBB62BF692(0, 0, 3, 0);
@@ -48737,7 +48737,7 @@ void func_563(bool bParam0)
 	{
 		PED::SET_PED_USING_ACTION_MODE(PLAYER::PLAYER_PED_ID(), false, -1, 0);
 	}
-	PED::SET_PED_CAN_SWITCH_WEAPON(PLAYER::PLAYER_PED_ID(), 1);
+	PED::SET_PED_CAN_SWITCH_WEAPON(PLAYER::PLAYER_PED_ID(), true);
 	func_668(&Global_96664);
 	if (!bParam0)
 	{
@@ -50277,28 +50277,28 @@ void func_615(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_616(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_228(iParam0, &Var0);
-		MemCopy(&cVar1, {func_232(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_617(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_232(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_617(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_617(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_617(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 

@@ -49,7 +49,7 @@
 	var uLocal_47 = 0;
 	var uLocal_48 = 0;
 	int iLocal_49 = 0;
-	var uLocal_50 = 0;
+	int iLocal_50 = 0;
 	int iLocal_51 = 0;
 	var uLocal_52 = 0;
 	var uLocal_53 = 0;
@@ -290,7 +290,7 @@ void __EntryFunction__()
 	iLocal_44 = 49;
 	iLocal_45 = 64;
 	iLocal_49 = UI::_0x4A9923385BDB9DAD();
-	uLocal_50 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_50 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	uLocal_52 = func_490(60);
 	uLocal_53 = func_490(14);
 	iLocal_56 = -1;
@@ -441,7 +441,7 @@ void __EntryFunction__()
 					if (!func_362(PLAYER::PLAYER_PED_ID(), 713668775))
 					{
 						PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 256);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), 1827.34f, 4697.22f, 38.02f, 1f, 20000, 0.25f, 1, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), 1827.34f, 4697.22f, 38.02f, 1f, 20000, 0.25f, 1, 1193033728);
 					}
 				}
 			}
@@ -39141,7 +39141,7 @@ void func_354(int iParam0)
 			case 1:
 				if (!func_362(iParam0->f_28[0], 713668775))
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0->f_28[0], vLocal_234[iLocal_233 /*3*/], 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0->f_28[0], vLocal_234[iLocal_233 /*3*/], 1f, 20000, 1048576000, 0, 1193033728);
 					func_487("Eps 6: Nav tasking Tom...");
 					iLocal_232 = 2;
 				}
@@ -42522,13 +42522,13 @@ void func_405(int iParam0, var uParam1, int iParam2)
 								AI::OPEN_SEQUENCE_TASK(&iVar0);
 								if (func_407(uParam1))
 								{
-									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0f, 2, 0);
+									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0, 2, 0);
 								}
 								else
 								{
-									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0f, 2, 0);
+									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0, 2, 0);
 								}
-								AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+								AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 								AI::CLOSE_SEQUENCE_TASK(iVar0);
 								AI::TASK_PERFORM_SEQUENCE(iParam0, iVar0);
 								AI::CLEAR_SEQUENCE_TASK(&iVar0);
@@ -42536,7 +42536,7 @@ void func_405(int iParam0, var uParam1, int iParam2)
 						}
 						else
 						{
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 3);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 3);
 						}
 						uParam1->f_3 = 2;
 					}
@@ -42575,8 +42575,8 @@ void func_405(int iParam0, var uParam1, int iParam2)
 				}
 				else
 				{
-					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 4f, -4f, -1, 262152, 0f, 2, 0);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 4f, -4f, -1, 262152, 0, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 				}
 				AI::CLOSE_SEQUENCE_TASK(iVar1);
 				AI::TASK_PERFORM_SEQUENCE(iParam0, iVar1);
@@ -42601,7 +42601,7 @@ void func_405(int iParam0, var uParam1, int iParam2)
 					}
 					else
 					{
-						AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 					}
 					uParam1->f_3 = 2;
 				}
@@ -43634,12 +43634,12 @@ int func_437(var uParam0)
 				iVar5 = PED::GET_PED_RELATIONSHIP_GROUP_HASH(PLAYER::PLAYER_PED_ID());
 				WEAPON::GIVE_WEAPON_TO_PED(uParam0->f_28[0], joaat("weapon_digiscanner"), -1, true, true);
 				PED::SET_PED_DEFAULT_COMPONENT_VARIATION(uParam0->f_28[0]);
-				PED::SET_PED_DIES_WHEN_INJURED(uParam0->f_28[0], 1);
+				PED::SET_PED_DIES_WHEN_INJURED(uParam0->f_28[0], true);
 				PED::SET_PED_CAN_BE_TARGETTED(uParam0->f_28[0], false);
 				PED::SET_PED_CONFIG_FLAG(uParam0->f_28[0], 185, true);
 				PED::SET_PED_CONFIG_FLAG(uParam0->f_28[0], 188, true);
 				PED::SET_PED_CONFIG_FLAG(uParam0->f_28[0], 132, true);
-				AUDIO::STOP_PED_SPEAKING(uParam0->f_28[0], 1);
+				AUDIO::STOP_PED_SPEAKING(uParam0->f_28[0], true);
 				PED::SET_PED_RELATIONSHIP_GROUP_HASH(uParam0->f_28[0], iVar5);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam0->f_28[0], false);
 			}

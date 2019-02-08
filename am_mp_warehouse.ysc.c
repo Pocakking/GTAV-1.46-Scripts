@@ -11130,7 +11130,7 @@ void func_238(int iParam0)
 			{
 				if (((ENTITY::DOES_ENTITY_EXIST(iParam0->f_2) && !PED::IS_PED_INJURED(iParam0->f_2)) && !GAMEPLAY::IS_STRING_NULL_OR_EMPTY(iParam0->f_4)) && !GAMEPLAY::IS_STRING_NULL_OR_EMPTY(iParam0->f_6))
 				{
-					AI::TASK_PLAY_ANIM(iParam0->f_2, iParam0->f_4, iParam0->f_6, 2f, -2f, -1, 10, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(iParam0->f_2, iParam0->f_4, iParam0->f_6, 2f, -2f, -1, 10, 0f, 0, 0, 0);
 				}
 				func_86(5, iParam0);
 			}
@@ -114015,11 +114015,11 @@ int func_1219(int iParam0)
 
 float func_1220(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_112(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_112(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -132001,7 +132001,7 @@ void func_1341(var uParam0, int iParam1)
 		{
 			if (AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 			{
-				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 0);
+				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, false);
 			}
 		}
 	}
@@ -132268,7 +132268,7 @@ void func_1347(var uParam0, int iParam1, var uParam2, var uParam3)
 		{
 			if (!AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 			{
-				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 1);
+				AI::SET_SCENARIO_GROUP_ENABLED(sVar0, true);
 			}
 		}
 	}
@@ -132276,7 +132276,7 @@ void func_1347(var uParam0, int iParam1, var uParam2, var uParam3)
 	{
 		if (AI::IS_SCENARIO_GROUP_ENABLED(sVar0))
 		{
-			AI::SET_SCENARIO_GROUP_ENABLED(sVar0, 0);
+			AI::SET_SCENARIO_GROUP_ENABLED(sVar0, false);
 		}
 	}
 	if (func_1322(iParam1) == 9 && !GAMEPLAY::IS_BIT_SET(uParam0->f_22, 14))
@@ -161682,10 +161682,10 @@ void func_1988(bool bParam0)
 	}
 }
 
-int func_1989(char* sParam0, int iParam1)
+int func_1989(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
@@ -185150,8 +185150,8 @@ int func_2387(var uParam0, var uParam1)
 				if (ENTITY::DOES_ENTITY_EXIST(uParam1->f_126[1]) && !ENTITY::IS_ENTITY_DEAD(uParam1->f_126[1], 0))
 				{
 					AI::OPEN_SEQUENCE_TASK(&uVar2);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -8f, -1, 0, 0, 0, 0, 0);
-					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -4f, -1, 0, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -8f, -1, 0, 0f, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(0, "amb@world_human_car_park_attendant@male@base", "base", 8f, -4f, -1, 0, 0f, 0, 0, 0);
 					AI::CLOSE_SEQUENCE_TASK(uVar2);
 					unk_0x8C33220C8D78CA0D(uParam1->f_126[1], uVar2);
 				}

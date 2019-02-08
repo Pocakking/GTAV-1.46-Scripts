@@ -527,7 +527,7 @@ void func_6()
 					{
 						if (SCRIPT::_GET_NUM_OF_INSTANCES_OF_SCRIPT_WITH_NAME_HASH(joaat("chop")) == 0)
 						{
-							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), 19.3f, 528.24f, 169.63f, 1) > 50f)
+							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), 19.3f, 528.24f, 169.63f, true) > 50f)
 							{
 								func_7(139, 1, 0);
 							}
@@ -544,7 +544,7 @@ void func_6()
 					{
 						if (SCRIPT::_GET_NUM_OF_INSTANCES_OF_SCRIPT_WITH_NAME_HASH(joaat("chop")) == 0)
 						{
-							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), -11.15f, -1425.56f, 29.67f, 1) > 50f)
+							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), -11.15f, -1425.56f, 29.67f, true) > 50f)
 							{
 								func_7(138, 1, 0);
 							}
@@ -649,7 +649,7 @@ void func_10()
 		{
 			if (UI::DOES_BLIP_EXIST(Global_25834[iLocal_51[iVar3] /*23*/].f_19))
 			{
-				fVar4 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, UI::GET_BLIP_COORDS(Global_25834[iLocal_51[iVar3] /*23*/].f_19), 1);
+				fVar4 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, UI::GET_BLIP_COORDS(Global_25834[iLocal_51[iVar3] /*23*/].f_19), true);
 				if (fVar4 < fVar2)
 				{
 					fVar2 = fVar4;

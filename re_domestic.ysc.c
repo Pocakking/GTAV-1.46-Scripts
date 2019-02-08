@@ -4810,7 +4810,7 @@ void func_113()
 		{
 			if (ENTITY::IS_ENTITY_AT_COORD(iLocal_54, vLocal_89, 200f, 200f, 200f, false, true, 0))
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_54, vLocal_89, 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_54, vLocal_89, 1f, -1, 1048576000, 0, 1193033728);
 			}
 			else
 			{
@@ -6198,10 +6198,10 @@ void func_145()
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_53, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_53, 17, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_53, 8, false);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 1, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 2, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 8, 0);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 1, false);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 2, false);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_53, 8, false);
 	AI::TASK_PLAY_ANIM(iLocal_53, "random@domestic", "balcony_fight_idle_female", 8f, -4f, -1, 1, 0f, 0, 0, 0);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_53, iLocal_111);
 	func_148(iLocal_53, "GENERIC_WHATEVER", 24);
@@ -6209,11 +6209,11 @@ void func_145()
 	PED::SET_PED_CONFIG_FLAG(iLocal_53, 185, true);
 	iLocal_54 = PED::CREATE_PED(26, iLocal_79, vLocal_57, fLocal_59, 1, true);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_54, true);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 1, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 2, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 8, 0);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 65536, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 1, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 2, false);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 8, false);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_54, 65536, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_54, 185, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_54, 206, true);
 	PED::SET_PED_HELMET(iLocal_54, 0);

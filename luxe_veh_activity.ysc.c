@@ -69603,20 +69603,20 @@ int func_273(int iParam0, int iParam1, int iParam2, int iParam3)
 	return -99;
 }
 
-int func_274(int iParam0, bool bParam1, bool bParam2, var uParam3)
+int func_274(int iParam0, bool bParam1, bool bParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && bParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && bParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && bParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && bParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -73535,9 +73535,9 @@ void func_317(var uParam0, char* sParam1)
 			sParam1->f_16 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 			sParam1->f_19 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 			sParam1->f_22 = { 0.1108f, 0.8483f, 0.1573f };
-			sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-			sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-			sParam1->f_31 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
+			sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+			sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+			sParam1->f_31 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_BACK@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
 			sParam1->f_34 = { 0f, 0f, 40.4759f };
 		}
 		else
@@ -73546,9 +73546,9 @@ void func_317(var uParam0, char* sParam1)
 			sParam1->f_16 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 			sParam1->f_19 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 			sParam1->f_22 = { -0.0647f, 0.797f, 0.1612f };
-			sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-			sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-			sParam1->f_31 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
+			sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+			sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+			sParam1->f_31 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@PLANE@LUXOR2@REAR_FRONT@SMOKE@", uParam0->f_37, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
 			sParam1->f_34 = { 0f, 0f, 40.4759f };
 		}
 	}
@@ -73556,15 +73556,15 @@ void func_317(var uParam0, char* sParam1)
 	{
 		sParam1->f_13 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 		sParam1->f_16 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-		sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-		sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
+		sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+		sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RDS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
 	}
 	else
 	{
 		sParam1->f_13 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
 		sParam1->f_16 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-		sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
-		sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0, 2) };
+		sParam1->f_25 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_39, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
+		sParam1->f_28 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION("ANIM@MP_PLAYER_INTVEH@HELICOPTER@SWIFT2@RPS@DRINK@", uParam0->f_41, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 2) };
 	}
 }
 
@@ -73963,7 +73963,7 @@ void func_335(var uParam0, var uParam1)
 						if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iVar3) >= fVar0 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iVar3) < fVar1)
 						{
 							GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL("scr_mp_cig_plane");
-							GRAPHICS::_START_PARTICLE_FX_NON_LOOPED_ON_ENTITY_2("ent_anim_lighter_sparks_plane", NETWORK::NET_TO_ENT(uParam0->f_3[uParam1->f_32 /*40*/].f_12), 0f, 0f, 0.06f, 0f, 0f, 0f, 1f, 0, 0, 0);
+							GRAPHICS::_START_PARTICLE_FX_NON_LOOPED_ON_ENTITY_2("ent_anim_lighter_sparks_plane", NETWORK::NET_TO_ENT(uParam0->f_3[uParam1->f_32 /*40*/].f_12), 0f, 0f, 0.06f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 							iLocal_49 = 1;
 						}
 					}
@@ -73975,7 +73975,7 @@ void func_335(var uParam0, var uParam1)
 						if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iVar3) >= fVar2 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iVar3) < fVar1)
 						{
 							GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL("scr_mp_cig_plane");
-							GRAPHICS::_START_PARTICLE_FX_NON_LOOPED_ON_ENTITY_2("ent_anim_lighter_sparks_plane", NETWORK::NET_TO_ENT(uParam0->f_3[uParam1->f_32 /*40*/].f_12), 0f, 0f, 0.06f, 0f, 0f, 0f, 1f, 0, 0, 0);
+							GRAPHICS::_START_PARTICLE_FX_NON_LOOPED_ON_ENTITY_2("ent_anim_lighter_sparks_plane", NETWORK::NET_TO_ENT(uParam0->f_3[uParam1->f_32 /*40*/].f_12), 0f, 0f, 0.06f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 							iLocal_50 = 1;
 						}
 					}

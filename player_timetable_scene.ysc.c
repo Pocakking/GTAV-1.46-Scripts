@@ -690,7 +690,7 @@ int func_1(var uParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam4, 
 					}
 					CAM::_0x0FB82563989CF4FB(uParam0->f_3, uParam0->f_2, (uParam0->f_14 - uParam0->f_17), 2);
 					CAM::_0xD1B0F412F109EA5D(uParam0->f_3, iParam6);
-					CAM::SET_CAM_ACTIVE(uParam0->f_3, 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_3, true);
 				}
 				else
 				{
@@ -1247,7 +1247,7 @@ int func_7(int iParam0, int iParam1)
 			{
 				func_11(1);
 			}
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar10, vVar8, vVar9, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar10, vVar8, vVar9, 1065353216, 0, 0, 0);
 			OBJECT::DELETE_OBJECT(iParam0);
 			return 1;
 			break;
@@ -1335,7 +1335,7 @@ int func_7(int iParam0, int iParam1)
 			{
 				func_11(1);
 			}
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar13, vVar11, vVar12, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar13, vVar11, vVar12, 1065353216, 0, 0, 0);
 			OBJECT::DELETE_OBJECT(iParam0);
 			*iParam0 = OBJECT::CREATE_OBJECT(iVar14, vVar11, true, true, false);
 			ENTITY::SET_ENTITY_ROTATION(*iParam0, vVar12, 2, 1);
@@ -55006,7 +55006,7 @@ int func_233(int iParam0, char* sParam1)
 	if (func_234(iParam0, &iVar0))
 	{
 		PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-		PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, iVar0, 0f, 1, 0);
+		PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, iVar0, 0, 1, 0);
 	}
 	if (!ENTITY::IS_ENTITY_DEAD(iLocal_305, 0))
 	{
@@ -56450,7 +56450,7 @@ int func_267(int iParam0, int iParam1, vector3 vParam2, float fParam3, bool bPar
 		{
 			iVar0 = -1;
 			fVar1 = 0.25f;
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vParam2, 1f, iVar0, fVar1, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vParam2, 1f, iVar0, fVar1, 0, 1193033728);
 		}
 	}
 	else
@@ -64760,7 +64760,7 @@ int func_349()
 							if (!PED::IS_PED_RUNNING_RAGDOLL_TASK(iLocal_305))
 							{
 								AI::SET_HIGH_FALL_TASK(iLocal_305, 1000, 3000, 0);
-								DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(95, iLocal_305, -1082130432);
+								DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(95, iLocal_305, -1f);
 								PED::SET_PED_MONEY(iLocal_305, 0);
 								ENTITY::SET_ENTITY_HEALTH(iLocal_305, 0, 0);
 							}
@@ -64770,7 +64770,7 @@ int func_349()
 					{
 						if (!ENTITY::IS_ENTITY_DEAD(iLocal_305, 0))
 						{
-							DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(95, iLocal_305, -1082130432);
+							DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(95, iLocal_305, -1f);
 							PED::SET_PED_MONEY(iLocal_305, 0);
 							ENTITY::SET_ENTITY_HEALTH(iLocal_305, 0, 0);
 						}
@@ -69946,7 +69946,7 @@ int func_411()
 		{
 			if (!CAM::IS_CAM_RENDERING(iLocal_327))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_327, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_327, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 		}
@@ -74121,7 +74121,7 @@ int func_432()
 						CAM::SET_CAM_COORD(iLocal_328, vVar11);
 						CAM::SET_CAM_ROT(iLocal_328, vVar12, 2);
 						CAM::SET_CAM_FOV(iLocal_328, fVar13);
-						CAM::SET_CAM_ACTIVE(iLocal_328, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_328, true);
 						CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					}
 				}
@@ -76496,7 +76496,7 @@ int func_435()
 			{
 				PED::SET_PED_COORDS_KEEP_VEHICLE(iLocal_305, vVar0 + Local_99.f_112);
 				ENTITY::SET_ENTITY_HEADING(iLocal_305, (fVar1 + Local_99.f_115));
-				AI::TASK_PLAY_ANIM_ADVANCED(iLocal_305, &sVar2, &cVar3, vVar0 + Local_99.f_112, 0f, 0f, (fVar1 + Local_99.f_115), 1000f, -8f, -1, iVar5, 0f, 2, 0);
+				AI::TASK_PLAY_ANIM_ADVANCED(iLocal_305, &sVar2, &cVar3, vVar0 + Local_99.f_112, 0f, 0f, (fVar1 + Local_99.f_115), 1000f, -8f, -1, iVar5, 0, 2, 0);
 				PED::SET_PED_KEEP_TASK(iLocal_305, true);
 				return 1;
 			}
@@ -76876,7 +76876,7 @@ int func_439()
 			break;
 		
 		case 713668775:
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0f, 5f, 0f), 1f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0f, 5f, 0f), 1f, 20000, 1048576000, 0, 1193033728);
 			return 1;
 			break;
 		
@@ -111118,20 +111118,20 @@ int func_564(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_565(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_565(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -141009,7 +141009,7 @@ int func_647()
 				{
 					if (CAM::DOES_CAM_EXIST(iLocal_327))
 					{
-						CAM::SET_CAM_ACTIVE(iLocal_327, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_327, false);
 						CAM::DESTROY_CAM(iLocal_327, 0);
 					}
 				}
@@ -141039,7 +141039,7 @@ int func_647()
 				{
 					if (CAM::DOES_CAM_EXIST(iLocal_327))
 					{
-						CAM::SET_CAM_ACTIVE(iLocal_327, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_327, false);
 						CAM::DESTROY_CAM(iLocal_327, 0);
 					}
 					iLocal_328 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", true);
@@ -141220,7 +141220,7 @@ int func_647()
 		
 		case 713668775:
 			vVar50 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0f, 5f, 0f) };
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar50, 1f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar50, 1f, 20000, 1048576000, 0, 1193033728);
 			return 1;
 			break;
 		

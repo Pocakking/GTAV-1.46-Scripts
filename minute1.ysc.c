@@ -1394,7 +1394,7 @@ void func_32(int iParam0)
 			else
 			{
 				PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 3, false);
-				PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, true);
 				if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(iVar0, -1, 0) == iParam0)
 				{
 					if (VEHICLE::IS_PLAYBACK_GOING_ON_FOR_VEHICLE(iVar0))
@@ -30809,28 +30809,28 @@ void func_189(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_190(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_192(iParam0, &Var0);
-		MemCopy(&cVar1, {func_187(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_191(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_187(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_191(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_191(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_191(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -47945,10 +47945,10 @@ void func_495()
 				PED::SET_PED_CONFIG_FLAG(iLocal_365, 104, true);
 				PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_365, 13, false);
 				PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_365, 17, true);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_365, 2, 0);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_365, 2, false);
 				func_20(&uLocal_108, 5, iLocal_365, "MIN1DRUNKMALE", 0, 1);
 				AI::OPEN_SEQUENCE_TASK(&iLocal_385);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1992.058f, 3056.179f, 46.063f, 1f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1992.058f, 3056.179f, 46.063f, 1f, 20000, 1048576000, 0, 1193033728);
 				AI::TASK_WANDER_IN_AREA(0, 1994f, 3059f, 47f, 5f, 1077936128, 1086324736);
 				AI::CLOSE_SEQUENCE_TASK(iLocal_385);
 				AI::TASK_PERFORM_SEQUENCE(iLocal_365, iLocal_385);
@@ -53311,12 +53311,12 @@ void func_599(int iParam0, int iParam1, int iParam2)
 	}
 }
 
-void func_600(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_600(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

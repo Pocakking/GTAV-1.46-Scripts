@@ -72481,11 +72481,11 @@ int func_558(int iParam0)
 
 float func_559(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_78(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_78(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -115829,7 +115829,7 @@ int func_856(int iParam0)
 		{
 			if (STREAMING::HAS_ANIM_DICT_LOADED(Local_769.f_214) && PED::IS_PED_IN_VEHICLE(PLAYER::PLAYER_PED_ID(), iParam0, 0))
 			{
-				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_769.f_214, Local_769.f_215, 8f, -4f, -1, 0, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_769.f_214, Local_769.f_215, 8f, -4f, -1, 0, 0f, 0, 0, 0);
 				Local_769.f_216 = NETWORK::GET_NETWORK_TIME();
 				GAMEPLAY::SET_BIT(&Local_769, 2);
 			}
@@ -117215,7 +117215,7 @@ void func_907()
 				func_208(1, 1);
 				if (STREAMING::HAS_ANIM_DICT_LOADED("ANIM@AMB@YACHT@CAPTAIN@"))
 				{
-					AI::TASK_PLAY_ANIM(iLocal_691, "ANIM@AMB@YACHT@CAPTAIN@", "idle", 1000f, -2f, -1, 1, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(iLocal_691, "ANIM@AMB@YACHT@CAPTAIN@", "idle", 1000f, -2f, -1, 1, 0f, 0, 0, 0);
 				}
 				func_908(1);
 				Global_1589747[PLAYER::PLAYER_ID() /*790*/].f_657 = 0;
@@ -119805,7 +119805,7 @@ void func_979()
 					if (STREAMING::HAS_ANIM_DICT_LOADED("ANIM@AMB@YACHT@CAPTAIN@"))
 					{
 						AI::TASK_PED_SLIDE_TO_COORD(0, Var0, Var0.f_3.f_2, 1061158912);
-						AI::TASK_PLAY_ANIM(0, "ANIM@AMB@YACHT@CAPTAIN@", "idle", 2f, -2f, -1, 1, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(0, "ANIM@AMB@YACHT@CAPTAIN@", "idle", 2f, -2f, -1, 1, 0f, 0, 0, 0);
 					}
 					AI::CLOSE_SEQUENCE_TASK(uVar2);
 					AI::TASK_PERFORM_SEQUENCE(iLocal_691, uVar2);

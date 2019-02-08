@@ -3241,7 +3241,7 @@ void func_86()
 	{
 		if (iLocal_68 == 0)
 		{
-			PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49, 2, 0);
+			PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49, 2, false);
 			AI::CLEAR_PED_TASKS(iLocal_49);
 			if (func_67(iLocal_51))
 			{
@@ -5402,7 +5402,7 @@ void func_150()
 		PED::SET_PED_COMBAT_MOVEMENT(iLocal_49, 3);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49, 17, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_49, 13, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49, 1, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_49, 1, true);
 		PED::SET_PED_HELMET(iLocal_49, 0);
 		PED::SET_PED_CONFIG_FLAG(iLocal_49, 42, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_49, 281, true);
@@ -5413,7 +5413,7 @@ void func_150()
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(joaat("a_m_y_beachvesp_01"));
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_50, true);
 		ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_50, true);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_50, 8, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_50, 8, true);
 		if (iLocal_263 == 3)
 		{
 			PED::SET_PED_HELMET(iLocal_50, 1);

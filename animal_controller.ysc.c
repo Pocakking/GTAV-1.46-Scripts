@@ -1390,7 +1390,7 @@ int func_18()
 			{
 				if (!GAMEPLAY::IS_BIT_SET(iLocal_78, 11))
 				{
-					AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_54.f_3, Local_54.f_4, 4f, -4f, -1, 0, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_54.f_3, Local_54.f_4, 4f, -4f, -1, 0, 0f, 0, 0, 0);
 					GAMEPLAY::SET_BIT(&iLocal_78, 11);
 				}
 			}
@@ -12878,11 +12878,11 @@ int func_154(int iParam0)
 
 float func_155(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_39(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_39(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -98727,7 +98727,7 @@ void func_471(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam
 		AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 		if (!GAMEPLAY::IS_STRING_NULL_OR_EMPTY(sParam0))
 		{
-			AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sParam0, sParam1, 8f, -4f, -1, 32, 0, 0, 0, 0);
+			AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sParam0, sParam1, 8f, -4f, -1, 32, 0f, 0, 0, 0);
 			*iParam2 = GAMEPLAY::GET_GAME_TIMER() + 500;
 		}
 	}
@@ -102479,7 +102479,7 @@ int func_516()
 									func_518(iLocal_113);
 									if (!GAMEPLAY::IS_STRING_NULL_OR_EMPTY(Local_54.f_3))
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_54.f_3, Local_54.f_4, 1000f, -8f, -1, 0, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), Local_54.f_3, Local_54.f_4, 1000f, -8f, -1, 0, 0f, 0, 0, 0);
 									}
 									func_29();
 									GRAPHICS::_STOP_SCREEN_EFFECT("PeyoteIn");

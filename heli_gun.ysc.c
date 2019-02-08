@@ -2660,11 +2660,11 @@ void func_56()
 												vVar6 = { (-SYSTEM::SIN(vVar5.z) * SYSTEM::COS(vVar5.x)), (SYSTEM::COS(vVar5.z) * SYSTEM::COS(vVar5.x)), SYSTEM::SIN(vVar5.x) };
 												vVar7 = { 10f, 10f, 10f };
 												vVar8 = { vVar4 + vVar6 * vVar7 };
-												GAMEPLAY::_0xBFE5756E7407064A(vVar4, vVar8, iVar1, 1, func_66(iLocal_120), PLAYER::PLAYER_PED_ID(), 1, 1, -1082130432, iVar3, 0, 0, 0, 1, 0, 1);
+												GAMEPLAY::_0xBFE5756E7407064A(vVar4, vVar8, iVar1, 1, func_66(iLocal_120), PLAYER::PLAYER_PED_ID(), 1, 1, -1f, iVar3, 0, 0, 0, 1, 0, 1);
 											}
 											else
 											{
-												GAMEPLAY::_0xBFE5756E7407064A(vVar4, Local_71.f_45, iVar1, 1, func_66(iLocal_120), PLAYER::PLAYER_PED_ID(), 1, 1, -1082130432, iVar3, 0, 0, 0, 1, 0, 1);
+												GAMEPLAY::_0xBFE5756E7407064A(vVar4, Local_71.f_45, iVar1, 1, func_66(iLocal_120), PLAYER::PLAYER_PED_ID(), 1, 1, -1f, iVar3, 0, 0, 0, 1, 0, 1);
 											}
 											func_141(&(Global_2437022.f_3981), 0, 0);
 											if (iLocal_115 != 0)
@@ -2729,7 +2729,7 @@ void func_56()
 												vVar13 = { CAM::GET_CAM_ROT(CAM::GET_RENDERING_CAM(), 2) };
 												vVar12 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(vVar12, vVar13.z, -0.5f, 0f, 0f) };
 											}
-											GAMEPLAY::_0xBFE5756E7407064A(vVar12, Local_71.f_45, iVar9, 1, joaat("vehicle_weapon_player_bullet"), PLAYER::PLAYER_PED_ID(), 1, 1, -1082130432, iVar11, 0, 0, 0, 1, 0, 1);
+											GAMEPLAY::_0xBFE5756E7407064A(vVar12, Local_71.f_45, iVar9, 1, joaat("vehicle_weapon_player_bullet"), PLAYER::PLAYER_PED_ID(), 1, 1, -1f, iVar11, 0, 0, 0, 1, 0, 1);
 											func_141(&Local_74, 0, 0);
 											if (iLocal_115 != 0)
 											{
@@ -4923,7 +4923,7 @@ void func_97(var uParam0, float fParam1, float fParam2, float fParam3, float fPa
 		{
 			if (!CAM::IS_CAM_ACTIVE(uParam0->f_32))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_32, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_32, true);
 				if (Global_1316800 != -1 || Global_1316806 != -1)
 				{
 					uParam0->f_213 = 1;
@@ -5751,7 +5751,7 @@ void func_97(var uParam0, float fParam1, float fParam2, float fParam3, float fPa
 	{
 		if (CAM::IS_CAM_ACTIVE(uParam0->f_32))
 		{
-			CAM::SET_CAM_ACTIVE(uParam0->f_32, 0);
+			CAM::SET_CAM_ACTIVE(uParam0->f_32, false);
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		}
 	}
@@ -6678,7 +6678,7 @@ int func_132(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 			{
 				if (CAM::IS_CAM_ACTIVE(uParam0->f_32))
 				{
-					CAM::SET_CAM_ACTIVE(uParam0->f_32, 0);
+					CAM::SET_CAM_ACTIVE(uParam0->f_32, false);
 				}
 				if (CAM::IS_CAM_RENDERING(uParam0->f_32))
 				{

@@ -2277,7 +2277,7 @@ int func_13(int iParam0)
 			{
 				if (!CAM::IS_CAM_ACTIVE(iLocal_251))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_251, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_251, true);
 					if (CAM::IS_CINEMATIC_CAM_RENDERING())
 					{
 					}
@@ -2482,7 +2482,7 @@ int func_13(int iParam0)
 						AUDIO::PLAY_SOUND_FRONTEND(-1, "YES", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
 						func_727(&iLocal_203);
 						func_263(iParam0);
-						CAM::SET_CAM_ACTIVE(iLocal_239, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_239, true);
 						GRAPHICS::_STOP_SCREEN_EFFECT("MinigameTransitionIn");
 						GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionOut", 600, 0);
 						func_262(0, 0, 0);
@@ -2524,7 +2524,7 @@ int func_13(int iParam0)
 					GRAPHICS::_STOP_SCREEN_EFFECT("MinigameTransitionIn");
 					GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionOut", 600, 0);
 					func_263(iParam0);
-					CAM::SET_CAM_ACTIVE(iLocal_239, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_239, true);
 					func_262(0, 0, 0);
 					iParam0->f_31 = 11;
 				}
@@ -2591,8 +2591,8 @@ int func_13(int iParam0)
 			{
 				if (!PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_240, 0);
-					CAM::SET_CAM_ACTIVE(iLocal_241, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_240, false);
+					CAM::SET_CAM_ACTIVE(iLocal_241, true);
 					func_231(&iLocal_1029);
 					CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_241, iLocal_1029, "offroad_outro_cam", "MINI@RACING@QUAD@");
 					if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -2637,7 +2637,7 @@ int func_13(int iParam0)
 				{
 					AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 					PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, true, 0, 0);
-					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0f, 1, 0);
+					PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 500, 0, 1, 0);
 					func_220(1, 1, 0);
 					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 					iParam0->f_31 = 14;
@@ -44001,20 +44001,20 @@ int func_387(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_388(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_388(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -110010,7 +110010,7 @@ void func_704(var uParam0, var uParam1)
 	func_705(uParam0);
 	Local_47.f_357 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_3757, uParam0->f_3760, 50f, 0, 2);
 	Local_47.f_358 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, func_206(), func_204(), 50f, 0, 2);
-	CAM::SET_CAM_ACTIVE(iLocal_251, 1);
+	CAM::SET_CAM_ACTIVE(iLocal_251, true);
 }
 
 void func_705(var uParam0)
@@ -113236,7 +113236,7 @@ int func_779(var uParam0)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
 				{
-					VEHICLE::START_PLAYBACK_RECORDED_VEHICLE_USING_AI(uParam0->f_396[0 /*203*/].f_9, 1, &cVar2, 1092616192, 262144);
+					VEHICLE::START_PLAYBACK_RECORDED_VEHICLE_USING_AI(uParam0->f_396[0 /*203*/].f_9, 1, &cVar2, 10f, 262144);
 				}
 			}
 			if (func_879(&iLocal_1038) >= uParam0->f_3783)
@@ -113394,7 +113394,7 @@ int func_779(var uParam0)
 		case 8:
 			if (CAM::DOES_CAM_EXIST(iLocal_246) && 0)
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_246, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_246, true);
 			}
 			else
 			{
@@ -113406,7 +113406,7 @@ int func_779(var uParam0)
 		case 9:
 			if (CAM::DOES_CAM_EXIST(iLocal_247) && 0)
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_247, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_247, true);
 				if (func_879(&iLocal_1038) >= 1f)
 				{
 					func_727(&iLocal_1038);
@@ -113445,7 +113445,7 @@ void func_780()
 	{
 		if (!iLocal_254)
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_239, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_239, true);
 		}
 		return;
 	}

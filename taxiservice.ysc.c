@@ -940,7 +940,7 @@ void func_1()
 				PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 				PLAYER::SET_PLAYER_CAN_DO_DRIVE_BY(PLAYER::PLAYER_ID(), 1);
 			}
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 			if ((iLocal_808 == 2 || iLocal_808 == 3) || iLocal_808 == 4)
 			{
 				func_7();
@@ -2434,12 +2434,12 @@ void func_42(int iParam0, int iParam1)
 						bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 						}
 						func_46(PLAYER::PLAYER_PED_ID(), "TAXI_CHANGE_DEST", 7);
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 						}
 						*iParam1 = 10;
 					}
@@ -2503,7 +2503,7 @@ void func_42(int iParam0, int iParam1)
 							bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 							if (bVar0)
 							{
-								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 							}
 							switch (AUDIO::GET_PLAYER_RADIO_STATION_INDEX())
 							{
@@ -2573,7 +2573,7 @@ void func_42(int iParam0, int iParam1)
 							}
 							if (bVar0)
 							{
-								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 							}
 						}
 						*iParam1 = 22;
@@ -2590,12 +2590,12 @@ void func_42(int iParam0, int iParam1)
 						bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 						}
 						func_46(PLAYER::PLAYER_PED_ID(), "TAXI_STEP_ON_IT", 7);
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 						}
 						*iParam1 = 21;
 					}
@@ -2612,12 +2612,12 @@ void func_42(int iParam0, int iParam1)
 						bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 						}
 						func_46(PLAYER::PLAYER_PED_ID(), "THANKS", 7);
 						if (bVar0)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 						}
 						*iParam1 = 22;
 					}
@@ -2645,12 +2645,12 @@ void func_43()
 		bVar1 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 		if (bVar1)
 		{
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 		}
 		func_46(PLAYER::PLAYER_PED_ID(), sVar0, 7);
 		if (bVar1)
 		{
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 		}
 	}
 }
@@ -3989,7 +3989,7 @@ void func_76()
 				{
 					GRAPHICS::SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(0);
 					Global_105118 = 0;
-					CAM::SET_CAM_ACTIVE(iLocal_68, 0);
+					CAM::SET_CAM_ACTIVE(iLocal_68, false);
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 					UI::UNLOCK_MINIMAP_POSITION();
 					UI::UNLOCK_MINIMAP_ANGLE();
@@ -9705,7 +9705,7 @@ void func_172()
 				func_175(4, 1, -1);
 				CAM::_0x661B5C8654ADD825(iLocal_68, 1);
 				func_174();
-				CAM::SET_CAM_ACTIVE(iLocal_68, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_68, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				Global_105118 = 1;
 				GRAPHICS::SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(1);
@@ -9721,7 +9721,7 @@ void func_172()
 	}
 	else if (CAM::IS_CAM_ACTIVE(iLocal_68))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_68, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_68, false);
 		CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 		CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
@@ -12016,7 +12016,7 @@ int func_221()
 							Global_105117 = 1;
 							PLAYER::SET_PLAYER_CAN_DO_DRIVE_BY(PLAYER::PLAYER_ID(), 0);
 							UI::HIDE_HUD_COMPONENT_THIS_FRAME(2);
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 							return 1;
 						}
 					}
@@ -12031,7 +12031,7 @@ int func_221()
 			GRAPHICS::SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(0);
 			Global_105118 = 0;
 		}
-		CAM::SET_CAM_ACTIVE(iLocal_68, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_68, false);
 		CAM::DESTROY_CAM(iLocal_68, 0);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		UI::UNLOCK_MINIMAP_POSITION();
@@ -12160,7 +12160,7 @@ int func_225()
 			func_217();
 			PLAYER::SET_PLAYER_CAN_DO_DRIVE_BY(PLAYER::PLAYER_ID(), 0);
 			UI::HIDE_HUD_COMPONENT_THIS_FRAME(2);
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 			if (VEHICLE::GET_PED_IN_VEHICLE_SEAT(iVar0, 1, 0) == PLAYER::PLAYER_PED_ID())
 			{
 				iLocal_826 = 1;
@@ -12258,7 +12258,7 @@ int func_227(int iParam0, int iParam1, bool bParam2)
 					PED::SET_PED_CONFIG_FLAG(Global_105102, 251, true);
 					PED::SET_PED_COMBAT_ATTRIBUTES(Global_105102, 5, false);
 					PED::SET_PED_COMBAT_ATTRIBUTES(Global_105102, 17, true);
-					PED::SET_PED_FLEE_ATTRIBUTES(Global_105102, 512, 0);
+					PED::SET_PED_FLEE_ATTRIBUTES(Global_105102, 512, false);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Global_105102, true);
 					AUDIO::SET_AMBIENT_VOICE_NAME(Global_105102, "A_M_M_EASTSA_02_LATINO_FULL_01");
 					VEHICLE::SET_VEHICLE_DOORS_LOCKED(Global_105101, 1);
@@ -12387,7 +12387,7 @@ int func_229(int iParam0, int iParam1, int iParam2)
 							{
 								if (PED::IS_PED_MODEL(iVar0, iParam2))
 								{
-									if (ENTITY::IS_ENTITY_UPRIGHT(*iParam0, 1119092736))
+									if (ENTITY::IS_ENTITY_UPRIGHT(*iParam0, 90f))
 									{
 										iVar1 = VEHICLE::GET_VEHICLE_DOOR_LOCK_STATUS(*iParam0);
 										if (iVar1 != 3 && iVar1 != 2)
@@ -12429,7 +12429,7 @@ void func_232(bool bParam0)
 		{
 			GRAPHICS::SET_PARTICLE_FX_CAM_INSIDE_VEHICLE(0);
 		}
-		CAM::SET_CAM_ACTIVE(iLocal_68, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_68, false);
 		CAM::DESTROY_CAM(iLocal_68, 0);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		UI::UNLOCK_MINIMAP_POSITION();

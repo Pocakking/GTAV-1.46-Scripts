@@ -2311,7 +2311,7 @@ void func_71(var uParam0, int iParam1, bool bParam2)
 		}
 		if (CAM::IS_CAM_ACTIVE(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 		}
 		CAM::DESTROY_CAM(*uParam0, iParam1);
 	}
@@ -4623,7 +4623,7 @@ void func_118(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3, int 
 	uParam0->f_23 = iParam8;
 	uParam0->f_19 = uParam7;
 	*uParam0 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_PARAMS(*uParam0, uParam0->f_1, uParam0->f_4, uParam0->f_7, 0, 1, 1, 2);
 	if (!bParam11)
 	{
@@ -5507,7 +5507,7 @@ void func_149()
 					PED::SET_PED_MIN_MOVE_BLEND_RATIO(PLAYER::PLAYER_PED_ID(), 1f);
 					if (CAM::_0xEE778F8C7E1142E2(0) == 4)
 					{
-						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 					}
 					PED::SET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 208, false);
 					PED::SET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 118, true);
@@ -5563,7 +5563,7 @@ void func_149()
 			if (CAM::_0xEE778F8C7E1142E2(0) == 4)
 			{
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 			}
 			PED::REMOVE_SCENARIO_BLOCKING_AREA(iLocal_89, 0);
 			if (iLocal_90 != -1)

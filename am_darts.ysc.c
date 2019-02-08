@@ -2170,20 +2170,20 @@ void __EntryFunction__()
 										{
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar76[iVar87], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[0], iVar56, "mini@dartsoutro", sVar77[iVar87], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 										else
 										{
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[0], iVar56, "mini@dartsoutro", sVar76[iVar87], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar77[iVar87], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[0], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[0], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 									}
 								}
 								else if (!PED::IS_PED_INJURED(uVar29[1]))
 								{
 									AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar76[iVar87], 1000f, -1.5f, 0, 0, 1148846080, 0);
-									AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+									AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 								}
 								iVar40++;
 							}
@@ -2313,20 +2313,20 @@ void __EntryFunction__()
 									{
 										AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar76[iVar91], 1000f, -1.5f, 0, 0, 1148846080, 0);
 										AI::TASK_SYNCHRONIZED_SCENE(uVar29[0], iVar56, "mini@dartsoutro", sVar77[iVar91], 1000f, -1.5f, 0, 0, 1148846080, 0);
-										AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 									}
 									else
 									{
 										AI::TASK_SYNCHRONIZED_SCENE(uVar29[0], iVar56, "mini@dartsoutro", sVar76[iVar91], 1000f, -1.5f, 0, 0, 1148846080, 0);
 										AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar77[iVar91], 1000f, -1.5f, 0, 0, 1148846080, 0);
-										AI::TASK_PLAY_ANIM(uVar29[0], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(uVar29[0], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 									}
 								}
 							}
 							else if (!PED::IS_PED_INJURED(uVar29[1]))
 							{
 								AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsoutro", sVar76[iVar91], 1000f, -1.5f, 0, 0, 1148846080, 0);
-								AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(uVar29[1], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 							}
 							Var7.f_671 = GAMEPLAY::GET_GAME_TIMER();
 							func_905("DARTS_SPECAD", -1);
@@ -2860,8 +2860,8 @@ void __EntryFunction__()
 							CAM::RENDER_SCRIPT_CAMS(true, 0, 3000, 1, 0, 0);
 							AI::TASK_SYNCHRONIZED_SCENE(uVar29[0], iVar56, "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy1", 1000f, -1000f, 0, 0, 1148846080, 0);
 							AI::TASK_SYNCHRONIZED_SCENE(uVar29[1], iVar56, "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy2", 1000f, -1000f, 0, 0, 1148846080, 0);
-							AI::TASK_PLAY_ANIM(uVar29[0], "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy1_face", 8f, -8f, -1, 32, 0, 0, 0, 0);
-							AI::TASK_PLAY_ANIM(uVar29[1], "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy2_face", 8f, -8f, -1, 32, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(uVar29[0], "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy1_face", 8f, -8f, -1, 32, 0f, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(uVar29[1], "mini@dartsintro_alt1", "darts_ig_intro_alt1_guy2_face", 8f, -8f, -1, 32, 0f, 0, 0, 0);
 							ENTITY::PLAY_SYNCHRONIZED_ENTITY_ANIM(iVar30, iVar56, "darts_ig_intro_alt1_dart", "mini@dartsintro_alt1", 1000f, 8f, 0, 1148846080);
 							Var80[iLocal_365 /*123*/] = 10;
 						}
@@ -3951,20 +3951,20 @@ void __EntryFunction__()
 										{
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_365 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar76[iVar99], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_366 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar77[iVar99], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 										else
 										{
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_366 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar76[iVar99], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_365 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar77[iVar99], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 									}
 								}
 								else if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 								{
 									AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iVar56, "mini@dartsoutro", sVar76[iVar99], 1000f, -1.5f, 0, 0, 1148846080, 0);
-									AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+									AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 								}
 								iVar40++;
 							}
@@ -4059,14 +4059,14 @@ void __EntryFunction__()
 											func_485();
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_365 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar76[iVar102], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_366 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar77[iVar102], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 										else
 										{
 											func_484();
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_366 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar76[iVar102], 1000f, -1.5f, 0, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(uVar29[Var80[iLocal_365 /*123*/].f_122], iVar56, "mini@dartsoutro", sVar77[iVar102], 1000f, -1.5f, 0, 0, 1148846080, 0);
-											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(uVar29[Var80[iLocal_365 /*123*/].f_122], sLocal_371, sLocal_372[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 										}
 									}
 								}
@@ -4074,7 +4074,7 @@ void __EntryFunction__()
 								{
 									func_485();
 									AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iVar56, "mini@dartsoutro", sVar76[iVar102], 1000f, -1.5f, 0, 0, 1148846080, 0);
-									AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0, 0, 0, 0);
+									AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_369, sLocal_370[GAMEPLAY::GET_RANDOM_INT_IN_RANGE(0, 3)], 1.5f, -1.5f, -1, 33, 0f, 0, 0, 0);
 								}
 								Var0.f_95 = 1;
 							}
@@ -12272,7 +12272,7 @@ void func_120(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -12305,14 +12305,14 @@ void func_120(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_356(iVar6, iParam1, -1);
-				uVar11 = func_133(iVar7, iParam1);
+				fVar11 = func_133(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_127(iVar6, iParam1);
-				uVar11 = func_131(iVar7, iParam1);
+				fVar11 = func_131(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_126(iVar5);
 			iVar9 = func_125(iVar5);
 			if (iVar8 != -1)
@@ -12798,11 +12798,11 @@ int func_132(int iParam0)
 
 float func_133(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_124(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_124(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -97672,11 +97672,11 @@ int func_433(var uParam0, var uParam1, int iParam2, int iParam3)
 			ENTITY::FREEZE_ENTITY_POSITION(uParam0->f_20, true);
 			if (PED::IS_PED_MALE(uParam0->f_20))
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			else
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			AI::TASK_LOOK_AT_COORD(uParam0->f_20, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_20, 0.7866f, 2.2904f, 0.7608f), -1, 2048, 2);
 			PED::_0x2208438012482A1A(uParam0->f_20, 0, 0);
@@ -104859,7 +104859,7 @@ void func_567(var uParam0)
 	}
 }
 
-void func_568(var uParam0, int iParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6)
+void func_568(var uParam0, char* sParam1, char* sParam2, char* sParam3, int iParam4, int iParam5, int iParam6)
 {
 	char* sVar0;
 	
@@ -104871,7 +104871,7 @@ void func_568(var uParam0, int iParam1, char* sParam2, char* sParam3, int iParam
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM(sParam2);
 	UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(sParam3);
@@ -123005,7 +123005,7 @@ int func_901()
 		fVar1 = CAM::_0x80EC114669DAEFF4();
 		func_19(0, 0);
 		GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionIn", 0, 1);
-		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 65f, 0, 2);
+		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 1115815936, 0, 2);
 		CAM::SET_CAM_FOV(Global_2449169.f_2844.f_19, fVar1);
 		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, true);
 		CAM::RENDER_SCRIPT_CAMS(true, 0, iVar2, 1, 1, 0);
@@ -123123,7 +123123,7 @@ void func_909(var uParam0, float fParam1)
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();
 }
 
-void func_910(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
+void func_910(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
 {
 	char* sVar0;
 	
@@ -123135,7 +123135,7 @@ void func_910(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	func_414(sParam2);
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();

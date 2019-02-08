@@ -260,7 +260,7 @@
 	var uLocal_258 = 0;
 	var uLocal_259 = 0;
 	int iLocal_260 = 0;
-	int iLocal_261 = 0;
+	char[] cLocal_261[8] = 0;
 	char* sLocal_262 = NULL;
 	char* sLocal_263 = NULL;
 	char* sLocal_264 = NULL;
@@ -515,7 +515,7 @@ void __EntryFunction__()
 	vLocal_74 = { -1063.605f, 4972.88f, 241.1299f };
 	fLocal_75 = 12.875f;
 	iLocal_96 = 4;
-	iLocal_261 = "REPLAY_TMG";
+	cLocal_261 = "REPLAY_TMG";
 	sLocal_262 = "CMN_TDIED";
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(26))
 	{
@@ -663,7 +663,7 @@ void __EntryFunction__()
 						func_59(&uLocal_114, 0);
 						iLocal_77 = 1;
 					}
-					if (func_30(&uLocal_114, &uLocal_120, &uLocal_109, iLocal_261, sLocal_262, &bLocal_76, 78))
+					if (func_30(&uLocal_114, &uLocal_120, &uLocal_109, cLocal_261, sLocal_262, &bLocal_76, 78))
 					{
 						iLocal_94 = 0;
 						PED::REMOVE_RELATIONSHIP_GROUP(iLocal_270);
@@ -1258,7 +1258,7 @@ void func_29(int iParam0)
 	}
 }
 
-int func_30(var uParam0, var uParam1, var uParam2, int iParam3, char* sParam4, int iParam5, int iParam6)
+int func_30(var uParam0, var uParam1, var uParam2, char* sParam3, char* sParam4, int iParam5, int iParam6)
 {
 	switch (*uParam0)
 	{
@@ -1292,12 +1292,12 @@ int func_30(var uParam0, var uParam1, var uParam2, int iParam3, char* sParam4, i
 					AUDIO::PLAY_SOUND_FRONTEND(-1, "TextHit", "WastedSounds", 1);
 					func_52(&(uParam0->f_4), 2);
 				}
-				func_31(uParam2, uParam1, iParam3, sParam4, iParam5, ((iParam6 - 4 & iParam6) - 2 & iParam6) | 16, 7, 1, 1097859072, 0);
+				func_31(uParam2, uParam1, sParam3, sParam4, iParam5, ((iParam6 - 4 & iParam6) - 2 & iParam6) | 16, 7, 1, 1097859072, 0);
 			}
 			break;
 		
 		case 2:
-			if (func_31(uParam2, uParam1, iParam3, sParam4, iParam5, (((iParam6 - 8 & iParam6) - 4 & iParam6) - 2 & iParam6), 7, 1, 1097859072, 1))
+			if (func_31(uParam2, uParam1, sParam3, sParam4, iParam5, (((iParam6 - 8 & iParam6) - 4 & iParam6) - 2 & iParam6), 7, 1, 1097859072, 1))
 			{
 				func_13(0, 1);
 				func_11(0, 1);
@@ -1336,7 +1336,7 @@ int func_30(var uParam0, var uParam1, var uParam2, int iParam3, char* sParam4, i
 	return 0;
 }
 
-int func_31(var uParam0, var uParam1, int iParam2, char* sParam3, var uParam4, int iParam5, int iParam6, bool bParam7, float fParam8, bool bParam9)
+int func_31(var uParam0, var uParam1, char* sParam2, char* sParam3, var uParam4, int iParam5, int iParam6, bool bParam7, float fParam8, bool bParam9)
 {
 	switch (*uParam1)
 	{
@@ -1368,7 +1368,7 @@ int func_31(var uParam0, var uParam1, int iParam2, char* sParam3, var uParam4, i
 			GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, "SHOW_CENTERED_MP_MESSAGE_LARGE");
 			GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
 			UI::_SET_NOTIFACTION_COLOR_NEXT(6);
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+			UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 			GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 			func_50(sParam3);
 			GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION_PARAMETER_INT(100);

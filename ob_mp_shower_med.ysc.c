@@ -981,7 +981,7 @@ void func_2()
 							}
 							if (CAM::DOES_CAM_EXIST(iLocal_415))
 							{
-								CAM::SET_CAM_ACTIVE(iLocal_415, 1);
+								CAM::SET_CAM_ACTIVE(iLocal_415, true);
 								CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 								if (iLocal_390 == 86)
 								{
@@ -1048,7 +1048,7 @@ void func_2()
 			}
 			if (CAM::DOES_CAM_EXIST(iLocal_415))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_415, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_415, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SET_CAM_PARAMS(iLocal_415, Global_2497403.f_41, Global_2497403.f_44, Global_2497403.f_47, 0, 1, 1, 2);
 				CAM::SHAKE_CAM(iLocal_415, "HAND_SHAKE", 0.2f);
@@ -1376,7 +1376,7 @@ void func_2()
 				iLocal_415 = CAM::CREATE_CAMERA(26379945, 0);
 				if (CAM::DOES_CAM_EXIST(iLocal_415))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_415, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_415, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					CAM::SET_CAM_PARAMS(iLocal_415, Global_2497403.f_62, Global_2497403.f_65, Global_2497403.f_68, 0, 1, 1, 2);
 					CAM::SHAKE_CAM(iLocal_415, "HAND_SHAKE", 0.2f);
@@ -63947,20 +63947,20 @@ int func_190(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_191(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_191(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -96201,7 +96201,7 @@ void func_446()
 		}
 		if (CAM::DOES_CAM_EXIST(iLocal_415))
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_415, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_415, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			CAM::SET_CAM_PARAMS(iLocal_415, Global_2497403.f_55, Global_2497403.f_58, Global_2497403.f_61, 0, 1, 1, 2);
 			CAM::SHAKE_CAM(iLocal_415, "HAND_SHAKE", 0.2f);

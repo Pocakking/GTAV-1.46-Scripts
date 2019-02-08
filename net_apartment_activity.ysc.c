@@ -34067,20 +34067,20 @@ int func_141(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_142(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_142(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -67836,7 +67836,7 @@ void func_236(var uParam0, int iParam1, int iParam2)
 		if (ENTITY::HAS_ANIM_EVENT_FIRED(iParam2, GAMEPLAY::GET_HASH_KEY(uParam0->f_10)))
 		{
 			GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL(uParam0->f_8);
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(uParam0->f_7, iParam1, uParam0->f_1, uParam0->f_4, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(uParam0->f_7, iParam1, uParam0->f_1, uParam0->f_4, 1065353216, 0, 0, 0);
 		}
 	}
 }
@@ -67855,11 +67855,11 @@ void func_237(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4)
 				GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL(uParam0->f_7);
 				if (bParam4)
 				{
-					uParam0->f_13 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY(uParam0->f_6, iParam2, *uParam0, uParam0->f_3, 1065353216, 0, 0, 0);
+					uParam0->f_13 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY(uParam0->f_6, iParam2, *uParam0, uParam0->f_3, 1f, 0, 0, 0);
 				}
 				else
 				{
-					uParam0->f_13 = GRAPHICS::_START_PARTICLE_FX_LOOPED_ON_ENTITY_2(uParam0->f_6, iParam2, *uParam0, uParam0->f_3, 1f, 0, 0, 0, 1f, 1f, 1f, 0);
+					uParam0->f_13 = GRAPHICS::_START_PARTICLE_FX_LOOPED_ON_ENTITY_2(uParam0->f_6, iParam2, *uParam0, uParam0->f_3, 1065353216, 0, 0, 0, 1065353216, 1065353216, 1065353216, 0);
 				}
 				uParam0->f_8 = 1;
 			}
@@ -67881,7 +67881,7 @@ void func_238(var uParam0, int iParam1)
 			if (ENTITY::HAS_ANIM_EVENT_FIRED(iParam1, GAMEPLAY::GET_HASH_KEY(uParam0->f_10)))
 			{
 				GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL(uParam0->f_8);
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE(uParam0->f_7, iParam1, uParam0->f_1, uParam0->f_4, uParam0->f_11, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE(uParam0->f_7, iParam1, uParam0->f_1, uParam0->f_4, uParam0->f_11, 1065353216, 0, 0, 0);
 				uParam0->f_12 = 1;
 			}
 		}

@@ -1114,12 +1114,12 @@ void func_29()
 	}
 }
 
-void func_30(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_30(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -3016,7 +3016,7 @@ void func_43()
 					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -1007.351f, -477.5197f, 49.0282f, 1f, -1, 0.5f, 0, 30.4025f);
 					func_47(sLocal_77);
 					UI::DISPLAY_RADAR(false);
-					CAM::SET_CAM_ACTIVE(iLocal_62, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_62, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					iLocal_61++;
 				}
@@ -3063,7 +3063,7 @@ void func_43()
 				func_45(1);
 				AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
-				CAM::SET_CAM_ACTIVE(iLocal_62, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_62, false);
 				iLocal_61++;
 			}
 			break;
@@ -3601,8 +3601,8 @@ void func_77()
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_66, true);
 			PED::SET_PED_KEEP_TASK(iLocal_66, true);
 			ENTITY::FREEZE_ENTITY_POSITION(iLocal_66, true);
-			AUDIO::STOP_PED_SPEAKING(iLocal_66, 1);
-			AUDIO::DISABLE_PED_PAIN_AUDIO(iLocal_66, 1);
+			AUDIO::STOP_PED_SPEAKING(iLocal_66, true);
+			AUDIO::DISABLE_PED_PAIN_AUDIO(iLocal_66, true);
 			PED::SET_PED_CONFIG_FLAG(iLocal_66, 118, false);
 			PED::SET_PED_CONFIG_FLAG(iLocal_66, 208, true);
 			ENTITY::SET_ENTITY_INVINCIBLE(iLocal_66, true);
@@ -3621,8 +3621,8 @@ void func_77()
 			iLocal_64 = PED::CREATE_PED(26, 732742363, func_68(6), 22.9631f, 1, true);
 			PED::SET_PED_PROP_INDEX(iLocal_64, 0, 0, 0, false);
 			STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(732742363);
-			AUDIO::STOP_PED_SPEAKING(iLocal_64, 1);
-			AUDIO::DISABLE_PED_PAIN_AUDIO(iLocal_64, 1);
+			AUDIO::STOP_PED_SPEAKING(iLocal_64, true);
+			AUDIO::DISABLE_PED_PAIN_AUDIO(iLocal_64, true);
 			PED::EXPLODE_PED_HEAD(iLocal_64, joaat("weapon_sniperrifle"));
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_64, 1862763509);
 			iLocal_65 = OBJECT::CREATE_OBJECT_NO_OFFSET(130556722, -543.71f, 1986.2f, 126.05f, true, true, false);

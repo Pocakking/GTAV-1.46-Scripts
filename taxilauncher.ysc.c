@@ -46,7 +46,7 @@
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	int iLocal_46 = 0;
-	var uLocal_47 = 0;
+	int iLocal_47 = 0;
 	var uLocal_48 = 0;
 	var uLocal_49 = 0;
 	var uLocal_50 = 0;
@@ -275,7 +275,7 @@ void __EntryFunction__()
 	iLocal_41 = 49;
 	iLocal_42 = 64;
 	iLocal_46 = UI::_0x4A9923385BDB9DAD();
-	uLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	iLocal_60 = 1;
 	iLocal_65 = -1;
 	iLocal_69 = func_144();
@@ -1065,7 +1065,7 @@ int func_21(int iParam0, int iParam1, int iParam2)
 							{
 								if (PED::IS_PED_MODEL(iVar0, iParam2))
 								{
-									if (ENTITY::IS_ENTITY_UPRIGHT(*iParam0, 1119092736))
+									if (ENTITY::IS_ENTITY_UPRIGHT(*iParam0, 90f))
 									{
 										iVar1 = VEHICLE::GET_VEHICLE_DOOR_LOCK_STATUS(*iParam0);
 										if (iVar1 != 3 && iVar1 != 2)
@@ -1175,7 +1175,7 @@ int func_25(int iParam0)
 {
 	if (VEHICLE::IS_VEHICLE_DRIVEABLE(iParam0, 0))
 	{
-		if (ENTITY::IS_ENTITY_UPRIGHT(iParam0, 1119092736))
+		if (ENTITY::IS_ENTITY_UPRIGHT(iParam0, 90f))
 		{
 			return 1;
 		}
@@ -1275,7 +1275,7 @@ int func_27(int iParam0, int iParam1, bool bParam2)
 					PED::SET_PED_CONFIG_FLAG(Global_105102, 251, true);
 					PED::SET_PED_COMBAT_ATTRIBUTES(Global_105102, 5, false);
 					PED::SET_PED_COMBAT_ATTRIBUTES(Global_105102, 17, true);
-					PED::SET_PED_FLEE_ATTRIBUTES(Global_105102, 512, 0);
+					PED::SET_PED_FLEE_ATTRIBUTES(Global_105102, 512, false);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Global_105102, true);
 					AUDIO::SET_AMBIENT_VOICE_NAME(Global_105102, "A_M_M_EASTSA_02_LATINO_FULL_01");
 					VEHICLE::SET_VEHICLE_DOORS_LOCKED(Global_105101, 1);
@@ -1828,12 +1828,12 @@ void func_48()
 						bVar1 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 						if (bVar1)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 						}
 						func_51(PLAYER::PLAYER_PED_ID(), "TAXI_HAIL", 34);
 						if (bVar1)
 						{
-							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+							AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 						}
 					}
 				}
@@ -2301,12 +2301,12 @@ void func_59()
 	{
 		if (bVar1)
 		{
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 		}
 		func_51(PLAYER::PLAYER_PED_ID(), "TAXI_HAIL_DRUNK", 7);
 		if (bVar1)
 		{
-			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+			AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 		}
 	}
 }
@@ -2471,12 +2471,12 @@ void func_63()
 							bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 							if (!bVar0)
 							{
-								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 1);
+								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), true);
 							}
 							func_51(PLAYER::PLAYER_PED_ID(), "TAXI_DRIVES_PAST", 24);
 							if (!bVar0)
 							{
-								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), 0);
+								AUDIO::STOP_PED_SPEAKING(PLAYER::PLAYER_PED_ID(), false);
 							}
 						}
 						PED::SET_PED_CONFIG_FLAG(PLAYER::PLAYER_PED_ID(), 113, false);
@@ -4572,7 +4572,7 @@ int func_98(var uParam0, var uParam1, vector3 vParam2, float fParam3)
 							PED::SET_PED_CONFIG_FLAG(*uParam1, 251, true);
 							PED::SET_PED_COMBAT_ATTRIBUTES(*uParam1, 5, false);
 							PED::SET_PED_COMBAT_ATTRIBUTES(*uParam1, 17, true);
-							PED::SET_PED_FLEE_ATTRIBUTES(*uParam1, 512, 0);
+							PED::SET_PED_FLEE_ATTRIBUTES(*uParam1, 512, false);
 							AUDIO::SET_AMBIENT_VOICE_NAME(*uParam1, "A_M_M_EASTSA_02_LATINO_FULL_01");
 							STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(func_143());
 							STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(func_144());
@@ -5334,7 +5334,7 @@ int func_106()
 															{
 																fVar6 = (fVar6 * 0.2f);
 															}
-															if (!ENTITY::IS_ENTITY_UPRIGHT(uVar13[iVar4], 1119092736) || ENTITY::IS_ENTITY_IN_WATER(uVar13[iVar4]))
+															if (!ENTITY::IS_ENTITY_UPRIGHT(uVar13[iVar4], 90f) || ENTITY::IS_ENTITY_IN_WATER(uVar13[iVar4]))
 															{
 																fVar6 = 0f;
 															}

@@ -8325,7 +8325,7 @@ int func_180()
 						AI::TASK_GO_TO_COORD_ANY_MEANS(0, OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(Local_393[iLocal_450 /*23*/].f_1, Local_393[iLocal_450 /*23*/].f_4, 0f, 15f, 0f), 3f, 0, 0, 786603, -1082130432);
 						AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_171);
-						PED::SET_PED_FLEE_ATTRIBUTES(Local_824[0 /*20*/], 64, 0);
+						PED::SET_PED_FLEE_ATTRIBUTES(Local_824[0 /*20*/], 64, false);
 						AI::TASK_PERFORM_SEQUENCE(Local_824[0 /*20*/], iLocal_171);
 						AI::CLEAR_SEQUENCE_TASK(&iLocal_171);
 						iLocal_911 = 4;
@@ -8783,7 +8783,7 @@ int func_189(int iParam0)
 	return 1;
 }
 
-void func_190(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, char* sParam7)
+void func_190(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, int iParam7)
 {
 	func_112(iParam1);
 	if (bParam2)
@@ -8796,15 +8796,15 @@ void func_190(char* sParam0, int iParam1, bool bParam2, int iParam3, float fPara
 	}
 	if (iParam3 != 0)
 	{
-		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, sParam7, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, iParam7, 0, 0);
 	}
 	else if ((fParam4 != 0f || fParam5 != 0f) || fParam6 != 0f)
 	{
-		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, sParam7, 0, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, iParam7, 0, 0, 0);
 	}
 	else
 	{
-		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, sParam7, true);
+		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, iParam7, true);
 	}
 }
 

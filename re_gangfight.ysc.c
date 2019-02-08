@@ -2543,7 +2543,7 @@ void func_53()
 			if (!PED::IS_PED_INJURED(iLocal_58) && !ENTITY::IS_ENTITY_DEAD(iLocal_60, 0))
 			{
 				AI::OPEN_SEQUENCE_TASK(&iLocal_62);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 916.5764f, 3602.146f, 31.9262f, 1f, 40000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 916.5764f, 3602.146f, 31.9262f, 1f, 40000, 1048576000, 0, 1193033728);
 				AI::CLOSE_SEQUENCE_TASK(iLocal_62);
 				AI::TASK_PERFORM_SEQUENCE(iLocal_58, iLocal_62);
 				AI::CLEAR_SEQUENCE_TASK(&iLocal_62);
@@ -3833,7 +3833,7 @@ int func_79()
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iLocal_58, 16);
 			AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_58, "A_M_M_TRAMP_01_BLACK_MINI_01");
 			func_57(&uLocal_63, 1, iLocal_58, "RECGFDealer", 0, 1);
-			AUDIO::STOP_PED_SPEAKING(iLocal_58, 1);
+			AUDIO::STOP_PED_SPEAKING(iLocal_58, true);
 			AI::TASK_PLAY_ANIM(iLocal_58, "random@countryside_gang_fight", "gangmember_stickup_loop", 1000f, -2f, -1, 1, 0f, 0, 0, 0);
 			PED::SET_PED_MOVEMENT_CLIPSET(iLocal_58, "move_m@gangster@var_i", 1048576000);
 			iLocal_60 = VEHICLE::CREATE_VEHICLE(joaat("picador"), 915.7905f, 3603.449f, 31.9111f, 111.9593f, true, true, false);

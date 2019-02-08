@@ -47,7 +47,7 @@
 	var uLocal_45 = 0;
 	var uLocal_46 = 0;
 	int iLocal_47 = 0;
-	var uLocal_48 = 0;
+	int iLocal_48 = 0;
 	var uLocal_49 = 0;
 	vector3 vLocal_50 = { 0f, 0f, 0f };
 	int iLocal_51 = 0;
@@ -329,7 +329,7 @@ void __EntryFunction__()
 	iLocal_42 = 49;
 	iLocal_43 = 64;
 	iLocal_47 = UI::_0x4A9923385BDB9DAD();
-	uLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	vLocal_59 = { 1492.31f, 2136.53f, 89.15f };
 	vLocal_60 = { 1408.24f, 2522.803f, 41.0419f };
 	vLocal_98 = { 370.2576f, -1597.488f, 35.94954f };
@@ -3323,7 +3323,7 @@ void func_63()
 					{
 						func_72(&uLocal_114, "PRI2AU", "PRI2_WHTT", 4, 0, 0, 0);
 					}
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 2, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 2, true);
 					iLocal_53 = 3;
 				}
 			}
@@ -4681,9 +4681,9 @@ void func_102()
 	AI::TASK_PLAY_ANIM(iLocal_64, "random@prisoner_lift", "loop2_idlelook2", 2f, -2f, -1, 1, 0f, 0, 0, 0);
 	PED::SET_PED_MONEY(iLocal_64, 0);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_64, 8, false);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 128, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 2, 1);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 1, 0);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 128, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 2, true);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_64, 1, false);
 	GAMEPLAY::SET_BIT(&uLocal_78, 3);
 	GAMEPLAY::SET_BIT(&uLocal_78, 5);
 	GAMEPLAY::SET_BIT(&uLocal_78, 0);

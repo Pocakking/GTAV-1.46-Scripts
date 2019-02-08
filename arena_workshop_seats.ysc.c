@@ -430,7 +430,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			vVar2 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
-			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			iVar4 = vVar3.z;
 			fVar5 = 0.05f;
 			if (uParam0->f_43.f_8 == 1)
@@ -447,7 +447,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			iVar6 = AI::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), 2106541073);
-			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			fVar8 = vVar7.z;
 			if ((iVar6 != 1 && iVar6 != 0) || func_34(ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), fVar8, 5f))
 			{
@@ -1068,9 +1068,9 @@ bool func_32(var uParam0, int iParam1)
 	return GAMEPLAY::IS_BIT_SET(*uParam0, iParam1);
 }
 
-void func_33(var uParam0, int iParam1)
+void func_33(int iParam0, int iParam1)
 {
-	GAMEPLAY::SET_BIT(uParam0, iParam1);
+	GAMEPLAY::SET_BIT(iParam0, iParam1);
 }
 
 int func_34(float fParam0, float fParam1, float fParam2)
@@ -1126,7 +1126,7 @@ void func_35(var uParam0)
 			func_39();
 			if (WEAPON::GET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), &iVar0, 1) && iVar0 != joaat("weapon_unarmed"))
 			{
-				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 1);
+				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), true);
 			}
 			CONTROLS::DISABLE_CONTROL_ACTION(0, 37, 1);
 			func_37(1);
@@ -1197,7 +1197,7 @@ void func_41(int iParam0)
 	}
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	}
 	Global_15822 = 5;
 	if (iParam0 == 1)
@@ -1915,9 +1915,9 @@ void func_65(var uParam0, int iParam1)
 	uParam0->f_43.f_4 = iParam1;
 }
 
-void func_66(var uParam0, int iParam1)
+void func_66(int iParam0, int iParam1)
 {
-	GAMEPLAY::CLEAR_BIT(uParam0, iParam1);
+	GAMEPLAY::CLEAR_BIT(iParam0, iParam1);
 }
 
 void func_67(var uParam0)
@@ -1951,18 +1951,18 @@ void func_69(var uParam0)
 	func_70(&(uParam0->f_43), 2, AI::IS_PED_RUNNING(PLAYER::PLAYER_PED_ID()));
 }
 
-void func_70(var uParam0, int iParam1, bool bParam2)
+void func_70(int iParam0, int iParam1, bool bParam2)
 {
 	int iVar0;
 	
 	iVar0 = iParam1;
 	if (bParam2)
 	{
-		GAMEPLAY::SET_BIT(uParam0, iVar0);
+		GAMEPLAY::SET_BIT(iParam0, iVar0);
 	}
 	else
 	{
-		GAMEPLAY::CLEAR_BIT(uParam0, iVar0);
+		GAMEPLAY::CLEAR_BIT(iParam0, iVar0);
 	}
 }
 
@@ -2162,7 +2162,7 @@ int func_82(int iParam0, var uParam1)
 			{
 				if (!VEHICLE::IS_THIS_MODEL_A_TRAIN(ENTITY::GET_ENTITY_MODEL(iParam0)))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, 1);
 					*uParam1 = 1;
 				}
 			}

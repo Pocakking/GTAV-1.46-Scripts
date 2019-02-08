@@ -42081,20 +42081,20 @@ int func_305(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_306(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_306(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -103027,7 +103027,7 @@ void func_559()
 		{
 			AI::OPEN_SEQUENCE_TASK(&iLocal_52);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 1000, 0);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 131f, -1302f, 29.2f, 1f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 131f, -1302f, 29.2f, 1f, 20000, 1048576000, 0, 1193033728);
 			AI::CLOSE_SEQUENCE_TASK(iLocal_52);
 			AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), iLocal_52);
 			AI::CLEAR_SEQUENCE_TASK(&iLocal_52);
@@ -103036,7 +103036,7 @@ void func_559()
 		{
 			AI::OPEN_SEQUENCE_TASK(&iLocal_51);
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 1250, 0);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 131f, -1302f, 29.2f, 1f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 131f, -1302f, 29.2f, 1f, 20000, 1048576000, 0, 1193033728);
 			AI::CLOSE_SEQUENCE_TASK(iLocal_51);
 			AI::TASK_PERFORM_SEQUENCE(iLocal_49, iLocal_51);
 			AI::CLEAR_SEQUENCE_TASK(&iLocal_51);
@@ -111127,12 +111127,12 @@ void func_687(int iParam0)
 	}
 }
 
-void func_688(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_688(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

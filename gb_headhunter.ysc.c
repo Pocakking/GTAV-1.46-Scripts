@@ -1340,11 +1340,11 @@ int func_35(int iParam0)
 										if (func_40(&(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), Local_110.f_2[iParam0 /*26*/].f_2, 22, iVar0, iVar1, 1, 1, 1))
 										{
 											ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), true);
-											ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, 0f);
+											ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, 0);
 											PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), true);
 											PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), Global_1574993);
 											ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, iLocal_117);
-											PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1);
+											PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), true);
 											WEAPON::GIVE_WEAPON_TO_PED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), joaat("weapon_microsmg"), 99999999, false, true);
 											PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 3, false);
 											PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 5, true);
@@ -1378,7 +1378,7 @@ int func_35(int iParam0)
 									if (func_39(&(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 22, iVar0, vVar5, fVar6, 1, 1, 1))
 									{
 										ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), true);
-										ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, 0f);
+										ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, 0);
 										PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), true);
 										PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), Global_1574993);
 										ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_3[iVar1]), 1, iLocal_117);
@@ -1611,11 +1611,11 @@ int func_46(int iParam0)
 							if (func_40(&(Local_110.f_2[iParam0 /*26*/].f_1), Local_110.f_2[iParam0 /*26*/].f_2, 22, iVar1, -1, 1, 1, 1))
 							{
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
-								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0f);
+								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0);
 								PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), Global_1574993);
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, iLocal_117);
-								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1);
+								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								GAMEPLAY::SET_BIT(&(Local_110.f_107), iParam0);
 							}
 						}
@@ -1645,11 +1645,11 @@ int func_46(int iParam0)
 							if (func_39(&(Local_110.f_2[iParam0 /*26*/].f_1), 22, iVar1, Local_110.f_2[iParam0 /*26*/].f_13, Local_110.f_2[iParam0 /*26*/].f_16, 1, 1, 1))
 							{
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
-								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0f);
+								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0);
 								PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), Global_1574993);
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, iLocal_117);
-								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1);
+								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								GAMEPLAY::SET_BIT(&(Local_110.f_107), iParam0);
 							}
 						}
@@ -1681,11 +1681,11 @@ int func_46(int iParam0)
 							if (func_39(&(Local_110.f_2[iParam0 /*26*/].f_1), 22, iVar1, Local_110.f_2[iParam0 /*26*/].f_13, Local_110.f_2[iParam0 /*26*/].f_16, 1, 1, 1))
 							{
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
-								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0f);
+								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, 0);
 								PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), Global_1574993);
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_RELATIONSHIP_GROUP(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1, iLocal_117);
-								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1);
+								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), true);
 								PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1);
 								PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 42, true);
 								PED::_0x52D59AB61DDC05DD(NETWORK::NET_TO_PED(Local_110.f_2[iParam0 /*26*/].f_1), 1);

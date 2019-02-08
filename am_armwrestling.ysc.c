@@ -2933,11 +2933,11 @@ void __EntryFunction__()
 					{
 						if (iLocal_296 == 1)
 						{
-							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "nuetral_idle_a_face", 4f, -4f, -1, 32, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "nuetral_idle_a_face", 4f, -4f, -1, 32, 0f, 0, 0, 0);
 						}
 						else
 						{
-							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "nuetral_idle_b_face", 4f, -4f, -1, 32, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "nuetral_idle_b_face", 4f, -4f, -1, 32, 0f, 0, 0, 0);
 						}
 						func_777(0);
 						func_772(&(Var8[iLocal_1523[iLocal_296] /*28*/]));
@@ -3035,11 +3035,11 @@ void __EntryFunction__()
 														{
 															if (iLocal_296 == 1)
 															{
-																AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "idle_to_nuetral_a_face", 4f, -4f, -1, 32, 0, 0, 0, 0);
+																AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "idle_to_nuetral_a_face", 4f, -4f, -1, 32, 0f, 0, 0, 0);
 															}
 															else
 															{
-																AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "idle_to_nuetral_b_face", 4f, -4f, -1, 32, 0, 0, 0, 0);
+																AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "idle_to_nuetral_b_face", 4f, -4f, -1, 32, 0f, 0, 0, 0);
 															}
 														}
 													}
@@ -3206,11 +3206,11 @@ void __EntryFunction__()
 								{
 									if (iLocal_296 == 1)
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "expression_idle_a_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "expression_idle_a_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 									}
 									else
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "expression_idle_b_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "expression_idle_b_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 									}
 									func_961(&(Var8[iLocal_1523[iLocal_296] /*28*/]), 5, 1);
 								}
@@ -3323,11 +3323,11 @@ void __EntryFunction__()
 												{
 													if (iLocal_296 == 1)
 													{
-														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_892(bVar60, "win_a_ped_a_face", "win_b_ped_a_face"), 4f, -4f, -1, 32, 0, 0, 0, 0);
+														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_892(bVar60, "win_a_ped_a_face", "win_b_ped_a_face"), 4f, -4f, -1, 32, 0f, 0, 0, 0);
 													}
 													else
 													{
-														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_892(bVar60, "win_b_ped_b_face", "win_a_ped_b_face"), 4f, -4f, -1, 32, 0, 0, 0, 0);
+														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_892(bVar60, "win_b_ped_b_face", "win_a_ped_b_face"), 4f, -4f, -1, 32, 0f, 0, 0, 0);
 													}
 												}
 											}
@@ -3353,11 +3353,11 @@ void __EntryFunction__()
 									{
 										if (iLocal_296 == 1)
 										{
-											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 										}
 										else
 										{
-											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 										}
 										func_961(&(Var8[iLocal_1523[iLocal_296] /*28*/]), 10, 1);
 									}
@@ -3396,11 +3396,11 @@ void __EntryFunction__()
 										{
 											if (iLocal_296 == 1)
 											{
-												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 											}
 											else
 											{
-												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 											}
 											func_961(&(Var8[iLocal_1523[iLocal_296] /*28*/]), 10, 1);
 										}
@@ -3497,11 +3497,11 @@ void __EntryFunction__()
 								{
 									if (iLocal_296 == 1)
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_a_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 									}
 									else
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", "stand_idle_b_face", 4f, -4f, -1, 33, 0f, 0, 0, 0);
 									}
 									func_961(&(Var8[iLocal_1523[iLocal_296] /*28*/]), 10, 1);
 								}
@@ -9534,11 +9534,11 @@ int func_154(var uParam0, var uParam1, int iParam2, int iParam3)
 			ENTITY::FREEZE_ENTITY_POSITION(uParam0->f_20, true);
 			if (PED::IS_PED_MALE(uParam0->f_20))
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			else
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			AI::TASK_LOOK_AT_COORD(uParam0->f_20, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_20, 0.7866f, 2.2904f, 0.7608f), -1, 2048, 2);
 			PED::_0x2208438012482A1A(uParam0->f_20, 0, 0);
@@ -59437,7 +59437,7 @@ void func_499(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -59470,14 +59470,14 @@ void func_499(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_345(iVar6, iParam1, -1);
-				uVar11 = func_511(iVar7, iParam1);
+				fVar11 = func_511(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_505(iVar6, iParam1);
-				uVar11 = func_509(iVar7, iParam1);
+				fVar11 = func_509(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_504(iVar5);
 			iVar9 = func_503(iVar5);
 			if (iVar8 != -1)
@@ -59940,11 +59940,11 @@ int func_510(int iParam0)
 
 float func_511(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_97(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_97(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -113251,7 +113251,7 @@ void func_724()
 	GRAPHICS::_START_SCREEN_EFFECT("MP_Celeb_Lose", 0, 1);
 }
 
-void func_725(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
+void func_725(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
 {
 	char* sVar0;
 	
@@ -113263,7 +113263,7 @@ void func_725(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	func_135(sParam2);
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();
@@ -120593,7 +120593,7 @@ int func_878()
 		fVar1 = CAM::_0x80EC114669DAEFF4();
 		func_693(0, 0);
 		GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionIn", 0, 1);
-		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 65f, 0, 2);
+		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 1115815936, 0, 2);
 		CAM::SET_CAM_FOV(Global_2449169.f_2844.f_19, fVar1);
 		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, true);
 		CAM::RENDER_SCRIPT_CAMS(true, 0, iVar2, 1, 1, 0);

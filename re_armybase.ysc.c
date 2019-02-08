@@ -2475,7 +2475,7 @@ void func_44()
 			break;
 		
 		case 1:
-			AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 0);
+			AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", false);
 			iLocal_414 = 2;
 			break;
 		

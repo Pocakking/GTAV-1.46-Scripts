@@ -1223,7 +1223,7 @@ void func_17()
 			}
 			if (func_68(iLocal_323))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_323, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_323, true);
 				CAM::SHAKE_CAM(iLocal_323, "HAND_SHAKE", (0.2f / 3f));
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
@@ -2529,12 +2529,12 @@ void func_44(int iParam0)
 		case 0:
 			if (!iLocal_307 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.25f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_sh_lighter_sparks", func_47(), 0f, 0f, 0.05f, 0f, 0f, 0f, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_sh_lighter_sparks", func_47(), 0f, 0f, 0.05f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 				iLocal_307 = 1;
 			}
 			if (!iLocal_306 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.255f)
 			{
-				iLocal_325 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sh_lighter_flame", func_47(), 0f, 0f, 0.05f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+				iLocal_325 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sh_lighter_flame", func_47(), 0f, 0f, 0.05f, 0f, 0f, 0f, 1f, 0, 0, 0);
 				iLocal_306 = 1;
 			}
 			if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(iLocal_325) && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.45f)
@@ -2543,17 +2543,17 @@ void func_44(int iParam0)
 			}
 			if (!iLocal_321 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.346f)
 			{
-				iLocal_324 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sh_cig_smoke", func_49(), -0.09f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+				iLocal_324 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sh_cig_smoke", func_49(), -0.09f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 				iLocal_321 = 1;
 			}
 			if (!iLocal_308 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.82f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1065353216, 0, 0, 0);
 				iLocal_308 = 1;
 			}
 			if (!iLocal_309 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.876f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1065353216, 0, 0, 0);
 				iLocal_309 = 1;
 			}
 			break;
@@ -2561,12 +2561,12 @@ void func_44(int iParam0)
 		case 1:
 			if (!iLocal_309 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.42f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, 0f, 0f, 0f, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, 0f, 0f, 0f, 31086, 1065353216, 0, 0, 0);
 				iLocal_309 = 1;
 			}
 			if (!iLocal_308 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.7f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1065353216, 0, 0, 0);
 				iLocal_308 = 1;
 			}
 			break;
@@ -2574,7 +2574,7 @@ void func_44(int iParam0)
 		case 2:
 			if (!iLocal_309 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.48f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1065353216, 0, 0, 0);
 				iLocal_309 = 1;
 			}
 			break;
@@ -2586,12 +2586,12 @@ void func_44(int iParam0)
 			}
 			if (!iLocal_308 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.45f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_mouth", PLAYER::PLAYER_PED_ID(), vLocal_334, 0f, 0f, 0f, 31086, 1065353216, 0, 0, 0);
 				iLocal_308 = 1;
 			}
 			if (!iLocal_309 && PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_326) > 0.45f)
 			{
-				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1f, 0, 0, 0);
+				GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_cig_exhale_nose", PLAYER::PLAYER_PED_ID(), vLocal_335, vLocal_336, 31086, 1065353216, 0, 0, 0);
 				iLocal_309 = 1;
 			}
 			break;

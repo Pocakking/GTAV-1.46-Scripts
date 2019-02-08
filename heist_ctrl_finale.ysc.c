@@ -2356,7 +2356,7 @@ void func_71(var uParam0, int iParam1, bool bParam2)
 		}
 		if (CAM::IS_CAM_ACTIVE(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 		}
 		CAM::DESTROY_CAM(*uParam0, iParam1);
 	}
@@ -4668,7 +4668,7 @@ void func_118(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3, int 
 	uParam0->f_23 = iParam8;
 	uParam0->f_19 = uParam7;
 	*uParam0 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_PARAMS(*uParam0, uParam0->f_1, uParam0->f_4, uParam0->f_7, 0, 1, 1, 2);
 	if (!bParam11)
 	{
@@ -5484,7 +5484,7 @@ void func_145()
 					PED::FORCE_PED_MOTION_STATE(iLocal_130, -668482597, false, 1, 0);
 					if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 					{
-						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 					}
 				}
 				func_186(0);

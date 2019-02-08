@@ -507,7 +507,7 @@ void func_19()
 			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_68[iVar0], 17, true);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_68[iVar0], true);
 			PED::SET_PED_CAN_BE_TARGETTED(iLocal_68[iVar0], false);
-			AI::TASK_PLAY_ANIM_ADVANCED(iLocal_68[iVar0], &cLocal_75, &(Local_80[iVar0 /*8*/]), vLocal_70 + vLocal_72[iVar0 /*3*/], Vector(uLocal_71, 0f, 0f) + vLocal_73[iVar0 /*3*/], 1000f, -8f, -1, iLocal_81, 0f, 2, 0);
+			AI::TASK_PLAY_ANIM_ADVANCED(iLocal_68[iVar0], &cLocal_75, &(Local_80[iVar0 /*8*/]), vLocal_70 + vLocal_72[iVar0 /*3*/], Vector(uLocal_71, 0f, 0f) + vLocal_73[iVar0 /*3*/], 1000f, -8f, -1, iLocal_81, 0, 2, 0);
 			PED::_0x2208438012482A1A(iLocal_68[iVar0], 0, 0);
 			PED::SET_PED_KEEP_TASK(iLocal_68[iVar0], true);
 			PED::SET_PED_RESET_FLAG(iLocal_68[iVar0], 55, true);

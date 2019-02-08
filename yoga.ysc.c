@@ -61220,20 +61220,20 @@ int func_249(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_250(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_250(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -90195,7 +90195,7 @@ int func_315(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 				}
 				if (CAM::DOES_CAM_EXIST(iLocal_57))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_57, 0);
+					CAM::SET_CAM_ACTIVE(iLocal_57, false);
 					CAM::DESTROY_CAM(iLocal_57, 0);
 				}
 				uParam0->f_7 = 7;
@@ -90752,8 +90752,8 @@ void func_329(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 
 void func_330(int iParam0)
 {
-	GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_FLOAT_PARAMS(*iParam0, "ADD_BUTTON_TO_LIST", SYSTEM::TO_FLOAT(5), -1f, -1f, -1082130432, -1082130432);
-	GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_FLOAT_PARAMS(*iParam0, "ADD_BUTTON_TO_LIST", SYSTEM::TO_FLOAT(7), -1f, -1f, -1082130432, -1082130432);
+	GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_FLOAT_PARAMS(*iParam0, "ADD_BUTTON_TO_LIST", SYSTEM::TO_FLOAT(5), -1082130432, -1082130432, -1082130432, -1082130432);
+	GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_FLOAT_PARAMS(*iParam0, "ADD_BUTTON_TO_LIST", SYSTEM::TO_FLOAT(7), -1082130432, -1082130432, -1082130432, -1082130432);
 	GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD(*iParam0, "DRAW_BUTTONS");
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*iParam0, "SET_PLAYER_INPUT_COLOUR");
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION_PARAMETER_INT(5);
@@ -92543,7 +92543,7 @@ void func_356(var uParam0)
 				switch (uParam0->f_8)
 				{
 					case 0:
-						CAM::SET_CAM_ACTIVE(iLocal_58, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_58, false);
 						break;
 					
 					default:
@@ -94653,7 +94653,7 @@ void func_400()
 {
 	if (CAM::DOES_CAM_EXIST(iLocal_170))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_170, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_170, false);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		CAM::DESTROY_CAM(iLocal_170, 0);
 	}

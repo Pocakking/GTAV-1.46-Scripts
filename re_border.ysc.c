@@ -2987,7 +2987,7 @@ int func_66()
 						PED::SET_PED_HELMET(iLocal_63[iVar2], 0);
 						PED::SET_PED_MONEY(iLocal_63[iVar2], 233);
 						AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_63[iVar2], "A_M_M_HILLBILLY_02_WHITE_MINI_04");
-						AUDIO::STOP_PED_SPEAKING(iLocal_63[iVar2], 1);
+						AUDIO::STOP_PED_SPEAKING(iLocal_63[iVar2], true);
 						iVar2++;
 					}
 					VEHICLE::SET_VEHICLE_COLOUR_COMBINATION(iLocal_64[0], 0);

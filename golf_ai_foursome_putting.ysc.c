@@ -1158,7 +1158,7 @@ void func_30(var uParam0, var uParam1, var uParam2)
 						}
 						AI::CLEAR_PED_TASKS(func_274(uParam2));
 						AI::OPEN_SEQUENCE_TASK(&(uParam2->f_15[func_258(uParam2) /*34*/].f_21));
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_38(uParam1, func_296(uParam2), func_258(uParam2)), 1f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_38(uParam1, func_296(uParam2), func_258(uParam2)), 1f, -1, 1048576000, 0, 1193033728);
 						AI::TASK_TURN_PED_TO_FACE_COORD(0, func_295(uParam1, func_296(uParam2)), 0);
 						AI::CLOSE_SEQUENCE_TASK(uParam2->f_15[func_258(uParam2) /*34*/].f_21);
 						AI::TASK_PERFORM_SEQUENCE(func_274(uParam2), uParam2->f_15[func_258(uParam2) /*34*/].f_21);
@@ -1180,7 +1180,7 @@ void func_30(var uParam0, var uParam1, var uParam2)
 							}
 							AI::CLEAR_PED_TASKS(func_274(uParam2));
 							AI::OPEN_SEQUENCE_TASK(&(uParam2->f_15[func_258(uParam2) /*34*/].f_21));
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_44(uParam1, func_296(uParam2), func_258(uParam2)), 1f, -1, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_44(uParam1, func_296(uParam2), func_258(uParam2)), 1f, -1, 1048576000, 0, 1193033728);
 							AI::TASK_TURN_PED_TO_FACE_COORD(0, func_43(uParam1, func_296(uParam2)), 0);
 							AI::CLOSE_SEQUENCE_TASK(uParam2->f_15[func_258(uParam2) /*34*/].f_21);
 							AI::TASK_PERFORM_SEQUENCE(func_274(uParam2), uParam2->f_15[func_258(uParam2) /*34*/].f_21);
@@ -2456,7 +2456,7 @@ void func_79(var uParam0)
 {
 	AUDIO::PLAY_SOUND_FROM_ENTITY(-1, "GOLF_BALL_IN_WATER_MASTER", func_272(uParam0), 0, 0, 0);
 	return;
-	GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_golf_landing_water", ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), 0f, 0f, func_241(ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), func_242(uParam0)), 1f, 0, 0, 0);
+	GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_golf_landing_water", ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), 0f, 0f, func_241(ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), func_242(uParam0)), 1065353216, 0, 0, 0);
 }
 
 int func_80(var uParam0, int iParam1)
@@ -2774,7 +2774,7 @@ void func_84(var uParam0)
 	}
 	if (!func_85(sVar0))
 	{
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), 0f, 0f, func_241(ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), func_242(uParam0)), 1f, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), 0f, 0f, func_241(ENTITY::GET_ENTITY_COORDS(func_272(uParam0), true), func_242(uParam0)), 1065353216, 0, 0, 0);
 	}
 }
 
@@ -3199,7 +3199,7 @@ int func_108(var uParam0, var uParam1, var uParam2)
 	
 	func_196(func_272(uParam2), 0);
 	ENTITY::SET_ENTITY_RECORDS_COLLISIONS(func_272(uParam2), 1);
-	OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_272(uParam2), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1f);
+	OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_272(uParam2), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1082130432);
 	bVar0 = func_60(uParam2) == 4;
 	fVar1 = func_124(&(uParam2->f_15[func_258(uParam2) /*34*/]), uParam0, &(uParam2->f_1), bVar0, !bLocal_355, 0);
 	fVar2 = 1f;
@@ -3389,7 +3389,7 @@ void func_109(var uParam0, var uParam1, var uParam2)
 	func_110(uParam0, func_138(uParam2, 16));
 	if (!func_85(sVar0))
 	{
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, func_242(uParam0), 0f, 0f, func_98(uParam0), 1f, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, func_242(uParam0), 0f, 0f, func_98(uParam0), 1065353216, 0, 0, 0);
 	}
 }
 
@@ -3400,7 +3400,7 @@ void func_110(var uParam0, bool bParam1)
 	return;
 	if (!func_186(uParam0) && ENTITY::DOES_ENTITY_EXIST(func_272(uParam0)))
 	{
-		iVar0 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_golf_ball_trail", func_272(uParam0), 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+		iVar0 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_golf_ball_trail", func_272(uParam0), 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 		if (bParam1)
 		{
 			GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iVar0, (240f / 255f), (200f / 255f), (80f / 255f), 0);
@@ -5721,7 +5721,7 @@ void func_196(int iParam0, bool bParam1)
 void func_197(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, bool bParam5, int iParam6, bool bParam7)
 {
 	vector3 vVar0;
-	float fVar1;
+	int iVar1;
 	
 	if (bParam5)
 	{
@@ -5731,11 +5731,11 @@ void func_197(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, b
 	{
 		vVar0 = { func_43(uParam0, func_296(uParam1)) };
 	}
-	fVar1 = (func_241(vVar0, func_242(uParam1)) + 90f);
-	func_198(&(uParam1->f_15[func_258(uParam1) /*34*/]), uParam2, fVar1, 0, iParam3, iParam4, iParam6, bParam7);
+	iVar1 = (func_241(vVar0, func_242(uParam1)) + 90f);
+	func_198(&(uParam1->f_15[func_258(uParam1) /*34*/]), uParam2, iVar1, 0, iParam3, iParam4, iParam6, bParam7);
 }
 
-void func_198(var uParam0, var uParam1, float fParam2, bool bParam3, var uParam4, int iParam5, var uParam6, bool bParam7)
+void func_198(var uParam0, var uParam1, int iParam2, bool bParam3, var uParam4, int iParam5, var uParam6, bool bParam7)
 {
 	int iVar0;
 	vector3 vVar1;
@@ -5753,7 +5753,7 @@ void func_198(var uParam0, var uParam1, float fParam2, bool bParam3, var uParam4
 	}
 	iVar0 = func_104(uParam1, func_105(uParam0));
 	func_46(uParam0, 134217728);
-	func_223(uParam0, fParam2);
+	func_223(uParam0, iParam2);
 	vVar1 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(func_170(uParam0), func_99(uParam0), func_222(iVar0)) };
 	vVar2 = { ENTITY::GET_ENTITY_COORDS(func_171(uParam0), true) };
 	if (bParam3)
@@ -5793,13 +5793,13 @@ void func_198(var uParam0, var uParam1, float fParam2, bool bParam3, var uParam4
 		AI::OPEN_SEQUENCE_TASK(&(uParam0->f_21));
 		if (func_237() || func_173(uParam0))
 		{
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, fParam2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, iParam2);
 			AI::TASK_PLAY_ANIM(0, "mini@golfai", "putt_approach_no_ball", 2f, -4f, -1, 0, 0f, 0, 0, 0);
 			AI::TASK_PLAY_ANIM(0, "mini@golfai", "putt_approach_no_ball", 4f, -4f, -1, 2, 0.999f, 0, 0, 0);
 		}
 		else
 		{
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, fParam2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, iParam2);
 		}
 		AI::CLOSE_SEQUENCE_TASK(uParam0->f_21);
 		AI::TASK_PERFORM_SEQUENCE(func_171(uParam0), uParam0->f_21);

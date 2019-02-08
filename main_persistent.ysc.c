@@ -1421,7 +1421,7 @@ void func_20(bool bParam0, bool bParam1, bool bParam2, bool bParam3, bool bParam
 			if (CAM::DOES_CAM_EXIST(Global_2449169.f_2844.f_19))
 			{
 				CAM::RENDER_SCRIPT_CAMS(false, false, 1000, 0, 1, 0);
-				CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, 0);
+				CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, false);
 				CAM::DESTROY_CAM(Global_2449169.f_2844.f_19, 1);
 			}
 		}
@@ -73852,7 +73852,7 @@ int func_462()
 		GRAPHICS::_START_SCREEN_EFFECT("MinigameTransitionIn", 0, 1);
 		Global_2449169.f_2844.f_19 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", Global_2449169.f_2844.f_22, vVar0, 1115815936, 0, 2);
 		CAM::SET_CAM_FOV(Global_2449169.f_2844.f_19, fVar1);
-		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, 1);
+		CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, iVar2, 1, 1, 0);
 		if (Global_2449169.f_2844.f_26)
 		{
@@ -73946,7 +73946,7 @@ void func_466()
 				{
 					if (CAM::DOES_CAM_EXIST(Global_2449169.f_2844.f_19))
 					{
-						CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, 0);
+						CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, false);
 						if (!CAM::IS_CAM_ACTIVE(Global_2449169.f_2844.f_19))
 						{
 							CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
@@ -73964,7 +73964,7 @@ void func_466()
 				{
 					if (CAM::DOES_CAM_EXIST(Global_2449169.f_2844.f_19))
 					{
-						CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, 1);
+						CAM::SET_CAM_ACTIVE(Global_2449169.f_2844.f_19, true);
 					}
 					if (func_31() || func_30())
 					{
@@ -93604,20 +93604,20 @@ int func_598(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_599(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_599(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -139997,7 +139997,7 @@ void func_1350(vector3 vParam0, float fParam1, bool bParam2)
 	PED::SET_PED_MAX_HEALTH(Global_104497.f_12, 100000);
 	ENTITY::SET_ENTITY_HEALTH(Global_104497.f_12, 100000, 0);
 	PED::SET_PED_MONEY(Global_104497.f_12, 0);
-	AUDIO::DISABLE_PED_PAIN_AUDIO(Global_104497.f_12, 1);
+	AUDIO::DISABLE_PED_PAIN_AUDIO(Global_104497.f_12, true);
 	if (bParam2)
 	{
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(Global_104497.f_12, Global_104497.f_13);

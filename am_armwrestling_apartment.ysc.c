@@ -2651,7 +2651,7 @@ void __EntryFunction__()
 						}
 						if (func_686(&Var13) >= 8)
 						{
-							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(0, iLocal_296 == 1), 4f, -4f, -1, 32, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(0, iLocal_296 == 1), 4f, -4f, -1, 32, 0f, 0, 0, 0);
 							func_630(0);
 							func_628(&(Var14[iLocal_1526[iLocal_296] /*28*/]));
 							func_759(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 1, 0);
@@ -2741,7 +2741,7 @@ void __EntryFunction__()
 															{
 																if (AI::_0xD01015C7316AE176(PLAYER::PLAYER_PED_ID(), sVar74))
 																{
-																	AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(1, iLocal_296 == 1), 4f, -4f, -1, 32, 0, 0, 0, 0);
+																	AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(1, iLocal_296 == 1), 4f, -4f, -1, 32, 0f, 0, 0, 0);
 																}
 															}
 															else if ((GAMEPLAY::GET_GAME_TIMER() % 1000) < 50)
@@ -2928,7 +2928,7 @@ void __EntryFunction__()
 									}
 									if (!func_717(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 5))
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(2, iLocal_296 == 1), 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(2, iLocal_296 == 1), 4f, -4f, -1, 33, 0f, 0, 0, 0);
 										func_759(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 5, 1);
 									}
 								}
@@ -3036,7 +3036,7 @@ void __EntryFunction__()
 													if (AI::_0xD01015C7316AE176(PLAYER::PLAYER_PED_ID(), func_665(bVar56, sVar76, sVar77)))
 													{
 														sVar78 = func_665(bVar56, func_620(3, iLocal_296 == 1), func_620(4, iLocal_296 == 1));
-														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", sVar78, 4f, -4f, -1, 32, 0, 0, 0, 0);
+														AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", sVar78, 4f, -4f, -1, 32, 0f, 0, 0, 0);
 													}
 												}
 											}
@@ -3060,7 +3060,7 @@ void __EntryFunction__()
 									{
 										if (!func_717(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10))
 										{
-											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0, 0, 0, 0);
+											AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0f, 0, 0, 0);
 											func_759(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10, 1);
 										}
 									}
@@ -3095,7 +3095,7 @@ void __EntryFunction__()
 										{
 											if (!func_717(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10))
 											{
-												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0, 0, 0, 0);
+												AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0f, 0, 0, 0);
 												func_759(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10, 1);
 											}
 										}
@@ -3185,7 +3185,7 @@ void __EntryFunction__()
 								{
 									if (!func_717(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10))
 									{
-										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0, 0, 0, 0);
+										AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mini@arm_wrestling", func_620(5, iLocal_296 == 1), 4f, -4f, -1, 33, 0f, 0, 0, 0);
 										func_759(&(Var14[iLocal_1526[iLocal_296] /*28*/]), 10, 1);
 									}
 								}
@@ -3206,7 +3206,7 @@ void __EntryFunction__()
 						{
 							if (STREAMING::HAS_ANIM_DICT_LOADED("anim@amb@clubhouse@mini@arm_wrestling@"))
 							{
-								AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "anim@amb@clubhouse@mini@arm_wrestling@", func_665(iLocal_296 == 1, "cancel_neutral_ped_a", "cancel_neutral_ped_b"), 8f, -8f, -1, 0, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "anim@amb@clubhouse@mini@arm_wrestling@", func_665(iLocal_296 == 1, "cancel_neutral_ped_a", "cancel_neutral_ped_b"), 8f, -8f, -1, 0, 0f, 0, 0, 0);
 							}
 						}
 						func_603(&(Var9[iLocal_296 /*29*/]));
@@ -9881,11 +9881,11 @@ int func_167(var uParam0, var uParam1, int iParam2, int iParam3)
 			ENTITY::FREEZE_ENTITY_POSITION(uParam0->f_20, true);
 			if (PED::IS_PED_MALE(uParam0->f_20))
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_m@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			else
 			{
-				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(uParam0->f_20, "move_f@generic", "idle", 1000f, -1.5f, -1, 9, 0f, 0, 0, 0);
 			}
 			AI::TASK_LOOK_AT_COORD(uParam0->f_20, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(uParam0->f_20, 0.7866f, 2.2904f, 0.7608f), -1, 2048, 2);
 			PED::_0x2208438012482A1A(uParam0->f_20, 0, 0);
@@ -54249,7 +54249,7 @@ int func_503(int iParam0, int iParam1)
 	return 0;
 }
 
-void func_504(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
+void func_504(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5)
 {
 	char* sVar0;
 	
@@ -54261,7 +54261,7 @@ void func_504(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4,
 	}
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(*uParam0, sVar0);
 	GRAPHICS::_BEGIN_TEXT_COMMAND_SCALEFORM("STRING");
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	GRAPHICS::_END_TEXT_COMMAND_SCALEFORM();
 	func_148(sParam2);
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();

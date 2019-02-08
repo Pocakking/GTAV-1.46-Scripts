@@ -5150,7 +5150,7 @@ void func_17(var uParam0, int iParam1, bool bParam2, bool bParam3)
 	}
 }
 
-void func_18(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, char* sParam7)
+void func_18(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, int iParam7)
 {
 	func_19(iParam1);
 	if (bParam2)
@@ -5163,15 +5163,15 @@ void func_18(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam
 	}
 	if (iParam3 != 0)
 	{
-		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, sParam7, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, iParam7, 0, 0);
 	}
 	else if ((fParam4 != 0f || fParam5 != 0f) || fParam6 != 0f)
 	{
-		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, sParam7, 0, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, iParam7, 0, 0, 0);
 	}
 	else
 	{
-		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, sParam7, true);
+		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, iParam7, true);
 	}
 }
 
@@ -12821,7 +12821,7 @@ void func_205(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 			CAM::SHAKE_CAM(uParam0->f_304, "HAND_SHAKE", 1.5f);
 			CAM::POINT_CAM_AT_ENTITY(uParam0->f_304, iParam1, 0f, 0f, 0f, 1);
 			STREAMING::_SET_FOCUS_AREA(ENTITY::GET_ENTITY_COORDS(iParam1, true), 0f, 0f, 0f);
-			CAM::SET_CAM_ACTIVE(uParam0->f_304, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_304, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			uParam0->f_234 = 0;
 			uParam0->f_233 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -13336,7 +13336,7 @@ void func_217(var uParam0, int iParam1, int iParam2)
 	CAM::SHAKE_CAM(uParam0->f_304, "HAND_SHAKE", 1.5f);
 	CAM::POINT_CAM_AT_ENTITY(uParam0->f_304, iParam1, 0f, 0f, 0f, 1);
 	VEHICLE::_0xE05DD0E9707003A3(uParam0->f_25, 0);
-	CAM::SET_CAM_ACTIVE(uParam0->f_304, 1);
+	CAM::SET_CAM_ACTIVE(uParam0->f_304, true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	uParam0->f_234 = 0;
 	uParam0->f_233 = (GAMEPLAY::GET_GAME_TIMER() + iParam2);
@@ -13592,7 +13592,7 @@ void func_225(var uParam0)
 				if (uParam0->f_99[iVar0 /*10*/][iVar1] != 0 && (GAMEPLAY::GET_GAME_TIMER() - uParam0->f_99[iVar0 /*10*/][iVar1]) > 125)
 				{
 					uParam0->f_99[iVar0 /*10*/][iVar1] = 0;
-					ENTITY::PLAY_ENTITY_ANIM(uParam0->f_38[iVar0 /*10*/][iVar1], "BOMB_TAIL_OPEN_UP", "oddjobs@arms_traffic@", 4f, 0, 1, 0, 0, 0);
+					ENTITY::PLAY_ENTITY_ANIM(uParam0->f_38[iVar0 /*10*/][iVar1], "BOMB_TAIL_OPEN_UP", "oddjobs@arms_traffic@", 4f, 0, 1, 0, 0f, 0);
 				}
 			}
 			iVar1++;
@@ -13658,7 +13658,7 @@ int func_227(var uParam0, var uParam1)
 		CAM::ATTACH_CAM_TO_ENTITY(uParam1->f_304, uParam1->f_25, 0f, 1.44f, -0.9565f, 1);
 		CAM::POINT_CAM_AT_ENTITY(uParam1->f_304, uParam1->f_25, -0.1281f, -1.5596f, -1.4592f, 1);
 		VEHICLE::_0xE05DD0E9707003A3(uParam1->f_25, 1);
-		CAM::SET_CAM_ACTIVE(uParam1->f_304, 1);
+		CAM::SET_CAM_ACTIVE(uParam1->f_304, true);
 		UI::DISPLAY_RADAR(false);
 		UI::DISPLAY_HUD(false);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -13900,7 +13900,7 @@ int func_230(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, ch
 					func_386("SECOND CHECK PASS");
 					if (CAM::DOES_CAM_EXIST(uParam1->f_305))
 					{
-						CAM::SET_CAM_ACTIVE(uParam1->f_305, 0);
+						CAM::SET_CAM_ACTIVE(uParam1->f_305, false);
 					}
 					STREAMING::CLEAR_FOCUS();
 					func_7(uParam1, &bLocal_4123);
@@ -14449,7 +14449,7 @@ void func_239(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 				{
 					if ((GAMEPLAY::GET_GAME_TIMER() - uParam1->f_186[*uParam3]) > 150)
 					{
-						ENTITY::PLAY_ENTITY_ANIM(uParam1->f_179[*uParam3], "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1000f, 0, 0, 0, 0, 0);
+						ENTITY::PLAY_ENTITY_ANIM(uParam1->f_179[*uParam3], "p_cargo_chute_s_deploy", "p_cargo_chute_s", 1000f, 0, 0, 0, 0f, 0);
 						ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(uParam1->f_179[*uParam3]);
 						ENTITY::SET_ENTITY_VISIBLE(uParam1->f_179[*uParam3], true, 0);
 						uParam1->f_193[*uParam3] = 1;
@@ -15365,7 +15365,7 @@ int func_255(var uParam0, var uParam1)
 	func_219(*uParam1);
 	CAM::SHAKE_CAM(uParam0->f_304, "ROAD_VIBRATION_SHAKE", 1f);
 	CAM::SET_CAM_FOV(uParam0->f_304, 65f);
-	CAM::SET_CAM_ACTIVE(uParam0->f_304, 1);
+	CAM::SET_CAM_ACTIVE(uParam0->f_304, true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	UI::DISPLAY_RADAR(false);
 	UI::DISPLAY_HUD(false);
@@ -16365,7 +16365,7 @@ void func_278(var uParam0, var uParam1, var uParam2)
 			}
 			if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(uParam0->f_363[iVar0]))
 			{
-				uParam0->f_363[iVar0] = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_drug_traffic_flare_L", vVar1, 0f, 0f, 0f, 1f, 0, 0, 0, 0);
+				uParam0->f_363[iVar0] = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_drug_traffic_flare_L", vVar1, 0f, 0f, 0f, 1065353216, 0, 0, 0, 0);
 				GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(uParam0->f_363[iVar0], vVar2.x, vVar2.y, vVar2.z, 0);
 			}
 		}

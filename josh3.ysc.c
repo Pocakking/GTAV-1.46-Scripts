@@ -80,7 +80,7 @@
 	var uLocal_78 = 0;
 	var uLocal_79 = 0;
 	int iLocal_80 = 0;
-	var uLocal_81 = 0;
+	int iLocal_81 = 0;
 	struct<61> Local_82 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	int iLocal_83 = 0;
 	int iLocal_84 = 0;
@@ -445,7 +445,7 @@ void __EntryFunction__()
 	iLocal_75 = 49;
 	iLocal_76 = 64;
 	iLocal_80 = UI::_0x4A9923385BDB9DAD();
-	uLocal_81 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_81 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	iLocal_83 = 1;
 	vLocal_100 = { 572.4306f, -1765.003f, 28.1693f };
 	vLocal_101 = { -1116.902f, 281.7206f, 64.2895f };
@@ -32613,28 +32613,28 @@ void func_190(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_191(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_193(iParam0, &Var0);
-		MemCopy(&cVar1, {func_188(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_192(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_188(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_192(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_192(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_192(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -35305,8 +35305,8 @@ void func_254()
 			func_264(500, 0);
 			func_255(1, 0, 1, 0);
 			GRAPHICS::_START_SCREEN_EFFECT("ExplosionJosh3", 0, 0);
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_light_explosion", vLocal_335, 0f, 0f, 0f, 1f, 0, 0, 0);
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_exp_debris", vLocal_335, 0f, 0f, 0f, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_light_explosion", vLocal_335, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_exp_debris", vLocal_335, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 			if (STREAMING::_0x07C313F94746702C(iLocal_403))
 			{
 				STREAMING::_0x1EE7D8DF4425F053(iLocal_403);
@@ -36167,8 +36167,8 @@ void func_282(int iParam0)
 {
 	if (!GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(iLocal_330))
 	{
-		iLocal_330 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_josh3_fires", vLocal_331, vLocal_332, 1f, 0, 0, 0, 0);
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_explosion", vLocal_331, vLocal_332, 1f, 0, 0, 0);
+		iLocal_330 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_josh3_fires", vLocal_331, vLocal_332, 1065353216, 0, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_josh3_explosion", vLocal_331, vLocal_332, 1065353216, 0, 0, 0);
 		if (iParam0 == 0)
 		{
 			if (CAM::DOES_CAM_EXIST(iLocal_337))
@@ -36849,7 +36849,7 @@ void func_303()
 			break;
 		
 		case 1:
-			UI::SET_RADAR_AS_INTERIOR_THIS_FRAME(0, 0, 0, 0, 0);
+			UI::SET_RADAR_AS_INTERIOR_THIS_FRAME(0, 0f, 0f, 0, 0);
 			func_297();
 			func_312();
 			func_310();
@@ -43304,7 +43304,7 @@ void func_429()
 						{
 							func_284(PLAYER::PLAYER_PED_ID(), vLocal_108, 66.0379f, 0, 1);
 							PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2500, 0f, 1, 0);
+							PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2500, 0, 1, 0);
 							CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 							CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 						}
@@ -46811,7 +46811,7 @@ void func_477()
 						CAM::ADD_CAM_SPLINE_NODE(Local_90.f_4, 578.9f, -1761.4f, 31.3f, 27.6f, 2.5f, 11f, 5000, 3, 2);
 						CAM::ADD_CAM_SPLINE_NODE(Local_90.f_4, 578.8f, -1761.1f, 31.4f, 27.6f, 2.5f, 11f, 5000, 3, 2);
 						CAM::SET_CAM_FOV(Local_90.f_4, 50f);
-						CAM::SET_CAM_ACTIVE(Local_90.f_4, 1);
+						CAM::SET_CAM_ACTIVE(Local_90.f_4, true);
 						AUDIO::PLAY_SOUND_FRONTEND(-1, "TIME_LAPSE_MASTER", 0, true);
 						func_501(&Local_90, 1, 0, 2000, 1, 1, 0, 1);
 						Local_90 = func_379();
@@ -47486,7 +47486,7 @@ void func_501(var uParam0, bool bParam1, bool bParam2, int iParam3, int iParam4,
 		{
 			if (CAM::IS_CAM_ACTIVE(uParam0->f_4))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 0);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, false);
 			}
 			CAM::DESTROY_CAM(uParam0->f_4, 1);
 		}
@@ -51356,7 +51356,7 @@ void func_555(int iParam0)
 				{
 					func_284(PLAYER::PLAYER_PED_ID(), vLocal_108, 66.0379f, 0, 1);
 				}
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2500, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2500, 0, 1, 0);
 			}
 			func_431();
 			func_516();
@@ -51517,12 +51517,12 @@ void func_557(int iParam0, int iParam1, int iParam2)
 	}
 }
 
-void func_558(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_558(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

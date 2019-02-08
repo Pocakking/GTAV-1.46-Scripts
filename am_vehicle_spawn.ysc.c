@@ -43939,11 +43939,11 @@ int func_883(int iParam0)
 
 float func_884(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_47(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_47(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -106541,10 +106541,10 @@ bool func_1065(int iParam0)
 	return GAMEPLAY::IS_BIT_SET(Global_2524719.f_4883.f_39, iParam0);
 }
 
-int func_1066(char* sParam0, int iParam1)
+int func_1066(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
@@ -109516,7 +109516,7 @@ void func_1150(int iParam0, bool bParam1, int iParam2, bool bParam3)
 	var uVar1;
 	int iVar2;
 	int iVar3;
-	int iVar4;
+	char* sVar4;
 	
 	iVar0 = iLocal_237;
 	if (iParam2 > -1)
@@ -109556,12 +109556,12 @@ void func_1150(int iParam0, bool bParam1, int iParam2, bool bParam3)
 						{
 							if (!GAMEPLAY::IS_BIT_SET(iLocal_225, iVar0))
 							{
-								iVar4 = "PEG_RECLAIM";
+								sVar4 = "PEG_RECLAIM";
 								if (func_1154(*iParam0))
 								{
-									iVar4 = "GB_RECLAIM";
+									sVar4 = "GB_RECLAIM";
 								}
-								func_1153("TWOSTRINGS", iVar4, "EPS_DROP_EXIT", -1);
+								func_1153("TWOSTRINGS", sVar4, "EPS_DROP_EXIT", -1);
 								GAMEPLAY::SET_BIT(&iLocal_225, iVar0);
 							}
 						}
@@ -109657,11 +109657,11 @@ int func_1152(int iParam0, var uParam1)
 	return 0;
 }
 
-void func_1153(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_1153(char* sParam0, char* sParam1, char* sParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam3);
 }
 

@@ -1934,7 +1934,7 @@ void func_68(int iParam0)
 	int iVar1;
 	int iVar2;
 	int iVar3;
-	char[] cVar4[8];
+	char* sVar4;
 	
 	if (Global_93232 != 12)
 	{
@@ -1968,22 +1968,22 @@ void func_68(int iParam0)
 			iVar2 = 2;
 		}
 		iVar3 = func_98(iVar1);
-		cVar4 = { Global_84115[iVar1 /*34*/].f_8 };
+		sVar4 = { Global_84115[iVar1 /*34*/].f_8 };
 		if (iVar1 == 90)
 		{
 			switch (Global_106070.f_9057.f_99.f_205[7])
 			{
 				case 1:
-					StringConCat(&cVar4, "A", 8);
+					StringConCat(&sVar4, "A", 8);
 					break;
 				
 				case 2:
-					StringConCat(&cVar4, "B", 8);
+					StringConCat(&sVar4, "B", 8);
 					break;
 				}
 		}
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar4, iVar3, Global_93269, 0);
-		func_97(&cVar4, iVar3, Global_93269, 1, 0);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar4, iVar3, Global_93269, 0);
+		func_97(&sVar4, iVar3, Global_93269, 1, 0);
 		if (func_69(&Var0, iVar2, iVar1))
 		{
 			Global_93232.f_1 = iParam0;
@@ -3229,17 +3229,17 @@ void func_96()
 	}
 }
 
-void func_97(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_97(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -3298,7 +3298,7 @@ int func_99(int iParam0)
 var func_100(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4)
 {
 	int iVar0;
-	char[] cVar1[8];
+	char* sVar1;
 	struct<2> Var2;
 	int iVar3;
 	int iVar4;
@@ -3307,22 +3307,22 @@ var func_100(int iParam0, int iParam1, int iParam2, bool bParam3, bool bParam4)
 	if (!bParam4)
 	{
 		iVar0 = func_98(iParam2);
-		cVar1 = { Global_84115[iParam2 /*34*/].f_8 };
+		sVar1 = { Global_84115[iParam2 /*34*/].f_8 };
 		if (iParam2 == 90)
 		{
 			switch (Global_106070.f_9057.f_99.f_205[7])
 			{
 				case 1:
-					StringConCat(&cVar1, "A", 8);
+					StringConCat(&sVar1, "A", 8);
 					break;
 				
 				case 2:
-					StringConCat(&cVar1, "B", 8);
+					StringConCat(&sVar1, "B", 8);
 					break;
 				}
 		}
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, iVar0, Global_93269, 0);
-		func_97(&cVar1, iVar0, Global_93269, 0, 0);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, iVar0, Global_93269, 0);
+		func_97(&sVar1, iVar0, Global_93269, 0, 0);
 		Global_71469 = iParam2;
 		Global_71470 = GAMEPLAY::GET_GAME_TIMER();
 		if (iParam2 == 28)
@@ -75936,20 +75936,20 @@ int func_492(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_493(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_493(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}

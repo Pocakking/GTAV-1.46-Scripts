@@ -982,7 +982,7 @@
 	var uLocal_980 = 0;
 	var uLocal_981 = 0;
 	int iLocal_982 = 0;
-	var uLocal_983 = 0;
+	int iLocal_983 = 0;
 	int iLocal_984 = 0;
 	struct<6> Local_985 = { 0, 0, 0, 0, 0, 0 } ;
 	int iLocal_986 = 0;
@@ -1782,7 +1782,7 @@ void __EntryFunction__()
 	vLocal_808 = { 0f, 0f, 0f };
 	fLocal_809 = 0f;
 	iLocal_982 = UI::_0x4A9923385BDB9DAD();
-	uLocal_983 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_983 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	iLocal_984 = -1;
 	StringCopy(&Local_985, "", 24);
 	iLocal_986 = -1;
@@ -12754,7 +12754,7 @@ void func_215()
 				vVar0 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_798, true), ENTITY::GET_ENTITY_HEADING(iLocal_798), 0f, 5f, 0f) };
 			}
 			AI::OPEN_SEQUENCE_TASK(&iVar1);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar0, 1f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar0, 1f, -1, 1048576000, 0, 1193033728);
 			if (Local_562 == 2)
 			{
 				AI::TASK_START_SCENARIO_IN_PLACE(0, "WORLD_HUMAN_SMOKING", 0, 1);
@@ -12799,7 +12799,7 @@ int func_216(var uParam0)
 				{
 					uParam0->f_5[6] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[6 /*3*/], uParam0->f_163[6 /*3*/], 50f, 0, 2);
 					uParam0->f_5[7] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[7 /*3*/], uParam0->f_163[7 /*3*/], 50f, 0, 2);
-					CAM::SET_CAM_ACTIVE(uParam0->f_5[6], 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_5[6], true);
 					CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam0->f_5[7], uParam0->f_5[6], 2000, 3, 1);
 					CAM::SHAKE_CAM(uParam0->f_5[7], "HAND_SHAKE", 0.3f);
 					CAM::DESTROY_CAM(uParam0->f_5[5], 0);
@@ -13111,7 +13111,7 @@ void func_230(var uParam0, bool bParam1, int iParam2)
 		if (bParam1)
 		{
 			uParam0->f_5[3] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[3 /*3*/], uParam0->f_163[3 /*3*/], 25.3742f, 0, 2);
-			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], true);
 			uParam0->f_5[4] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[4 /*3*/], uParam0->f_163[4 /*3*/], 25.3742f, 0, 2);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam0->f_5[4], uParam0->f_5[3], 600, 1, 1);
 			CAM::SET_CAM_MOTION_BLUR_STRENGTH(uParam0->f_5[3], 1f);
@@ -13124,7 +13124,7 @@ void func_230(var uParam0, bool bParam1, int iParam2)
 			vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0f, -5f, 1f) };
 			vVar1 = { ENTITY::GET_ENTITY_ROTATION(PLAYER::PLAYER_PED_ID(), 2) };
 			uParam0->f_5[3] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0 + Vector(20f, 0f, 0f), vVar1 + Vector(0f, 0f, 55f), 50f, 0, 2);
-			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], true);
 			uParam0->f_5[4] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, vVar1, 50f, 0, 2);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam0->f_5[4], uParam0->f_5[3], 600, 1, 1);
 			CAM::SET_CAM_MOTION_BLUR_STRENGTH(uParam0->f_5[3], 1f);
@@ -21116,7 +21116,7 @@ void func_356(int iParam0)
 				func_32(1);
 				iLocal_798 = PED::CREATE_PED(5, joaat("a_f_y_genhot_01"), vLocal_801, fLocal_802, 1, true);
 				func_357(&uLocal_813, 3, iLocal_798, "StrRaceGirl", 1, 1);
-				AUDIO::STOP_PED_SPEAKING(iLocal_798, 1);
+				AUDIO::STOP_PED_SPEAKING(iLocal_798, true);
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(joaat("a_f_y_genhot_01"));
 			}
 		}
@@ -22028,7 +22028,7 @@ int func_374(int iParam0, var uParam1, int iParam2)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(uParam1->f_5[0]))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_5[0], 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_5[0], true);
 				CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam1->f_5[1], uParam1->f_5[0], 2000, 0, 1);
 				GRAPHICS::_START_SCREEN_EFFECT("MinigameEndFranklin", 0, 0);
 				AUDIO::PLAY_SOUND_FRONTEND(-1, "Hit_In", "PLAYER_SWITCH_CUSTOM_SOUNDSET", true);
@@ -28526,7 +28526,7 @@ int func_501()
 		{
 			if (!CAM::IS_CAM_INTERPOLATING(iLocal_584[2]))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_584[3], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_584[3], true);
 				CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_584[4], iLocal_584[3], 5000, 3, 1);
 				CAM::SHAKE_CAM(iLocal_584[4], "HAND_SHAKE", 0.3f);
 				CAM::DESTROY_CAM(iLocal_584[2], 0);
@@ -28630,7 +28630,7 @@ int func_501()
 		{
 			if (func_502())
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_584[6], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_584[6], true);
 			}
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_584[7], iLocal_584[6], 3000, 3, 1);
 			CAM::SHAKE_CAM(iLocal_584[6], "HAND_SHAKE", 1f);
@@ -29488,7 +29488,7 @@ void func_521()
 	if (Local_562.f_1 == 3)
 	{
 		iLocal_584[0] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_585, vLocal_586, 35f, 0, 2);
-		CAM::SET_CAM_ACTIVE(iLocal_584[0], 1);
+		CAM::SET_CAM_ACTIVE(iLocal_584[0], true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 0, 1, 0, 0);
 		iLocal_584[1] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_601, vLocal_602, 35f, 0, 2);
 		iLocal_584[2] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_587, vLocal_588, 35f, 0, 2);
@@ -29513,7 +29513,7 @@ void func_521()
 		CAM::SET_CAM_FOV(iLocal_584[1], 40f);
 		CAM::ATTACH_CAM_TO_ENTITY(iLocal_584[1], vLocal_18.x, vLocal_587, 1);
 		CAM::POINT_CAM_AT_ENTITY(iLocal_584[1], vLocal_18.x, vLocal_588, 1);
-		CAM::SET_CAM_ACTIVE(iLocal_584[0], 1);
+		CAM::SET_CAM_ACTIVE(iLocal_584[0], true);
 		CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_584[1], iLocal_584[0], 3000, 1, 1);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 0, 1, 0, 0);
 		CAM::SHAKE_CAM(iLocal_584[0], "ROAD_VIBRATION_SHAKE", 0.5f);

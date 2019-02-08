@@ -1468,12 +1468,12 @@ int func_25()
 	return 0;
 }
 
-void func_26(vector3 vParam0, float fParam1, int iParam2)
+void func_26(vector3 vParam0, int iParam1, int iParam2)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = GAMEPLAY::GET_GAME_TIMER() + 20000;

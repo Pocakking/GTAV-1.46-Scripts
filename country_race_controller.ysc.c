@@ -390,7 +390,7 @@ void func_8()
 void func_9(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 bool func_10()
@@ -824,8 +824,8 @@ void func_23()
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "YES", "HUD_FRONTEND_DEFAULT_SOUNDSET", 1);
 							UI::CLEAR_HELP(1);
 							GAMEPLAY::CLEAR_AREA_OF_PROJECTILES(func_60(), 20f, 0);
-							ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), 1);
-							ENTITY::SET_ENTITY_INVINCIBLE(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), 1);
+							ENTITY::SET_ENTITY_INVINCIBLE(PLAYER::PLAYER_PED_ID(), true);
+							ENTITY::SET_ENTITY_INVINCIBLE(PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0), true);
 							UI::HIDE_HELP_TEXT_THIS_FRAME();
 							iLocal_148 = 1;
 						}
@@ -903,10 +903,10 @@ void func_28()
 	}
 }
 
-void func_29(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_29(char* sParam0, int iParam1, bool bParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, iParam1, iParam2, iParam3);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, iParam1, bParam2, iParam3);
 }
 
 int func_30(int iParam0)
@@ -1664,7 +1664,7 @@ int func_54()
 	return 0;
 }
 
-float func_55(int iParam0, vector3 vParam1, int iParam2)
+float func_55(int iParam0, vector3 vParam1, bool bParam2)
 {
 	vector3 vVar0;
 	
@@ -1676,7 +1676,7 @@ float func_55(int iParam0, vector3 vParam1, int iParam2)
 	{
 		vVar0 = { ENTITY::GET_ENTITY_COORDS(iParam0, false) };
 	}
-	return GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vParam1, iParam2);
+	return GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar0, vParam1, bParam2);
 }
 
 void func_56()

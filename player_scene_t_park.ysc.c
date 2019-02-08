@@ -286,7 +286,7 @@ int func_2()
 								iLocal_170++;
 							}
 						}
-						else if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(&cLocal_89, iLocal_68, 0f, 0f, -1f, 0f, 0f, 0f, 1f, 0, 0, 0))
+						else if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(&cLocal_89, iLocal_68, 0f, 0f, -1f, 0f, 0f, 0f, 1065353216, 0, 0, 0))
 						{
 							if (GAMEPLAY::ARE_STRINGS_EQUAL(&cLocal_89, "scr_meth_pipe_smoke"))
 							{
@@ -320,7 +320,7 @@ int func_2()
 								iLocal_170++;
 							}
 						}
-						else if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(&cLocal_89, iLocal_68, 0f, 0f, -1f, 0f, 0f, 0f, 1f, 0, 0, 0))
+						else if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY(&cLocal_89, iLocal_68, 0f, 0f, -1f, 0f, 0f, 0f, 1065353216, 0, 0, 0))
 						{
 							if (GAMEPLAY::ARE_STRINGS_EQUAL(&cLocal_89, "scr_meth_pipe_smoke"))
 							{
@@ -630,7 +630,7 @@ int func_3(int iParam0, int iParam1)
 			{
 				func_7(1);
 			}
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar10, vVar8, vVar9, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar10, vVar8, vVar9, 1065353216, 0, 0, 0);
 			OBJECT::DELETE_OBJECT(iParam0);
 			return 1;
 			break;
@@ -718,7 +718,7 @@ int func_3(int iParam0, int iParam1)
 			{
 				func_7(1);
 			}
-			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar13, vVar11, vVar12, 1f, 0, 0, 0);
+			GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar13, vVar11, vVar12, 1065353216, 0, 0, 0);
 			OBJECT::DELETE_OBJECT(iParam0);
 			*iParam0 = OBJECT::CREATE_OBJECT(iVar14, vVar11, true, true, false);
 			ENTITY::SET_ENTITY_ROTATION(*iParam0, vVar12, 2, 1);

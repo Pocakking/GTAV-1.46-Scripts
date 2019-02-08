@@ -29985,28 +29985,28 @@ void func_158(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_159(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_161(iParam0, &Var0);
-		MemCopy(&cVar1, {func_156(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_160(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_156(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_160(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_160(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_160(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -35082,7 +35082,7 @@ void func_243()
 					{
 						CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_104, iLocal_103, "out_trunk_cam", sLocal_100);
 					}
-					CAM::SET_CAM_ACTIVE(iLocal_104, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_104, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					iLocal_106 = OBJECT::CREATE_OBJECT(iLocal_105, vLocal_101, true, true, false);
 					AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_103, sLocal_100, "out_trunk_trevor", 1000f, -2f, 2, 0, 1148846080, 0);
@@ -35184,7 +35184,7 @@ void func_243()
 				if (CAM::DOES_CAM_EXIST(iLocal_104))
 				{
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
-					CAM::SET_CAM_ACTIVE(iLocal_104, 0);
+					CAM::SET_CAM_ACTIVE(iLocal_104, false);
 					CAM::DESTROY_CAM(iLocal_104, 0);
 				}
 				if (bLocal_98)
@@ -36993,7 +36993,7 @@ void func_291()
 		CAM::SET_CAM_FOV(iLocal_374, 40.68f);
 		CAM::SHAKE_CAM(iLocal_374, "HAND_SHAKE", 1f);
 		CAM::ATTACH_CAM_TO_ENTITY(iLocal_374, Local_314, 3.32f, -6.08f, 4.28f, 1);
-		CAM::SET_CAM_ACTIVE(iLocal_374, 1);
+		CAM::SET_CAM_ACTIVE(iLocal_374, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	}
 }
@@ -37590,7 +37590,7 @@ void func_311()
 	{
 		if (CAM::IS_CAM_ACTIVE(iLocal_374))
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_374, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_374, false);
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		}
 		CAM::DESTROY_CAM(iLocal_374, 0);
@@ -49326,12 +49326,12 @@ void func_540(bool bParam0)
 	func_472(1, 1, 1);
 }
 
-void func_541(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_541(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);

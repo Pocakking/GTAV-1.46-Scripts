@@ -46,7 +46,7 @@
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	int iLocal_46 = 0;
-	var uLocal_47 = 0;
+	int iLocal_47 = 0;
 	var uLocal_48 = 0;
 	vector3 vLocal_49 = { 0f, 0f, 0f };
 	struct<2> Local_50[2];
@@ -1275,7 +1275,7 @@ void __EntryFunction__()
 	iLocal_41 = 49;
 	iLocal_42 = 64;
 	iLocal_46 = UI::_0x4A9923385BDB9DAD();
-	uLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	vLocal_49 = { 692.8256f, -1012.544f, 21.722f };
 	StringCopy(&cLocal_243, "", 64);
 	iLocal_244 = 1;
@@ -66995,20 +66995,20 @@ int func_382(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_383(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_383(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -97828,7 +97828,7 @@ void func_466(int iParam0, int iParam1, bool bParam2)
 	ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Local_52[iParam0 /*13*/], true, 0);
 	PED::SET_PED_TO_LOAD_COVER(Local_52[iParam0 /*13*/], 1);
 	PED::SET_PED_CONFIG_FLAG(Local_52[iParam0 /*13*/], 184, true);
-	AUDIO::STOP_PED_SPEAKING(Local_52[iParam0 /*13*/], 1);
+	AUDIO::STOP_PED_SPEAKING(Local_52[iParam0 /*13*/], true);
 	ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(Local_52[iParam0 /*13*/], true, 1);
 	PED::SET_PED_ACCURACY(Local_52[iParam0 /*13*/], 7);
 	PED::SET_PED_AS_COP(Local_52[iParam0 /*13*/], 1);

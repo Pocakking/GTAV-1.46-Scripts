@@ -4711,12 +4711,12 @@ void func_138()
 					if (iVar2 == 416676503)
 					{
 						sLocal_109 = "hold_up_head_additive_pistol";
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mp_am_hold_up", sLocal_109, 8f, -8f, -1, 305, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mp_am_hold_up", sLocal_109, 8f, -8f, -1, 305, 0f, 0, 0, 0);
 					}
 					else if ((((iVar2 == 1159398588 || iVar2 == 970310034) || iVar2 == 860033945) || iVar2 == -1212426201) || iVar2 == -957766203)
 					{
 						sLocal_109 = "hold_up_head_additive_rifle";
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mp_am_hold_up", sLocal_109, 8f, -8f, -1, 305, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "mp_am_hold_up", sLocal_109, 8f, -8f, -1, 305, 0f, 0, 0, 0);
 					}
 					else
 					{
@@ -7104,7 +7104,7 @@ int func_226()
 				{
 					AI::TASK_LOOK_AT_ENTITY(NETWORK::NET_TO_PED(Local_103), iVar1, -1, 0, 2);
 					PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(NETWORK::NET_TO_PED(Local_103), 16);
-					AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_103), "mp_am_hold_up", "WARY_LOOP", 4f, -4f, -1, 49, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_103), "mp_am_hold_up", "WARY_LOOP", 4f, -4f, -1, 49, 0f, 0, 0, 0);
 					GAMEPLAY::SET_BIT(&(Local_104[NETWORK::PARTICIPANT_ID_TO_INT() /*10*/]), 0);
 				}
 			}
@@ -8498,9 +8498,9 @@ void func_259()
 				ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), GAMEPLAY::GET_HEADING_FROM_VECTOR_2D((vLocal_129.x - vLocal_342.x), (vLocal_129.y - vLocal_342.y)));
 				AI::CLEAR_SEQUENCE_TASK(&uVar4);
 				AI::OPEN_SEQUENCE_TASK(&uVar4);
-				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "enter", 8f, -8f, 4000, 262144, 0, 0, 0, 0);
-				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "loop", 8f, -8f, 4000, 262145, 0, 0, 0, 0);
-				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "exit", 8f, -8f, 4000, 262144, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "enter", 8f, -8f, 4000, 262144, 0f, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "loop", 8f, -8f, 4000, 262145, 0f, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(0, "oddjobs@shop_robbery@rob_till", "exit", 8f, -8f, 4000, 262144, 0f, 0, 0, 0);
 				AI::CLOSE_SEQUENCE_TASK(uVar4);
 				AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), uVar4);
 				PED::SET_PED_USING_ACTION_MODE(PLAYER::PLAYER_PED_ID(), 0, -1, 0);
@@ -9244,7 +9244,7 @@ void func_266(var uParam0, var uParam1, var uParam2, var uParam3, vector3 vParam
 						}
 						else
 						{
-							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), func_162(), func_277(), 8f, -8f, -1, 1048576, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), func_162(), func_277(), 8f, -8f, -1, 1048576, 0f, 0, 0, 0);
 							uParam0->f_54 = 8;
 							uParam0->f_15 = GAMEPLAY::GET_GAME_TIMER();
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "SELECT", "HUD_LIQUOR_STORE_SOUNDSET", 1);
@@ -15540,22 +15540,22 @@ void func_390()
 {
 	AI::OPEN_SEQUENCE_TASK(&uLocal_119);
 	AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 0, 2);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_enter", 8f, -8f, -1, 262192, 0, 0, 0, 0);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_base", 8f, -4f, -1, 262193, 0, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_enter", 8f, -8f, -1, 262192, 0f, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_base", 8f, -4f, -1, 262193, 0f, 0, 0, 0);
 	AI::CLOSE_SEQUENCE_TASK(uLocal_119);
 	AI::OPEN_SEQUENCE_TASK(&uLocal_120);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_base", 4f, -4f, -1, 262193, 0, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "handsup_base", 4f, -4f, -1, 262193, 0f, 0, 0, 0);
 	AI::CLOSE_SEQUENCE_TASK(uLocal_120);
 	AI::OPEN_SEQUENCE_TASK(&uLocal_121);
 	AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_112, 2f, -1, 0.25f, 0, fLocal_113);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_intro", 8f, -4f, -1, 262144, 0, 0, 0, 0);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_loop", 8f, -4f, -1, 270337, 0, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_intro", 8f, -4f, -1, 262144, 0f, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_loop", 8f, -4f, -1, 270337, 0f, 0, 0, 0);
 	AI::TASK_SMART_FLEE_COORD(0, vLocal_112, 250f, -1, 1, 0);
 	AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 0);
 	AI::CLOSE_SEQUENCE_TASK(uLocal_121);
 	AI::OPEN_SEQUENCE_TASK(&uLocal_123);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_intro", 8f, -4f, -1, 262144, 0, 0, 0, 0);
-	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_loop", 8f, -4f, -1, 270337, 0, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_intro", 8f, -4f, -1, 262144, 0f, 0, 0, 0);
+	AI::TASK_PLAY_ANIM(0, "mp_am_hold_up", "cower_loop", 8f, -4f, -1, 270337, 0f, 0, 0, 0);
 	AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 0);
 	AI::CLOSE_SEQUENCE_TASK(uLocal_123);
 	AI::OPEN_SEQUENCE_TASK(&uLocal_122);

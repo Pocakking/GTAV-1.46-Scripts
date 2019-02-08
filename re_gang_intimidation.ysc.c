@@ -2233,9 +2233,9 @@ int func_34(struct<6> Param0, int iParam1, var uParam2)
 				{
 					AI::OPEN_SEQUENCE_TASK(&iLocal_48);
 					AI::TASK_STAND_STILL(0, 700);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_222[0 /*3*/], 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_222[0 /*3*/], 1f, -1, 1048576000, 0, 1193033728);
 					AI::TASK_ACHIEVE_HEADING(0, fLocal_223[0], 0);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, Param0.f_5, "sit_down_idle_01", vLocal_222[0 /*3*/], 0f, 0f, fLocal_223[0], 1000f, -4f, -1, 1, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, Param0.f_5, "sit_down_idle_01", vLocal_222[0 /*3*/], 0f, 0f, fLocal_223[0], 1000f, -4f, -1, 1, 0, 2, 0);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_48);
 					AI::TASK_PERFORM_SEQUENCE((*uParam2)[0], iLocal_48);
 					AI::CLEAR_SEQUENCE_TASK(&iLocal_48);
@@ -2245,7 +2245,7 @@ int func_34(struct<6> Param0, int iParam1, var uParam2)
 				{
 					AI::OPEN_SEQUENCE_TASK(&iLocal_48);
 					AI::TASK_STAND_STILL(0, 200);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_222[1 /*3*/], 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_222[1 /*3*/], 1f, -1, 1048576000, 0, 1193033728);
 					AI::TASK_WANDER_STANDARD(0, 1193033728, 0);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_48);
 					AI::TASK_PERFORM_SEQUENCE((*uParam2)[1], iLocal_48);
@@ -2319,7 +2319,7 @@ void func_36(var uParam0)
 			if (!PED::IS_PED_INJURED((*uParam0)[iVar0]))
 			{
 				iLocal_218[iVar0] = func_37((*uParam0)[iVar0], 1, 145);
-				ENTITY::SET_ENTITY_IS_TARGET_PRIORITY((*uParam0)[iVar0], 1, 0f);
+				ENTITY::SET_ENTITY_IS_TARGET_PRIORITY((*uParam0)[iVar0], 1, 0);
 			}
 		}
 		iVar0++;
@@ -3033,7 +3033,7 @@ int func_54(int iParam0, var uParam1)
 			{
 				AI::OPEN_SEQUENCE_TASK(&iLocal_48);
 				AI::TASK_STAND_STILL(0, 500);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_224, 2f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_224, 2f, 20000, 1048576000, 0, 1193033728);
 				AI::CLOSE_SEQUENCE_TASK(iLocal_48);
 				AI::CLEAR_SEQUENCE_TASK(&iLocal_48);
 				iLocal_48 = 0;
@@ -3063,7 +3063,7 @@ void func_55(int iParam0)
 	{
 		AI::CLEAR_PED_TASKS(iParam0);
 		AI::OPEN_SEQUENCE_TASK(&iLocal_48);
-		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1286.037f, -1623.207f, 53.2297f, 2f, -1, 0.25f, 0, 40000f);
+		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 1286.037f, -1623.207f, 53.2297f, 2f, -1, 1048576000, 0, 1193033728);
 		AI::TASK_COWER(0, -1);
 		AI::CLOSE_SEQUENCE_TASK(iLocal_48);
 		AI::TASK_PERFORM_SEQUENCE(iParam0, iLocal_48);

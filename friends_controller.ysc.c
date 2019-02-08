@@ -33836,7 +33836,7 @@ void func_260(var uParam0, var uParam1)
 				}
 				if (iVar4 == 0)
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(uParam1->f_2, vVar2, 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(uParam1->f_2, vVar2, 1f, -1, 1048576000, 0, 1193033728);
 					uParam1->f_4 = 60;
 				}
 			}
@@ -34516,7 +34516,7 @@ void func_278(var uParam0, var uParam1, var uParam2)
 		func_226(uParam2, Global_89061, PLAYER::PLAYER_PED_ID(), 0);
 		func_226(uParam2, uParam1->f_1, uParam1->f_2, 0);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam1->f_2, true);
-		AUDIO::STOP_PED_SPEAKING(uParam1->f_2, 0);
+		AUDIO::STOP_PED_SPEAKING(uParam1->f_2, false);
 		WEAPON::SET_CURRENT_PED_WEAPON(uParam1->f_2, joaat("weapon_unarmed"), true);
 		ENTITY::FREEZE_ENTITY_POSITION(uParam1->f_2, false);
 		ENTITY::_SET_ENTITY_REGISTER(uParam1->f_2, true);
@@ -37775,7 +37775,7 @@ void func_360(var uParam0, var uParam1)
 	{
 		PED::_0xA3A9299C4F2ADB98(uParam1->f_2);
 		PED::_RESET_PED_RAGDOLL_BLOCKING_FLAGS(uParam1->f_2, 16);
-		PED::SET_PED_CAN_SWITCH_WEAPON(uParam1->f_2, 1);
+		PED::SET_PED_CAN_SWITCH_WEAPON(uParam1->f_2, true);
 		func_273(uParam0, uParam1, 0);
 	}
 }

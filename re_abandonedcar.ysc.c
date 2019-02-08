@@ -46,7 +46,7 @@
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	int iLocal_46 = 0;
-	var uLocal_47 = 0;
+	int iLocal_47 = 0;
 	vector3 vLocal_48 = { 0f, 0f, 0f };
 	int iLocal_49 = 0;
 	int iLocal_50 = 0;
@@ -314,7 +314,7 @@ void __EntryFunction__()
 	iLocal_41 = 49;
 	iLocal_42 = 64;
 	iLocal_46 = UI::_0x4A9923385BDB9DAD();
-	uLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	vLocal_261 = { 1435.77f, 2983.11f, 40.77f };
 	vLocal_262 = { 2162.552f, 2122.646f, 124.7956f };
 	vLocal_54 = { ScriptParam_264.f_1[0 /*3*/] };
@@ -30568,7 +30568,7 @@ void func_177()
 						PED::SET_PED_COMBAT_RANGE(iLocal_234, 0);
 						PED::SET_COMBAT_FLOAT(iLocal_234, 2, 11f);
 						PED::SET_COMBAT_FLOAT(iLocal_234, 13, 1f);
-						AUDIO::STOP_PED_SPEAKING(iLocal_234, 1);
+						AUDIO::STOP_PED_SPEAKING(iLocal_234, true);
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(iLocal_234, iLocal_63);
 						func_181(&uLocal_66, 4, iLocal_234, "RAPIST", 0, 1);
 						PED::CLEAR_PED_ALTERNATE_WALK_ANIM(PLAYER::PLAYER_PED_ID(), -8f);
@@ -31749,7 +31749,7 @@ void func_214()
 		WEAPON::GIVE_WEAPON_TO_PED(iLocal_234, joaat("weapon_sawnoffshotgun"), -1, false, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_234, 1, false);
 		PED::SET_PED_ACCURACY(iLocal_234, 25);
-		AUDIO::STOP_PED_SPEAKING(iLocal_234, 1);
+		AUDIO::STOP_PED_SPEAKING(iLocal_234, true);
 		AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_234, "A_M_M_HillBilly_02_WHITE_MINI_01");
 		func_181(&uLocal_66, 4, iLocal_234, "INCESTBRO1", 0, 1);
 		iLocal_235 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_236, 26, iLocal_240, 0, 1, true);
@@ -31764,7 +31764,7 @@ void func_214()
 		WEAPON::GIVE_WEAPON_TO_PED(iLocal_235, joaat("weapon_pistol"), -1, false, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_235, 1, false);
 		PED::SET_PED_ACCURACY(iLocal_235, 25);
-		AUDIO::STOP_PED_SPEAKING(iLocal_235, 1);
+		AUDIO::STOP_PED_SPEAKING(iLocal_235, true);
 		AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_235, "A_M_M_HillBilly_02_WHITE_MINI_02");
 		func_181(&uLocal_66, 5, iLocal_235, "INCESTBRO2", 0, 1);
 		AI::TASK_PLAY_ANIM(iLocal_234, "random@train_tracks", "frontseat_carsex_loop_low_guy", 1000f, -8f, -1, 1, 0f, 0, 0, 0);

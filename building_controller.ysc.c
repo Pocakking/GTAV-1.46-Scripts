@@ -445,7 +445,7 @@ void func_1()
 			STREAMING::REQUEST_MODEL(476379176);
 			if (STREAMING::HAS_MODEL_LOADED(476379176))
 			{
-				iLocal_193[0] = OBJECT::CREATE_OBJECT_NO_OFFSET(476379176, 2222.883f, 5612.299f, 55.291f, 0, 0, 1);
+				iLocal_193[0] = OBJECT::CREATE_OBJECT_NO_OFFSET(476379176, 2222.883f, 5612.299f, 55.291f, 0, false, 1);
 				ENTITY::SET_ENTITY_ROTATION(iLocal_193[0], 0.5f, 0f, 15.325f, 2, 1);
 				ENTITY::FREEZE_ENTITY_POSITION(iLocal_193[0], true);
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(476379176);
@@ -463,7 +463,7 @@ void func_1()
 			STREAMING::REQUEST_MODEL(630616933);
 			if (STREAMING::HAS_MODEL_LOADED(630616933))
 			{
-				iLocal_193[1] = OBJECT::CREATE_OBJECT_NO_OFFSET(630616933, -362.402f, 4829.89f, 142.477f, 0, 0, 1);
+				iLocal_193[1] = OBJECT::CREATE_OBJECT_NO_OFFSET(630616933, -362.402f, 4829.89f, 142.477f, 0, false, 1);
 				ENTITY::SET_ENTITY_ROTATION(iLocal_193[1], 0f, 0f, 320f, 2, 1);
 				ENTITY::FREEZE_ENTITY_POSITION(iLocal_193[1], true);
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(630616933);
@@ -688,7 +688,7 @@ void func_15()
 	vVar1 = { func_24(iVar0) };
 	if (func_23(iVar0))
 	{
-		if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vVar1, 1) > 250f)
+		if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vVar1, true) > 250f)
 		{
 			func_22(iVar0, 0);
 			func_21(iVar0, 1);
@@ -722,7 +722,7 @@ void func_15()
 				}
 			}
 		}
-		if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vVar1, 1) > 250f && !bVar4)
+		if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vVar1, true) > 250f && !bVar4)
 		{
 			func_18(iVar0, 1);
 			func_16(iVar0, 0);
@@ -2635,11 +2635,11 @@ void func_26()
 	}
 	if (iLocal_81 == iLocal_82)
 	{
-		fLocal_83 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Global_35240[iLocal_81 /*31*/].f_2, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), 1);
+		fLocal_83 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Global_35240[iLocal_81 /*31*/].f_2, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), true);
 	}
 	else
 	{
-		fVar0 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Global_35240[iLocal_81 /*31*/].f_2, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), 1);
+		fVar0 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Global_35240[iLocal_81 /*31*/].f_2, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), true);
 		if (fVar0 < fLocal_83)
 		{
 			fLocal_83 = fVar0;
@@ -3206,7 +3206,7 @@ void func_35(int iParam0)
 					{
 						if (SCRIPT::_GET_NUM_OF_INSTANCES_OF_SCRIPT_WITH_NAME_HASH(Global_84115[78 /*34*/].f_6) == 0)
 						{
-							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[13 /*31*/].f_2, 1) <= 100f)
+							if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[13 /*31*/].f_2, true) <= 100f)
 							{
 								if (!func_45(13, PLAYER::PLAYER_PED_ID()))
 								{
@@ -3232,7 +3232,7 @@ void func_35(int iParam0)
 				case 16:
 					if (SCRIPT::_GET_NUM_OF_INSTANCES_OF_SCRIPT_WITH_NAME_HASH(Global_84115[9 /*34*/].f_6) == 0 && SCRIPT::_GET_NUM_OF_INSTANCES_OF_SCRIPT_WITH_NAME_HASH(joaat("extreme2")) == 0)
 					{
-						if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[17 /*31*/].f_2, 1) <= 100f)
+						if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[17 /*31*/].f_2, true) <= 100f)
 						{
 							switch (func_39())
 							{
@@ -3327,7 +3327,7 @@ void func_35(int iParam0)
 					break;
 				
 				case 22:
-					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[22 /*31*/].f_2, 1) <= 100f)
+					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Global_35240[22 /*31*/].f_2, true) <= 100f)
 					{
 						switch (func_39())
 						{
@@ -3774,7 +3774,7 @@ void func_48(int iParam0)
 	}
 	bVar1 = false;
 	bVar2 = false;
-	fVar4 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), 1);
+	fVar4 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var0, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1), true);
 	if ((GAMEPLAY::IS_BIT_SET(Global_31913[(iParam0 / 32)], (iParam0 % 32)) && Global_32376[iParam0] == 2) && fVar4 > 210f)
 	{
 		GAMEPLAY::CLEAR_BIT(&(Global_31913[(iParam0 / 32)]), (iParam0 % 32));
@@ -8061,7 +8061,7 @@ int func_78(int iParam0)
 		{
 			if (GAMEPLAY::GET_HASH_KEY(&(vLocal_95.f_8[2 /*8*/])) != GAMEPLAY::GET_HASH_KEY(""))
 			{
-				if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vLocal_95, 1) > 250f)
+				if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), vLocal_95, true) > 250f)
 				{
 					func_79(iParam0, 2, 0, 1, 0);
 				}
@@ -8228,7 +8228,7 @@ bool func_82(int iParam0, bool bParam1, int iParam2, bool bParam3)
 		{
 			if (iParam2 == 0)
 			{
-				if (Global_33084[iParam0] && GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Var3, 1) < 200f)
+				if (Global_33084[iParam0] && GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), Var3, true) < 200f)
 				{
 					bVar5 = false;
 					Global_1645162 = 1;
@@ -8468,7 +8468,7 @@ bool func_82(int iParam0, bool bParam1, int iParam2, bool bParam3)
 					break;
 				
 				case 3:
-					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var3, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), 1) < 250f)
+					if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(Var3, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), true) < 250f)
 					{
 						uVar4 = OBJECT::_0xB48FCED898292E52(Var3, 25f, &(Var3.f_8[0 /*8*/]));
 						if (OBJECT::_0x52AF537A0C5B8AAD(uVar4))

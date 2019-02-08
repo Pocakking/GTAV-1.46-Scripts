@@ -47,7 +47,7 @@
 	var uLocal_45 = 0;
 	var uLocal_46 = 0;
 	int iLocal_47 = 0;
-	var uLocal_48 = 0;
+	int iLocal_48 = 0;
 	struct<4> Local_49[10];
 	bool bLocal_50 = 0;
 	int iLocal_51 = 0;
@@ -128,7 +128,7 @@ void __EntryFunction__()
 	iLocal_42 = 49;
 	iLocal_43 = 64;
 	iLocal_47 = UI::_0x4A9923385BDB9DAD();
-	uLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	uLocal_52 = func_317(64);
 	uLocal_53 = func_317(63);
 	iLocal_54 = joaat("u_m_m_aldinapoli");
@@ -9291,13 +9291,13 @@ void func_200(int iParam0, var uParam1, int iParam2)
 								AI::OPEN_SEQUENCE_TASK(&iVar0);
 								if (func_202(uParam1))
 								{
-									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0f, 2, 0);
+									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0, 2, 0);
 								}
 								else
 								{
-									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0f, 2, 0);
+									AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 1000f, -8f, -1, 262152, 0, 2, 0);
 								}
-								AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+								AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 								AI::CLOSE_SEQUENCE_TASK(iVar0);
 								AI::TASK_PERFORM_SEQUENCE(iParam0, iVar0);
 								AI::CLEAR_SEQUENCE_TASK(&iVar0);
@@ -9305,7 +9305,7 @@ void func_200(int iParam0, var uParam1, int iParam2)
 						}
 						else
 						{
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 3);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 3);
 						}
 						uParam1->f_3 = 2;
 					}
@@ -9344,8 +9344,8 @@ void func_200(int iParam0, var uParam1, int iParam2)
 				}
 				else
 				{
-					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 4f, -4f, -1, 262152, 0f, 2, 0);
-					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_2, uParam1->f_5, uParam1->f_8, 4f, -4f, -1, 262152, 0, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 				}
 				AI::CLOSE_SEQUENCE_TASK(iVar1);
 				AI::TASK_PERFORM_SEQUENCE(iParam0, iVar1);
@@ -9370,7 +9370,7 @@ void func_200(int iParam0, var uParam1, int iParam2)
 					}
 					else
 					{
-						AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(iParam0, *uParam1, uParam1->f_1, uParam1->f_5, uParam1->f_8, 8f, -8f, -1, 262153, 0, 2, 0);
 					}
 					uParam1->f_3 = 2;
 				}
@@ -11422,7 +11422,7 @@ int func_264(var uParam0, var uParam1)
 				WEAPON::GIVE_WEAPON_TO_PED(uParam0->f_28[iVar2], joaat("weapon_pistol"), -1, false, true);
 				ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(uParam0->f_28[iVar2], true);
 				PED::SET_PED_CAN_BE_TARGETTED(uParam0->f_28[iVar2], true);
-				PED::SET_PED_DIES_WHEN_INJURED(uParam0->f_28[iVar2], 1);
+				PED::SET_PED_DIES_WHEN_INJURED(uParam0->f_28[iVar2], true);
 				AI::SET_PED_PATH_PREFER_TO_AVOID_WATER(uParam0->f_28[iVar2], 1);
 				PED::SET_PED_MODEL_IS_SUPPRESSED(iVar0[0], true);
 				iVar2++;
@@ -11555,7 +11555,7 @@ int func_268(var uParam0)
 			PED::SET_PED_CONFIG_FLAG(uParam0->f_28[0], 132, true);
 			ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(uParam0->f_28[0], true);
 			PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(uParam0->f_28[0], 0);
-			AUDIO::STOP_PED_SPEAKING(uParam0->f_28[0], 1);
+			AUDIO::STOP_PED_SPEAKING(uParam0->f_28[0], true);
 			AI::OPEN_SEQUENCE_TASK(&iVar3);
 			AI::TASK_PLAY_ANIM(0, sVar2, "base", 8f, -8f, -1, 0, 0f, 0, 0, 0);
 			AI::TASK_PLAY_ANIM(0, sVar2, "dexy_stay_there", 8f, -8f, -1, 0, 0f, 0, 0, 0);

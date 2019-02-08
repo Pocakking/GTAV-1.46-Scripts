@@ -51950,20 +51950,20 @@ int func_336(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_337(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_337(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -117537,7 +117537,7 @@ void func_808()
 				}
 				if (CAM::DOES_CAM_EXIST(iLocal_4992))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_4992, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_4992, true);
 				}
 				if (bVar0)
 				{
@@ -117694,8 +117694,8 @@ void func_808()
 				}
 				iLocal_4992 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_5331, vLocal_5332, fLocal_5333, 0, 2);
 				iLocal_4991 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_5331.x, vLocal_5331.y, (vLocal_5331.z + 1000f), 90f, vLocal_5332.y, vLocal_5332.z, fLocal_5333, 0, 2);
-				CAM::SET_CAM_ACTIVE(iLocal_4991, 1);
-				CAM::SET_CAM_ACTIVE(iLocal_4992, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_4991, true);
+				CAM::SET_CAM_ACTIVE(iLocal_4992, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SET_CINEMATIC_MODE_ACTIVE(0);
 				CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_4991, iLocal_4992, 500, 1, 1);
@@ -121431,7 +121431,7 @@ void func_935()
 	}
 }
 
-void func_936(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, char* sParam7)
+void func_936(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, int iParam7)
 {
 	func_580(iParam1);
 	if (bParam2)
@@ -121444,15 +121444,15 @@ void func_936(char* sParam0, int iParam1, bool bParam2, int iParam3, float fPara
 	}
 	if (iParam3 != 0)
 	{
-		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, sParam7, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, iParam7, 0, 0);
 	}
 	else if ((fParam4 != 0f || fParam5 != 0f) || fParam6 != 0f)
 	{
-		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, sParam7, 0, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, iParam7, 0, 0, 0);
 	}
 	else
 	{
-		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, sParam7, true);
+		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, iParam7, true);
 	}
 }
 
@@ -134443,13 +134443,13 @@ int func_1186()
 					{
 						case 0:
 						case 1:
-							AI::TASK_HELI_MISSION(PLAYER::PLAYER_PED_ID(), Local_2143, 0, 0, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_2143, 0f, 100f, 0f), 6, 1f, 1f, 1f, 10, 10, -1082130432, 0);
+							AI::TASK_HELI_MISSION(PLAYER::PLAYER_PED_ID(), Local_2143, 0, 0, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_2143, 0f, 100f, 0f), 6, 1f, 1f, 1f, 10, 10, -1f, 0);
 							iLocal_7688++;
 							iLocal_7687 = GAMEPLAY::GET_GAME_TIMER() + 2000;
 							break;
 						
 						default:
-							AI::TASK_HELI_MISSION(PLAYER::PLAYER_PED_ID(), Local_2143, 0, 0, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_2143, 0f, 100f, 0f), 6, 1f, 1f, 1f, 10, 10, -1082130432, 0);
+							AI::TASK_HELI_MISSION(PLAYER::PLAYER_PED_ID(), Local_2143, 0, 0, ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_2143, 0f, 100f, 0f), 6, 1f, 1f, 1f, 10, 10, -1f, 0);
 							AI::ADD_VEHICLE_SUBTASK_ATTACK_COORD(PLAYER::PLAYER_PED_ID(), ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_2143, 0f, 100f, 0f));
 							iLocal_7688 = 0;
 							iLocal_7687 = GAMEPLAY::GET_GAME_TIMER() + 2000;
@@ -152376,7 +152376,7 @@ int func_1518()
 		iVar0 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_355.x, vLocal_355.y, (vLocal_355.z + 1000f), vLocal_356, 50f, 1, 2);
 		if (CAM::DOES_CAM_EXIST(iVar0))
 		{
-			CAM::SET_CAM_ACTIVE(iVar0, 1);
+			CAM::SET_CAM_ACTIVE(iVar0, true);
 		}
 		if (CAM::IS_CAM_ACTIVE(iVar0))
 		{
@@ -152395,7 +152395,7 @@ int func_1518()
 	}
 	if (CAM::DOES_CAM_EXIST(iVar0))
 	{
-		CAM::SET_CAM_ACTIVE(iVar0, 0);
+		CAM::SET_CAM_ACTIVE(iVar0, false);
 		CAM::DESTROY_CAM(iVar0, 1);
 	}
 	return 1;
@@ -155436,7 +155436,7 @@ void func_1574(var uParam0, float fParam1, vector3 vParam2, vector3 vParam3, flo
 		CAM::SET_CAM_COORD(uParam0->f_1.f_39, vParam2);
 		CAM::SET_CAM_ROT(uParam0->f_1.f_39, vParam3, 2);
 		CAM::SET_CAM_FOV(uParam0->f_1.f_39, fParam4);
-		CAM::SET_CAM_ACTIVE(uParam0->f_1.f_39, 1);
+		CAM::SET_CAM_ACTIVE(uParam0->f_1.f_39, true);
 		CAM::SHAKE_CAM(uParam0->f_1.f_39, "HAND_SHAKE", fParam1);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		GAMEPLAY::SET_BIT(&(uParam0->f_1), 15);
@@ -158595,11 +158595,11 @@ bool func_1756()
 	return Global_2448386.f_11;
 }
 
-void func_1757(float fParam0)
+void func_1757(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }
@@ -158617,11 +158617,11 @@ void func_1759()
 	func_1760(-1f);
 }
 
-void func_1760(float fParam0)
+void func_1760(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }

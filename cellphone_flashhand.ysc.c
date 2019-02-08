@@ -28,7 +28,7 @@
 	float fLocal_26 = 0f;
 	float fLocal_27 = 0f;
 	int iLocal_28 = 0;
-	var uLocal_29 = 0;
+	int iLocal_29 = 0;
 	int iLocal_30 = 0;
 	int iLocal_31 = 0;
 	int iLocal_32 = 0;
@@ -1736,14 +1736,14 @@ void func_8()
 	Global_16833 = 0;
 	if ((AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_14513.f_1 == 9) || Global_14512 == 1)
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_15822 = 6;
 		Global_14513.f_1 = 3;
 		return;
 	}
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(1);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(true);
 		Global_15822 = 6;
 		return;
 	}
@@ -2078,7 +2078,7 @@ void func_18()
 		Global_2989 = 0;
 		Global_14491 = 1;
 		GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(Global_14494, "GET_CURRENT_SELECTION");
-		uLocal_29 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
+		iLocal_29 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
 		iLocal_30 = 1;
 	}
 	else if (Global_14491 == 0)
@@ -2091,7 +2091,7 @@ void func_18()
 				Global_2989 = 0;
 				Global_14491 = 1;
 				GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(Global_14494, "GET_CURRENT_SELECTION");
-				uLocal_29 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
+				iLocal_29 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
 				iLocal_30 = 1;
 			}
 		}
@@ -3498,10 +3498,10 @@ void func_36()
 	int iVar0;
 	int iVar1;
 	
-	if (GRAPHICS::_0x768FF8961BA904D6(uLocal_29))
+	if (GRAPHICS::_0x768FF8961BA904D6(iLocal_29))
 	{
 		iLocal_30 = 0;
-		iLocal_28 = GRAPHICS::_0x2DE7EFA66B906036(uLocal_29);
+		iLocal_28 = GRAPHICS::_0x2DE7EFA66B906036(iLocal_29);
 		if (Global_14682 == 0)
 		{
 			Global_14517 = iLocal_28;
@@ -4424,7 +4424,7 @@ void func_52()
 	{
 		AUDIO::RESTART_SCRIPTED_CONVERSATION();
 		Global_16833 = 0;
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_15822 = 6;
 		Global_14513.f_1 = Global_14515;
 		return;
@@ -4488,7 +4488,7 @@ void func_56(int iParam0)
 	}
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	}
 	Global_15822 = 5;
 	if (iParam0 == 1)
@@ -4861,7 +4861,7 @@ int func_69()
 void func_70(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 void func_71()

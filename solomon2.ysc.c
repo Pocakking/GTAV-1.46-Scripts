@@ -89,7 +89,7 @@
 	var uLocal_87 = 0;
 	var uLocal_88 = 0;
 	int iLocal_89 = 0;
-	var uLocal_90 = 0;
+	int iLocal_90 = 0;
 	int iLocal_91 = 0;
 	int iLocal_92 = 0;
 	int iLocal_93 = 0;
@@ -456,7 +456,7 @@ void __EntryFunction__()
 	iLocal_84 = 49;
 	iLocal_85 = 64;
 	iLocal_89 = UI::_0x4A9923385BDB9DAD();
-	uLocal_90 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_90 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	sLocal_204 = "SOL2";
 	vLocal_209 = { 0f, 0f, 0f };
 	vLocal_210 = { -1011.528f, -480.0313f, 38.9757f };
@@ -31351,7 +31351,7 @@ int func_195(int iParam0, bool bParam1)
 					if (func_451(iLocal_233))
 					{
 						PED::SET_PED_MOVEMENT_CLIPSET(iLocal_233, "move_injured_generic", 1048576000);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_233, vLocal_210, 1f, 60000, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_233, vLocal_210, 1f, 60000, 1048576000, 0, 1193033728);
 					}
 					if (func_451(Local_229))
 					{
@@ -31384,7 +31384,7 @@ int func_195(int iParam0, bool bParam1)
 						GAMEPLAY::CLEAR_AREA_OF_PEDS(-1176.525f, -550.9145f, 27.73062f, 9.22f, 0);
 						bLocal_202 = false;
 						PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -530524, false, 0, 0);
-						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0f, 1, 0);
+						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0, 1, 0);
 						PED::SET_PED_USING_ACTION_MODE(PLAYER::PLAYER_PED_ID(), true, -1, "DEFAULT_ACTION");
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 						func_205(1084227584, 1092616192);
@@ -33478,12 +33478,12 @@ int func_210(int iParam0, char* sParam1, int iParam2)
 	return 0;
 }
 
-void func_211(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_211(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -33789,7 +33789,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 				Local_229 = Global_89824.f_9[0];
 				if (func_451(Local_229))
 				{
-					AUDIO::STOP_PED_SPEAKING(Local_229, 1);
+					AUDIO::STOP_PED_SPEAKING(Local_229, true);
 					PED::SET_PED_CONFIG_FLAG(Local_229, 214, false);
 					func_224(&uLocal_238, 3, Local_229, "ROCCO", 0, 1);
 					PED::SET_PED_PLAYS_HEAD_ON_HORN_ANIM_WHEN_DIES_IN_VEHICLE(Local_229, 1);
@@ -33799,7 +33799,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 			}
 			else if (func_223(&Local_229, Local_229.f_5, Local_229.f_1, Local_229.f_4, 1, 0, 1, 1))
 			{
-				AUDIO::STOP_PED_SPEAKING(Local_229, 1);
+				AUDIO::STOP_PED_SPEAKING(Local_229, true);
 				PED::SET_PED_CONFIG_FLAG(Local_229, 214, false);
 				func_224(&uLocal_238, 3, Local_229, "ROCCO", 0, 1);
 				PED::SET_PED_PLAYS_HEAD_ON_HORN_ANIM_WHEN_DIES_IN_VEHICLE(Local_229, 1);
@@ -33815,7 +33815,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 				Local_230 = Global_89824.f_9[1];
 				if (func_451(Local_230))
 				{
-					AUDIO::STOP_PED_SPEAKING(Local_230, 1);
+					AUDIO::STOP_PED_SPEAKING(Local_230, true);
 					PED::SET_PED_CONFIG_FLAG(Local_230, 214, false);
 					func_224(&uLocal_238, 4, Local_230, "GIANNI", 0, 1);
 					WEAPON::GIVE_WEAPON_TO_PED(Local_230, joaat("weapon_pistol"), -1, false, true);
@@ -33826,7 +33826,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 			}
 			else if (func_223(&Local_230, Local_230.f_5, Local_230.f_1, Local_230.f_4, 1, 0, 1, 1))
 			{
-				AUDIO::STOP_PED_SPEAKING(Local_230, 1);
+				AUDIO::STOP_PED_SPEAKING(Local_230, true);
 				PED::SET_PED_CONFIG_FLAG(Local_230, 214, false);
 				WEAPON::GIVE_WEAPON_TO_PED(Local_230, joaat("weapon_pistol"), -1, false, true);
 				func_224(&uLocal_238, 4, Local_230, "GIANNI", 0, 1);
@@ -33843,7 +33843,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 				iLocal_233 = Global_89824.f_9[2];
 				if (func_451(iLocal_233))
 				{
-					AUDIO::STOP_PED_SPEAKING(iLocal_233, 1);
+					AUDIO::STOP_PED_SPEAKING(iLocal_233, true);
 					PED::SET_PED_CAN_BE_TARGETTED(iLocal_233, false);
 					ENTITY::SET_ENTITY_PROOFS(iLocal_233, true, false, false, false, true, false, 0, false);
 					return 1;
@@ -33851,7 +33851,7 @@ int func_222(int iParam0, vector3 vParam1, float fParam2)
 			}
 			else if (func_223(&iLocal_233, joaat("ig_solomon"), -1031.94f, -544.25f, 35.29f, 40.97f, 1, 0, 1, 1))
 			{
-				AUDIO::STOP_PED_SPEAKING(iLocal_233, 1);
+				AUDIO::STOP_PED_SPEAKING(iLocal_233, true);
 				PED::SET_PED_DEFAULT_COMPONENT_VARIATION(iLocal_233);
 				return 1;
 			}
@@ -34187,7 +34187,7 @@ int func_237()
 		case 1:
 			iLocal_208 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, -1017f, -483.5f, 40.7f, 49.6f, 0f, -78.9f, 50f, 0, 2);
 			CAM::SHAKE_CAM(iLocal_208, "hand_shake", 0.5f);
-			CAM::SET_CAM_ACTIVE(iLocal_208, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_208, true);
 			CAM::RENDER_SCRIPT_CAMS(true, true, 3500, 1, 1, 0);
 			iLocal_214 = GAMEPLAY::GET_GAME_TIMER();
 			iLocal_96 = 2;
@@ -40419,7 +40419,7 @@ void func_341()
 			}
 			if (SYSTEM::TIMERA() < 1250)
 			{
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0, 1, 0);
 			}
 			else
 			{
@@ -42095,7 +42095,7 @@ void func_389(int iParam0, bool bParam1)
 			{
 				AI::CLEAR_PED_TASKS(iParam0);
 			}
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, 0);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, false);
 			AI::TASK_SMART_FLEE_PED(iParam0, PLAYER::PLAYER_PED_ID(), 550f, -1, 1, 0);
 			PED::SET_PED_KEEP_TASK(iParam0, true);
 		}
@@ -42435,7 +42435,7 @@ void func_404()
 			{
 				PED::SET_PED_USING_ACTION_MODE(PLAYER::PLAYER_PED_ID(), true, -1, "DEFAULT_ACTION");
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -530524, false, 1, 1);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0, 1, 0);
 			}
 			if (CUTSCENE::CAN_SET_EXIT_STATE_FOR_REGISTERED_ENTITY("Rocco", 0))
 			{
@@ -42484,7 +42484,7 @@ void func_404()
 			if (func_451(iLocal_233))
 			{
 				PED::SET_PED_MOVEMENT_CLIPSET(iLocal_233, "move_injured_generic", 1048576000);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_233, vLocal_210, 0.2f, 60000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_233, vLocal_210, 0.2f, 60000, 1048576000, 0, 1193033728);
 			}
 			UNK1::_0x81CBAE94390F9F89();
 			func_231(0);
@@ -42515,7 +42515,7 @@ void func_404()
 			}
 			CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 			PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -530524, false, 1, 0);
-			PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0f, 1, 0);
+			PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 2f, 2000, 0, 1, 0);
 			iLocal_92 = 2;
 			break;
 	}

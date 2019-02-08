@@ -567,7 +567,7 @@ void func_1()
 				if (CAM::DOES_CAM_EXIST(iLocal_329))
 				{
 					CAM::SET_CAM_PARAMS(iLocal_329, vLocal_335[0 /*3*/], vLocal_336[0 /*3*/], 45f, 0, 1, 1, 2);
-					CAM::SET_CAM_ACTIVE(iLocal_329, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_329, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 					CAM::SHAKE_CAM(iLocal_329, "HAND_SHAKE", (0.2f / 3f));
 				}
@@ -35603,20 +35603,20 @@ int func_193(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_194(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_194(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -95714,7 +95714,7 @@ void func_415()
 	{
 		if ((ENTITY::DOES_ENTITY_EXIST(iLocal_41) && iLocal_327) && ENTITY::DOES_ENTITY_HAVE_DRAWABLE(iLocal_41))
 		{
-			ENTITY::PLAY_ENTITY_ANIM(iLocal_41, "base_drink_bottle", sLocal_341, 1000f, 0, 1, 0, 0, 0);
+			ENTITY::PLAY_ENTITY_ANIM(iLocal_41, "base_drink_bottle", sLocal_341, 1000f, 0, 1, 0, 0f, 0);
 		}
 		if (iLocal_327)
 		{

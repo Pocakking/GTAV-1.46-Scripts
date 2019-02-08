@@ -629,7 +629,7 @@ void __EntryFunction__()
 													}
 													else if (iLocal_47 == 2)
 													{
-														AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 0.25f, 0, 40000f);
+														AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 1048576000, 0, 1193033728);
 													}
 													AI::TASK_SMART_FLEE_COORD(0, vLocal_59, 150f, -1, 0, 0);
 													AI::CLOSE_SEQUENCE_TASK(iLocal_87);
@@ -1258,7 +1258,7 @@ void func_1()
 			if (!PED::IS_PED_INJURED(iLocal_67[0]))
 			{
 				func_52();
-				CAM::SET_CAM_ACTIVE(iLocal_129, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_129, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				SYSTEM::SETTIMERA(0);
 				iLocal_114 = 1;
@@ -1298,7 +1298,7 @@ void func_1()
 		}
 		AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 		PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
-		PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 650, 0f, 1, 0);
+		PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 650, 0, 1, 0);
 		func_134(0, 1, 1, 0, 0);
 		PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 4);
 		UI::DISPLAY_HUD(true);
@@ -6786,12 +6786,12 @@ void func_105()
 			}
 			else
 			{
-				vLocal_61 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_66[0], true), 1067030938, 1069547520) };
+				vLocal_61 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_66[0], true), 1.2f, 1.5f) };
 			}
 		}
 		else if (ENTITY::DOES_ENTITY_EXIST(iLocal_106))
 		{
-			vLocal_61 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_106, false), 1067030938, 1069547520) };
+			vLocal_61 = { OBJECT::GET_SAFE_PICKUP_COORDS(ENTITY::GET_ENTITY_COORDS(iLocal_106, false), 1.2f, 1.5f) };
 		}
 		vLocal_61 = { vLocal_61.x, vLocal_61.y, (vLocal_61.z + 0.25f) };
 		iLocal_62 = OBJECT::CREATE_PICKUP(joaat("pickup_money_med_bag"), vLocal_61, iLocal_60, iLocal_118, 1, joaat("prop_cs_duffel_01"));
@@ -8219,8 +8219,8 @@ void func_147()
 					if (!PED::IS_PED_INJURED(iLocal_66[0]))
 					{
 						AI::CLEAR_PED_TASKS(iLocal_66[0]);
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[0], 128, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[0], 1, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[0], 128, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[0], 1, true);
 						PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_66[0], 17, true);
 						PED::SET_PED_MAX_MOVE_BLEND_RATIO(iLocal_66[0], 1.6f);
 						ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iLocal_66[0], true, 1);
@@ -8236,8 +8236,8 @@ void func_147()
 					}
 					if (!PED::IS_PED_INJURED(iLocal_66[1]))
 					{
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[1], 128, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[1], 1, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[1], 128, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[1], 1, true);
 						PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_66[1], 17, true);
 						PED::SET_PED_MAX_MOVE_BLEND_RATIO(iLocal_66[1], 1.6f);
 						ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(iLocal_66[1], true, 1);
@@ -8266,7 +8266,7 @@ void func_148()
 			func_134(1, 1, 1, 0, 0);
 			GAMEPLAY::CLEAR_AREA_OF_PEDS(func_149(PLAYER::PLAYER_ID()), 10f, 0);
 			iLocal_145 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
-			CAM::SET_CAM_ACTIVE(iLocal_145, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_145, true);
 			CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_145, iLocal_135, "robbery_action_cam", "random@shop_robbery");
 			if (iLocal_47 == 1)
 			{
@@ -8291,7 +8291,7 @@ void func_148()
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(-18.1582f, 1065353216);
 				}
 				STREAMING::NEW_LOAD_SCENE_STOP();
-				CAM::SET_CAM_ACTIVE(iLocal_145, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_145, false);
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				func_52();
 				func_134(0, 1, 1, 0, 0);
@@ -8454,7 +8454,7 @@ void func_151()
 		PED::SET_PED_COMBAT_ABILITY(iLocal_115, 0);
 		PED::SET_PED_ACCURACY(iLocal_115, 13);
 		WEAPON::GIVE_WEAPON_TO_PED(iLocal_115, joaat("weapon_pistol"), -1, true, true);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_115, 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_115, 1, 0);
 		PED::SET_PED_CONFIG_FLAG(iLocal_115, 42, true);
 		iLocal_107 = 1;
 	}
@@ -9008,12 +9008,12 @@ void func_167()
 		{
 			func_168(iLocal_67[1], "WHIMPER", "WAVELOAD_PAIN_FEMALE", 3);
 		}
-		AUDIO::PLAY_PAIN(iLocal_67[1], 26, 0, 0);
+		AUDIO::PLAY_PAIN(iLocal_67[1], 26, 0f, 0);
 	}
 	if (!PED::IS_PED_INJURED(iLocal_68[1]))
 	{
 		func_168(iLocal_68[1], "SCREAM_PANIC", "WAVELOAD_PAIN_FEMALE", 3);
-		AUDIO::PLAY_PAIN(iLocal_68[1], 3, 0, 0);
+		AUDIO::PLAY_PAIN(iLocal_68[1], 3, 0f, 0);
 	}
 }
 
@@ -9161,13 +9161,13 @@ void func_170()
 		PED::SET_PED_COMBAT_ABILITY(iLocal_66[iVar0], 0);
 		PED::SET_PED_ACCURACY(iLocal_66[iVar0], 13);
 		WEAPON::GIVE_WEAPON_TO_PED(iLocal_66[iVar0], joaat("weapon_pistol"), -1, true, true);
-		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_66[iVar0], 1, 0f);
+		ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_66[iVar0], 1, 0);
 		PED::SET_PED_CONFIG_FLAG(iLocal_66[iVar0], 42, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_66[iVar0], 269, true);
 		PED::SET_PED_CONFIG_FLAG(iLocal_66[iVar0], 188, true);
 		PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iLocal_66[iVar0], 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[iVar0], 128, 1);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[iVar0], 8, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[iVar0], 128, true);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_66[iVar0], 8, true);
 		iVar0++;
 	}
 	PED::SET_PED_NAME_DEBUG(iLocal_66[0], "pedRobber[0]");
@@ -11893,7 +11893,7 @@ void func_228()
 					else if (iLocal_47 == 2)
 					{
 						AI::CLEAR_PED_TASKS(iLocal_68[iVar0]);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 1048576000, 0, 1193033728);
 					}
 					AI::TASK_SMART_FLEE_COORD(0, vLocal_59, 150f, -1, 0, 0);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_87);
@@ -11931,7 +11931,7 @@ void func_228()
 						if (iLocal_47 == 2)
 						{
 							AI::CLEAR_PED_TASKS(iLocal_67[iVar0]);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1201.476f, -790.2733f, 15.5475f, 2f, -1, 1048576000, 0, 1193033728);
 						}
 						AI::TASK_SMART_FLEE_COORD(0, vLocal_59, 150f, -1, 0, 0);
 						AI::CLOSE_SEQUENCE_TASK(iLocal_87);

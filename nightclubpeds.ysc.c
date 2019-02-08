@@ -21166,7 +21166,7 @@ int func_138(var uParam0, var uParam1, var uParam2, int iParam3)
 										{
 											if (func_226(uParam2->f_6))
 											{
-												AI::TASK_PLAY_ANIM_ADVANCED(*uParam2, uParam1->f_5.f_324[iVar17 /*48*/], &(uParam1->f_5.f_324[iVar17 /*48*/].f_1), *uParam1, 0f, 0f, uParam1->f_3, fVar0, fVar1, -1, 790530, 0f, 2, 3);
+												AI::TASK_PLAY_ANIM_ADVANCED(*uParam2, uParam1->f_5.f_324[iVar17 /*48*/], &(uParam1->f_5.f_324[iVar17 /*48*/].f_1), *uParam1, 0f, 0f, uParam1->f_3, fVar0, fVar1, -1, 790530, 0, 2, 3);
 											}
 											else if (func_350(uParam2->f_6))
 											{
@@ -21190,7 +21190,7 @@ int func_138(var uParam0, var uParam1, var uParam2, int iParam3)
 											fVar19 = 0f;
 											vVar20 = { ENTITY::GET_ENTITY_COORDS(*uParam2, false) };
 											uParam1->f_2 = vVar20.z;
-											AI::TASK_PLAY_ANIM_ADVANCED(*uParam2, uParam1->f_5.f_324[iVar17 /*48*/], &(uParam1->f_5.f_324[iVar17 /*48*/].f_1), *uParam1, 0f, 0f, uParam1->f_3, fVar0, fVar1, -1, 2, 0f, 2, 0);
+											AI::TASK_PLAY_ANIM_ADVANCED(*uParam2, uParam1->f_5.f_324[iVar17 /*48*/], &(uParam1->f_5.f_324[iVar17 /*48*/].f_1), *uParam1, 0f, 0f, uParam1->f_3, fVar0, fVar1, -1, 2, 0, 2, 0);
 											iVar18 = 0;
 											iVar18 = 0;
 											while (iVar18 < iVar11)
@@ -21198,7 +21198,7 @@ int func_138(var uParam0, var uParam1, var uParam2, int iParam3)
 												if (ENTITY::DOES_ENTITY_EXIST((*uParam0)[uParam0->f_7255[uParam2->f_41[iVar18]] /*58*/]) && !ENTITY::IS_ENTITY_DEAD((*uParam0)[uParam0->f_7255[uParam2->f_41[iVar18]] /*58*/], 0))
 												{
 													Var10[iVar18 /*607*/].f_2 = vVar20.z;
-													AI::TASK_PLAY_ANIM_ADVANCED((*uParam0)[uParam0->f_7255[uParam2->f_41[iVar18]] /*58*/], Var10[iVar18 /*607*/].f_5.f_324[iVar17 /*48*/], &(Var10[iVar18 /*607*/].f_5.f_324[iVar17 /*48*/].f_1), Var10[iVar18 /*607*/], 0f, 0f, Var10[iVar18 /*607*/].f_3, fVar0, fVar1, -1, 2, 0f, 2, 0);
+													AI::TASK_PLAY_ANIM_ADVANCED((*uParam0)[uParam0->f_7255[uParam2->f_41[iVar18]] /*58*/], Var10[iVar18 /*607*/].f_5.f_324[iVar17 /*48*/], &(Var10[iVar18 /*607*/].f_5.f_324[iVar17 /*48*/].f_1), Var10[iVar18 /*607*/], 0f, 0f, Var10[iVar18 /*607*/].f_3, fVar0, fVar1, -1, 2, 0, 2, 0);
 												}
 												func_122(uParam0[uParam0->f_7255[uParam2->f_41[iVar18]] /*58*/]);
 												iVar18++;
@@ -26614,7 +26614,7 @@ void func_249(var uParam0)
 					AUDIO::PLAY_STREAM_FRONTEND();
 				}
 				GRAPHICS::CLEAR_TIMECYCLE_MODIFIER();
-				CAM::SET_CAM_ACTIVE(uParam0->f_7906.f_34, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_7906.f_34, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_294(1, 1, 1, 0, 0);
 				func_291(1, 1);
@@ -29746,7 +29746,7 @@ int func_331(var uParam0, var uParam1, var uParam2)
 								else
 								{
 									vVar1 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(uParam1->f_5.f_7[iVar0 /*79*/], uParam1->f_5.f_7[iVar0 /*79*/].f_1, *uParam1, 0f, 0f, uParam1->f_3, 0, 2) };
-									vVar2 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(uParam1->f_5.f_7[iVar0 /*79*/], uParam1->f_5.f_7[iVar0 /*79*/].f_1, *uParam1, 0f, 0f, uParam1->f_3, 0, 2) };
+									vVar2 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(uParam1->f_5.f_7[iVar0 /*79*/], uParam1->f_5.f_7[iVar0 /*79*/].f_1, *uParam1, 0f, 0f, uParam1->f_3, 0f, 2) };
 								}
 								if (SYSTEM::VMAG(vVar1) > 0.1f && SYSTEM::VMAG(*uParam1) > 0.1f)
 								{

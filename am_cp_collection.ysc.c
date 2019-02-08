@@ -16623,10 +16623,10 @@ void func_464(int iParam0)
 	}
 }
 
-void func_465(char* sParam0, int iParam1, int iParam2)
+void func_465(char* sParam0, char* sParam1, int iParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam2);
 }
 

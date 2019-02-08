@@ -1730,7 +1730,7 @@ void func_1(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 				CAM::SET_CAM_COORD(uParam2->f_5, uParam5->f_136);
 				CAM::SET_CAM_ROT(uParam2->f_5, uParam5->f_139, 2);
 				CAM::SET_CAM_FOV(uParam2->f_5, 42.3427f);
-				CAM::SET_CAM_ACTIVE(uParam2->f_5, 1);
+				CAM::SET_CAM_ACTIVE(uParam2->f_5, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SET_CAM_PARAMS(uParam2->f_5, uParam5->f_142, uParam5->f_145, 42.3427f, 2500, 1, 1, 2);
 				PED::CLEAR_PED_PROP(iLocal_99, 0);
@@ -1747,7 +1747,7 @@ void func_1(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_99, uParam5->f_130, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_99, uParam5->f_130, 1f, 20000, 1048576000, 0, 1193033728);
 				}
 				PED::SET_PED_CONFIG_FLAG(iLocal_99, 104, true);
 				PED::SET_PED_RESET_FLAG(iLocal_99, 60, true);
@@ -1763,7 +1763,7 @@ void func_1(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var
 				OBJECT::SET_STATE_OF_CLOSEST_DOOR_OF_TYPE(joaat("v_ilev_gc_door01"), uParam5->f_109, 1, 0f, 0);
 				CAM::SET_CAM_COORD(uParam2->f_5, uParam5->f_148);
 				CAM::SET_CAM_ROT(uParam2->f_5, uParam5->f_151, 2);
-				CAM::SET_CAM_ACTIVE(uParam2->f_5, 1);
+				CAM::SET_CAM_ACTIVE(uParam2->f_5, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				uParam0->f_4 = 18;
 			}
@@ -59090,20 +59090,20 @@ int func_217(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_218(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_218(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -99379,7 +99379,7 @@ int func_523(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 			uParam0->f_4 = PED::CREATE_SYNCHRONIZED_SCENE(uParam0->f_16, uParam0->f_19, 2);
 			uParam0->f_5 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 			CAM::PLAY_SYNCHRONIZED_CAM_ANIM(uParam0->f_5, uParam0->f_4, "shoot_range_tutorial_cam", "mini@shoot_range");
-			CAM::SET_CAM_ACTIVE(uParam0->f_5, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			AI::TASK_SYNCHRONIZED_SCENE(iLocal_99, uParam0->f_4, "mini@shoot_range", "shoot_range_tutorial_plyr", 1000f, -1.5f, 0, 0, 1148846080, 0);
 			PED::_0x129466ED55140F8D(iLocal_99, 1);
@@ -100193,7 +100193,7 @@ void func_549(var uParam0, var uParam1, var uParam2)
 	func_550(uParam2, uParam1);
 	func_755(&(uParam1->f_27));
 	func_469(&(uParam1->f_10), 32);
-	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, 0);
+	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, false);
 	if (GAMEPLAY::ABSF((ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()) - uParam2->f_116)) > 20f)
 	{
 		ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), uParam2->f_116);
@@ -112132,7 +112132,7 @@ int func_770(var uParam0, var uParam1, var uParam2, var uParam3)
 			CAM::SET_CAM_COORD(uParam0->f_5, uParam0->f_25);
 			CAM::SET_CAM_ROT(uParam0->f_5, uParam0->f_28, 2);
 			CAM::SET_CAM_FOV(uParam0->f_5, 50f);
-			CAM::SET_CAM_ACTIVE(uParam0->f_5, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			CAM::SET_CAM_PARAMS(uParam0->f_5, uParam0->f_31, uParam0->f_34, 50f, 4000, 1, 1, 2);
 			uParam0->f_4 = PED::CREATE_SYNCHRONIZED_SCENE(uParam0->f_16, uParam0->f_19, 2);
@@ -113901,7 +113901,7 @@ void func_816(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 				if ((uParam0->f_25 != -1 || uParam0->f_26 != -1) && !uParam0->f_1)
 				{
 					SYSTEM::SETTIMERA(0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_99, uParam6->f_133, 1f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_99, uParam6->f_133, 1f, 20000, 1048576000, 0, 1193033728);
 					uParam0->f_4 = 16;
 					uParam0->f_3 = 1;
 				}
@@ -114048,7 +114048,7 @@ int func_820(var uParam0, var uParam1, var uParam2)
 				CAM::SET_CAM_COORD(uParam1->f_5, uParam2->f_154);
 				CAM::SET_CAM_ROT(uParam1->f_5, uParam2->f_157, 2);
 				CAM::SET_CAM_FOV(uParam1->f_5, 50f);
-				CAM::SET_CAM_ACTIVE(uParam1->f_5, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_5, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 				CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -115248,7 +115248,7 @@ void func_850(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, b
 	{
 		CAM::_0xC819F3CBB62BF692(0, 0, 3, 0);
 	}
-	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, 1);
+	PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_99, true);
 	UI::DISPLAY_RADAR(true);
 	PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 	if (uParam2->f_20 != 0)

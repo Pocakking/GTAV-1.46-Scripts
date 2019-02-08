@@ -410,16 +410,16 @@ void __EntryFunction__()
 
 void func_1()
 {
-	int iVar0;
+	bool bVar0;
 	
 	if (!bLocal_110)
 	{
 		return;
 	}
-	iVar0 = 1;
+	bVar0 = true;
 	if (iLocal_115 == 1)
 	{
-		iVar0 = 0;
+		bVar0 = false;
 	}
 	if (bLocal_111)
 	{
@@ -437,13 +437,13 @@ void func_1()
 			UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_37022);
 			UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Local_114);
 		}
-		UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, iVar0, 50);
+		UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, bVar0, 50);
 	}
 	else
 	{
 		UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(&Local_113);
 		UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(&Global_37022);
-		UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, iVar0, 50);
+		UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, bVar0, 50);
 	}
 	switch (iLocal_115)
 	{

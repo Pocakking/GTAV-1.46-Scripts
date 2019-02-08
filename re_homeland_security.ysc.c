@@ -515,7 +515,7 @@ void __EntryFunction__()
 								AI::TASK_CLEAR_LOOK_AT(PLAYER::PLAYER_PED_ID());
 								if (!PED::IS_PED_INJURED(iLocal_58))
 								{
-									AUDIO::PLAY_PAIN(iLocal_58, 3, 0, 0);
+									AUDIO::PLAY_PAIN(iLocal_58, 3, 0f, 0);
 									if (!PED::IS_PED_IN_ANY_VEHICLE(iLocal_58, 0))
 									{
 										if (!iLocal_85)
@@ -4903,7 +4903,7 @@ void func_119()
 											AI::TASK_SYNCHRONIZED_SCENE(iLocal_58, iLocal_115, "random@homelandsecurity", "exit_girl", 2f, -4f, 1, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(iLocal_50[0], iLocal_115, "random@homelandsecurity", "exit_cop_gun", 2f, -4f, 1, 0, 1148846080, 0);
 											AI::TASK_SYNCHRONIZED_SCENE(iLocal_50[1], iLocal_115, "random@homelandsecurity", "exit_cop_ground", 2f, -4f, 1, 0, 1148846080, 0);
-											ENTITY::PLAY_ENTITY_ANIM(iLocal_53, "exit_car", "random@homelandsecurity", 4f, 0, 0, 0, 0, 0);
+											ENTITY::PLAY_ENTITY_ANIM(iLocal_53, "exit_car", "random@homelandsecurity", 4f, 0, 0, 0, 0f, 0);
 											iLocal_116 = 1;
 											iLocal_93 = GAMEPLAY::GET_GAME_TIMER();
 											iLocal_49 = 6;
@@ -4937,7 +4937,7 @@ void func_119()
 									AI::TASK_SYNCHRONIZED_SCENE(iLocal_58, iLocal_115, "random@homelandsecurity", "exit_girl", 2f, -4f, 1, 0, 1148846080, 0);
 									AI::TASK_SYNCHRONIZED_SCENE(iLocal_50[0], iLocal_115, "random@homelandsecurity", "exit_cop_gun", 2f, -4f, 1, 0, 1148846080, 0);
 									AI::TASK_SYNCHRONIZED_SCENE(iLocal_50[1], iLocal_115, "random@homelandsecurity", "exit_cop_ground", 2f, -4f, 1, 0, 1148846080, 0);
-									ENTITY::PLAY_ENTITY_ANIM(iLocal_53, "exit_car", "random@homelandsecurity", 2f, 0, 0, 0, 0, 0);
+									ENTITY::PLAY_ENTITY_ANIM(iLocal_53, "exit_car", "random@homelandsecurity", 2f, 0, 0, 0, 0f, 0);
 									iLocal_116 = 1;
 									iLocal_93 = GAMEPLAY::GET_GAME_TIMER();
 									iLocal_49 = 6;
@@ -5906,8 +5906,8 @@ void func_136()
 	PED::SET_PED_CAN_BE_TARGETTED(iLocal_58, false);
 	PED::SET_PED_CONFIG_FLAG(iLocal_58, 185, true);
 	PED::SET_PED_CONFIG_FLAG(iLocal_58, 206, true);
-	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 2, 0);
-	AUDIO::STOP_PED_SPEAKING(iLocal_58, 1);
+	PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 2, false);
+	AUDIO::STOP_PED_SPEAKING(iLocal_58, true);
 	AUDIO::SET_AMBIENT_VOICE_NAME(iLocal_58, "REHOMGirl");
 	PED::SET_PED_COMPONENT_VARIATION(iLocal_58, 0, 2, 1, 0);
 	PED::SET_PED_COMPONENT_VARIATION(iLocal_58, 2, 0, 0, 0);

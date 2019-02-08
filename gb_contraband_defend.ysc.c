@@ -1727,7 +1727,7 @@ int func_44(int iParam0)
 					ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1), true);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1), true);
 					PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1), Global_1574984);
-					PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1), 1);
+					PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1), true);
 					if ((iParam0 % 2) == 0)
 					{
 						iVar4 = ENTITY::GET_ENTITY_HEALTH(NETWORK::NET_TO_PED(Local_182.f_2[iParam0 /*10*/].f_1));
@@ -2278,7 +2278,7 @@ int func_66()
 					if (func_67(&(Local_182.f_2[0 /*10*/].f_1), Local_182.f_2[0 /*10*/].f_2, 22, iVar1, -1, 1, 1, 1))
 					{
 						ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), true);
-						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), 1, 0f);
+						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), 1, 0);
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), true);
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), Global_1574984);
 						PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_182.f_2[0 /*10*/].f_1), 42, true);
@@ -2300,7 +2300,7 @@ int func_66()
 					if (func_67(&(Local_182.f_2[1 /*10*/].f_1), Local_182.f_2[0 /*10*/].f_2, 22, iVar1, 0, 1, 1, 1))
 					{
 						ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), true);
-						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), 1, 0f);
+						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), 1, 0);
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), true);
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), Global_1574984);
 						PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_182.f_2[1 /*10*/].f_1), 42, true);

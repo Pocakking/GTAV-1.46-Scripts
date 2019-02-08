@@ -37336,20 +37336,20 @@ int func_167(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_168(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_168(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -100289,7 +100289,7 @@ void func_563()
 				{
 					iLocal_2861 = func_606();
 				}
-				CAM::SET_CAM_ACTIVE(iLocal_2861, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_2861, true);
 				if (bVar0)
 				{
 					CAM::POINT_CAM_AT_COORD(iLocal_2861, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true));
@@ -102036,7 +102036,7 @@ void func_616()
 	}
 }
 
-void func_617(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, char* sParam7)
+void func_617(char* sParam0, int iParam1, bool bParam2, int iParam3, float fParam4, float fParam5, float fParam6, int iParam7)
 {
 	func_393(iParam1);
 	if (bParam2)
@@ -102049,15 +102049,15 @@ void func_617(char* sParam0, int iParam1, bool bParam2, int iParam3, float fPara
 	}
 	if (iParam3 != 0)
 	{
-		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, sParam7, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_ENTITY(*iParam1, sParam0, iParam3, iParam7, 0, 0);
 	}
 	else if ((fParam4 != 0f || fParam5 != 0f) || fParam6 != 0f)
 	{
-		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, sParam7, 0, 0, 0);
+		AUDIO::PLAY_SOUND_FROM_COORD(*iParam1, sParam0, fParam4, fParam5, fParam6, iParam7, 0, 0, 0);
 	}
 	else
 	{
-		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, sParam7, true);
+		AUDIO::PLAY_SOUND_FRONTEND(*iParam1, sParam0, iParam7, true);
 	}
 }
 
@@ -106401,7 +106401,7 @@ int func_771()
 				}
 				CAM::ATTACH_CAM_TO_ENTITY(Local_702.f_516, Local_702.f_7, 3f, -4f, 1f, 1);
 				CAM::POINT_CAM_AT_ENTITY(Local_702.f_516, Local_702.f_6, 0f, 0f, 0f, 1);
-				CAM::SET_CAM_ACTIVE(Local_702.f_516, 1);
+				CAM::SET_CAM_ACTIVE(Local_702.f_516, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				break;
 			
@@ -114282,7 +114282,7 @@ int func_928()
 				Local_702.f_517 = CAM::CREATE_CAMERA(26379945, 0);
 				CAM::ATTACH_CAM_TO_ENTITY(Local_702.f_516, Local_702, -2f, -6f, 1f, 1);
 				CAM::POINT_CAM_AT_ENTITY(Local_702.f_516, Local_702, 0f, 0f, 0f, 1);
-				CAM::SET_CAM_ACTIVE(Local_702.f_516, 1);
+				CAM::SET_CAM_ACTIVE(Local_702.f_516, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_767(4, iLocal_734, 1);
 				func_705("PS_PREV02", "PS_PREV02_1", "PS_PREV02_2", 0, 0, 0);
@@ -125423,7 +125423,7 @@ void func_1127()
 		iVar0 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_70.x, vLocal_70.y, (vLocal_70.z + 1000f), vLocal_71, 50f, 1, 2);
 		if (CAM::DOES_CAM_EXIST(iVar0))
 		{
-			CAM::SET_CAM_ACTIVE(iVar0, 1);
+			CAM::SET_CAM_ACTIVE(iVar0, true);
 		}
 		if (CAM::IS_CAM_ACTIVE(iVar0))
 		{
@@ -125442,7 +125442,7 @@ void func_1127()
 	}
 	if (CAM::DOES_CAM_EXIST(iVar0))
 	{
-		CAM::SET_CAM_ACTIVE(iVar0, 0);
+		CAM::SET_CAM_ACTIVE(iVar0, false);
 		CAM::DESTROY_CAM(iVar0, 1);
 	}
 }

@@ -338,7 +338,7 @@ void func_1()
 					{
 						if (func_14(iLocal_58, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), 35f))
 						{
-							AUDIO::STOP_PED_SPEAKING(iLocal_58, 0);
+							AUDIO::STOP_PED_SPEAKING(iLocal_58, false);
 							func_12(iLocal_58, "GENERIC_FRIGHTENED_HIGH", "MAUDE", 3);
 						}
 					}
@@ -390,12 +390,12 @@ void func_1()
 							{
 								if (!ENTITY::IS_ENTITY_PLAYING_ANIM(iLocal_58, "special_ped@maude@exit_flee", "female_Flee_Table_Left_Maude", 3))
 								{
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 2, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 64, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 128, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 8, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 1, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 32, 0);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 2, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 64, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 128, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 8, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 1, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iLocal_58, 32, false);
 									PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_58, 5, false);
 									PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_58, 17, true);
 									AI::TASK_SMART_FLEE_PED(iLocal_58, PLAYER::PLAYER_PED_ID(), 50f, -1, 0, 0);
@@ -30366,28 +30366,28 @@ void func_184(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_185(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_187(iParam0, &Var0);
-		MemCopy(&cVar1, {func_182(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_186(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_182(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_186(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_186(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_186(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -35116,7 +35116,7 @@ void func_256()
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 				}
 				PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+				PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 				bLocal_45 = true;
 			}
 			if (!bLocal_45)

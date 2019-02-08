@@ -923,17 +923,17 @@ void func_5()
 	AUDIO::SET_AUDIO_FLAG("DisableFlightMusic", 0);
 }
 
-void func_6(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_6(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -1233,7 +1233,7 @@ void func_26()
 	}
 	if (CAM::IS_CAM_ACTIVE(iLocal_252))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_252, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_252, false);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		CAM::DESTROY_CAM(iLocal_252, 0);
 	}
@@ -3858,7 +3858,7 @@ void func_51()
 				func_64(0, 0, 1);
 				func_58(1);
 				iLocal_252 = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, func_57(iLocal_81), func_56(iLocal_81), func_55(iLocal_81), 0, 2);
-				CAM::SET_CAM_ACTIVE(iLocal_252, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_252, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SHAKE_CAM(iLocal_252, "HAND_SHAKE", 0.07f);
 			}

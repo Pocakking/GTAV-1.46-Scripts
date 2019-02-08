@@ -3656,7 +3656,7 @@ void func_89()
 						iLocal_99 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", -2014.334f, 456.418f, 103.3152f, -6.198685f, -0.037031f, -100.5736f, 29.00143f, 0, 2);
 						CAM::SHAKE_CAM(iLocal_98, "HAND_SHAKE", 0.25f);
 						CAM::SHAKE_CAM(iLocal_99, "HAND_SHAKE", 0.25f);
-						CAM::SET_CAM_ACTIVE(iLocal_98, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_98, true);
 						CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 						SYSTEM::WAIT(1000);
 						CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_99, iLocal_98, 4000, 1, 1);
@@ -3705,7 +3705,7 @@ void func_89()
 						UI::DISPLAY_HUD(true);
 						UI::DISPLAY_RADAR(true);
 						func_52(0, 1, 1, 0, 0);
-						CAM::SET_CAM_ACTIVE(iLocal_98, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_98, false);
 						CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 						CAM::DESTROY_CAM(iLocal_98, 0);
 						CAM::STOP_GAMEPLAY_HINT(0);
@@ -3792,8 +3792,8 @@ void func_89()
 								{
 									AI::CLEAR_PED_TASKS(iLocal_51);
 									AI::OPEN_SEQUENCE_TASK(&iLocal_77);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -2013.094f, 460.3515f, 101.8024f, 2f, 20000, 0.25f, 0, 40000f);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_71, 3f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -2013.094f, 460.3515f, 101.8024f, 2f, 20000, 1048576000, 0, 1193033728);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_71, 3f, 20000, 1048576000, 0, 1193033728);
 									AI::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1);
 									AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 2048, 2);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_77);
@@ -4990,7 +4990,7 @@ void func_116()
 								PED::_0x2208438012482A1A(iLocal_51, 0, 0);
 								AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_282, "re@stag_do@", "untie_player", 1000f, -1000f, 0, 0, 1148846080, 0);
 								PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
-								CAM::SET_CAM_ACTIVE(iLocal_98, 1);
+								CAM::SET_CAM_ACTIVE(iLocal_98, true);
 								CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 								iLocal_275 = 1;
 							}
@@ -5066,7 +5066,7 @@ void func_116()
 		ENTITY::SET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), -936.6537f, 2767.497f, 24.4289f, 1, false, 0, 1);
 		ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), 208.4017f);
 		PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
-		CAM::SET_CAM_ACTIVE(iLocal_98, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_98, false);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		CAM::DESTROY_CAM(iLocal_98, 0);
 		CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -7691,13 +7691,13 @@ void func_177()
 			if (!PED::IS_PED_INJURED(iLocal_51) && !PED::IS_PED_INJURED(iLocal_53))
 			{
 				AI::OPEN_SEQUENCE_TASK(&iLocal_77);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -330.36f, 6154.03f, 31.8f, 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -330.36f, 6154.03f, 31.8f, 1f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_CHAT_TO_PED(0, iLocal_53, 16, 0f, 0f, 0f, 0f, 0f);
 				AI::CLOSE_SEQUENCE_TASK(iLocal_77);
 				AI::TASK_PERFORM_SEQUENCE(iLocal_51, iLocal_77);
 				AI::CLEAR_SEQUENCE_TASK(&iLocal_77);
 				AI::OPEN_SEQUENCE_TASK(&iLocal_77);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -330.36f, 6155.03f, 31.8f, 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -330.36f, 6155.03f, 31.8f, 1f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_CHAT_TO_PED(0, iLocal_51, 16, 0f, 0f, 0f, 0f, 0f);
 				AI::CLOSE_SEQUENCE_TASK(iLocal_77);
 				AI::TASK_PERFORM_SEQUENCE(iLocal_53, iLocal_77);

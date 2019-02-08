@@ -46,7 +46,7 @@
 	var uLocal_44 = 0;
 	var uLocal_45 = 0;
 	int iLocal_46 = 0;
-	var uLocal_47 = 0;
+	int iLocal_47 = 0;
 	var uLocal_48 = 0;
 	vector3 vLocal_49 = { 0f, 0f, 0f };
 	vector3 vLocal_50 = { 0f, 0f, 0f };
@@ -1336,7 +1336,7 @@ void __EntryFunction__()
 	iLocal_41 = 49;
 	iLocal_42 = 64;
 	iLocal_46 = UI::_0x4A9923385BDB9DAD();
-	uLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_47 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	vLocal_49 = { 1358.197f, 3618.234f, 33.89066f };
 	vLocal_50 = { 0f, 5f, -0.5f };
 	vLocal_51 = { 4f, 3f, -0.5f };
@@ -9518,8 +9518,8 @@ void func_164()
 			PED::GET_CLOSEST_PED(vLocal_283, 50f, 1, 0, &iVar5, 0, 0, -1);
 			if (func_31(iVar5))
 			{
-				PED::SET_PED_FLEE_ATTRIBUTES(iVar5, 2, 0);
-				PED::SET_PED_FLEE_ATTRIBUTES(iVar5, 2048, 0);
+				PED::SET_PED_FLEE_ATTRIBUTES(iVar5, 2, false);
+				PED::SET_PED_FLEE_ATTRIBUTES(iVar5, 2048, false);
 			}
 			switch (iLocal_258)
 			{
@@ -12241,7 +12241,7 @@ void func_210(int iParam0, int iParam1)
 	PED::SET_PED_COMBAT_MOVEMENT(Local_68[iParam0 /*14*/], 1);
 	PED::SET_PED_CONFIG_FLAG(Local_68[iParam0 /*14*/], 184, true);
 	PED::SET_PED_CONFIG_FLAG(Local_68[iParam0 /*14*/], 272, true);
-	AUDIO::STOP_PED_SPEAKING(Local_68[iParam0 /*14*/], 1);
+	AUDIO::STOP_PED_SPEAKING(Local_68[iParam0 /*14*/], true);
 	ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(Local_68[iParam0 /*14*/], true, 1);
 	PED::SET_PED_ACCURACY(Local_68[iParam0 /*14*/], 10);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_68[iParam0 /*14*/], true);

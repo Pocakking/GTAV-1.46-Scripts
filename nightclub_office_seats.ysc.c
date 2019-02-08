@@ -515,7 +515,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			vVar2 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
-			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar3 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			iVar4 = vVar3.z;
 			fVar5 = 0.05f;
 			if (uParam0->f_127.f_8 == 1)
@@ -532,7 +532,7 @@ void func_9(var uParam0)
 			func_49(uParam0, &sVar0);
 			func_48(uParam0, &sVar1);
 			iVar6 = AI::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), 2106541073);
-			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0, 2) };
+			vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&sVar0, &sVar1, func_47(uParam0), func_46(uParam0), 0f, 2) };
 			fVar8 = vVar7.z;
 			if ((iVar6 != 1 && iVar6 != 0) || func_34(ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()), fVar8, 5f))
 			{

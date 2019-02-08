@@ -4427,7 +4427,7 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 	bool bVar23;
 	bool bVar24;
 	bool bVar25;
-	int iVar26;
+	bool bVar26;
 	bool bVar27;
 	bool bVar28;
 	bool bVar29;
@@ -4453,12 +4453,12 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 	bool bVar49;
 	int iVar50;
 	bool bVar51;
-	int iVar52;
+	bool bVar52;
 	int iVar53;
 	bool bVar54;
 	int iVar55;
 	bool bVar56;
-	int iVar57;
+	bool bVar57;
 	bool bVar58;
 	bool bVar59;
 	bool bVar60;
@@ -4492,7 +4492,7 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 		bVar23 = true;
 		bVar24 = false;
 		bVar25 = true;
-		iVar26 = 1;
+		bVar26 = true;
 		bVar27 = true;
 		bVar28 = false;
 		bVar29 = true;
@@ -4518,12 +4518,12 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 		bVar49 = true;
 		iVar50 = 0;
 		bVar51 = false;
-		iVar52 = 0;
+		bVar52 = false;
 		iVar53 = 1;
 		bVar54 = true;
 		iVar55 = 0;
 		bVar56 = false;
-		iVar57 = 0;
+		bVar57 = false;
 		bVar58 = false;
 		bVar59 = false;
 		bVar60 = false;
@@ -4656,7 +4656,7 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 		PED::SET_PED_CONFIG_FLAG(Local_47[iParam0 /*5*/], 212, bVar23);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_47[iParam0 /*5*/], bVar24);
 		PED::SET_PED_KEEP_TASK(Local_47[iParam0 /*5*/], bVar25);
-		PED::SET_PED_DIES_WHEN_INJURED(Local_47[iParam0 /*5*/], iVar26);
+		PED::SET_PED_DIES_WHEN_INJURED(Local_47[iParam0 /*5*/], bVar26);
 		PED::SET_PED_CONFIG_FLAG(Local_47[iParam0 /*5*/], 188, bVar49);
 		PED::SET_PED_CONFIG_FLAG(Local_47[iParam0 /*5*/], 42, !bVar27);
 		PED::SET_PED_COMBAT_ATTRIBUTES(Local_47[iParam0 /*5*/], 9, bVar29);
@@ -4683,8 +4683,8 @@ int func_80(int iParam0, bool bParam1, vector3 vParam2, float fParam3)
 		PED::SET_PED_CONFIG_FLAG(Local_47[iParam0 /*5*/], 185, bVar48);
 		PED::SET_PED_TO_LOAD_COVER(Local_47[iParam0 /*5*/], iVar50);
 		PED::SET_PED_COMBAT_ATTRIBUTES(Local_47[iParam0 /*5*/], 17, bVar56);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(Local_47[iParam0 /*5*/], iVar57);
-		AUDIO::STOP_PED_SPEAKING(Local_47[iParam0 /*5*/], iVar52);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(Local_47[iParam0 /*5*/], bVar57);
+		AUDIO::STOP_PED_SPEAKING(Local_47[iParam0 /*5*/], bVar52);
 		func_83(Local_47[iParam0 /*5*/], fVar16, fVar17, fVar18, fVar19, fVar20);
 		ENTITY::FREEZE_ENTITY_POSITION(Local_47[iParam0 /*5*/], bVar60);
 		PED::SET_PED_CONFIG_FLAG(Local_47[iParam0 /*5*/], 203, bVar61);

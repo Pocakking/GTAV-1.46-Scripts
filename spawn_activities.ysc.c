@@ -421,7 +421,7 @@ void func_7()
 					iLocal_94 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
 					func_8(Global_2409250.f_26, iLocal_94);
 					CAM::SHAKE_CAM(iLocal_94, "HAND_SHAKE", 0.2f);
-					CAM::SET_CAM_ACTIVE(iLocal_94, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_94, true);
 					CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				}
 			}

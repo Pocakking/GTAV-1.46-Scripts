@@ -28201,14 +28201,14 @@ int func_858(bool bParam0)
 	return 0;
 }
 
-void func_859(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_859(char* sParam0, char* sParam1, int iParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 	if (!iParam2 == 0)
 	{
 		UI::_SET_NOTIFACTION_COLOR_NEXT(iParam2);
 	}
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, false, iParam3);
 }
 

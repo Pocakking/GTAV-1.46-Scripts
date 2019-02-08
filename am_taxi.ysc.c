@@ -7093,14 +7093,14 @@ void func_169(int iParam0)
 					{
 						AI::OPEN_SEQUENCE_TASK(&uVar0);
 						AI::TASK_SWAP_WEAPON(0, 0);
-						AI::TASK_PLAY_ANIM(0, "TAXI_HAIL", "HAIL_TAXI", 8f, -8f, -1, 48, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(0, "TAXI_HAIL", "HAIL_TAXI", 8f, -8f, -1, 48, 0f, 0, 0, 0);
 						AI::CLOSE_SEQUENCE_TASK(uVar0);
 						AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), uVar0);
 						AI::CLEAR_SEQUENCE_TASK(&uVar0);
 					}
 					else
 					{
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "TAXI_HAIL", "HAIL_TAXI", 8f, -8f, -1, 48, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "TAXI_HAIL", "HAIL_TAXI", 8f, -8f, -1, 48, 0f, 0, 0, 0);
 					}
 					if (func_48("TXM_H01"))
 					{
@@ -7758,7 +7758,7 @@ void func_187(int iParam0)
 							if (ENTITY::HAS_ENTITY_ANIM_FINISHED(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_enter", 3))
 							{
 								AI::TASK_CLEAR_LOOK_AT(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1));
-								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_idle", 4f, -8f, -1, 1, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_idle", 4f, -8f, -1, 1, 0f, 0, 0, 0);
 							}
 						}
 						else if (!ENTITY::IS_ENTITY_PLAYING_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_idle", 3))
@@ -7773,7 +7773,7 @@ void func_187(int iParam0)
 							else if (VEHICLE::IS_VEHICLE_SEAT_FREE(NETWORK::NET_TO_VEH(Local_100.f_2[iParam0 /*23*/]), 0, 0))
 							{
 								AI::TASK_CLEAR_LOOK_AT(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1));
-								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_enter", 8f, -8f, -1, 2, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_enter", 8f, -8f, -1, 2, 0f, 0, 0, 0);
 							}
 						}
 					}
@@ -7812,7 +7812,7 @@ void func_187(int iParam0)
 							if (STREAMING::HAS_ANIM_DICT_LOADED("ODDJOBS@TAXI@DRIVER"))
 							{
 								AI::TASK_CLEAR_LOOK_AT(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1));
-								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 4f, -4f, -1, 0, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 4f, -4f, -1, 0, 0f, 0, 0, 0);
 							}
 						}
 						else if (ENTITY::IS_ENTITY_PLAYING_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 3))
@@ -7892,7 +7892,7 @@ void func_187(int iParam0)
 								if (STREAMING::HAS_ANIM_DICT_LOADED("ODDJOBS@TAXI@DRIVER"))
 								{
 									AI::TASK_CLEAR_LOOK_AT(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1));
-									AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_idle", 4f, -8f, -1, 1, 0, 0, 0, 0);
+									AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_idle", 4f, -8f, -1, 1, 0f, 0, 0, 0);
 								}
 							}
 						}
@@ -7919,7 +7919,7 @@ void func_187(int iParam0)
 						if (STREAMING::HAS_ANIM_DICT_LOADED("ODDJOBS@TAXI@DRIVER"))
 						{
 							AI::TASK_CLEAR_LOOK_AT(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1));
-							AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 4f, -4f, -1, 0, 0, 0, 0, 0);
+							AI::TASK_PLAY_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 4f, -4f, -1, 0, 0f, 0, 0, 0);
 						}
 					}
 					else if (ENTITY::IS_ENTITY_PLAYING_ANIM(NETWORK::NET_TO_PED(Local_100.f_2[iParam0 /*23*/].f_1), "ODDJOBS@TAXI@DRIVER", "leanover_exit", 3))

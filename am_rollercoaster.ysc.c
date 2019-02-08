@@ -3757,7 +3757,7 @@ void func_70()
 						{
 							StringConCat(&cLocal_1429, "two", 64);
 						}
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0f, 0, 0, 0);
 						iLocal_1441 = 1;
 						break;
 					
@@ -3775,7 +3775,7 @@ void func_70()
 								{
 									StringConCat(&cLocal_1429, "two", 64);
 								}
-								AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 1, 0, 0, 0, 0);
+								AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 1, 0f, 0, 0, 0);
 								iLocal_1441 = 0;
 								GAMEPLAY::CLEAR_BIT(&(Local_1448[NETWORK::PARTICIPANT_ID_TO_INT() /*5*/].f_2), 9);
 								iLocal_723 = 1;
@@ -3796,7 +3796,7 @@ void func_70()
 			{
 				StringConCat(&cLocal_1429, "two", 64);
 			}
-			AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0, 0, 0, 0);
+			AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0f, 0, 0, 0);
 		}
 		else if (ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 3))
 		{
@@ -3811,7 +3811,7 @@ void func_70()
 				{
 					StringConCat(&cLocal_1429, "two", 64);
 				}
-				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 1, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 1, 0f, 0, 0, 0);
 				GAMEPLAY::CLEAR_BIT(&(Local_1448[NETWORK::PARTICIPANT_ID_TO_INT() /*5*/].f_2), 9);
 				iLocal_723 = 1;
 			}
@@ -5552,7 +5552,7 @@ void func_146()
 				{
 					StringConCat(&cLocal_1429, "two", 64);
 				}
-				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0, 0, 0, 0);
+				AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), sLocal_1418, &cLocal_1429, 8f, -8f, -1, 2, 0f, 0, 0, 0);
 			}
 			iLocal_1440 = 1;
 			break;

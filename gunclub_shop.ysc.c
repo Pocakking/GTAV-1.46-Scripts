@@ -35033,7 +35033,7 @@ void func_234(bool bParam0)
 		{
 			if (CAM::IS_CAM_ACTIVE(Local_148.f_157.f_10))
 			{
-				CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, 0);
+				CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, false);
 			}
 			CAM::DESTROY_CAM(Local_148.f_157.f_10, 0);
 		}
@@ -41059,7 +41059,7 @@ void func_358(var uParam0)
 	{
 		if (CAM::DOES_CAM_EXIST((*uParam0)[iVar0 /*12*/]))
 		{
-			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], 0);
+			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], false);
 		}
 		iVar0++;
 	}
@@ -135446,7 +135446,7 @@ void func_834(var uParam0)
 	CAM::SET_CAM_FOV(*uParam0, uParam0->f_7);
 	if (!CAM::IS_CAM_ACTIVE(*uParam0))
 	{
-		CAM::SET_CAM_ACTIVE(*uParam0, 1);
+		CAM::SET_CAM_ACTIVE(*uParam0, true);
 	}
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 }
@@ -150699,7 +150699,7 @@ void func_1032()
 						{
 							Local_148.f_157.f_10 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
 						}
-						CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, 1);
+						CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, true);
 						INTERIOR::_0x405DC2AEF6AF95B9(Local_148.f_4);
 						CAM::SET_CAM_PARAMS(Local_148.f_157.f_10, Local_148.f_157.f_11[0 /*3*/], Local_148.f_157.f_18[0 /*3*/], Local_148.f_157.f_25[0], 0, 1, 1, 2);
 						CAM::SET_CAM_PARAMS(Local_148.f_157.f_10, Local_148.f_157.f_11[1 /*3*/], Local_148.f_157.f_18[1 /*3*/], Local_148.f_157.f_25[1], 6000, 0, 0, 2);
@@ -150751,7 +150751,7 @@ void func_1032()
 					{
 						if (CAM::IS_CAM_ACTIVE(Local_148.f_157.f_10))
 						{
-							CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, 0);
+							CAM::SET_CAM_ACTIVE(Local_148.f_157.f_10, false);
 						}
 						CAM::DESTROY_CAM(Local_148.f_157.f_10, 0);
 					}

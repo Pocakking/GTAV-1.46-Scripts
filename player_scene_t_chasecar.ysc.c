@@ -3296,8 +3296,8 @@ void func_84()
 			{
 				PED::SET_PED_COMBAT_MOVEMENT(iLocal_447[iVar0], 3);
 				PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_447[iVar0], 17, true);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_447[iVar0], 1, 1);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_447[iVar0], 2, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_447[iVar0], 1, true);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_447[iVar0], 2, true);
 			}
 		}
 		iVar0++;

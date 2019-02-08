@@ -638,7 +638,7 @@ int func_1(int iParam0, int iParam1)
 							if (!CAM::DOES_CAM_EXIST(iParam0->f_7))
 							{
 								iParam0->f_7 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-								CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+								CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 							}
 							CAM::SET_CAM_PARAMS(iParam0->f_7, 754.2219f, 1226.831f, 356.5081f, -14.367f, 0f, 157.3524f, 42.2442f, 0, 1, 1, 2);
 							CAM::SET_CAM_PARAMS(iParam0->f_7, 740.7797f, 1193.923f, 351.1997f, -9.6114f, 0f, 157.8659f, 44.8314f, 6500, 0, 0, 2);
@@ -995,7 +995,7 @@ int func_1(int iParam0, int iParam1)
 					{
 						iParam0->f_7 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
 					}
-					CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+					CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 					CAM::SET_CAM_PARAMS(iParam0->f_7, 228.1892f, -1006.758f, -96.8311f, -13.0682f, 0.0572f, 0.7306f, 40.033f, 0, 1, 1, 2);
 					CAM::SET_CAM_PARAMS(iParam0->f_7, 228.2493f, -1006.155f, -98.1976f, -2.3097f, 0.0572f, 0.7306f, 40.033f, 6000, 0, 0, 2);
 					CAM::SHAKE_CAM(iParam0->f_7, "HAND_SHAKE", 0.1f);
@@ -1300,12 +1300,12 @@ int func_1(int iParam0, int iParam1)
 							{
 								if (!GAMEPLAY::IS_BIT_SET(*iParam0, 27))
 								{
-									GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_mp_plane_landing_tyre_smoke", iParam0->f_33, -2.508f, -3.666f, -3.584f, 0f, 0f, -90f, 1f, 0, 0, 0);
+									GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_mp_plane_landing_tyre_smoke", iParam0->f_33, -2.508f, -3.666f, -3.584f, 0f, 0f, -90f, 1065353216, 0, 0, 0);
 									GAMEPLAY::SET_BIT(iParam0, 27);
 								}
 								if (!GAMEPLAY::IS_BIT_SET(*iParam0, 28))
 								{
-									GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_mp_plane_landing_tyre_smoke", iParam0->f_33, 3.508f, -3.666f, -3.584f, 0f, 0f, -90f, 1f, 0, 0, 0);
+									GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_mp_plane_landing_tyre_smoke", iParam0->f_33, 3.508f, -3.666f, -3.584f, 0f, 0f, -90f, 1065353216, 0, 0, 0);
 									GAMEPLAY::SET_BIT(iParam0, 28);
 								}
 							}
@@ -1409,7 +1409,7 @@ int func_1(int iParam0, int iParam1)
 						CAM::POINT_CAM_AT_ENTITY(iParam0->f_7, iParam0->f_34, -0.4552f, -0.4977f, 0.5449f, 1);
 						CAM::SET_CAM_FOV(iParam0->f_7, 33.3479f);
 						CAM::SHAKE_CAM(iParam0->f_7, "ROAD_VIBRATION_SHAKE", 2f);
-						CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+						CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 						if (!ENTITY::IS_ENTITY_DEAD(iParam0->f_35, 0))
 						{
 							ENTITY::SET_ENTITY_VISIBLE(iParam0->f_35, false, 0);
@@ -1561,7 +1561,7 @@ int func_1(int iParam0, int iParam1)
 						CAM::POINT_CAM_AT_ENTITY(iParam0->f_7, iParam0->f_34, -0.4552f, -0.4977f, 0.5449f, 1);
 						CAM::SET_CAM_FOV(iParam0->f_7, 33.3479f);
 						CAM::SHAKE_CAM(iParam0->f_7, "ROAD_VIBRATION_SHAKE", 2f);
-						CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+						CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 						if (!ENTITY::IS_ENTITY_DEAD(iParam0->f_35, 0))
 						{
 							ENTITY::SET_ENTITY_VISIBLE(iParam0->f_35, false, 0);
@@ -1758,7 +1758,7 @@ int func_1(int iParam0, int iParam1)
 						CAM::POINT_CAM_AT_ENTITY(iParam0->f_7, iParam0->f_34, -0.4552f, -0.4977f, 0.5449f, 1);
 						CAM::SET_CAM_FOV(iParam0->f_7, 33.3479f);
 						CAM::SHAKE_CAM(iParam0->f_7, "ROAD_VIBRATION_SHAKE", 2f);
-						CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+						CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 						if (!ENTITY::IS_ENTITY_DEAD(iParam0->f_35, 0))
 						{
 							ENTITY::SET_ENTITY_VISIBLE(iParam0->f_35, false, 0);
@@ -1954,7 +1954,7 @@ int func_1(int iParam0, int iParam1)
 						CAM::POINT_CAM_AT_ENTITY(iParam0->f_7, iParam0->f_34, -0.4552f, -0.4977f, 0.5449f, 1);
 						CAM::SET_CAM_FOV(iParam0->f_7, 33.3479f);
 						CAM::SHAKE_CAM(iParam0->f_7, "ROAD_VIBRATION_SHAKE", 2f);
-						CAM::SET_CAM_ACTIVE(iParam0->f_7, 1);
+						CAM::SET_CAM_ACTIVE(iParam0->f_7, true);
 						if (!ENTITY::IS_ENTITY_DEAD(iParam0->f_35, 0))
 						{
 							ENTITY::SET_ENTITY_VISIBLE(iParam0->f_35, false, 0);
@@ -3644,23 +3644,23 @@ int func_43(int iParam0)
 					switch (iVar0)
 					{
 						case 0:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -85.925f, -1233.407f, 27.759f, 0f, 0f, 97.75f, 1000f, -1000f, -1, 1025, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -85.925f, -1233.407f, 27.759f, 0f, 0f, 97.75f, 1000f, -1000f, -1, 1025, 0, 2, 0);
 							break;
 						
 						case 1:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -86.487f, -1232.985f, 28.759f, 0f, 0f, -110.5f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -86.487f, -1232.985f, 28.759f, 0f, 0f, -110.5f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 2:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -82.139f, -1203.525f, 26.574f, 0f, 0f, 90.75f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -82.139f, -1203.525f, 26.574f, 0f, 0f, 90.75f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 3:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -83.539f, -1203.537f, 27.549f, 0f, 0f, -85.25f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -83.539f, -1203.537f, 27.549f, 0f, 0f, -85.25f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 4:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -83.75f, -1197.136f, 26.471f, 0f, 0f, -174.5f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -83.75f, -1197.136f, 26.471f, 0f, 0f, -174.5f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 5:
@@ -3671,7 +3671,7 @@ int func_43(int iParam0)
 							break;
 						
 						case 6:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -86f, -1222.397f, 27.417f, 0f, 0f, 98.75f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_leaning@male@wall@back@foot_up@idle_a", "idle_a", -86f, -1222.397f, 27.417f, 0f, 0f, 98.75f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 7:
@@ -3682,11 +3682,11 @@ int func_43(int iParam0)
 							break;
 						
 						case 8:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -87.1f, -1221.762f, 28.367f, 0f, 0f, -85.25f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -87.1f, -1221.762f, 28.367f, 0f, 0f, -85.25f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						
 						case 9:
-							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -87.063f, -1222.918f, 28.417f, 0f, 0f, -45.5f, 1000f, -1000f, -1, 1, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(iParam0->f_37[iVar0], "amb@world_human_hang_out_street@male_a@base", "base", -87.063f, -1222.918f, 28.417f, 0f, 0f, -45.5f, 1000f, -1000f, -1, 1, 0, 2, 0);
 							break;
 						}
 				}
@@ -4882,7 +4882,7 @@ void func_91(int iParam0, char* sParam1, char* sParam2, int iParam3, vector3 vPa
 		iParam0->f_9 = PED::CREATE_SYNCHRONIZED_SCENE(vParam4, vParam5, 2);
 		PED::ATTACH_SYNCHRONIZED_SCENE_TO_ENTITY(iParam0->f_9, iParam3, 0);
 		CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iParam0->f_8, iParam0->f_9, sParam1, sParam2);
-		CAM::SET_CAM_ACTIVE(iParam0->f_8, 1);
+		CAM::SET_CAM_ACTIVE(iParam0->f_8, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 1, 0);
 	}
 }
@@ -4957,8 +4957,8 @@ int func_94(int iParam0)
 			ENTITY::SET_ENTITY_VISIBLE(iParam0->f_33, false, 0);
 			if (iParam0->f_294)
 			{
-				iParam0->f_120 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_mp_intro_plane_exhaust", iParam0->f_33, -5.403f, -8f, -2.2f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
-				iParam0->f_121 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_mp_intro_plane_exhaust", iParam0->f_33, 6.629f, -8f, -2.2f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+				iParam0->f_120 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_mp_intro_plane_exhaust", iParam0->f_33, -5.403f, -8f, -2.2f, 0f, 0f, 0f, 1f, 0, 0, 0);
+				iParam0->f_121 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_mp_intro_plane_exhaust", iParam0->f_33, 6.629f, -8f, -2.2f, 0f, 0f, 0f, 1f, 0, 0, 0);
 			}
 			if (iParam0->f_295)
 			{
@@ -6037,7 +6037,7 @@ void func_116(int iParam0, char* sParam1, char* sParam2, vector3 vParam3, vector
 	CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iParam0->f_8, iParam0->f_9, sParam1, sParam2);
 	PED::SET_SYNCHRONIZED_SCENE_PHASE(iParam0->f_9, fParam5);
 	PED::SET_SYNCHRONIZED_SCENE_RATE(iParam0->f_9, fParam6);
-	CAM::SET_CAM_ACTIVE(iParam0->f_8, 1);
+	CAM::SET_CAM_ACTIVE(iParam0->f_8, true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 1, 0);
 }
 
@@ -6316,7 +6316,7 @@ int func_121(int iParam0)
 void func_122(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, false, iParam1);
 }
 
 int func_123(int iParam0, int iParam1, int iParam2)
@@ -8994,7 +8994,7 @@ void func_171(bool bParam0, bool bParam1)
 				{
 					if (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(Global_1315639))
 					{
-						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Global_1315639, 0, 0);
+						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Global_1315639, false, 0);
 					}
 					PED::DELETE_PED(&Global_1315639);
 				}

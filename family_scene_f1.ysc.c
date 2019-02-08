@@ -1584,7 +1584,7 @@ void func_32(var uParam0, int iParam1, var uParam2, var uParam3, vector3 vParam4
 void func_33(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 void func_34(int iParam0)
@@ -1668,7 +1668,7 @@ int func_41(int iParam0, vector3 vParam1, float fParam2)
 	{
 		return 0;
 	}
-	if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam1, 1) >= (100f * fParam2))
+	if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam1, true) >= (100f * fParam2))
 	{
 		return 0;
 	}
@@ -3370,7 +3370,7 @@ int func_77(int iParam0, char* sParam1, int iParam2)
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(iParam0, 0) && !ENTITY::DOES_ENTITY_BELONG_TO_THIS_SCRIPT(iParam0, 1))
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 1, 0);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, true, 0);
 		}
 		return 1;
 	}

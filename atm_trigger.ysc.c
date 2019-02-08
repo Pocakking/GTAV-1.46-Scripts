@@ -770,7 +770,7 @@ void __EntryFunction__()
 							{
 								UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP("SHOP_JUGG_NONE");
 								UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL("GB_COUT_ATM");
-								UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, -1);
+								UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, false, -1);
 							}
 						}
 					}
@@ -807,7 +807,7 @@ void __EntryFunction__()
 							StringCopy(&Var7, "", 64);
 							if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 							{
-								WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 1);
+								WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), true);
 								if (func_61(0, &Var7))
 								{
 									AI::TASK_GO_STRAIGHT_TO_COORD(PLAYER::PLAYER_PED_ID(), vLocal_564, 1f, 5000, ENTITY::GET_ENTITY_HEADING(iScriptParam_594), 0.25f);
@@ -1400,17 +1400,17 @@ void func_8(int iParam0)
 
 void func_9(int iParam0, var uParam1)
 {
-	var uVar0;
+	int iVar0;
 	
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(iLocal_584, "SET_INPUT_SELECT");
 	GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION_VOID();
 	GRAPHICS::_PUSH_SCALEFORM_MOVIE_FUNCTION(iLocal_584, "GET_CURRENT_SELECTION");
-	uVar0 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
-	while (!GRAPHICS::_0x768FF8961BA904D6(uVar0) && !func_62(iParam0, 1))
+	iVar0 = GRAPHICS::_POP_SCALEFORM_MOVIE_FUNCTION();
+	while (!GRAPHICS::_0x768FF8961BA904D6(iVar0) && !func_62(iParam0, 1))
 	{
 		func_39();
 	}
-	iLocal_590 = GRAPHICS::_0x2DE7EFA66B906036(uVar0);
+	iLocal_590 = GRAPHICS::_0x2DE7EFA66B906036(iVar0);
 	switch (*uParam1)
 	{
 		case 0:
@@ -3858,7 +3858,7 @@ void func_44(int iParam0)
 	}
 	if (AUDIO::IS_MOBILE_PHONE_CALL_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	}
 	Global_15822 = 5;
 	if (iParam0 == 1)
@@ -4889,7 +4889,7 @@ int func_84(char* sParam0)
 void func_85(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 int func_86()
@@ -5062,7 +5062,7 @@ int func_95(int iParam0, var uParam1)
 			{
 				if (!VEHICLE::IS_THIS_MODEL_A_TRAIN(ENTITY::GET_ENTITY_MODEL(iParam0)))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, 1);
 					*uParam1 = 1;
 				}
 			}

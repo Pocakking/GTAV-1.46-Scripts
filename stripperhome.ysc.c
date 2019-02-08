@@ -820,8 +820,8 @@ void func_26()
 	ENTITY::FREEZE_ENTITY_POSITION(iLocal_271[0], false);
 	PED::SET_PED_CONFIG_FLAG(iLocal_271[0], 104, true);
 	AI::OPEN_SEQUENCE_TASK(&iVar0);
-	AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 98.2041f, -1291.252f, 28.2688f, 1f, -1, 0.25f, 1, 40000f);
-	AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 107.6303f, -1304.742f, 27.7688f, 1f, -1, 0.25f, 0, 40000f);
+	AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 98.2041f, -1291.252f, 28.2688f, 1f, -1, 0.25f, 1, 1193033728);
+	AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 107.6303f, -1304.742f, 27.7688f, 1f, -1, 0.25f, 0, 1193033728);
 	AI::TASK_PLAY_ANIM(0, "mini@strip_club@idles@stripper", "stripper_idle_01", 8f, -4f, 15000, 1, 0f, 0, 0, 0);
 	AI::CLOSE_SEQUENCE_TASK(iVar0);
 	AI::TASK_PERFORM_SEQUENCE(iLocal_271[0], iVar0);
@@ -1690,7 +1690,7 @@ void func_57()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(iLocal_271[0]) && !ENTITY::IS_ENTITY_DEAD(iLocal_271[0], 0))
 	{
-		AUDIO::STOP_PED_SPEAKING(iLocal_271[0], 1);
+		AUDIO::STOP_PED_SPEAKING(iLocal_271[0], true);
 		if (PED::IS_PED_IN_GROUP(iLocal_271[0]))
 		{
 			PED::REMOVE_PED_FROM_GROUP(iLocal_271[0]);
@@ -3161,7 +3161,7 @@ void func_106()
 		case 2:
 			if (!CAM::IS_CAM_RENDERING(iLocal_279[0]))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_279[0], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_279[0], true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				if (!ENTITY::IS_ENTITY_DEAD(iLocal_307, 0))
 				{
@@ -3294,7 +3294,7 @@ void func_106()
 			}
 			if (func_188(&iLocal_252) > 6f)
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_279[3], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_279[3], true);
 				if (!ENTITY::IS_ENTITY_DEAD(iLocal_307, 0))
 				{
 					if (ENTITY::GET_ENTITY_MODEL(iLocal_307) == joaat("blimp2"))
@@ -5612,7 +5612,7 @@ void func_187(var uParam0, bool bParam1, bool bParam2, int iParam3, int iParam4,
 		{
 			if (CAM::IS_CAM_ACTIVE(uParam0->f_4))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 0);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, false);
 			}
 			CAM::DESTROY_CAM(uParam0->f_4, 1);
 		}
@@ -5828,7 +5828,7 @@ void func_191(int iParam0, vector3 vParam1)
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_285, 1f, -1, 0.25f, 64, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_285, 1f, -1, 0.25f, 64, 1193033728);
 				}
 			}
 			if (iParam0 != PLAYER::PLAYER_PED_ID())
@@ -5839,7 +5839,7 @@ void func_191(int iParam0, vector3 vParam1)
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam1, 1f, -1, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vParam1, 1f, -1, 0.25f, 1, 1193033728);
 				}
 				if (func_25(iParam0, vParam1, 1) > 5f)
 				{
@@ -8010,7 +8010,7 @@ void func_249(int iParam0)
 			AI::CLEAR_SEQUENCE_TASK(&iLocal_306);
 			AI::OPEN_SEQUENCE_TASK(&iLocal_306);
 			AI::TASK_USE_MOBILE_PHONE_TIMED(0, 8000);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_286, 1.5f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_286, 1.5f, -1, 0.25f, 0, 1193033728);
 			AI::CLOSE_SEQUENCE_TASK(iLocal_306);
 			AI::TASK_PERFORM_SEQUENCE(iParam0, iLocal_306);
 		}
@@ -8114,7 +8114,7 @@ int func_255(var uParam0, bool bParam1)
 			func_269(iLocal_271[0], uLocal_74[0], 0);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_271[iVar2], true);
 			PED::SET_PED_KEEP_TASK(iLocal_271[0], true);
-			PED::SET_PED_DIES_WHEN_INJURED(iLocal_271[0], 1);
+			PED::SET_PED_DIES_WHEN_INJURED(iLocal_271[0], true);
 			func_265(iLocal_271[0]);
 			AI::TASK_PLAY_ANIM(iLocal_271[0], "mini@strip_club@idles@stripper", "stripper_idle_01", 8f, -1.5f, -1, 1, 0f, 0, 0, 0);
 			AI::TASK_LOOK_AT_ENTITY(iLocal_271[iVar2], PLAYER::PLAYER_PED_ID(), -1, 2048, 4);

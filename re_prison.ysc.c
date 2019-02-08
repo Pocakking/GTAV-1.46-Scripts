@@ -1914,7 +1914,7 @@ void func_33()
 		{
 			if (AUDIO::PREPARE_ALARM("PRISON_ALARMS"))
 			{
-				AUDIO::START_ALARM("PRISON_ALARMS", 0);
+				AUDIO::START_ALARM("PRISON_ALARMS", false);
 			}
 		}
 		else

@@ -67,7 +67,7 @@
 	var uLocal_65 = 0;
 	var uLocal_66 = 0;
 	int iLocal_67 = 0;
-	var uLocal_68 = 0;
+	int iLocal_68 = 0;
 	struct<61> Local_69 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	int iLocal_70 = 0;
 	int iLocal_71 = 0;
@@ -454,7 +454,7 @@ void __EntryFunction__()
 	iLocal_62 = 49;
 	iLocal_63 = 64;
 	iLocal_67 = UI::_0x4A9923385BDB9DAD();
-	uLocal_68 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_68 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	sLocal_74 = "rcmminute3glances";
 	sLocal_75 = "rcmminute3panic";
 	vLocal_76 = { 423.5757f, 6478.869f, 32.81561f };
@@ -31136,28 +31136,28 @@ void func_198(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_199(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_201(iParam0, &Var0);
-		MemCopy(&cVar1, {func_196(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_200(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_196(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_200(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_200(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_200(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -36497,7 +36497,7 @@ void func_292()
 			if ((!PED::IS_PED_FLEEING(iLocal_98[iVar0]) && !func_286(iLocal_98[iVar0], 242628503)) && iVar1 > (iVar0 * iVar2))
 			{
 				AI::OPEN_SEQUENCE_TASK(&iVar3);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_101[iVar0 /*3*/], 3f, 20000, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_101[iVar0 /*3*/], 3f, 20000, 1048576000, 0, 1193033728);
 				AI::TASK_SMART_FLEE_PED(0, PLAYER::PLAYER_PED_ID(), 500f, -1, 0, 0);
 				AI::CLOSE_SEQUENCE_TASK(iVar3);
 				if (PED::IS_PED_USING_ANY_SCENARIO(iLocal_98[iVar0]))
@@ -36974,8 +36974,8 @@ void func_303()
 				{
 					Local_94.f_1 = func_307(Local_94, 1, 0, 5);
 				}
-				PED::SET_PED_FLEE_ATTRIBUTES(Local_94, 65536, 1);
-				PED::SET_PED_FLEE_ATTRIBUTES(Local_94, 2, 0);
+				PED::SET_PED_FLEE_ATTRIBUTES(Local_94, 65536, true);
+				PED::SET_PED_FLEE_ATTRIBUTES(Local_94, 2, false);
 				AI::TASK_SMART_FLEE_PED(Local_94, PLAYER::PLAYER_PED_ID(), 500f, -1, 0, 0);
 			}
 			iLocal_325 = GAMEPLAY::GET_GAME_TIMER();
@@ -42853,7 +42853,7 @@ void func_411()
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_103[iVar0], true);
 				AI::SET_PED_PATH_CAN_USE_LADDERS(iLocal_103[iVar0], 0);
 				PED::SET_PED_CAN_BE_TARGETTED(iLocal_103[iVar0], false);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_103[iVar0], 4, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_103[iVar0], 4, true);
 				ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_103[iVar0], true);
 				if ((iVar0 % 2) == 0)
 				{
@@ -42948,7 +42948,7 @@ void func_412()
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_98[iVar0], true);
 				AI::SET_PED_PATH_CAN_USE_LADDERS(iLocal_98[iVar0], 0);
 				PED::SET_PED_CAN_BE_TARGETTED(iLocal_98[iVar0], false);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_98[iVar0], 4, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_98[iVar0], 4, true);
 				ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(iLocal_98[iVar0], true);
 				if ((iVar0 % 2) == 0)
 				{
@@ -51538,12 +51538,12 @@ void func_564()
 	func_471(1, 1, 1);
 }
 
-void func_565(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_565(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -53275,7 +53275,7 @@ void func_625()
 			{
 				if (!(func_286(iLocal_98[iVar0], 713668775) || PED::IS_PED_FLEEING(iLocal_98[iVar0])))
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_98[iVar0], vLocal_101[iVar0 /*3*/], 2f, 20000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_98[iVar0], vLocal_101[iVar0 /*3*/], 2f, 20000, 1048576000, 0, 1193033728);
 				}
 				PED::SET_PED_KEEP_TASK(iLocal_98[iVar0], true);
 				ENTITY::SET_PED_AS_NO_LONGER_NEEDED(&(iLocal_98[iVar0]));

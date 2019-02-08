@@ -165,12 +165,12 @@ void func_2(int iParam0)
 {
 	if (func_51(*iParam0))
 	{
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 2, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 64, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 8, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, 0);
-		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 32, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 2, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 64, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 8, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1, false);
+		PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 32, false);
 		PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 5, false);
 		PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 17, true);
 		PED::SET_PED_CONFIG_FLAG(*iParam0, 118, true);
@@ -305,12 +305,12 @@ void func_13(int iParam0, char* sParam1, char* sParam2, int iParam3)
 		bVar0 = AUDIO::IS_AMBIENT_SPEECH_DISABLED(*iParam0);
 		if (bVar0)
 		{
-			AUDIO::STOP_PED_SPEAKING(*iParam0, 0);
+			AUDIO::STOP_PED_SPEAKING(*iParam0, false);
 		}
 		func_14(*iParam0, sParam1, sParam2, iParam3);
 		if (bVar0)
 		{
-			AUDIO::STOP_PED_SPEAKING(*iParam0, 1);
+			AUDIO::STOP_PED_SPEAKING(*iParam0, true);
 		}
 	}
 }

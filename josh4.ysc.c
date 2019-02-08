@@ -480,11 +480,11 @@ void __EntryFunction__()
 	}
 	if (func_428(Local_386.f_28[1]))
 	{
-		AUDIO::STOP_PED_SPEAKING(Local_386.f_28[1], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_386.f_28[1], true);
 	}
 	if (func_428(Local_386.f_28[2]))
 	{
-		AUDIO::STOP_PED_SPEAKING(Local_386.f_28[2], 1);
+		AUDIO::STOP_PED_SPEAKING(Local_386.f_28[2], true);
 	}
 	iLocal_390 = Local_386.f_35[0];
 	iLocal_391 = Local_386.f_35[1];
@@ -30009,28 +30009,28 @@ void func_158(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_159(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_161(iParam0, &Var0);
-		MemCopy(&cVar1, {func_156(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_160(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_156(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_160(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_160(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_160(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -34535,8 +34535,8 @@ void func_225()
 							func_476("Back gate blocked");
 							vLocal_55 = { -1130.35f, 307.92f, 65.19f };
 							AI::OPEN_SEQUENCE_TASK(&iLocal_389);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_55, 2f, 20000, 1f, 1, 40000f);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1126.56f, 319.85f, 65.98f, 2f, 20000, 1f, 1, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_55, 2f, 20000, 1f, 1, 1193033728);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -1126.56f, 319.85f, 65.98f, 2f, 20000, 1f, 1, 1193033728);
 							AI::TASK_SMART_FLEE_PED(0, PLAYER::PLAYER_PED_ID(), 500f, -1, 0, 0);
 							AI::CLOSE_SEQUENCE_TASK(iLocal_389);
 							PED::SET_PED_KEEP_TASK(Local_386.f_28[0], true);
@@ -34563,7 +34563,7 @@ void func_225()
 					{
 						func_476("Josh car not ok - do Josh flee anyway");
 						AI::OPEN_SEQUENCE_TASK(&iLocal_389);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_55, 2f, 20000, 1f, 1, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_55, 2f, 20000, 1f, 1, 1193033728);
 						if (func_203(iLocal_391))
 						{
 							AI::TASK_ENTER_VEHICLE(0, iLocal_391, 20000, -1, 2f, 1, 0);
@@ -34577,7 +34577,7 @@ void func_225()
 						PED::SET_PED_KEEP_TASK(Local_386.f_28[0], true);
 						AI::TASK_PERFORM_SEQUENCE(Local_386.f_28[0], iLocal_389);
 					}
-					PED::SET_PED_FLEE_ATTRIBUTES(Local_386.f_28[0], 2, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(Local_386.f_28[0], 2, true);
 					AI::CLEAR_SEQUENCE_TASK(&iLocal_389);
 				}
 				iLocal_413 = GAMEPLAY::GET_GAME_TIMER();
@@ -36243,8 +36243,8 @@ void func_267()
 			PED::FORCE_PED_MOTION_STATE(Local_386.f_28[2], 1063765679, false, 1, 0);
 			AI::OPEN_SEQUENCE_TASK(&iLocal_389);
 			AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 1026, 2);
-			AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, -1103.72f, 289.46f, 63.23f, PLAYER::PLAYER_PED_ID(), 1f, false, 0.1f, 1082130432, 1, 0, 1, -957453492, 20000);
-			AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, -1106.08f, 288.55f, 63.31f, PLAYER::PLAYER_PED_ID(), 1f, false, 0.1f, 1082130432, 1, 0, 1, -957453492, 20000);
+			AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, -1103.72f, 289.46f, 63.23f, PLAYER::PLAYER_PED_ID(), 1f, false, 0.1f, 4f, 1, 0, 1, -957453492, 20000);
+			AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, -1106.08f, 288.55f, 63.31f, PLAYER::PLAYER_PED_ID(), 1f, false, 0.1f, 4f, 1, 0, 1, -957453492, 20000);
 			AI::TASK_AIM_GUN_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 1);
 			AI::CLOSE_SEQUENCE_TASK(iLocal_389);
 			AI::TASK_PERFORM_SEQUENCE(Local_386.f_28[2], iLocal_389);

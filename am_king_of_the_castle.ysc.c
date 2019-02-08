@@ -7912,7 +7912,7 @@ bool func_158(char* sParam0, char* sParam1, char* sParam2)
 	return GAMEPLAY::GET_HASH_KEY(sParam2) == GAMEPLAY::GET_HASH_KEY(&(Global_1312576.f_32));
 }
 
-void func_159(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5)
+void func_159(char* sParam0, char* sParam1, int iParam2, char* sParam3, int iParam4, int iParam5)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 	if (!iParam2 == 0)
@@ -7924,7 +7924,7 @@ void func_159(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam
 	{
 		UI::_SET_NOTIFACTION_COLOR_NEXT(iParam4);
 	}
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam3);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam3);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam5);
 }
 

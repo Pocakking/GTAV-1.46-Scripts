@@ -394,9 +394,9 @@ int func_5(var uParam0, struct<2> Param1, var uParam2, var uParam3, var uParam4,
 	return 0;
 }
 
-void func_6(var uParam0)
+void func_6(int iParam0)
 {
-	OBJECT::_0x190428512B240692(uParam0, 1, 1, 0, 1);
+	OBJECT::_0x190428512B240692(iParam0, 1, 1, 0, 1);
 }
 
 void func_7(var uParam0)
@@ -9459,11 +9459,11 @@ int func_153(int iParam0)
 
 float func_154(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_104(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_104(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}

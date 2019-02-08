@@ -629,10 +629,10 @@ int func_15(int iParam0, int iParam1, int iParam2)
 	int iVar1;
 	
 	iVar0 = PED::CREATE_PED(26, Local_36.f_53[0], (iParam0[iParam1 /*122*/])->f_2[iParam2 /*20*/].f_10, (iParam0[iParam1 /*122*/])->f_2[iParam2 /*20*/].f_13, 1, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iVar0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iVar0, true);
 	PED::SET_PED_AS_ENEMY(iVar0, 1);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iVar0, Local_36.f_52);
-	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iVar0, 1, 0f);
+	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iVar0, 1, 0);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iVar0, 5, true);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(iVar0, 1);
 	PED::SET_PED_CONFIG_FLAG(iVar0, 42, true);

@@ -29792,28 +29792,28 @@ void func_158(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_159(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_161(iParam0, &Var0);
-		MemCopy(&cVar1, {func_156(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_160(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_156(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_160(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_160(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_160(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -36480,7 +36480,7 @@ void func_283()
 {
 	if (ENTITY::DOES_ENTITY_EXIST(Local_43.f_41[3]) && !iLocal_235)
 	{
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_rcpap1_camera", PED::GET_PED_BONE_COORDS(Local_43.f_28[0], 28422, vLocal_232), ENTITY::GET_ENTITY_ROTATION(Local_43.f_41[3], 2), 1f, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_rcpap1_camera", PED::GET_PED_BONE_COORDS(Local_43.f_28[0], 28422, vLocal_232), ENTITY::GET_ENTITY_ROTATION(Local_43.f_41[3], 2), 1065353216, 0, 0, 0);
 		if (!AUDIO::HAS_SOUND_FINISHED(iLocal_231))
 		{
 			AUDIO::STOP_SOUND(iLocal_231);

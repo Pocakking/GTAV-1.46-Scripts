@@ -4680,7 +4680,7 @@ void func_103()
 	}
 	else if (!AUDIO::IS_AMBIENT_SPEECH_PLAYING(iLocal_49))
 	{
-		AUDIO::PLAY_PAIN(iLocal_49, 4, 0, 0);
+		AUDIO::PLAY_PAIN(iLocal_49, 4, 0f, 0);
 	}
 }
 
@@ -4747,11 +4747,11 @@ int func_106()
 		iLocal_48 = PED::CREATE_PED(22, iVar0, vLocal_46, fLocal_47, 1, true);
 		ENTITY::SET_ENTITY_HEALTH(iLocal_48, 125, 0);
 		PED::SET_PED_MAX_HEALTH(iLocal_48, 125);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 128, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_48, 128, true);
 		PED::SET_PED_SUFFERS_CRITICAL_HITS(iLocal_48, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_48, 42, true);
 		PED::SET_PED_HEARING_RANGE(iLocal_48, 1.5f);
-		AUDIO::STOP_PED_SPEAKING(iLocal_48, 1);
+		AUDIO::STOP_PED_SPEAKING(iLocal_48, true);
 		PED::SET_PED_SEEING_RANGE(iLocal_48, 40f);
 		PED::SET_PED_CONFIG_FLAG(iLocal_48, 20, true);
 		PED::SET_PED_VISUAL_FIELD_MIN_ANGLE(iLocal_48, fLocal_85);
@@ -4762,7 +4762,7 @@ int func_106()
 		AI::ADD_COVER_BLOCKING_AREA(Vector(31.64024f, 6405.058f, -98.41389f) - Vector(5f, 5f, 5f), Vector(31.64024f, 6405.058f, -98.41389f) + Vector(5f, 5f, 5f), 0, 0, 1, 0);
 		iLocal_61 = PED::ADD_SCENARIO_BLOCKING_AREA(Vector(31.64024f, 6405.058f, -98.41389f) - Vector(40f, 40f, 40f), Vector(31.64024f, 6405.058f, -98.41389f) + Vector(40f, 40f, 40f), 0, 1, 1, 1);
 		PED::SET_PED_CAN_BE_TARGETTED(iLocal_50, false);
-		AUDIO::STOP_PED_SPEAKING(iLocal_50, 1);
+		AUDIO::STOP_PED_SPEAKING(iLocal_50, true);
 		vLocal_46.z = (vLocal_46.z + 1f);
 		vLocal_66 = { vLocal_46 };
 		vLocal_67 = { 0f, 0f, fLocal_47 };

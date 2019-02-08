@@ -662,7 +662,7 @@ void func_2()
 			{
 				PED::SET_PED_CONFIG_FLAG(iLocal_222[0], 185, true);
 				AI::OPEN_SEQUENCE_TASK(&iLocal_243);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_226, false) + Vector(0f, 5f, 0f), 1f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_226, false) + Vector(0f, 5f, 0f), 1f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_SWAP_WEAPON(0, 0);
 				AI::TASK_PLAY_ANIM(0, "random@countrysiderobbery", "idle_a", 2f, -2f, -1, 0, 0f, 0, 0, 0);
 				AI::TASK_PLAY_ANIM(0, "random@countrysiderobbery", "idle_d", 2f, -2f, -1, 1, 0f, 0, 0, 0);
@@ -676,7 +676,7 @@ void func_2()
 				PED::SET_PED_CONFIG_FLAG(iLocal_222[1], 185, true);
 				WEAPON::SET_CURRENT_PED_WEAPON(iLocal_222[1], joaat("weapon_unarmed"), true);
 				AI::OPEN_SEQUENCE_TASK(&iLocal_243);
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_223, false) + Vector(0f, 1f, 0f), 2f, -1, 0.25f, 0, 40000f);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_223, false) + Vector(0f, 1f, 0f), 2f, -1, 1048576000, 0, 1193033728);
 				AI::TASK_LOOK_AT_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_223, false), -1, 2052, 2);
 				AI::TASK_TURN_PED_TO_FACE_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_223, false), 0);
 				AI::TASK_PLAY_ANIM(0, "random@countrysiderobbery", "enter", 2f, -2f, -1, 0, 0f, 0, 0, 0);
@@ -692,7 +692,7 @@ void func_2()
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_219))
 				{
 					AI::OPEN_SEQUENCE_TASK(&iLocal_243);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_219, false) + Vector(0f, 1f, 0f), 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, ENTITY::GET_ENTITY_COORDS(iLocal_219, false) + Vector(0f, 1f, 0f), 1f, -1, 1048576000, 0, 1193033728);
 					AI::TASK_SWAP_WEAPON(0, 0);
 					AI::TASK_PLAY_ANIM(0, "random@countrysiderobbery", "idle_d", 2f, -2f, -1, 0, 0f, 0, 0, 0);
 					AI::TASK_PLAY_ANIM(0, "random@countrysiderobbery", "idle_a", 2f, -2f, -1, 1, 0f, 0, 0, 0);
@@ -2761,7 +2761,7 @@ void func_56()
 				func_50(&uLocal_52, 5, iLocal_219, "RECSBRobber1", 0, 1);
 				func_57(&uLocal_52, "recsbau", "recsb_thanxa", "recsb_thanxa_3", 4, 0, 0);
 			}
-			OBJECT::CREATE_MONEY_PICKUPS(OBJECT::GET_SAFE_PICKUP_COORDS(vLocal_245, 1067030938, 1069547520), 1000, 5, 0);
+			OBJECT::CREATE_MONEY_PICKUPS(OBJECT::GET_SAFE_PICKUP_COORDS(vLocal_245, 1.2f, 1.5f), 1000, 5, 0);
 			iLocal_253 = 1;
 		}
 	}
@@ -2838,7 +2838,7 @@ void func_58()
 			{
 				if (PED::IS_PED_IN_VEHICLE(iLocal_218, iLocal_226, 0))
 				{
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_218, 2, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_218, 2, true);
 					AI::OPEN_SEQUENCE_TASK(&iLocal_243);
 					AI::TASK_VEHICLE_MISSION_PED_TARGET(0, iLocal_226, PLAYER::PLAYER_PED_ID(), 8, 100f, 786469, 1000f, 10f, 1);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_243);
@@ -2855,7 +2855,7 @@ void func_58()
 			{
 				if (PED::IS_PED_IN_VEHICLE(iLocal_219, iLocal_226, 0))
 				{
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_219, 2, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_219, 2, true);
 					AI::OPEN_SEQUENCE_TASK(&iLocal_243);
 					AI::TASK_VEHICLE_MISSION_PED_TARGET(0, iLocal_226, PLAYER::PLAYER_PED_ID(), 8, 100f, 786469, 1000f, 10f, 1);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_243);
@@ -2872,8 +2872,8 @@ void func_58()
 			{
 				if (PED::IS_PED_IN_VEHICLE(iLocal_218, iLocal_226, 0) && PED::IS_PED_IN_VEHICLE(iLocal_219, iLocal_226, 0))
 				{
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_218, 2, 1);
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_219, 2, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_218, 2, true);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_219, 2, true);
 					AI::OPEN_SEQUENCE_TASK(&iLocal_243);
 					AI::TASK_VEHICLE_MISSION_PED_TARGET(0, iLocal_226, PLAYER::PLAYER_PED_ID(), 8, 100f, 786469, 1000f, 10f, 1);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_243);

@@ -4568,7 +4568,7 @@ void func_40()
 			VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(iLocal_239[iVar0], 1084227584);
 			if (!GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&(Local_243[iVar0 /*16*/])))
 			{
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_239[iVar0], &(Local_243[iVar0 /*16*/]), &sLocal_249, 8f, 1, 0, 0, 0, 0);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_239[iVar0], &(Local_243[iVar0 /*16*/]), &sLocal_249, 8f, 1, 0, 0, 0f, 0);
 			}
 			else
 			{

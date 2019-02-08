@@ -1926,7 +1926,7 @@ void func_70()
 			{
 				func_61(&(Local_65.f_17), 0, 0);
 				func_71(1f, &vVar4, &vVar5);
-				GAMEPLAY::_0xBFE5756E7407064A(vVar4, vVar5, Local_64.f_8.f_3, 1, Local_64.f_8, PLAYER::PLAYER_PED_ID(), 1, 1, -1082130432, Local_64.f_95, 0, 0, Local_65.f_22, 1, 0, Local_64.f_94 != 0);
+				GAMEPLAY::_0xBFE5756E7407064A(vVar4, vVar5, Local_64.f_8.f_3, 1, Local_64.f_8, PLAYER::PLAYER_PED_ID(), 1, 1, -1f, Local_64.f_95, 0, 0, Local_65.f_22, 1, 0, Local_64.f_94 != 0);
 				AUDIO::PLAY_SOUND_FROM_COORD(Local_65.f_40.f_13.f_2, Local_65.f_40.f_13.f_1, vVar4, Local_65.f_40.f_13, 1, 500, 0);
 			}
 			else
@@ -2300,7 +2300,7 @@ void func_85()
 			vVar9 = { vVar9 + vVar10 };
 			vVar7 = { vVar6 + FtoV(SYSTEM::VMAG(vVar7 - vVar6)) * func_7(vVar9) };
 			vVar6.z = (vVar6.z - 1f);
-			GAMEPLAY::_0xBFE5756E7407064A(vVar6, vVar7, Local_64.f_8.f_3, 0, Local_64.f_8, PLAYER::PLAYER_PED_ID(), 1, 1, -1082130432, Local_64.f_95, 0, 0, 0, 1, 0, Local_64.f_94 != 0);
+			GAMEPLAY::_0xBFE5756E7407064A(vVar6, vVar7, Local_64.f_8.f_3, 0, Local_64.f_8, PLAYER::PLAYER_PED_ID(), 1, 1, -1f, Local_64.f_95, 0, 0, 0, 1, 0, Local_64.f_94 != 0);
 			if (Local_65.f_40.f_13.f_2 != -1 && AUDIO::HAS_SOUND_FINISHED(Local_65.f_40.f_13.f_2))
 			{
 				AUDIO::PLAY_SOUND_FROM_COORD(Local_65.f_40.f_13.f_2, Local_65.f_40.f_13.f_1, vVar6, Local_65.f_40.f_13, 1, 500, 0);

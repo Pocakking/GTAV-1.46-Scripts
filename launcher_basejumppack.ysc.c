@@ -890,17 +890,17 @@ void func_5()
 {
 }
 
-void func_6(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_6(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -1240,7 +1240,7 @@ void func_25(bool bParam0)
 				vVar5 = { ENTITY::GET_ENTITY_COORDS(iLocal_255, false) + vVar4 };
 				if (iLocal_82 == 12)
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar5, 1f, 20000, 0.25f, 0, func_63(vVar5, ENTITY::GET_ENTITY_COORDS(iLocal_255, false)));
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar5, 1f, 20000, 1048576000, 0, func_63(vVar5, ENTITY::GET_ENTITY_COORDS(iLocal_255, false)));
 				}
 				else
 				{
@@ -1315,7 +1315,7 @@ void func_25(bool bParam0)
 		if (!func_33(func_34(iLocal_82)) && !ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
 		{
 			AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), func_34(iLocal_82), 1f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), func_34(iLocal_82), 1f, -1, 1048576000, 0, 1193033728);
 		}
 		if (ENTITY::DOES_ENTITY_EXIST(iLocal_255))
 		{
@@ -1585,7 +1585,7 @@ void func_40()
 	AUDIO::PLAY_SOUND_FRONTEND(-1, "Grab_Parachute", "BASEJUMPS_SOUNDS", true);
 	iVar4 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 	CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iVar4, iVar3, "puton_parachute_cam", "oddjobs@basejump@ig_15");
-	CAM::SET_CAM_ACTIVE(iVar4, 1);
+	CAM::SET_CAM_ACTIVE(iVar4, true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	while (PED::GET_SYNCHRONIZED_SCENE_PHASE(iVar3) < 0.6f)
 	{

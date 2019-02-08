@@ -47,7 +47,7 @@
 	var uLocal_45 = 0;
 	var uLocal_46 = 0;
 	int iLocal_47 = 0;
-	var uLocal_48 = 0;
+	int iLocal_48 = 0;
 	vector3 vLocal_49 = { 0f, 0f, 0f };
 	float fLocal_50 = 0f;
 	int iLocal_51 = 0;
@@ -479,7 +479,7 @@ void __EntryFunction__()
 	iLocal_42 = 49;
 	iLocal_43 = 64;
 	iLocal_47 = UI::_0x4A9923385BDB9DAD();
-	uLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_48 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	fLocal_50 = -1f;
 	iLocal_218 = 1;
 	iLocal_227 = -1;
@@ -1116,9 +1116,9 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 			WEAPON::GIVE_WEAPON_TO_PED((*uParam6)[0], joaat("weapon_appistol"), -1, true, true);
 			PED::SET_PED_MONEY((*uParam6)[0], GAMEPLAY::GET_RANDOM_INT_IN_RANGE(800, 2000));
 			PED::SET_PED_CONFIG_FLAG((*uParam6)[0], 206, true);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 2, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 1024, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 65536, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 2, false);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 1024, true);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[0], 65536, true);
 			PED::SET_PED_COMPONENT_VARIATION((*uParam6)[0], 9, 1, 0, 0);
 			func_113(&uLocal_53, 2, (*uParam6)[0], "REGETRobber2", 0, 1);
 			(*uParam6)[1] = PED::CREATE_PED(22, Param1.f_1, vVar1[1 /*3*/], fVar2[1], 1, true);
@@ -1128,9 +1128,9 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 			WEAPON::GIVE_WEAPON_TO_PED((*uParam6)[1], joaat("weapon_pistol"), -1, true, true);
 			PED::SET_PED_MONEY((*uParam6)[1], GAMEPLAY::GET_RANDOM_INT_IN_RANGE(800, 2000));
 			PED::SET_PED_CONFIG_FLAG((*uParam6)[1], 206, true);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 2, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 1024, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 65536, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 2, false);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 1024, true);
+			PED::SET_PED_FLEE_ATTRIBUTES((*uParam6)[1], 65536, true);
 			PED::SET_PED_COMPONENT_VARIATION((*uParam6)[1], 0, 5, 0, 0);
 			PED::SET_PED_COMPONENT_VARIATION((*uParam6)[1], 1, 1, 0, 0);
 			PED::SET_PED_COMPONENT_VARIATION((*uParam6)[1], 2, 1, 0, 0);
@@ -1346,7 +1346,7 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 									AI::OPEN_SEQUENCE_TASK(&iLocal_265);
 									AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000, 2096, 4);
 									AI::TASK_AIM_GUN_AT_ENTITY(0, iLocal_257, 1500, 0);
-									AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar11, iLocal_257, 3f, false, 0.5f, 1082130432, true, 0, 0, -957453492, 20000);
+									AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar11, iLocal_257, 3f, false, 0.5f, 4f, true, 0, 0, -957453492, 20000);
 									AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000, 2096, 4);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_265);
 									AI::TASK_PERFORM_SEQUENCE(iLocal_258[0], iLocal_265);
@@ -1354,7 +1354,7 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 									AI::OPEN_SEQUENCE_TASK(&iLocal_265);
 									AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000, 2096, 4);
 									AI::TASK_AIM_GUN_AT_ENTITY(0, iLocal_257, 2500, 0);
-									AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar12, iLocal_257, 3f, false, 0.5f, 1082130432, true, 0, 0, -957453492, 20000);
+									AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(0, vVar12, iLocal_257, 3f, false, 0.5f, 4f, true, 0, 0, -957453492, 20000);
 									AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 10000, 2096, 4);
 									AI::CLOSE_SEQUENCE_TASK(iLocal_265);
 									AI::TASK_PERFORM_SEQUENCE(iLocal_258[1], iLocal_265);
@@ -2020,7 +2020,7 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 					AI::TASK_LOOK_AT_ENTITY(PLAYER::PLAYER_PED_ID(), (*uParam6)[iVar8], 4000, 2048, 2);
 					AI::OPEN_SEQUENCE_TASK(&iVar0);
 					AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 4194816);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7[iLocal_221 /*3*/], 2f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7[iLocal_221 /*3*/], 2f, -1, 1048576000, 0, 1193033728);
 					AI::TASK_SMART_FLEE_PED(0, PLAYER::PLAYER_PED_ID(), 200f, -1, 0, 0);
 					AI::CLOSE_SEQUENCE_TASK(iVar0);
 					AI::TASK_PERFORM_SEQUENCE((*uParam6)[0], iVar0);
@@ -2030,7 +2030,7 @@ int func_1(int iParam0, struct<5> Param1, var uParam2, var uParam3, var uParam4,
 						AI::OPEN_SEQUENCE_TASK(&iVar0);
 						AI::TASK_LEAVE_ANY_VEHICLE(0, 2000, 4194816);
 						AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000, 2052, 2);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7[iLocal_221 /*3*/], 2f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7[iLocal_221 /*3*/], 2f, -1, 1048576000, 0, 1193033728);
 						AI::TASK_SMART_FLEE_PED(0, PLAYER::PLAYER_PED_ID(), 200f, -1, 0, 0);
 						AI::CLOSE_SEQUENCE_TASK(iVar0);
 						AI::TASK_PERFORM_SEQUENCE((*uParam6)[1], iVar0);

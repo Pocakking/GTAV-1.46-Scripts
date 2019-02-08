@@ -1453,12 +1453,12 @@ void func_32()
 	}
 }
 
-void func_33(vector3 vParam0, float fParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
+void func_33(vector3 vParam0, int iParam1, int iParam2, int iParam3, bool bParam4, bool bParam5)
 {
 	int iVar0;
 	int iVar1;
 	
-	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, fParam1, iParam2, 127);
+	iVar0 = STREAMING::FORMAT_FOCUS_HEADING(vParam0, iParam1, iParam2, 127);
 	if (STREAMING::_0x07C313F94746702C(iVar0))
 	{
 		iVar1 = (GAMEPLAY::GET_GAME_TIMER() + iParam3);
@@ -1788,7 +1788,7 @@ int func_42()
 			GRAPHICS::_0xEF398BEEE4EF45F9(1);
 			iLocal_82 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", 93.8459f, 251.8829f, 110.4535f, 23.0883f, 0.101f, -61.7699f, 40f, 1, 2);
 			iLocal_83 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", 97.0995f, 249.7653f, 109.0195f, -3f, 0f, -91.5944f, 50f, 1, 2);
-			CAM::SET_CAM_ACTIVE(iLocal_82, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_82, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_83, iLocal_82, 17000, 1, 1);
 			func_77(&uLocal_96, "BUSTOAU", "BUSTO_THANK", 4, 0, 0, 0);
@@ -1864,7 +1864,7 @@ int func_42()
 			break;
 		
 		case 3:
-			CAM::SET_CAM_ACTIVE(iLocal_82, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_82, false);
 			CAM::RENDER_SCRIPT_CAMS(false, true, 3000, 0, 0, 0);
 			CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 			CAM::DESTROY_CAM(iLocal_82, 0);
@@ -3566,7 +3566,7 @@ void func_85()
 				UI::DISPLAY_RADAR(false);
 				iLocal_82 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", 94.5693f, 246.0525f, 108.9809f, -11.5369f, 0f, -74.512f, 40f, 1, 2);
 				iLocal_83 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_SCRIPTED_CAMERA", 95.7144f, 243.8854f, 111.291f, -26.2154f, 0f, -59.2407f, 50f, 1, 2);
-				CAM::SET_CAM_ACTIVE(iLocal_82, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_82, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_83, iLocal_82, 6500, 1, 1);
 				if (VEHICLE::IS_VEHICLE_DRIVEABLE(PLAYER::GET_PLAYERS_LAST_VEHICLE(), 0))
@@ -3636,7 +3636,7 @@ void func_85()
 			
 			case 2:
 				AI::TASK_VEHICLE_DRIVE_TO_COORD(iLocal_57, iLocal_63, Local_50[0 /*15*/].f_1, Local_50[0 /*15*/].f_8, 0, joaat("tourbus"), iLocal_264, 5f, 15f);
-				CAM::SET_CAM_ACTIVE(iLocal_82, 0);
+				CAM::SET_CAM_ACTIVE(iLocal_82, false);
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				CAM::DESTROY_CAM(iLocal_82, 0);
 				CAM::DESTROY_CAM(iLocal_83, 0);
@@ -8276,7 +8276,7 @@ void func_220()
 	}
 	if (CAM::DOES_CAM_EXIST(iLocal_82))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_82, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_82, false);
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		CAM::DESTROY_CAM(iLocal_82, 0);
 		GAMEPLAY::SET_MINIGAME_IN_PROGRESS(0);

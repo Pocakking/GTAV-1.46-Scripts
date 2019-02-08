@@ -199025,20 +199025,20 @@ int func_581(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_582(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_582(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -203588,7 +203588,7 @@ bool func_606(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, i
 						unk_0x7D3EC9370CE8AE07(func_607(func_635()));
 						if (iParam0 == 1394405165)
 						{
-							NETWORKCASH::NETWORK_BUY_PROPERTY(iParam4, iParam8, 0, 0);
+							NETWORKCASH::NETWORK_BUY_PROPERTY(iParam4, iParam8, false, false);
 						}
 						else if (iParam0 == -103880010)
 						{
@@ -233406,7 +233406,7 @@ void func_989()
 	}
 }
 
-int func_990(int iParam0, int iParam1, var uParam2)
+int func_990(int iParam0, int iParam1, int iParam2)
 {
 	int iVar0;
 	int iVar1;
@@ -233417,10 +233417,10 @@ int func_990(int iParam0, int iParam1, var uParam2)
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam2, &uVar2, &iVar3);
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam2, &uVar2, &iVar3);
 		if (iVar3 == iParam1)
 		{
-			if (*uParam2 != 0 && *uParam2 != 1849449579)
+			if (*iParam2 != 0 && *iParam2 != 1849449579)
 			{
 				return 1;
 			}
@@ -236286,7 +236286,7 @@ void func_1055(bool bParam0)
 
 void func_1056(int iParam0, int iParam1, int iParam2, int iParam3)
 {
-	var uVar0;
+	int iVar0;
 	
 	Global_95952 = iParam1;
 	Global_95953 = iParam0;
@@ -236302,7 +236302,7 @@ void func_1056(int iParam0, int iParam1, int iParam2, int iParam3)
 		else if ((GAMEPLAY::IS_BIT_SET(Global_71017[1 /*14*/].f_6, 1) && !GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&(Global_71017[1 /*14*/].f_8))) && GAMEPLAY::GET_HASH_KEY(&(Global_71017[1 /*14*/].f_8)) != GAMEPLAY::GET_HASH_KEY("NO_LABEL"))
 		{
 		}
-		else if (GAMEPLAY::IS_BIT_SET(Global_71017[1 /*14*/].f_6, 6) && func_990(Global_2621444, 11, &uVar0))
+		else if (GAMEPLAY::IS_BIT_SET(Global_71017[1 /*14*/].f_6, 6) && func_990(Global_2621444, 11, &iVar0))
 		{
 		}
 		else

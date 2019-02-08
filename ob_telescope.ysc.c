@@ -269,7 +269,7 @@ void func_1()
 	CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 	if (CAM::IS_CAM_ACTIVE(iLocal_80))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_80, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_80, false);
 	}
 	CAM::DESTROY_CAM(iLocal_80, 0);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -535,7 +535,7 @@ void func_4()
 										{
 											vVar6 = { 0f, 0f, ENTITY::GET_ENTITY_HEADING(iLocal_79) };
 											vVar7 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar6, 0, 2) };
-											vVar8 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar6, 0, 2) };
+											vVar8 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar6, 0f, 2) };
 											AI::TASK_GO_STRAIGHT_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar7, 1f, 20000, vVar8.z, 0.05f);
 										}
 										else
@@ -553,7 +553,7 @@ void func_4()
 									{
 										vVar9 = { 0f, 0f, ENTITY::GET_ENTITY_HEADING(iLocal_79) };
 										vVar10 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar9, 0, 2) };
-										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar9, 0, 2) };
+										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), vVar9, 0f, 2) };
 										func_310(1, 1, 1, 0);
 										AI::TASK_GO_STRAIGHT_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar10, 1f, 20000, vVar11.z, 0.05f);
 										func_295();
@@ -671,7 +671,7 @@ void func_4()
 					func_67();
 					if (!ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), 14.53664f, 529.3154f, 173.6282f, 12.65681f, 528.8023f, 175.8782f, 2f, 0, true, 0))
 					{
-						AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), ENTITY::GET_ENTITY_ROTATION(iLocal_79, 2), 2f, 0.1f, -1, 1576960, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), sLocal_97, sLocal_103, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), ENTITY::GET_ENTITY_ROTATION(iLocal_79, 2), 2f, 0.1f, -1, 1576960, 0, 2, 0);
 					}
 					iLocal_55 = 3;
 				}
@@ -722,7 +722,7 @@ void func_4()
 			{
 				if (!ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), 14.53664f, 529.3154f, 173.6282f, 12.65681f, 528.8023f, 175.8782f, 2f, 0, true, 0))
 				{
-					AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), sLocal_97, sLocal_104, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), ENTITY::GET_ENTITY_ROTATION(iLocal_79, 2), 2f, 0.1f, -1, 1576961, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), sLocal_97, sLocal_104, ENTITY::GET_ENTITY_COORDS(iLocal_79, true), ENTITY::GET_ENTITY_ROTATION(iLocal_79, 2), 2f, 0.1f, -1, 1576961, 0, 2, 0);
 				}
 				if (bLocal_67)
 				{
@@ -38759,20 +38759,20 @@ int func_208(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_209(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_209(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}

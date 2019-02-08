@@ -747,7 +747,7 @@ void func_17()
 							MemCopy(&cLocal_88, {Local_87.f_34}, 16);
 							StringConCat(&cLocal_88, "_CAM", 64);
 							CAM::PLAY_CAM_ANIM(iLocal_84, &cLocal_88, &(Local_87.f_26), Local_87.f_20, Local_87.f_23, 0, 2);
-							CAM::SET_CAM_ACTIVE(iLocal_84, 1);
+							CAM::SET_CAM_ACTIVE(iLocal_84, true);
 							if (CAM::_0xEE778F8C7E1142E2(CAM::_0x19CAFA3C87F7C2FF()) != 4)
 							{
 								CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -934,7 +934,7 @@ void func_17()
 						MemCopy(&cLocal_88, {Local_87.f_50}, 16);
 						StringConCat(&cLocal_88, "_CAM", 64);
 						CAM::PLAY_CAM_ANIM(iLocal_84, &cLocal_88, &(Local_87.f_26), Local_87.f_20, Local_87.f_23, 0, 2);
-						CAM::SET_CAM_ACTIVE(iLocal_84, 1);
+						CAM::SET_CAM_ACTIVE(iLocal_84, true);
 						if (CAM::_0xEE778F8C7E1142E2(CAM::_0x19CAFA3C87F7C2FF()) != 4)
 						{
 							CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -958,7 +958,7 @@ void func_17()
 				AI::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 				if (CAM::DOES_CAM_EXIST(iLocal_84))
 				{
-					CAM::SET_CAM_ACTIVE(iLocal_84, 0);
+					CAM::SET_CAM_ACTIVE(iLocal_84, false);
 					CAM::DESTROY_CAM(iLocal_84, 0);
 				}
 				if (CAM::_0xEE778F8C7E1142E2(CAM::_0x19CAFA3C87F7C2FF()) != 4)
@@ -37566,20 +37566,20 @@ int func_200(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_201(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_201(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -95499,7 +95499,7 @@ void func_422()
 			if (!CAM::DOES_CAM_EXIST(iLocal_85))
 			{
 				iLocal_85 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-				CAM::SET_CAM_ACTIVE(iLocal_85, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_85, true);
 				if (iLocal_73)
 				{
 					CAM::SET_CAM_PARAMS(iLocal_85, Local_87.f_105, Local_87.f_108, Local_87.f_111, 0, 1, 1, 2);
@@ -95905,7 +95905,7 @@ void func_429()
 		}
 		if (CAM::DOES_CAM_EXIST(iLocal_84))
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_84, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_84, false);
 			CAM::DESTROY_CAM(iLocal_84, 0);
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 			CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);

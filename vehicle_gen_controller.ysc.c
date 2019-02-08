@@ -20208,12 +20208,12 @@ void func_226()
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 					if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 						CAM::DESTROY_CAM(Local_56.f_110, 0);
 					}
 					if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 						CAM::DESTROY_CAM(Local_56.f_111, 0);
 					}
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_178))
@@ -20348,12 +20348,12 @@ void func_226()
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 					if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 						CAM::DESTROY_CAM(Local_56.f_110, 0);
 					}
 					if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 						CAM::DESTROY_CAM(Local_56.f_111, 0);
 					}
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_178))
@@ -20684,12 +20684,12 @@ void func_226()
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 					if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 						CAM::DESTROY_CAM(Local_56.f_110, 0);
 					}
 					if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 						CAM::DESTROY_CAM(Local_56.f_111, 0);
 					}
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_178))
@@ -20853,12 +20853,12 @@ void func_226()
 							CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 							if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 							{
-								CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+								CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 								CAM::DESTROY_CAM(Local_56.f_110, 0);
 							}
 							if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 							{
-								CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+								CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 								CAM::DESTROY_CAM(Local_56.f_111, 0);
 							}
 							if (ENTITY::DOES_ENTITY_EXIST(iLocal_178))
@@ -21016,12 +21016,12 @@ void func_226()
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 				if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 				{
-					CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+					CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 					CAM::DESTROY_CAM(Local_56.f_110, 0);
 				}
 				if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 				{
-					CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+					CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 					CAM::DESTROY_CAM(Local_56.f_111, 0);
 				}
 				if (ENTITY::DOES_ENTITY_EXIST(iLocal_178))
@@ -23352,7 +23352,7 @@ int func_289(var uParam0, var uParam1, var uParam2)
 		}
 		else
 		{
-			CAM::SET_CAM_ACTIVE(*uParam1, 1);
+			CAM::SET_CAM_ACTIVE(*uParam1, true);
 		}
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		return 1;
@@ -25626,12 +25626,12 @@ void func_310()
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 			if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 			{
-				CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+				CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 				CAM::DESTROY_CAM(Local_56.f_110, 0);
 			}
 			if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 			{
-				CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+				CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 				CAM::DESTROY_CAM(Local_56.f_111, 0);
 			}
 			ENTITY::SET_ENTITY_VISIBLE(PLAYER::PLAYER_PED_ID(), true, 0);
@@ -26021,12 +26021,12 @@ void func_310()
 					CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 					if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 						CAM::DESTROY_CAM(Local_56.f_110, 0);
 					}
 					if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 					{
-						CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+						CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 						CAM::DESTROY_CAM(Local_56.f_111, 0);
 					}
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
@@ -30686,7 +30686,7 @@ void func_407(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(5, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30743,7 +30743,7 @@ void func_409(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(5, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30768,7 +30768,7 @@ void func_410(var uParam0, vector3 vParam1, float fParam2)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30794,7 +30794,7 @@ void func_411(var uParam0, var uParam1, vector3 vParam2, float fParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0) && STREAMING::HAS_MODEL_LOADED(iVar1))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar0, vParam2, fParam3, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30847,7 +30847,7 @@ void func_413(var uParam0, var uParam1, vector3 vParam2, float fParam3, bool bPa
 	if (STREAMING::HAS_MODEL_LOADED(iVar0) && STREAMING::HAS_MODEL_LOADED(iVar1))
 	{
 		*uParam0 = PED::CREATE_PED(4, iVar1, vParam2, fParam3, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar1);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30891,7 +30891,7 @@ void func_414(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30965,7 +30965,7 @@ void func_416(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 227, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
@@ -30998,7 +30998,7 @@ void func_417(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
 		ROPE::ACTIVATE_PHYSICS(*uParam0);
@@ -31035,7 +31035,7 @@ void func_418(var uParam0, vector3 vParam1, float fParam2, bool bParam3)
 	if (STREAMING::HAS_MODEL_LOADED(iVar0))
 	{
 		*uParam0 = PED::CREATE_PED(28, iVar0, vParam1, fParam2, 1, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(*uParam0, true);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar0);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 0, 0);
 		ROPE::ACTIVATE_PHYSICS(*uParam0);
@@ -33858,12 +33858,12 @@ void func_469()
 	}
 	if (CAM::DOES_CAM_EXIST(Local_56.f_110))
 	{
-		CAM::SET_CAM_ACTIVE(Local_56.f_110, 0);
+		CAM::SET_CAM_ACTIVE(Local_56.f_110, false);
 		CAM::DESTROY_CAM(Local_56.f_110, 0);
 	}
 	if (CAM::DOES_CAM_EXIST(Local_56.f_111))
 	{
-		CAM::SET_CAM_ACTIVE(Local_56.f_111, 0);
+		CAM::SET_CAM_ACTIVE(Local_56.f_111, false);
 		CAM::DESTROY_CAM(Local_56.f_111, 0);
 	}
 	if (Local_56.f_3 != 0)

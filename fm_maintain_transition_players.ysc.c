@@ -3979,7 +3979,7 @@ int func_131(int iParam0, var uParam1)
 			{
 				if (!VEHICLE::IS_THIS_MODEL_A_TRAIN(ENTITY::GET_ENTITY_MODEL(iParam0)))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, false, 1);
 					*uParam1 = 1;
 				}
 			}
@@ -39384,7 +39384,7 @@ int func_319(int iParam0, int iParam1, int iParam2)
 {
 	int iVar0;
 	int iVar1;
-	var uVar2;
+	int iVar2;
 	
 	if (iParam1 == -1)
 	{
@@ -39392,10 +39392,10 @@ int func_319(int iParam0, int iParam1, int iParam2)
 	}
 	iVar0 = 0;
 	iVar1 = func_321(iParam0, iParam1);
-	uVar2 = func_320(iParam0);
+	iVar2 = func_320(iParam0);
 	if (0 != iVar1)
 	{
-		if (!STATS::STAT_GET_MASKED_INT(iVar1, &iVar0, uVar2, 8, iParam2))
+		if (!STATS::STAT_GET_MASKED_INT(iVar1, &iVar0, iVar2, 8, iParam2))
 		{
 			iVar0 = 0;
 		}
@@ -43890,7 +43890,7 @@ void func_451(var uParam0, int iParam1, int iParam2, int iParam3, bool bParam4)
 	{
 		if (CAM::DOES_CAM_EXIST(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 			if (bParam4)
 			{
 				CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 1, 0);
@@ -45523,7 +45523,7 @@ void func_540(bool bParam0, bool bParam1)
 				{
 					if (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(Global_1315639))
 					{
-						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Global_1315639, 0, 0);
+						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Global_1315639, false, 0);
 					}
 					PED::DELETE_PED(&Global_1315639);
 				}
@@ -46071,7 +46071,7 @@ void func_584(var uParam0, int iParam1, int iParam2, vector3 vParam3, var uParam
 		func_593(&vVar3, 144, Global_1589747[PLAYER::PLAYER_ID() /*790*/].f_273.f_24);
 		vVar1 = { vVar3 };
 	}
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_COORD(*uParam0, vVar0);
 	CAM::SET_CAM_ROT(*uParam0, vVar1, 2);
 	if (fVar2 > 0f)

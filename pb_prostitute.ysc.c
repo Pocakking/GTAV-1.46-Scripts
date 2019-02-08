@@ -2365,7 +2365,7 @@ int func_49(int iParam0)
 		if (PED::IS_PED_BEING_JACKED(iParam0) || !func_51(iParam0, iLocal_92, -1))
 		{
 			vVar0 = { ENTITY::GET_ENTITY_COORDS(iParam0, true) };
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 196624, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 196624, true);
 			if (func_50())
 			{
 				AI::TASK_SMART_FLEE_COORD(iParam0, vVar0, 300f, -1, 1, 1);
@@ -3450,7 +3450,7 @@ void func_82()
 						vVar4 = { vVar5 };
 					}
 					AI::OPEN_SEQUENCE_TASK(&iLocal_95);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4.x, vVar4.y, vVar4.z, 1f, -1, 0.5f, 8192, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar4.x, vVar4.y, vVar4.z, 1f, -1, 0.5f, 8192, 1193033728);
 					AI::TASK_TURN_PED_TO_FACE_ENTITY(0, iLocal_91, 0);
 					AI::TASK_STAND_STILL(0, -1);
 					AI::CLOSE_SEQUENCE_TASK(iLocal_95);
@@ -3970,8 +3970,8 @@ void func_95()
 		{
 			if (func_476(iLocal_49, 134217728))
 			{
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 32768, 0);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196624, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 32768, false);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196624, true);
 			}
 			AUDIO::_PLAY_AMBIENT_SPEECH1(iLocal_90, "HOOKER_LEAVES_ANGRY", "SPEECH_PARAMS_FORCE_SHOUTED_CLEAR", 1);
 			func_89(15);
@@ -4118,12 +4118,12 @@ void func_100(int iParam0, bool bParam1)
 		}
 		if (func_476(iLocal_49, 134217728))
 		{
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32768, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32768, true);
 			AI::TASK_SMART_FLEE_PED(iParam0, PLAYER::PLAYER_PED_ID(), 300f, -1, 1, 0);
 		}
 		else
 		{
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 196624, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 196624, true);
 			AI::CLEAR_SEQUENCE_TASK(&iVar0);
 			AI::OPEN_SEQUENCE_TASK(&iVar0);
 			AI::TASK_SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(0, 1);
@@ -4481,7 +4481,7 @@ void func_117(var uParam0)
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 		if (CAM::IS_CAM_ACTIVE(*uParam0))
 		{
-			CAM::SET_CAM_ACTIVE(*uParam0, 0);
+			CAM::SET_CAM_ACTIVE(*uParam0, false);
 		}
 		CAM::DESTROY_CAM(*uParam0, 0);
 	}
@@ -6282,7 +6282,7 @@ void func_176(int iParam0)
 		func_177(&(Local_300[3 /*7*/]), func_179(3), fVar7, vVar2.y, fVar3, 45f);
 	}
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
-	CAM::SET_CAM_ACTIVE(Local_300[*iParam0 /*7*/], 1);
+	CAM::SET_CAM_ACTIVE(Local_300[*iParam0 /*7*/], true);
 }
 
 void func_177(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3)
@@ -6290,7 +6290,7 @@ void func_177(var uParam0, vector3 vParam1, vector3 vParam2, float fParam3)
 	uParam0->f_1 = { vParam2 };
 	uParam0->f_4 = { 0f, 0f, 0f };
 	*uParam0 = CAM::CREATE_CAM("DEFAULT_SCRIPTED_CAMERA", false);
-	CAM::SET_CAM_ACTIVE(*uParam0, 1);
+	CAM::SET_CAM_ACTIVE(*uParam0, true);
 	CAM::SET_CAM_PARAMS(*uParam0, vParam1, uParam0->f_1, fParam3, 0, 1, 1, 2);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 }
@@ -6402,7 +6402,7 @@ void func_182(int iParam0)
 		if ((CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 0) && !UI::IS_PAUSE_MENU_ACTIVE()) && !func_42(0, 1))
 		{
 			func_183(iParam0);
-			CAM::SET_CAM_ACTIVE(Local_300[*iParam0 /*7*/], 1);
+			CAM::SET_CAM_ACTIVE(Local_300[*iParam0 /*7*/], true);
 		}
 	}
 }
@@ -7556,7 +7556,7 @@ void func_215()
 	if (func_217(&iLocal_98, 3f) && !CAM::IS_CAM_ACTIVE(iLocal_97))
 	{
 		iVar0 = SYSTEM::FLOOR(((func_216() - 2f) * 1000f));
-		CAM::SET_CAM_ACTIVE(iLocal_96, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_96, false);
 		CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_97, iLocal_96, iVar0, 1, 1);
 	}
 	if (func_217(&iLocal_98, func_216()))
@@ -14457,8 +14457,8 @@ void func_374()
 	CAM::SET_CAM_COORD(iLocal_97, Var1);
 	CAM::SET_CAM_ROT(iLocal_97, Var1.f_3, 2);
 	CAM::SET_CAM_FOV(iLocal_97, Var1.f_6);
-	CAM::SET_CAM_ACTIVE(iLocal_96, 1);
-	CAM::SET_CAM_ACTIVE(iLocal_97, 0);
+	CAM::SET_CAM_ACTIVE(iLocal_96, true);
+	CAM::SET_CAM_ACTIVE(iLocal_97, false);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 }
 
@@ -14507,7 +14507,7 @@ void func_376(int iParam0)
 		{
 			AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 16842752);
 		}
-		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_377(), 1f, -1, 0.5f, 8192, 40000f);
+		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, func_377(), 1f, -1, 0.5f, 8192, 1193033728);
 		AI::CLOSE_SEQUENCE_TASK(iVar0);
 		AI::TASK_PERFORM_SEQUENCE(iParam0, iVar0);
 		AI::CLEAR_SEQUENCE_TASK(&iVar0);
@@ -16215,7 +16215,7 @@ void func_429(var uParam0)
 			func_430(&uLocal_281, uParam0);
 		}
 		AI::OPEN_SEQUENCE_TASK(&iVar6);
-		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar3.x, vVar3.y, vVar3.z, 1f, -1, 1f, 8192, 40000f);
+		AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar3.x, vVar3.y, vVar3.z, 1f, -1, 1f, 8192, 1193033728);
 		AI::TASK_TURN_PED_TO_FACE_COORD(0, PED::GET_PED_BONE_COORDS(PLAYER::PLAYER_PED_ID(), 31086, 0f, 0f, 0f), 0);
 		AI::CLOSE_SEQUENCE_TASK(iVar6);
 		AI::TASK_PERFORM_SEQUENCE(iLocal_90, iVar6);
@@ -16910,7 +16910,7 @@ void func_475()
 			if (AI::GET_SCRIPT_TASK_STATUS(iLocal_90, 1805844857) != 1)
 			{
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_90, false);
-				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196628, 1);
+				PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196628, true);
 				PED::_0xF1C03A5352243A30(iLocal_90);
 				AI::TASK_SMART_FLEE_PED(iLocal_90, PLAYER::PLAYER_PED_ID(), 300f, -1, 1, 0);
 				PED::SET_PED_KEEP_TASK(iLocal_90, true);
@@ -17322,7 +17322,7 @@ void func_491(var uParam0)
 				if (func_535())
 				{
 					func_116(0);
-					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196624, 1);
+					PED::SET_PED_FLEE_ATTRIBUTES(iLocal_90, 196624, true);
 					if (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(iLocal_90))
 					{
 						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_90, true, 0);

@@ -30198,28 +30198,28 @@ void func_160(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_161(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_163(iParam0, &Var0);
-		MemCopy(&cVar1, {func_158(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_162(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_158(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_162(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_162(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_162(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -35613,11 +35613,11 @@ void func_251(int iParam0, int iParam1)
 			AI::CLEAR_PED_TASKS(iParam0);
 			PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 13, false);
 			PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 17, true);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 8, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 1, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 64, 0);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, true);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 8, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 1, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 64, false);
 			AI::TASK_SMART_FLEE_PED(iParam0, PLAYER::PLAYER_PED_ID(), 200f, -1, 0, 0);
 			PED::SET_PED_KEEP_TASK(iParam0, true);
 		}
@@ -35626,11 +35626,11 @@ void func_251(int iParam0, int iParam1)
 			AI::CLEAR_PED_TASKS(iParam0);
 			PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 13, false);
 			PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 17, true);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 8, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 1, 0);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32, 1);
-			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 64, 0);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 2, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 8, true);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 1, false);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 32, true);
+			PED::SET_PED_FLEE_ATTRIBUTES(iParam0, 64, false);
 			AI::TASK_SMART_FLEE_PED(iParam0, PLAYER::PLAYER_PED_ID(), 200f, -1, 1, 0);
 			PED::SET_PED_KEEP_TASK(iParam0, true);
 		}
@@ -36264,7 +36264,7 @@ void func_276()
 			while (iVar0 <= 3)
 			{
 				func_278(&(Local_61[iVar0 /*9*/]), 0);
-				ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(Local_61[iVar0 /*9*/], 1, 0f);
+				ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(Local_61[iVar0 /*9*/], 1, 0);
 				PED::SET_PED_RELATIONSHIP_GROUP_HASH(Local_61[iVar0 /*9*/], iLocal_417);
 				if (iVar0 == 3)
 				{
@@ -36393,7 +36393,7 @@ void func_276()
 			func_278(&Local_71, 0);
 			PED::SET_PED_CAN_BE_TARGETTED(Local_71, false);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(Local_71, true);
-			PED::SET_PED_FLEE_ATTRIBUTES(Local_71, 128, 1);
+			PED::SET_PED_FLEE_ATTRIBUTES(Local_71, 128, true);
 			ENTITY::SET_ENTITY_COORDS_NO_OFFSET(Local_71, Local_71.f_1, 0, 0, 1);
 			WEAPON::GIVE_WEAPON_TO_PED(Local_71, joaat("weapon_knife"), -1, false, true);
 			AI::TASK_START_SCENARIO_IN_PLACE(Local_71, "WORLD_HUMAN_SMOKING", 0, 0);
@@ -37022,7 +37022,7 @@ void func_280()
 				}
 				if ((iLocal_149 == 1 && GAMEPLAY::GET_GAME_TIMER() > iLocal_148 + 1000) && func_225(Local_61[3 /*9*/]))
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Local_61[3 /*9*/], vLocal_156, 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Local_61[3 /*9*/], vLocal_156, 1f, -1, 0.25f, 0, 1193033728);
 					iLocal_149 = 2;
 				}
 				if (ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), 1078.845f, -796.3937f, 57.01259f, 1091.735f, -796.5964f, 60.38212f, 6f, 0, true, 0))

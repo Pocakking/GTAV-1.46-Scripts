@@ -15165,7 +15165,7 @@ void func_360(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -15198,14 +15198,14 @@ void func_360(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_367(iVar6, iParam1, -1);
-				uVar11 = func_375(iVar7, iParam1);
+				fVar11 = func_375(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_366(iVar6, iParam1);
-				uVar11 = func_373(iVar7, iParam1);
+				fVar11 = func_373(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_365(iVar5);
 			iVar9 = func_364(iVar5);
 			if (iVar8 != -1)
@@ -15871,11 +15871,11 @@ int func_374(int iParam0)
 
 float func_375(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_74(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_74(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -115728,7 +115728,7 @@ void func_1145(char* sParam0, char* sParam1, int iParam2, int iParam3)
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam3);
 }
 
-void func_1146(char* sParam0, char* sParam1, int iParam2, int iParam3, int iParam4, int iParam5)
+void func_1146(char* sParam0, char* sParam1, int iParam2, char* sParam3, int iParam4, int iParam5)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 	if (!iParam2 == 0)
@@ -115740,7 +115740,7 @@ void func_1146(char* sParam0, char* sParam1, int iParam2, int iParam3, int iPara
 	{
 		UI::_SET_NOTIFACTION_COLOR_NEXT(iParam4);
 	}
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam3);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam3);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam5);
 }
 

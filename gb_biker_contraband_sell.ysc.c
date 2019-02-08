@@ -12535,7 +12535,7 @@ void func_309(int iParam0, int iParam1)
 	int iVar1;
 	
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	iVar0 = func_312();
 	WEAPON::GIVE_WEAPON_TO_PED(iParam0, iVar0, 9999999, false, true);
 	iVar1 = 3;
@@ -13619,7 +13619,7 @@ Vector3 func_315(int iParam0)
 void func_316(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	PED::SET_PED_KEEP_TASK(iParam0, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam0, Global_1574981);
 }
@@ -13633,7 +13633,7 @@ void func_318(int iParam0, int iParam1)
 {
 	int iVar0;
 	
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	iVar0 = func_312();
 	WEAPON::GIVE_WEAPON_TO_PED(iParam0, iVar0, 9999999, true, true);
 	PED::SET_PED_CONFIG_FLAG(iParam0, 42, false);
@@ -14797,10 +14797,10 @@ int func_340(int iParam0)
 							PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 128, false);
 							PED::SET_PED_CAN_BE_DRAGGED_OUT(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 0);
 							PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 398, true);
-							PED::SET_PED_FLEE_ATTRIBUTES(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 512, 1);
+							PED::SET_PED_FLEE_ATTRIBUTES(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 512, true);
 							PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), Global_1574981);
 							PED::SET_PED_KEEP_TASK(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), true);
-							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 1);
+							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), true);
 							AI::TASK_STAND_STILL(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), -1);
 							Local_250.f_979++;
 						}
@@ -14818,7 +14818,7 @@ int func_340(int iParam0)
 					ENTITY::SET_ENTITY_INVINCIBLE(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), true);
 					ENTITY::SET_ENTITY_CAN_BE_DAMAGED(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 0);
 					PED::SET_PED_KEEP_TASK(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), true);
-					AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), 1);
+					AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_250.f_80[iParam0]), true);
 					Local_250.f_979++;
 				}
 			}
@@ -14851,7 +14851,7 @@ bool func_341()
 				ENTITY::SET_ENTITY_INVINCIBLE(iVar4, true);
 				ENTITY::SET_ENTITY_CAN_BE_DAMAGED(iVar4, 0);
 				PED::SET_PED_KEEP_TASK(iVar4, true);
-				AUDIO::STOP_PED_SPEAKING(iVar4, 1);
+				AUDIO::STOP_PED_SPEAKING(iVar4, true);
 				PED::SET_PED_CONFIG_FLAG(iVar4, 294, true);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar4, true);
 				ENTITY::ATTACH_ENTITY_TO_ENTITY(NETWORK::NET_TO_ENT(Local_250.f_80[iVar0]), func_67(iVar0), ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(func_13(iVar0), func_248()), 0f, -1.4f, 0.55f, 0f, 0f, -90f, 0, 0, 0, 0, 2, 1);
@@ -27166,7 +27166,7 @@ void func_496()
 								{
 									if (func_497(iVar4, iVar5))
 									{
-										ENTITY::PLAY_ENTITY_ANIM(iVar3, "P_cargo_chute_S_crumple", "P_cargo_chute_S", 1000f, 0, 0, 0, 0, 0);
+										ENTITY::PLAY_ENTITY_ANIM(iVar3, "P_cargo_chute_S_crumple", "P_cargo_chute_S", 1000f, 0, 0, 0, 0f, 0);
 										GAMEPLAY::SET_BIT(&(Local_250.f_193[iVar4 /*47*/].f_15[iVar5]), 0);
 										AUDIO::PLAY_SOUND_FROM_ENTITY(Local_202.f_473, "Parachute_Land", iVar3, "DLC_Exec_Air_Drop_Sounds", 0, 0);
 									}
@@ -27307,7 +27307,7 @@ int func_499(vector3 vParam0, float fParam1, int iParam2)
 						}
 						ENTITY::ATTACH_ENTITY_TO_ENTITY(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]), NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/][iParam2]), 0, 0f, 0f, 0f, 0f, 0f, 0f, 0, 0, 0, 0, 2, 1);
 						OBJECT::SET_ACTIVATE_OBJECT_PHYSICS_AS_SOON_AS_IT_IS_UNFROZEN(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]), 1);
-						ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]), "P_cargo_chute_S_deploy", "P_cargo_chute_S", 1000f, 0, 0, 0, 0, 0);
+						ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]), "P_cargo_chute_S_deploy", "P_cargo_chute_S", 1000f, 0, 0, 0, 0f, 0);
 						ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]));
 						ENTITY::SET_ENTITY_LOD_DIST(NETWORK::NET_TO_OBJ(Local_250.f_193[iVar1 /*47*/].f_5[iParam2]), 1200);
 						func_4(&(Local_250.f_193[iVar1 /*47*/].f_38[iParam2 /*2*/]), 0, 0);
@@ -62329,20 +62329,20 @@ int func_704(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_705(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_705(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -136962,8 +136962,8 @@ void func_1827()
 									if (func_323(Local_250.f_707[iVar4 /*8*/]))
 									{
 										AI::TASK_SMART_FLEE_COORD(iVar0, ENTITY::GET_ENTITY_COORDS(iVar0, true), 10000f, 999999, 0, 0);
-										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 256, 1);
-										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 2, 0);
+										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 256, true);
+										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 2, false);
 									}
 								}
 							}
@@ -136984,8 +136984,8 @@ void func_1827()
 									if (func_323(Local_250.f_707[iVar4 /*8*/]))
 									{
 										AI::TASK_SMART_FLEE_COORD(iVar0, ENTITY::GET_ENTITY_COORDS(iVar0, true), 10000f, 999999, 0, 0);
-										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 256, 1);
-										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 2, 0);
+										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 256, true);
+										PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 2, false);
 									}
 								}
 							}
@@ -137014,8 +137014,8 @@ void func_1827()
 												PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar0, true);
 												PED::SET_PED_COMBAT_ATTRIBUTES(iVar0, 5, false);
 												PED::SET_PED_COMBAT_ATTRIBUTES(iVar0, 17, true);
-												PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 1024, 1);
-												PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 32768, 0);
+												PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 1024, true);
+												PED::SET_PED_FLEE_ATTRIBUTES(iVar0, 32768, false);
 												AI::TASK_SMART_FLEE_COORD(iVar0, vVar1, 10000f, 999999, 0, 0);
 											}
 										}
@@ -137047,7 +137047,7 @@ void func_1827()
 									PED::SET_PED_CONFIG_FLAG(iVar0, 294, true);
 									PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iVar0, false);
 									PED::SET_PED_KEEP_TASK(iVar0, true);
-									PED::SET_PED_DIES_WHEN_INJURED(iVar0, 1);
+									PED::SET_PED_DIES_WHEN_INJURED(iVar0, true);
 									func_441(&(Local_250.f_707[iVar4 /*8*/]));
 								}
 							}
@@ -137111,7 +137111,7 @@ void func_1828(int iParam0, bool bParam1, bool bParam2, int iParam3)
 	int iVar1;
 	
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, bParam1);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	iVar0 = func_312();
 	WEAPON::GIVE_WEAPON_TO_PED(iParam0, iVar0, 9999999, true, true);
 	iVar1 = func_1829();
@@ -137144,7 +137144,7 @@ void func_1828(int iParam0, bool bParam1, bool bParam2, int iParam3)
 		}
 		PED::SET_PED_COMBAT_ATTRIBUTES(iParam0, 57, false);
 		PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(iParam0, 3);
-		PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+		PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 		PED::SET_PED_COMBAT_RANGE(iParam0, 2);
 		PED::SET_PED_SEEING_RANGE(iParam0, 299f);
 	}

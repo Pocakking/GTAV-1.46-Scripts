@@ -78242,7 +78242,7 @@ void func_925(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -78275,14 +78275,14 @@ void func_925(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_932(iVar6, iParam1, -1);
-				uVar11 = func_940(iVar7, iParam1);
+				fVar11 = func_940(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_931(iVar6, iParam1);
-				uVar11 = func_938(iVar7, iParam1);
+				fVar11 = func_938(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_930(iVar5);
 			iVar9 = func_929(iVar5);
 			if (iVar8 != -1)
@@ -78948,11 +78948,11 @@ int func_939(int iParam0)
 
 float func_940(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_90(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_90(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}

@@ -683,7 +683,7 @@ void func_1()
 				if (CAM::DOES_CAM_EXIST(iLocal_320))
 				{
 					CAM::SET_CAM_PARAMS(iLocal_320, func_4(), func_2(), 50f, 0, 1, 1, 2);
-					CAM::SET_CAM_ACTIVE(iLocal_320, 1);
+					CAM::SET_CAM_ACTIVE(iLocal_320, true);
 					SYSTEM::WAIT(0);
 					CAM::_0xC819F3CBB62BF692(0, 0, 3, 0);
 				}
@@ -3762,7 +3762,7 @@ void func_81()
 			}
 			if ((!iLocal_315 && iLocal_316) && ENTITY::DOES_ENTITY_HAVE_DRAWABLE(iLocal_41))
 			{
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_41, sLocal_330, sLocal_327, 1000f, 0, 1, 0, 0, 0);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_41, sLocal_330, sLocal_327, 1000f, 0, 1, 0, 0f, 0);
 				iLocal_315 = 1;
 			}
 			iLocal_322 = func_54(PLAYER::PLAYER_PED_ID());
@@ -36513,20 +36513,20 @@ int func_216(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_217(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_217(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -96458,8 +96458,8 @@ void func_430()
 		{
 			if (ENTITY::DOES_ENTITY_HAVE_DRAWABLE(iLocal_41) && ENTITY::DOES_ENTITY_HAVE_DRAWABLE(iLocal_326))
 			{
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_41, sLocal_330, sLocal_327, 1000f, 0, 1, 0, 0, 0);
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_326, sLocal_332, sLocal_327, 1000f, 0, 1, 0, 0, 0);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_41, sLocal_330, sLocal_327, 1000f, 0, 1, 0, 0f, 0);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_326, sLocal_332, sLocal_327, 1000f, 0, 1, 0, 0f, 0);
 			}
 		}
 		STREAMING::REMOVE_ANIM_DICT(sLocal_327);

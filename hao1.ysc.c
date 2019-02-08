@@ -1004,7 +1004,7 @@
 	var uLocal_1002 = 0;
 	var uLocal_1003 = 0;
 	int iLocal_1004 = 0;
-	var uLocal_1005 = 0;
+	int iLocal_1005 = 0;
 	struct<61> Local_1006 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } ;
 	int iLocal_1007 = 0;
 	int iLocal_1008 = 0;
@@ -1279,7 +1279,7 @@ void __EntryFunction__()
 	vLocal_830 = { 0f, 0f, 0f };
 	fLocal_831 = 0f;
 	iLocal_1004 = UI::_0x4A9923385BDB9DAD();
-	uLocal_1005 = UI::_GET_BLIP_INFO_ID_ITERATOR();
+	iLocal_1005 = UI::_GET_BLIP_INFO_ID_ITERATOR();
 	sLocal_1010 = "hao1_Hao";
 	vLocal_1012 = { -144.9697f, -1550.709f, 33.48785f };
 	vLocal_1013 = { -59.64f, -1808.68f, 26.76f };
@@ -32682,28 +32682,28 @@ void func_219(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_220(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_222(iParam0, &Var0);
-		MemCopy(&cVar1, {func_217(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_221(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_217(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_221(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_221(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_221(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -45870,7 +45870,7 @@ int func_482()
 		{
 			if (!CAM::IS_CAM_INTERPOLATING(iLocal_590[2]))
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_590[3], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_590[3], true);
 				CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_590[4], iLocal_590[3], 5000, 3, 1);
 				CAM::SHAKE_CAM(iLocal_590[4], "HAND_SHAKE", 0.3f);
 				CAM::DESTROY_CAM(iLocal_590[2], 0);
@@ -45974,7 +45974,7 @@ int func_482()
 		{
 			if (func_483())
 			{
-				CAM::SET_CAM_ACTIVE(iLocal_590[6], 1);
+				CAM::SET_CAM_ACTIVE(iLocal_590[6], true);
 			}
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_590[7], iLocal_590[6], 3000, 3, 1);
 			CAM::SHAKE_CAM(iLocal_590[6], "HAND_SHAKE", 1f);
@@ -46467,7 +46467,7 @@ void func_498()
 	if (Local_568.f_1 == 3)
 	{
 		iLocal_590[0] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_591, vLocal_592, 35f, 0, 2);
-		CAM::SET_CAM_ACTIVE(iLocal_590[0], 1);
+		CAM::SET_CAM_ACTIVE(iLocal_590[0], true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 0, 1, 0, 0);
 		iLocal_590[1] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_607, vLocal_608, 35f, 0, 2);
 		iLocal_590[2] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vLocal_593, vLocal_594, 35f, 0, 2);
@@ -46492,7 +46492,7 @@ void func_498()
 		CAM::SET_CAM_FOV(iLocal_590[1], 40f);
 		CAM::ATTACH_CAM_TO_ENTITY(iLocal_590[1], vLocal_39.x, vLocal_593, 1);
 		CAM::POINT_CAM_AT_ENTITY(iLocal_590[1], vLocal_39.x, vLocal_594, 1);
-		CAM::SET_CAM_ACTIVE(iLocal_590[0], 1);
+		CAM::SET_CAM_ACTIVE(iLocal_590[0], true);
 		CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_590[1], iLocal_590[0], 3000, 1, 1);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 0, 1, 0, 0);
 		CAM::SHAKE_CAM(iLocal_590[0], "ROAD_VIBRATION_SHAKE", 0.5f);
@@ -58041,7 +58041,7 @@ void func_716(bool bParam0)
 	if (CAM::DOES_CAM_EXIST(iLocal_1042))
 	{
 		CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
-		CAM::SET_CAM_ACTIVE(iLocal_1042, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_1042, false);
 		CAM::DESTROY_CAM(iLocal_1042, 0);
 	}
 	AI::REMOVE_WAYPOINT_RECORDING(sLocal_1010);
@@ -58310,7 +58310,7 @@ void func_721(var uParam0, bool bParam1, int iParam2)
 		if (bParam1)
 		{
 			uParam0->f_5[3] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[3 /*3*/], uParam0->f_163[3 /*3*/], 25.3742f, 0, 2);
-			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], true);
 			uParam0->f_5[4] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, uParam0->f_138[4 /*3*/], uParam0->f_163[4 /*3*/], 25.3742f, 0, 2);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam0->f_5[4], uParam0->f_5[3], 600, 1, 1);
 			CAM::SET_CAM_MOTION_BLUR_STRENGTH(uParam0->f_5[3], 1f);
@@ -58323,7 +58323,7 @@ void func_721(var uParam0, bool bParam1, int iParam2)
 			vVar0 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0f, -5f, 1f) };
 			vVar1 = { ENTITY::GET_ENTITY_ROTATION(PLAYER::PLAYER_PED_ID(), 2) };
 			uParam0->f_5[3] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0 + Vector(20f, 0f, 0f), vVar1 + Vector(0f, 0f, 55f), 50f, 0, 2);
-			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_5[3], true);
 			uParam0->f_5[4] = CAM::CREATE_CAMERA_WITH_PARAMS(26379945, vVar0, vVar1, 50f, 0, 2);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(uParam0->f_5[4], uParam0->f_5[3], 600, 1, 1);
 			CAM::SET_CAM_MOTION_BLUR_STRENGTH(uParam0->f_5[3], 1f);

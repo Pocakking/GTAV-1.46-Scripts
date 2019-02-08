@@ -10637,11 +10637,11 @@ void func_104(int iParam0, int iParam1)
 
 float func_105(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_71(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_71(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -70561,7 +70561,7 @@ void func_257(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -70594,14 +70594,14 @@ void func_257(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_399(iVar6, iParam1, -1);
-				uVar11 = func_105(iVar7, iParam1);
+				fVar11 = func_105(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_263(iVar6, iParam1);
-				uVar11 = func_267(iVar7, iParam1);
+				fVar11 = func_267(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_262(iVar5);
 			iVar9 = func_261(iVar5);
 			if (iVar8 != -1)
@@ -99299,12 +99299,12 @@ int func_408()
 					WEAPON::GIVE_WEAPON_TO_PED(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 0, true, true);
 					if (fVar3 == 1f)
 					{
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "wstop_l_0", 1000f, -8f, -1, 0, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "wstop_l_0", 1000f, -8f, -1, 0, 0f, 0, 0, 0);
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 					}
 					else if (fVar3 == 2f)
 					{
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "rstop_quick_l", 1000f, -8f, -1, 0, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "rstop_quick_l", 1000f, -8f, -1, 0, 0f, 0, 0, 0);
 						vVar5 = { -0.85f, 1.25f, 0.4f };
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 					}
@@ -99382,7 +99382,7 @@ int func_408()
 						WEAPON::GIVE_WEAPON_TO_PED(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 0, true, true);
 						iLocal_880 = NETWORK::NETWORK_CREATE_SYNCHRONISED_SCENE(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0.05f, 0.5f, -1.11f), 0f, 0f, (ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()) + 90f), 2, 0, 0, 1065353216, 0, 1065353216);
 						NETWORK::_0xCF8BD3B0BD6D42D7(iLocal_880, "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM_CAM");
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM", 1000f, -2f, -1, 0, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM", 1000f, -2f, -1, 0, 0f, 0, 0, 0);
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 						NETWORK::_0xC9B43A33D09CADA7(iLocal_880);
 						NETWORK::NETWORK_START_SYNCHRONISED_SCENE(iLocal_880);
@@ -112516,12 +112516,12 @@ int func_799()
 					}
 					if (fVar3 == 1f)
 					{
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "wstop_l_0", 1000f, -8f, -1, 0, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "wstop_l_0", 1000f, -8f, -1, 0, 0f, 0, 0, 0);
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 					}
 					else if (fVar3 == 2f)
 					{
-						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "rstop_quick_l", 1000f, -8f, -1, 0, 0, 0, 0, 0);
+						AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "move_m@GEneric", "rstop_quick_l", 1000f, -8f, -1, 0, 0f, 0, 0, 0);
 						vVar5 = { -0.85f, 1.25f, 0.4f };
 						PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 					}
@@ -112701,7 +112701,7 @@ int func_799()
 					WEAPON::GIVE_WEAPON_TO_PED(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), 0, true, true);
 					iLocal_880 = NETWORK::NETWORK_CREATE_SYNCHRONISED_SCENE(ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(PLAYER::PLAYER_PED_ID(), 0.05f, 0.5f, -1.11f), 0f, 0f, (ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID()) + 90f), 2, 0, 0, 1065353216, 0, 1065353216);
 					NETWORK::_0xCF8BD3B0BD6D42D7(iLocal_880, "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM_CAM");
-					AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM", 1000f, -2f, -1, 0, 0, 0, 0, 0);
+					AI::TASK_PLAY_ANIM(PLAYER::PLAYER_PED_ID(), "ANIM@MP_FM_EVENT@INTRO", "BEAST_TRANSFORM", 1000f, -2f, -1, 0, 0f, 0, 0, 0);
 					PED::_0x2208438012482A1A(PLAYER::PLAYER_PED_ID(), 0, 0);
 					if (GRAPHICS::_GET_SCREEN_EFFECT_IS_ACTIVE("BeastLaunch"))
 					{

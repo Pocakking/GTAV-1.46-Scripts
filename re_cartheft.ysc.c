@@ -966,7 +966,7 @@ int func_4()
 				AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_122, sLocal_126, sLocal_129, 1000f, -2f, 1024, 0, 1148846080, 0);
 				iLocal_75 = CAM::CREATE_CAM_WITH_PARAMS("DEFAULT_ANIMATED_CAMERA", vLocal_97, vLocal_98, fLocal_96, 0, 2);
 				CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_75, iLocal_122, "car_returned_cam", sLocal_126);
-				ENTITY::PLAY_ENTITY_ANIM(iLocal_73, sLocal_127, sLocal_126, 1000f, 0, 0, 0, 0, 262144);
+				ENTITY::PLAY_ENTITY_ANIM(iLocal_73, sLocal_127, sLocal_126, 1000f, 0, 0, 0, 0f, 262144);
 				vLocal_130 = { ENTITY::GET_ENTITY_COORDS(iLocal_73, true) };
 				vLocal_131 = { ENTITY::GET_ENTITY_ROTATION(iLocal_73, 2) };
 				if (func_162(iLocal_76))
@@ -990,7 +990,7 @@ int func_4()
 					VEHICLE::REQUEST_VEHICLE_ASSET(joaat("peyote"), 15);
 				}
 				FIRE::STOP_FIRE_IN_RANGE(vLocal_84, 15f);
-				CAM::SET_CAM_ACTIVE(iLocal_75, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_75, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				iLocal_49 = 3;
 				STREAMING::_0xA76359FC80B2438E(1f);
@@ -1181,7 +1181,7 @@ int func_4()
 					{
 						if (CAM::DOES_CAM_EXIST(iLocal_75))
 						{
-							CAM::SET_CAM_ACTIVE(iLocal_75, 0);
+							CAM::SET_CAM_ACTIVE(iLocal_75, false);
 							CAM::DESTROY_CAM(iLocal_75, 0);
 						}
 						CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
@@ -1193,7 +1193,7 @@ int func_4()
 					else
 					{
 						CAM::_0xC819F3CBB62BF692(0, 0, 3, 0);
-						CAM::SET_CAM_ACTIVE(iLocal_75, 0);
+						CAM::SET_CAM_ACTIVE(iLocal_75, false);
 					}
 					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), true, 0);
 					func_16(&iLocal_73);
@@ -1460,7 +1460,7 @@ int func_19()
 	{
 		if (VEHICLE::HAS_VEHICLE_ASSET_LOADED(iVar0))
 		{
-			CAM::SET_CAM_ACTIVE(iLocal_75, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_75, false);
 			CAM::DO_SCREEN_FADE_OUT(500);
 			while (CAM::IS_SCREEN_FADING_OUT())
 			{
@@ -6683,7 +6683,7 @@ int func_163()
 			PED::SET_PED_COMPONENT_VARIATION(iLocal_71, 2, 2, 0, 0);
 			PED::SET_PED_COMPONENT_VARIATION(iLocal_71, 3, 1, 1, 0);
 			PED::SET_PED_COMPONENT_VARIATION(iLocal_71, 4, 1, 1, 0);
-			AUDIO::STOP_PED_SPEAKING(iLocal_71, 1);
+			AUDIO::STOP_PED_SPEAKING(iLocal_71, true);
 			if (bLocal_57)
 			{
 				vLocal_84 = { -2254.413f, 4270.227f, 44.8028f };
@@ -6778,7 +6778,7 @@ int func_163()
 		AUDIO::_DYNAMIC_MIXER_RELATED_FN(iLocal_73, "RE_CAR_STEAL_STOLEN_VEHICLE", 0);
 		VEHICLE::_0x25367DE49D64CF16(iLocal_73, 1);
 		PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71, 17, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_71, 512, 1);
+		PED::SET_PED_FLEE_ATTRIBUTES(iLocal_71, 512, true);
 		switch (func_10())
 		{
 			case 0:

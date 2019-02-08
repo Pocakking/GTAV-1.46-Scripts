@@ -2725,7 +2725,7 @@ void func_53(var uParam0, var uParam1)
 		if (AI::GET_SCRIPT_TASK_STATUS(func_264(uParam0), 713668775) != 1 && AI::GET_SCRIPT_TASK_STATUS(func_264(uParam0), 242628503) != 1)
 		{
 			vVar0 = { uParam0->f_37 - uParam1->f_29 * Vector(0.93f, 0.93f, 0.93f) };
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_264(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_264(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 1048576000, 0, 1193033728);
 			func_58(uParam0, 2048);
 			func_54("FAR_FROM_COURT", -1);
 		}
@@ -6406,7 +6406,7 @@ void func_217(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_221(uParam0, func_27(uParam0) + 1);
 			}
@@ -6417,7 +6417,7 @@ void func_217(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 			}
 			else
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 				func_221(uParam0, func_27(uParam0) + 1);
 			}
 			sVar8 = func_195(func_196(uParam0), "mini@tennis", "mini@tennis@female");
@@ -6624,11 +6624,11 @@ void func_226(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_221(uParam0, func_27(uParam0) + 1);
 			}
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 			func_221(uParam0, func_27(uParam0) + 1);
 			AI::TASK_PLAY_ANIM(0, "mini@tennis", "idle_2_serve", 8f, -8f, -1, 0, 0f, 0, 0, 0);
 			func_221(uParam0, func_27(uParam0) + 1);
@@ -7946,7 +7946,7 @@ void func_290(var uParam0, vector3 vParam1)
 	{
 		if (!func_274(uParam0))
 		{
-			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1f, 0, 0, 0, 1);
+			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1065353216, 0, 0, 0, 1);
 			UI::GET_HUD_COLOUR(12, &iVar0, &iVar1, &iVar2, &uVar3);
 			GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(uParam0->f_23, (SYSTEM::TO_FLOAT(iVar0) / 255f), (SYSTEM::TO_FLOAT(iVar1) / 255f), (SYSTEM::TO_FLOAT(iVar2) / 255f), 0);
 			uVar3 = uVar3;

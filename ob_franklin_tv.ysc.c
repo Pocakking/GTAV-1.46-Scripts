@@ -1866,7 +1866,7 @@ void func_55()
 	}
 	if (CAM::DOES_CAM_EXIST(iLocal_313))
 	{
-		CAM::SET_CAM_ACTIVE(iLocal_313, 0);
+		CAM::SET_CAM_ACTIVE(iLocal_313, false);
 		CAM::DESTROY_CAM(iLocal_313, 0);
 	}
 	func_10();

@@ -6063,7 +6063,7 @@ void func_135(int iParam0, int iParam1)
 		WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_126(iParam0), 9999999, iVar0 == joaat("weapon_minigun"), true);
 	}
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 1);
 	PED::_0x52D59AB61DDC05DD(iParam1, 1);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(iParam1, 1);
@@ -51212,20 +51212,20 @@ int func_634(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_635(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_635(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -93920,7 +93920,7 @@ void func_797()
 							if (NETWORK::NETWORK_DOES_ENTITY_EXIST_WITH_NETWORK_ID(func_118(iVar3)) && !ENTITY::IS_ENTITY_DEAD(NETWORK::NET_TO_ENT(func_118(iVar3)), 0))
 							{
 								vVar6 = { func_122(iVar3) };
-								AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(iVar2, vVar6, NETWORK::NET_TO_ENT(func_118(iVar3)), 1f, true, 0.2f, 1082130432, 1, 0, 0, -957453492, -1);
+								AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(iVar2, vVar6, NETWORK::NET_TO_ENT(func_118(iVar3)), 1f, true, 0.2f, 4f, 1, 0, 0, -957453492, -1);
 							}
 						}
 					}
@@ -94662,7 +94662,7 @@ void func_820()
 				PLAYER::SET_PLAYER_WANTED_LEVEL_NOW(PLAYER::PLAYER_ID(), 0);
 				if (func_823())
 				{
-					DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(102, PLAYER::PLAYER_PED_ID(), -1082130432);
+					DECISIONEVENT::ADD_SHOCKING_EVENT_FOR_ENTITY(102, PLAYER::PLAYER_PED_ID(), -1f);
 					unk_0xAD27D957598E49E9(PLAYER::PLAYER_PED_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), 20f, -472287501);
 				}
 				func_821();
@@ -98732,7 +98732,7 @@ void func_991()
 					if (STREAMING::NEW_LOAD_SCENE_START_SPHERE(vVar3, 60f, 1))
 					{
 						STREAMING::_SET_FOCUS_AREA(vVar3, 0f, 0f, 0f);
-						CAM::SET_CAM_ACTIVE(iLocal_420[iLocal_421], 1);
+						CAM::SET_CAM_ACTIVE(iLocal_420[iLocal_421], true);
 						CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 						if (iLocal_424 != -1)
 						{

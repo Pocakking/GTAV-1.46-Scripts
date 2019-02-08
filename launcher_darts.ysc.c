@@ -759,17 +759,17 @@ void func_4()
 {
 }
 
-void func_5(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_5(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -1423,7 +1423,7 @@ void func_37()
 						}
 						else
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_87, 1991.677f, 3044.957f, 46.21505f, 1f, 20000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_87, 1991.677f, 3044.957f, 46.21505f, 1f, 20000, 1048576000, 0, 1193033728);
 						}
 						ENTITY::SET_PED_AS_NO_LONGER_NEEDED(&iLocal_87);
 					}
@@ -1436,7 +1436,7 @@ void func_37()
 						}
 						else
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_88, 1990.37f, 3045.121f, 46.21502f, 1f, 20000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_88, 1990.37f, 3045.121f, 46.21502f, 1f, 20000, 1048576000, 0, 1193033728);
 						}
 						ENTITY::SET_PED_AS_NO_LONGER_NEEDED(&iLocal_88);
 					}

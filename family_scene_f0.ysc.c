@@ -32264,7 +32264,7 @@ int func_166(vector3 vParam0, bool bParam1)
 		{
 			if (!bParam1 || GAMEPLAY::IS_BIT_SET(Global_106070.f_7201.f_11[iVar0], 0))
 			{
-				fVar1 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vParam0, Global_88530[iVar0 /*9*/].f_3, 1);
+				fVar1 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vParam0, Global_88530[iVar0 /*9*/].f_3, true);
 				if (fVar1 < fVar2)
 				{
 					fVar2 = fVar1;
@@ -41984,10 +41984,10 @@ void func_255(int iParam0, int iParam1, bool bParam2)
 	int iVar9;
 	int iVar10;
 	float fVar11;
-	var uVar12;
+	int iVar12;
 	int iVar13;
 	int iVar14;
-	var uVar15;
+	int iVar15;
 	
 	iVar0 = 0;
 	while (iVar0 < 20)
@@ -42038,8 +42038,8 @@ void func_255(int iParam0, int iParam1, bool bParam2)
 					iVar13 = func_258(iVar8, iParam1);
 					iVar14 = func_258(iVar9, iParam1);
 				}
-				func_257(iVar13, &uVar12, &uVar15);
-				PED::_SET_PED_HEAD_OVERLAY_COLOR(iParam0, iVar5, uVar15, uVar12, iVar14);
+				func_257(iVar13, &iVar12, &iVar15);
+				PED::_SET_PED_HEAD_OVERLAY_COLOR(iParam0, iVar5, iVar15, iVar12, iVar14);
 			}
 		}
 		iVar4++;
@@ -42262,7 +42262,7 @@ int func_262(int iParam0, int iParam1, int iParam2)
 {
 	int iVar0;
 	int iVar1;
-	var uVar2;
+	int iVar2;
 	
 	if (iParam1 == -1)
 	{
@@ -42270,10 +42270,10 @@ int func_262(int iParam0, int iParam1, int iParam2)
 	}
 	iVar0 = 0;
 	iVar1 = func_264(iParam0, iParam1);
-	uVar2 = func_263(iParam0);
+	iVar2 = func_263(iParam0);
 	if (0 != iVar1)
 	{
-		if (!STATS::STAT_GET_MASKED_INT(iVar1, &iVar0, uVar2, 8, iParam2))
+		if (!STATS::STAT_GET_MASKED_INT(iVar1, &iVar0, iVar2, 8, iParam2))
 		{
 			iVar0 = 0;
 		}
@@ -68541,20 +68541,20 @@ int func_335(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_336(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_336(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -97557,14 +97557,14 @@ int func_399(int iParam0)
 	return 0;
 }
 
-void func_400(int iParam0, int iParam1, int iParam2, var uParam3)
+void func_400(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	
 	iVar0 = func_399(iParam2);
 	if (iVar0 != 0)
 	{
-		unk_0x9FE5633880ECD8ED(iParam0, iParam1, iVar0, uParam3);
+		unk_0x9FE5633880ECD8ED(iParam0, iParam1, iVar0, iParam3);
 	}
 }
 
@@ -99155,7 +99155,7 @@ int func_425(var uParam0, int iParam1, var uParam2, int iParam3, int iParam4)
 				{
 					*uParam0 = Global_93018;
 					Global_93018 = 0;
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*uParam0, 1, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*uParam0, true, 1);
 					func_427(iParam1);
 					Global_88333[iParam1] = Global_88349;
 					if (ENTITY::DOES_ENTITY_EXIST(Global_93019))
@@ -100459,7 +100459,7 @@ void func_453(int iParam0, int iParam1, var uParam2, var uParam3, vector3 vParam
 void func_454(char* sParam0, int iParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 1, iParam1);
+	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, true, iParam1);
 }
 
 int func_455(var uParam0, int iParam1)
@@ -100620,7 +100620,7 @@ int func_458(int iParam0, int iParam1, var uParam2, char* sParam3, var uParam4, 
 	{
 		if (func_482(uVar4, 1))
 		{
-			if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar2, 0) > fParam7)
+			if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar2, false) > fParam7)
 			{
 				return 0;
 			}
@@ -101382,7 +101382,7 @@ int func_469(char* sParam0, int iParam1, bool bParam2)
 			{
 				if (Global_15829 == 0)
 				{
-					AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+					AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 					Global_14513.f_1 = 3;
 					Global_15822 = 0;
 					Global_15823 = 1;
@@ -101569,7 +101569,7 @@ void func_470()
 		StringCopy(&(Global_14690[iVar0 /*6*/]), "", 24);
 		iVar0++;
 	}
-	AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+	AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 	Global_15822 = 1;
 }
 
@@ -101709,14 +101709,14 @@ void func_476()
 	Global_16833 = 0;
 	if ((AUDIO::IS_MOBILE_PHONE_CALL_ONGOING() || Global_14513.f_1 == 9) || Global_14512 == 1)
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(0);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		Global_15822 = 6;
 		Global_14513.f_1 = 3;
 		return;
 	}
 	if (AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 	{
-		AUDIO::STOP_SCRIPTED_CONVERSATION(1);
+		AUDIO::STOP_SCRIPTED_CONVERSATION(true);
 		Global_15822 = 6;
 		return;
 	}
@@ -103322,7 +103322,7 @@ void func_496(int iParam0, int iParam1)
 					if (ENTITY::GET_ENTITY_MODEL(iVar5) == iVar3)
 					{
 						iLocal_88[0] = iVar5;
-						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], 1, 1);
+						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], true, 1);
 					}
 				}
 				if (!ENTITY::DOES_ENTITY_EXIST(iLocal_88[0]))
@@ -103335,12 +103335,12 @@ void func_496(int iParam0, int iParam1)
 						if (!PED::IS_PED_INJURED(uLocal_86[1]) && PED::IS_PED_SITTING_IN_ANY_VEHICLE(uLocal_86[1]))
 						{
 							iLocal_88[0] = PED::GET_VEHICLE_PED_IS_IN(uLocal_86[iParam0], 0);
-							ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], 1, 1);
+							ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], true, 1);
 						}
 						if (!PED::IS_PED_INJURED(uLocal_86[2]) && PED::IS_PED_SITTING_IN_ANY_VEHICLE(uLocal_86[2]))
 						{
 							iLocal_88[0] = PED::GET_VEHICLE_PED_IS_IN(uLocal_86[iParam0], 0);
-							ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], 1, 1);
+							ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], true, 1);
 						}
 					}
 				}
@@ -103357,7 +103357,7 @@ void func_496(int iParam0, int iParam1)
 				}
 				else
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], 1, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_88[0], true, 1);
 					STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(iVar3);
 				}
 			}
@@ -103620,7 +103620,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 			{
 				if (!PED::IS_PED_IN_ANY_VEHICLE(iParam0, 1))
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 1), 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 1), 1f, -1, 0.25f, 0, 1193033728);
 					return 0;
 				}
 			}
@@ -103640,7 +103640,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 				else
 				{
 					AI::CLEAR_PED_TASKS(iParam0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 0), 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 0), 1f, -1, 0.25f, 0, 1193033728);
 					SYSTEM::WAIT(0);
 					if (!PED::IS_PED_INJURED(iParam0) && AI::GET_SCRIPT_TASK_STATUS(iParam0, 713668775) == 1)
 					{
@@ -103726,7 +103726,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 				{
 					vVar15 = { func_499(iParam0, iParam1, 0) };
 					AI::CLEAR_PED_TASKS(iParam0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar15, 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar15, 1f, -1, 0.25f, 0, 1193033728);
 					*uParam2 = 0;
 					return 0;
 				}
@@ -103737,7 +103737,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 				iVar16 = AI::GET_NAVMESH_ROUTE_DISTANCE_REMAINING(iParam0, &uVar17, &uVar18);
 				if (iVar16 == 2)
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 1), 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, func_499(iParam0, iParam1, 1), 1f, -1, 0.25f, 0, 1193033728);
 					*uParam2 = 0;
 					return 0;
 				}
@@ -103771,7 +103771,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 						if (iVar19 == 2 || iVar19 == 0)
 						{
 							vVar22 = { func_499(iParam0, iParam1, 1) };
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar22, 1f, -1, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar22, 1f, -1, 0.25f, 0, 1193033728);
 							*uParam2 = 0;
 							return 0;
 						}
@@ -103785,7 +103785,7 @@ int func_498(int iParam0, int iParam1, var uParam2, var uParam3, var uParam4, va
 				else
 				{
 					vVar23 = { func_499(iParam0, iParam1, 1) };
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar23, 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vVar23, 1f, -1, 0.25f, 0, 1193033728);
 					*uParam2 = 0;
 					return 0;
 				}
@@ -103919,7 +103919,7 @@ Vector3 func_499(int iParam0, int iParam1, bool bParam2)
 	{
 		if (!func_442(vVar0[iVar2 /*3*/], 0f, 0f, 0f, 0))
 		{
-			fVar6 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar0[iVar2 /*3*/], 1);
+			fVar6 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar0[iVar2 /*3*/], true);
 			if (fVar6 < fVar3)
 			{
 				fVar3 = fVar6;
@@ -103938,7 +103938,7 @@ Vector3 func_499(int iParam0, int iParam1, bool bParam2)
 		{
 			if (!func_442(vVar0[iVar2 /*3*/], 0f, 0f, 0f, 0))
 			{
-				fVar8 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar0[iVar2 /*3*/], 1);
+				fVar8 = GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(vVar1, vVar0[iVar2 /*3*/], true);
 				if (fVar8 < fVar3 && iVar2 != iVar4)
 				{
 					fVar3 = fVar8;
@@ -103985,7 +103985,7 @@ int func_500(int iParam0, int iParam1, vector3 vParam2, float fParam3, bool bPar
 		{
 			iVar0 = -1;
 			fVar1 = 0.25f;
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vParam2, 1f, iVar0, fVar1, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, vParam2, 1f, iVar0, fVar1, 0, 1193033728);
 		}
 	}
 	else
@@ -107737,7 +107737,7 @@ int func_568(int iParam0, int iParam1, var uParam2, int iParam3, int iParam4, va
 							{
 								if (AI::GET_SCRIPT_TASK_STATUS(iParam0, 713668775) != 1)
 								{
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, ENTITY::GET_ENTITY_COORDS(*uParam2, true), 1f, -1, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iParam0, ENTITY::GET_ENTITY_COORDS(*uParam2, true), 1f, -1, 1048576000, 0, 1193033728);
 								}
 								return 0;
 							}
@@ -113197,7 +113197,7 @@ int func_608(int iParam0, int iParam1, int iParam2, char* sParam3, char* sParam4
 	return 0;
 }
 
-void func_609(int iParam0, var uParam1, var uParam2, int iParam3, vector3 vParam4, vector3 vParam5, char* sParam6, char* sParam7, float fParam8, float fParam9, int iParam10, int iParam11, float fParam12, int iParam13, int iParam14)
+void func_609(int iParam0, var uParam1, var uParam2, int iParam3, vector3 vParam4, vector3 vParam5, char* sParam6, char* sParam7, float fParam8, float fParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14)
 {
 	int iVar0;
 	int iVar1;
@@ -113266,7 +113266,7 @@ void func_609(int iParam0, var uParam1, var uParam2, int iParam3, vector3 vParam
 				PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 0);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, 1);
 			}
-			AI::TASK_PLAY_ANIM_ADVANCED(iParam0, &Var4, &Var5, vParam4, vParam5, fParam8, fParam9, iParam10, iParam11, fParam12, iParam13, iParam14);
+			AI::TASK_PLAY_ANIM_ADVANCED(iParam0, &Var4, &Var5, vParam4, vParam5, fParam8, fParam9, iParam10, iParam11, iParam12, iParam13, iParam14);
 			PED::_0x129466ED55140F8D(iParam0, 1);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, 1);
 			*sParam6 = { Var4 };
@@ -113297,7 +113297,7 @@ int func_611(int iParam0, vector3 vParam1, float fParam2)
 	{
 		return 0;
 	}
-	if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam1, 1) >= (100f * fParam2))
+	if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true), vParam1, true) >= (100f * fParam2))
 	{
 		return 0;
 	}
@@ -114128,7 +114128,7 @@ int func_635(int iParam0, char* sParam1, int iParam2)
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(iParam0, 0) && !ENTITY::DOES_ENTITY_BELONG_TO_THIS_SCRIPT(iParam0, 1))
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, 1, 0);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iParam0, true, 0);
 		}
 		return 1;
 	}

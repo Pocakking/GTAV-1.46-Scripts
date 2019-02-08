@@ -5103,7 +5103,7 @@ int func_112(int iParam0, int iParam1)
 			case 1:
 				if (AI::GET_SCRIPT_TASK_STATUS(*iParam0, 2106541073) != 1)
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vLocal_295 + vLocal_298[iParam1 /*3*/], 1f, -1, 0.25f, iVar0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vLocal_295 + vLocal_298[iParam1 /*3*/], 1f, -1, 0.25f, iVar0, 1193033728);
 					iLocal_292[iParam1] = 2;
 					return 1;
 				}
@@ -5112,7 +5112,7 @@ int func_112(int iParam0, int iParam1)
 				{
 					if (!func_117() && !ENTITY::IS_ENTITY_ON_SCREEN(*iParam0))
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vLocal_295 + vLocal_298[iParam1 /*3*/], 1f, -1, 0.25f, iVar0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vLocal_295 + vLocal_298[iParam1 /*3*/], 1f, -1, 0.25f, iVar0, 1193033728);
 						iLocal_292[iParam1] = 2;
 						return 1;
 					}
@@ -5194,7 +5194,7 @@ int func_112(int iParam0, int iParam1)
 					{
 						if (SYSTEM::VDIST2(ENTITY::GET_ENTITY_COORDS(*iParam0, true), vVar7) > 100f)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vVar7, 1f, -1, 0.25f, iVar0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(*iParam0, vVar7, 1f, -1, 0.25f, iVar0, 1193033728);
 							iLocal_292[iParam1] = 1;
 							return 1;
 						}

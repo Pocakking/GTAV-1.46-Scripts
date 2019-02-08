@@ -30247,28 +30247,28 @@ void func_165(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_166(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_168(iParam0, &Var0);
-		MemCopy(&cVar1, {func_163(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_167(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_163(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_167(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_167(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_167(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -42608,7 +42608,7 @@ void func_403()
 					if (CUTSCENE::CAN_SET_EXIT_STATE_FOR_REGISTERED_ENTITY(sLocal_354, 0))
 					{
 						PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 1, 0);
-						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+						PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 						bLocal_295 = true;
 					}
 					if (!bLocal_295)
@@ -44437,7 +44437,7 @@ void func_447()
 				{
 					iLocal_331 = 0;
 					func_448();
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[0 /*3*/], 1f, 60000, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[0 /*3*/], 1f, 60000, 0.25f, 0, 1193033728);
 					PED::SET_PED_CAN_RAGDOLL_FROM_PLAYER_IMPACT(iLocal_348, 1);
 					func_308(0, 0);
 					iLocal_255 = 17;
@@ -44467,7 +44467,7 @@ void func_447()
 					case 0:
 						if (func_319(iLocal_348, vLocal_420[0 /*3*/], 0) < 2f)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[1 /*3*/], 1f, 60000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[1 /*3*/], 1f, 60000, 0.25f, 0, 1193033728);
 							iLocal_331++;
 						}
 						break;
@@ -44475,7 +44475,7 @@ void func_447()
 					case 1:
 						if (func_319(iLocal_348, vLocal_420[1 /*3*/], 0) < 2f)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[2 /*3*/], 1f, 60000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[2 /*3*/], 1f, 60000, 0.25f, 0, 1193033728);
 							iLocal_331++;
 						}
 						break;
@@ -44483,7 +44483,7 @@ void func_447()
 					case 2:
 						if (func_319(iLocal_348, vLocal_420[2 /*3*/], 0) < 2f)
 						{
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[3 /*3*/], 1f, 60000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(iLocal_348, vLocal_420[3 /*3*/], 1f, 60000, 0.25f, 0, 1193033728);
 							iLocal_331++;
 						}
 						break;
@@ -44698,9 +44698,9 @@ void func_447()
 							AI::CLEAR_PED_TASKS(iLocal_348);
 							AI::SET_PED_PATH_CAN_DROP_FROM_HEIGHT(iLocal_348, 0);
 							AI::OPEN_SEQUENCE_TASK(&iLocal_351);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_422, 1f, 60000, 0.25f, 0, 40000f);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_423, 1f, 60000, 0.25f, 0, 40000f);
-							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_424, 1f, 60000, 0.25f, 0, 40000f);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_422, 1f, 60000, 0.25f, 0, 1193033728);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_423, 1f, 60000, 0.25f, 0, 1193033728);
+							AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vLocal_424, 1f, 60000, 0.25f, 0, 1193033728);
 							AI::TASK_WANDER_STANDARD(0, 1193033728, 0);
 							AI::CLOSE_SEQUENCE_TASK(iLocal_351);
 							AI::TASK_PERFORM_SEQUENCE(iLocal_348, iLocal_351);

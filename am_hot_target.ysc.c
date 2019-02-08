@@ -8384,10 +8384,10 @@ int func_225()
 	return 0;
 }
 
-var func_226(char* sParam0, int iParam1)
+var func_226(char* sParam0, char* sParam1)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
@@ -8396,10 +8396,10 @@ char* func_227()
 	return "VN_VEH";
 }
 
-var func_228(char* sParam0, int iParam1, int iParam2)
+var func_228(char* sParam0, char* sParam1, int iParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
@@ -17173,7 +17173,7 @@ void func_381(int iParam0, int iParam1, bool bParam2)
 	int iVar8;
 	int iVar9;
 	int iVar10;
-	var uVar11;
+	float fVar11;
 	var uVar12;
 	int iVar13;
 	int iVar14;
@@ -17206,14 +17206,14 @@ void func_381(int iParam0, int iParam1, bool bParam2)
 			if (!bParam2)
 			{
 				iVar10 = func_388(iVar6, iParam1, -1);
-				uVar11 = func_396(iVar7, iParam1);
+				fVar11 = func_396(iVar7, iParam1);
 			}
 			else
 			{
 				iVar10 = func_387(iVar6, iParam1);
-				uVar11 = func_394(iVar7, iParam1);
+				fVar11 = func_394(iVar7, iParam1);
 			}
-			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, uVar11);
+			PED::SET_PED_HEAD_OVERLAY(iParam0, iVar5, iVar10, fVar11);
 			iVar8 = func_386(iVar5);
 			iVar9 = func_385(iVar5);
 			if (iVar8 != -1)
@@ -17879,11 +17879,11 @@ int func_395(int iParam0)
 
 float func_396(int iParam0, int iParam1)
 {
-	var uVar0;
+	int iVar0;
 	var uVar1;
 	
-	uVar0 = Global_2565382[iParam0 /*3*/][func_155(iParam1)];
-	if (STATS::STAT_GET_FLOAT(uVar0, &uVar1, -1))
+	iVar0 = Global_2565382[iParam0 /*3*/][func_155(iParam1)];
+	if (STATS::STAT_GET_FLOAT(iVar0, &uVar1, -1))
 	{
 		return uVar1;
 	}
@@ -117101,10 +117101,10 @@ void func_1140(int iParam0)
 	}
 }
 
-void func_1141(char* sParam0, int iParam1, int iParam2)
+void func_1141(char* sParam0, char* sParam1, int iParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam2);
 }
 
@@ -117113,10 +117113,10 @@ bool func_1142(int iParam0)
 	return Global_2437022.f_2704[0 /*80*/].f_1 == iParam0;
 }
 
-void func_1143(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_1143(char* sParam0, char* sParam1, int iParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
 	UI::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam3);
 }

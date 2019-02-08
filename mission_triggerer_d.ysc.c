@@ -3416,7 +3416,7 @@ int func_28(int iParam0, var uParam1)
 													{
 														if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 														{
-															PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+															PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 														}
 														PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
 													}
@@ -4069,7 +4069,7 @@ void func_48(int iParam0)
 void func_49(int iParam0)
 {
 	AI::CLEAR_PED_TASKS(iParam0);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	PED::SET_PED_SUFFERS_CRITICAL_HITS(iParam0, 1);
 	PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 1);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, false);
@@ -4443,7 +4443,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 				CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_2, uParam1->f_5, uParam1->f_15, 3, 2);
 			}
 			CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
-			CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 			if (!bParam6)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4489,7 +4489,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 					CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_2, uParam1->f_5, uParam1->f_15, 3, 2);
 				}
 				CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 				if (!bParam6)
 				{
 					if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4541,7 +4541,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 			}
 			CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 			CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-			CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 			if (!bParam6)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4600,7 +4600,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 					CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_8, uParam1->f_11, uParam1->f_15, 3, 2);
 					CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 					CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-					CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 					uParam0->f_9 = GAMEPLAY::GET_GAME_TIMER();
 					uParam0->f_2 = 22;
 				}
@@ -4620,7 +4620,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 				CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_8, uParam1->f_11, uParam1->f_15, 3, 2);
 				CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 				CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 				uParam0->f_9 = GAMEPLAY::GET_GAME_TIMER();
 				uParam0->f_2 = 22;
 			}
@@ -6131,7 +6131,7 @@ void func_103(var uParam0, bool bParam1, bool bParam2, int iParam3, int iParam4,
 		{
 			if (CAM::IS_CAM_ACTIVE(uParam0->f_4))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 0);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, false);
 			}
 			CAM::DESTROY_CAM(uParam0->f_4, 1);
 		}
@@ -11123,9 +11123,9 @@ void func_228(int iParam0)
 						}
 						ENTITY::SET_ENTITY_HAS_GRAVITY(*iParam0, 1);
 						ENTITY::FREEZE_ENTITY_POSITION(*iParam0, false);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, true);
 						AI::CLEAR_PED_SECONDARY_TASK(*iParam0);
 						AI::TASK_SMART_FLEE_PED(*iParam0, PLAYER::PLAYER_PED_ID(), 300f, -1, 1, 0);
 						PED::SET_PED_KEEP_TASK(*iParam0, true);
@@ -11223,12 +11223,12 @@ void func_231(int iParam0, int iParam1)
 			PED::SET_PED_AS_ENEMY(iParam0, 0);
 			PED::SET_PED_CAN_BE_TARGETTED(iParam0, false);
 			PED::SET_PED_SUFFERS_CRITICAL_HITS(iParam0, 0);
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0);
 			PED::SET_PED_CAN_RAGDOLL(iParam0, 1);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 128);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 16);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 1);
-			PED::SET_PED_DIES_WHEN_INJURED(iParam0, 0);
+			PED::SET_PED_DIES_WHEN_INJURED(iParam0, false);
 			PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 0);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, true);
 			PED::SET_PED_CONFIG_FLAG(iParam0, 132, true);
@@ -11892,7 +11892,7 @@ int func_271()
 					PED::SET_SYNCHRONIZED_SCENE_RATE(iLocal_1458, 1f);
 					if (ENTITY::DOES_ENTITY_EXIST(Global_89824.f_9[3]))
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Global_89824.f_9[3], -14.9856f, -1446.958f, 29.6462f, 1f, 20000, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Global_89824.f_9[3], -14.9856f, -1446.958f, 29.6462f, 1f, 20000, 1048576000, 0, 1193033728);
 						func_52(&(Global_89824.f_28[2]));
 					}
 				}
@@ -69981,20 +69981,20 @@ int func_491(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_492(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_492(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -112378,8 +112378,8 @@ void func_919()
 						if (!func_114())
 						{
 							AI::OPEN_SEQUENCE_TASK(&iVar1);
-							AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHeistFBI3BleadInOut", "ah_3b_int_leadin_lester", 709.855f, -963.434f, 29.39f, 0f, 0f, 0f, 1000f, -1000f, -1, 4104, 0f, 2, 0);
-							AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHeistFBI3BleadInOut", "AH_3B_INT_loop_Lester", 709.855f, -963.434f, 29.39f, 0f, 0f, 0f, 1000f, -8f, -1, 4105, 0f, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHeistFBI3BleadInOut", "ah_3b_int_leadin_lester", 709.855f, -963.434f, 29.39f, 0f, 0f, 0f, 1000f, -1000f, -1, 4104, 0, 2, 0);
+							AI::TASK_PLAY_ANIM_ADVANCED(0, "MISSHeistFBI3BleadInOut", "AH_3B_INT_loop_Lester", 709.855f, -963.434f, 29.39f, 0f, 0f, 0f, 1000f, -8f, -1, 4105, 0, 2, 0);
 							AI::CLOSE_SEQUENCE_TASK(iVar1);
 							AI::TASK_PERFORM_SEQUENCE(Global_89824.f_9[0], iVar1);
 							AI::CLEAR_SEQUENCE_TASK(&iVar1);
@@ -112397,7 +112397,7 @@ void func_919()
 							{
 								PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 0);
 								AI::OPEN_SEQUENCE_TASK(&iVar1);
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 710.9573f, -964.1301f, 29.3953f, 1f, -1, 0.25f, 1, 93.3411f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, 710.9573f, -964.1301f, 29.3953f, 1f, -1, 1048576000, 1, 93.3411f);
 								AI::TASK_TURN_PED_TO_FACE_ENTITY(0, Global_89824.f_9[0], -1);
 								AI::CLOSE_SEQUENCE_TASK(iVar1);
 								AI::TASK_PERFORM_SEQUENCE(PLAYER::PLAYER_PED_ID(), iVar1);

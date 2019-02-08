@@ -512,7 +512,7 @@ void func_1()
 						WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("weapon_unarmed"), true);
 						func_16(1, 1, 1, 0, 0);
 						vLocal_335 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(sLocal_329, sLocal_330, vLocal_337, vLocal_338, 0, 2) };
-						vVar1 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_329, sLocal_330, vLocal_337, vLocal_338, 0, 2) };
+						vVar1 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(sLocal_329, sLocal_330, vLocal_337, vLocal_338, 0f, 2) };
 						fLocal_336 = vVar1.z;
 						AI::TASK_GO_STRAIGHT_TO_COORD(PLAYER::PLAYER_PED_ID(), vLocal_335, 1f, 5000, fLocal_336, 0.05f);
 						if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() == 4)

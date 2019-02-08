@@ -3445,7 +3445,7 @@ int func_28(int iParam0, var uParam1)
 													{
 														if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 														{
-															PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+															PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 														}
 														PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
 													}
@@ -4098,7 +4098,7 @@ void func_48(int iParam0)
 void func_49(int iParam0)
 {
 	AI::CLEAR_PED_TASKS(iParam0);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam0, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam0, true);
 	PED::SET_PED_SUFFERS_CRITICAL_HITS(iParam0, 1);
 	PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 1);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, false);
@@ -4472,7 +4472,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 				CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_2, uParam1->f_5, uParam1->f_15, 3, 2);
 			}
 			CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
-			CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 			if (!bParam6)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4518,7 +4518,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 					CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_2, uParam1->f_5, uParam1->f_15, 3, 2);
 				}
 				CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 				if (!bParam6)
 				{
 					if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4570,7 +4570,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 			}
 			CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 			CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-			CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+			CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 			if (!bParam6)
 			{
 				if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), 0))
@@ -4629,7 +4629,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 					CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_8, uParam1->f_11, uParam1->f_15, 3, 2);
 					CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 					CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-					CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+					CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 					uParam0->f_9 = GAMEPLAY::GET_GAME_TIMER();
 					uParam0->f_2 = 22;
 				}
@@ -4649,7 +4649,7 @@ int func_61(var uParam0, var uParam1, bool bParam2, bool bParam3, bool bParam4, 
 				CAM::ADD_CAM_SPLINE_NODE(uParam0->f_4, uParam1->f_8, uParam1->f_11, uParam1->f_15, 3, 2);
 				CAM::SET_CAM_FOV(uParam0->f_4, uParam1->f_14);
 				CAM::_0xD1B0F412F109EA5D(uParam0->f_4, 3);
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, true);
 				uParam0->f_9 = GAMEPLAY::GET_GAME_TIMER();
 				uParam0->f_2 = 22;
 			}
@@ -6160,7 +6160,7 @@ void func_103(var uParam0, bool bParam1, bool bParam2, int iParam3, int iParam4,
 		{
 			if (CAM::IS_CAM_ACTIVE(uParam0->f_4))
 			{
-				CAM::SET_CAM_ACTIVE(uParam0->f_4, 0);
+				CAM::SET_CAM_ACTIVE(uParam0->f_4, false);
 			}
 			CAM::DESTROY_CAM(uParam0->f_4, 1);
 		}
@@ -8276,7 +8276,7 @@ void func_184()
 								if (!PED::IS_PED_INJURED(Global_89824.f_9[0]))
 								{
 									PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 0);
-									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -808.416f, 177.4646f, 71.6071f, 1f, 20000, 0.25f, 0, 40000f);
+									AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -808.416f, 177.4646f, 71.6071f, 1f, 20000, 1048576000, 0, 1193033728);
 									AI::TASK_SYNCHRONIZED_SCENE(Global_89824.f_9[0], iLocal_1518, "missheist_jewelleadinoutjh_endscene", "action_mic", 8f, -8f, 4, 16, 1148846080, 0);
 									PED::SET_SYNCHRONIZED_SCENE_RATE(iLocal_1518, 0.7f);
 									func_185();
@@ -10934,9 +10934,9 @@ void func_207(int iParam0)
 						}
 						ENTITY::SET_ENTITY_HAS_GRAVITY(*iParam0, 1);
 						ENTITY::FREEZE_ENTITY_POSITION(*iParam0, false);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, 1);
-						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, 1);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, true);
+						PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, true);
 						AI::CLEAR_PED_SECONDARY_TASK(*iParam0);
 						AI::TASK_SMART_FLEE_PED(*iParam0, PLAYER::PLAYER_PED_ID(), 300f, -1, 1, 0);
 						PED::SET_PED_KEEP_TASK(*iParam0, true);
@@ -11152,12 +11152,12 @@ void func_214(int iParam0, int iParam1)
 			PED::SET_PED_AS_ENEMY(iParam0, 0);
 			PED::SET_PED_CAN_BE_TARGETTED(iParam0, false);
 			PED::SET_PED_SUFFERS_CRITICAL_HITS(iParam0, 0);
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0);
 			PED::SET_PED_CAN_RAGDOLL(iParam0, 1);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 128);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 16);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 1);
-			PED::SET_PED_DIES_WHEN_INJURED(iParam0, 0);
+			PED::SET_PED_DIES_WHEN_INJURED(iParam0, false);
 			PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 0);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam0, true);
 			PED::SET_PED_CONFIG_FLAG(iParam0, 132, true);
@@ -69042,20 +69042,20 @@ int func_425(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_426(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_426(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -102695,7 +102695,7 @@ void func_558(int iParam0, int iParam1, bool bParam2)
 		PED::SET_PED_COMPONENT_VARIATION(Global_89824.f_9[iParam0], 10, 0, 0, 0);
 	}
 	ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(Global_89824.f_9[iParam0], true, 1);
-	AUDIO::STOP_PED_SPEAKING(Global_89824.f_9[iParam0], 1);
+	AUDIO::STOP_PED_SPEAKING(Global_89824.f_9[iParam0], true);
 	PED::SET_PED_AS_COP(Global_89824.f_9[iParam0], 1);
 	PED::SET_PED_CONFIG_FLAG(Global_89824.f_9[iParam0], 330, true);
 	ENTITY::SET_ENTITY_ALPHA(Global_89824.f_9[iParam0], 100, false);
@@ -103008,9 +103008,9 @@ void func_572(int iParam0, int iParam1)
 							}
 							ENTITY::SET_ENTITY_HAS_GRAVITY(*iParam0, 1);
 							ENTITY::FREEZE_ENTITY_POSITION(*iParam0, false);
-							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, 1);
-							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, 1);
-							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, 1);
+							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 1024, true);
+							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 128, true);
+							PED::SET_PED_FLEE_ATTRIBUTES(*iParam0, 16, true);
 							AI::CLEAR_PED_SECONDARY_TASK(*iParam0);
 							AI::TASK_VEHICLE_MISSION_PED_TARGET(*iParam0, iParam1, PLAYER::PLAYER_PED_ID(), 8, 70f, 786468, 300f, 300f, 1);
 							PED::SET_PED_KEEP_TASK(*iParam0, true);
@@ -105734,7 +105734,7 @@ void func_677()
 					Global_89824.f_358 = PED::CREATE_SYNCHRONIZED_SCENE(1273.895f, -1720.816f, 53.66f, 0f, 0f, 27.36f, 2);
 					iLocal_1466 = CAM::CREATE_CAMERA(964613260, 1);
 					AI::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID());
-					AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), "MissLester1ALeadInOut", "lester_1_int_leadin_doorway_michael", 1273.895f, -1720.816f, 53.66f, 0f, 0f, 27.36f, 1000f, -8f, -1, 4104, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(PLAYER::PLAYER_PED_ID(), "MissLester1ALeadInOut", "lester_1_int_leadin_doorway_michael", 1273.895f, -1720.816f, 53.66f, 0f, 0f, 27.36f, 1000f, -8f, -1, 4104, 0, 2, 0);
 					ENTITY::PLAY_SYNCHRONIZED_ENTITY_ANIM(Global_89824.f_28[1], Global_89824.f_358, "lester_1_int_leadin_doorway_seccamprop", "MissLester1ALeadInOut", 1000f, -8f, 4, 1148846080);
 					CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_1466, Global_89824.f_358, "lester_1_int_leadin_doorway_cam", "MissLester1ALeadInOut");
 					PED::_SET_SYNCHRONIZED_SCENE_OCCLUSION_PORTAL(Global_89824.f_358, true);
@@ -108044,7 +108044,7 @@ void func_703()
 										{
 											AI::CLEAR_SEQUENCE_TASK(&iVar0);
 											AI::OPEN_SEQUENCE_TASK(&iVar0);
-											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -815.77f, 163.63f, 70.34f, 2f, 20000, 0.25f, 1, 40000f);
+											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -815.77f, 163.63f, 70.34f, 2f, 20000, 0.25f, 1, 1193033728);
 											if (VEHICLE::IS_VEHICLE_DRIVEABLE(Global_89824[1], 0))
 											{
 												if (VEHICLE::_0x639431E895B9AA57(Global_89824.f_9[0], Global_89824[1], -1, 0, 0))
@@ -108077,7 +108077,7 @@ void func_703()
 										{
 											AI::CLEAR_SEQUENCE_TASK(&iVar1);
 											AI::OPEN_SEQUENCE_TASK(&iVar1);
-											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -831.35f, 165.95f, 68.27f, 2f, 20000, 0.25f, 1, 40000f);
+											AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -831.35f, 165.95f, 68.27f, 2f, 20000, 0.25f, 1, 1193033728);
 											if (VEHICLE::IS_VEHICLE_DRIVEABLE(Global_89824[1], 0))
 											{
 												if (VEHICLE::_0x639431E895B9AA57(Global_89824.f_9[0], Global_89824[1], -1, 0, 0))
@@ -108413,10 +108413,10 @@ void func_713(int iParam0)
 			PED::SET_PED_AS_ENEMY(iParam0, 0);
 			PED::SET_PED_CAN_BE_TARGETTED(iParam0, false);
 			PED::SET_PED_SUFFERS_CRITICAL_HITS(iParam0, 0);
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iParam0, 0, 0);
 			PED::SET_PED_CAN_RAGDOLL(iParam0, 0);
 			PED::_SET_PED_RAGDOLL_BLOCKING_FLAGS(iParam0, 16);
-			PED::SET_PED_DIES_WHEN_INJURED(iParam0, 0);
+			PED::SET_PED_DIES_WHEN_INJURED(iParam0, false);
 			PED::SET_PED_CAN_EVASIVE_DIVE(iParam0, 0);
 			PED::SET_PED_CONFIG_FLAG(iParam0, 169, true);
 			PED::SET_PED_CONFIG_FLAG(iParam0, 208, true);
@@ -109057,7 +109057,7 @@ int func_757()
 				{
 					if ((ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), -35.82238f, -1111.382f, 25.43735f, -59.89202f, -1110.715f, 30.43581f, 20f, 0, true, 0) && iLocal_244 != -1) && (GAMEPLAY::GET_GAME_TIMER() - iLocal_244) > 1500)
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -46.0563f, -1113.369f, 25.4358f, 1f, 20000, 0.25f, 4, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -46.0563f, -1113.369f, 25.4358f, 1f, 20000, 1048576000, 4, 1193033728);
 						iLocal_243 = 1;
 						bLocal_242 = true;
 					}
@@ -111698,7 +111698,7 @@ int func_780()
 					{
 						func_185();
 						PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 1);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -34.4845f, -1099.388f, 25.4223f, 1f, 20000, 0.25f, 1, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), -34.4845f, -1099.388f, 25.4223f, 1f, 20000, 0.25f, 1, 1193033728);
 						iLocal_235++;
 					}
 				}

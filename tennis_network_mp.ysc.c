@@ -6841,7 +6841,7 @@ void func_97(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(*uParam1) || !CAM::IS_CAM_RENDERING(*uParam1))
 			{
-				CAM::SET_CAM_ACTIVE(*uParam1, 1);
+				CAM::SET_CAM_ACTIVE(*uParam1, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_104(0);
 			}
@@ -6856,7 +6856,7 @@ void func_97(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(uParam1->f_1) || !CAM::IS_CAM_RENDERING(uParam1->f_1))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_1, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_1, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_104(0);
 			}
@@ -6899,14 +6899,14 @@ void func_97(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			}
 			else if (!CAM::IS_CAM_ACTIVE(uParam1->f_2) || !CAM::IS_CAM_RENDERING(uParam1->f_2))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_2, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_2, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_104(0);
 			}
 			break;
 		
 		case 3:
-			CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+			CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			break;
 		
@@ -6914,7 +6914,7 @@ void func_97(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 			func_102(uParam1, &(uParam0->f_1658), &(uParam0->f_189.f_29));
 			if (!CAM::IS_CAM_ACTIVE(uParam1->f_3) || !CAM::IS_CAM_RENDERING(uParam1->f_3))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			break;
@@ -6922,7 +6922,7 @@ void func_97(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4)
 		case 6:
 			if (!CAM::IS_CAM_ACTIVE(uParam1->f_3) || !CAM::IS_CAM_RENDERING(uParam1->f_3))
 			{
-				CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+				CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			if ((func_98(&(uParam1->f_4)) * 1000f) > 3500f)
@@ -7197,7 +7197,7 @@ void func_116(var uParam0, vector3 vParam1)
 	{
 		if (!func_115(uParam0))
 		{
-			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1f, 0, 0, 0, 1);
+			uParam0->f_23 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_tennis_ball_trail", vParam1, 0f, 0f, 0f, 1065353216, 0, 0, 0, 1);
 			UI::GET_HUD_COLOUR(12, &iVar0, &iVar1, &iVar2, &uVar3);
 			GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(uParam0->f_23, (SYSTEM::TO_FLOAT(iVar0) / 255f), (SYSTEM::TO_FLOAT(iVar1) / 255f), (SYSTEM::TO_FLOAT(iVar2) / 255f), 0);
 			uVar3 = uVar3;
@@ -9732,7 +9732,7 @@ void func_180(var uParam0, var uParam1, int iParam2, int iParam3, bool bParam4, 
 										vVar9.z = (vVar9.z + 90f);
 										uParam0->f_437 = PED::CREATE_SYNCHRONIZED_SCENE(vVar8, vVar9, 2);
 										vVar10 = { PED::GET_ANIM_INITIAL_OFFSET_POSITION(&Var1, &cVar2, vVar8, vVar9, 0, 2) };
-										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&Var1, &cVar2, vVar8, vVar9, 0, 2) };
+										vVar11 = { PED::GET_ANIM_INITIAL_OFFSET_ROTATION(&Var1, &cVar2, vVar8, vVar9, 0f, 2) };
 										if (ENTITY::DOES_ENTITY_EXIST(*uParam1))
 										{
 											if (!ENTITY::IS_ENTITY_DEAD(*uParam1, 0))
@@ -10747,7 +10747,7 @@ void func_196(int iParam0, bool bParam1, char* sParam2, bool bParam3)
 	func_206(iParam0);
 	if (CAM::DOES_CAM_EXIST(iParam0->f_1210))
 	{
-		CAM::SET_CAM_ACTIVE(iParam0->f_1210, 0);
+		CAM::SET_CAM_ACTIVE(iParam0->f_1210, false);
 		CAM::DESTROY_CAM(iParam0->f_1210, 0);
 	}
 	iVar0 = 0;
@@ -49078,7 +49078,7 @@ void func_440(var uParam0, var uParam1, var uParam2, int iParam3, bool bParam4, 
 	}
 	uParam1->f_3 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 	CAM::PLAY_SYNCHRONIZED_CAM_ANIM(uParam1->f_3, uParam1->f_992, &(uParam1->f_1048), &(uParam1->f_1024));
-	CAM::SET_CAM_ACTIVE(uParam1->f_3, 1);
+	CAM::SET_CAM_ACTIVE(uParam1->f_3, true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	AI::TASK_PLAY_ANIM(uParam2->f_61[iParam3], sVar2, &(uParam1->f_1040), 1000f, -1000f, -1, 10, 0f, 0, 0, 0);
 	AI::TASK_PLAY_ANIM(uParam2->f_61[iParam3], &(uParam1->f_1056), &(uParam1->f_1072), 1000f, -1000f, -1, 42, 0f, 0, 0, 0);
@@ -92402,7 +92402,7 @@ void func_1077(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar7, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_1080(uParam0, func_921(uParam0) + 1);
 			}
@@ -92413,7 +92413,7 @@ void func_1077(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4, 
 			}
 			else
 			{
-				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+				AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 				func_1080(uParam0, func_921(uParam0) + 1);
 			}
 			sVar8 = func_170(func_171(uParam0), "mini@tennis", "mini@tennis@female");
@@ -92627,11 +92627,11 @@ void func_1084(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4, 
 				}
 				else
 				{
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 0.25f, 1, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar6, 1f, 20000, 1048576000, 1, 1193033728);
 				}
 				func_1080(uParam0, func_921(uParam0) + 1);
 			}
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 0.25f, 0, fVar2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, 20000, 1048576000, 0, fVar2);
 			func_1080(uParam0, func_921(uParam0) + 1);
 			AI::TASK_PLAY_ANIM(0, "mini@tennis", "idle_2_serve", 8f, -8f, -1, 10, 0f, 0, 0, 0);
 			func_1080(uParam0, func_921(uParam0) + 1);
@@ -123831,20 +123831,20 @@ int func_1216(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_1217(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_1217(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -133958,15 +133958,15 @@ void func_1336(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, 
 								switch (func_112(uParam3))
 								{
 									case 1:
-										CAM::SET_CAM_ACTIVE(*uParam3, 1);
+										CAM::SET_CAM_ACTIVE(*uParam3, true);
 										break;
 									
 									case 2:
-										CAM::SET_CAM_ACTIVE(uParam3->f_1, 1);
+										CAM::SET_CAM_ACTIVE(uParam3->f_1, true);
 										break;
 									
 									case 4:
-										CAM::SET_CAM_ACTIVE(uParam3->f_2, 1);
+										CAM::SET_CAM_ACTIVE(uParam3->f_2, true);
 										break;
 								}
 								CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
@@ -134939,7 +134939,7 @@ void func_1365(var uParam0, var uParam1)
 		if (AI::GET_SCRIPT_TASK_STATUS(func_1398(uParam0), 713668775) != 1 && AI::GET_SCRIPT_TASK_STATUS(func_1398(uParam0), 242628503) != 1)
 		{
 			vVar0 = { uParam0->f_37 - uParam1->f_29 * Vector(0.93f, 0.93f, 0.93f) };
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_1398(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(func_1398(uParam0), uParam1->f_29 + vVar0, 2f, 20000, 1048576000, 0, 1193033728);
 			func_169(uParam0, 2048);
 			func_1404("FAR_FROM_COURT", -1);
 		}
@@ -140564,11 +140564,11 @@ void func_1598()
 	func_1599(-1f);
 }
 
-void func_1599(float fParam0)
+void func_1599(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }
@@ -143128,11 +143128,11 @@ bool func_1748(int iParam0)
 	return (Global_105156 && iParam0) != 0;
 }
 
-void func_1749(float fParam0)
+void func_1749(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }

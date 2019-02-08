@@ -43081,20 +43081,20 @@ int func_269(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_270(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_270(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -105751,7 +105751,7 @@ int func_674(var uParam0, int iParam1, var uParam2, var uParam3)
 			AUDIO::PLAY_SOUND_FRONTEND(-1, "QUIT_WHOOSH", "HUD_MINI_GAME_SOUNDSET", true);
 			UI::DISPLAY_RADAR(false);
 			ENTITY::SET_ENTITY_VISIBLE(func_1331(&(uParam0->f_15[0 /*74*/])), true, 0);
-			CAM::SET_CAM_ACTIVE(iParam1->f_533, 1);
+			CAM::SET_CAM_ACTIVE(iParam1->f_533, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 		}
 		else if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_961) > 0.99f)
@@ -106779,7 +106779,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 				if (!func_433())
 				{
 					func_1101(uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), iParam4, func_1104(uParam3));
-					CAM::SET_CAM_ACTIVE(iParam4->f_536, 1);
+					CAM::SET_CAM_ACTIVE(iParam4->f_536, true);
 				}
 				else
 				{
@@ -106930,7 +106930,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 					if (!func_433())
 					{
 						func_1101(uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), iParam4, func_1104(uParam3));
-						CAM::SET_CAM_ACTIVE(iParam4->f_536, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_536, true);
 					}
 					else
 					{
@@ -107089,7 +107089,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 				func_1101(uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), iParam4, func_1104(uParam3));
 				if (!CAM::IS_CAM_RENDERING(iParam4->f_536))
 				{
-					CAM::SET_CAM_ACTIVE(iParam4->f_536, 1);
+					CAM::SET_CAM_ACTIVE(iParam4->f_536, true);
 				}
 				if (CAM::DOES_CAM_EXIST(iParam4->f_535))
 				{
@@ -107233,7 +107233,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 				func_1101(uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), iParam4, func_1104(uParam3));
 				if (!CAM::IS_CAM_RENDERING(iParam4->f_536))
 				{
-					CAM::SET_CAM_ACTIVE(iParam4->f_536, 1);
+					CAM::SET_CAM_ACTIVE(iParam4->f_536, true);
 				}
 			}
 			func_957(uParam1, uParam0, iParam4, &(uParam3->f_1), uParam2, uParam3);
@@ -107481,11 +107481,11 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 					func_1197(uParam0, iParam4, uParam1, uParam3, 1, !bVar2, 0);
 					if (!func_774(uParam3, iParam4, uParam1, 0))
 					{
-						CAM::SET_CAM_ACTIVE(iParam4->f_535, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_535, true);
 					}
 					else if (func_770(iParam4, uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), 0))
 					{
-						CAM::SET_CAM_ACTIVE(iParam4->f_540, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_540, true);
 					}
 				}
 				func_868(iParam4, uParam0, uParam1, uParam3);
@@ -107576,7 +107576,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 									func_763(uParam3, uParam1, func_774(uParam3, iParam4, uParam1, 0));
 									AI::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID());
 									PED::FORCE_PED_MOTION_STATE(PLAYER::PLAYER_PED_ID(), -668482597, false, 0, 0);
-									PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0f, 1, 0);
+									PLAYER::SIMULATE_PLAYER_INPUT_GAIT(PLAYER::PLAYER_ID(), 1f, 2000, 0, 1, 0);
 								}
 								else
 								{
@@ -107618,7 +107618,7 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 				{
 					if (func_770(iParam4, uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), 0))
 					{
-						CAM::SET_CAM_ACTIVE(iParam4->f_540, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_540, true);
 					}
 				}
 				STREAMING::CLEAR_FOCUS();
@@ -107707,11 +107707,11 @@ void func_714(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, v
 					func_1197(uParam0, iParam4, uParam1, uParam3, 1, 0, 1);
 					if (!func_774(uParam3, iParam4, uParam1, 0))
 					{
-						CAM::SET_CAM_ACTIVE(iParam4->f_535, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_535, true);
 					}
 					else if (func_770(iParam4, uParam3, &(uParam3->f_15[func_1265(uParam3) /*74*/]), 0))
 					{
-						CAM::SET_CAM_ACTIVE(iParam4->f_540, 1);
+						CAM::SET_CAM_ACTIVE(iParam4->f_540, true);
 					}
 					if (bVar17)
 					{
@@ -109155,7 +109155,7 @@ int func_770(int iParam0, var uParam1, var uParam2, char[4] cParam3)
 void func_771(int iParam0, char* sParam1, char* sParam2)
 {
 	CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iParam0, iLocal_949, sParam2, sParam1);
-	CAM::SET_CAM_ACTIVE(iParam0, 1);
+	CAM::SET_CAM_ACTIVE(iParam0, true);
 }
 
 char* func_772(int iParam0, char* sParam1, bool bParam2, var uParam3)
@@ -111454,7 +111454,7 @@ int func_846(var uParam0, var uParam1, var uParam2, var uParam3)
 void func_847(var uParam0)
 {
 	AUDIO::PLAY_SOUND_FROM_ENTITY(-1, "GOLF_BALL_IN_WATER_MASTER", func_1186(uParam0), 0, 0, 0);
-	GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_golf_landing_water", ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), 0f, 0f, func_1424(ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), func_1183(uParam0)), 1f, 0, 0, 0);
+	GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_golf_landing_water", ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), 0f, 0f, func_1424(ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), func_1183(uParam0)), 1065353216, 0, 0, 0);
 }
 
 void func_848(int iParam0, var uParam1)
@@ -113111,7 +113111,7 @@ void func_901(var uParam0)
 	}
 	if (!func_444(sVar0))
 	{
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), 0f, 0f, func_1424(ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), func_1183(uParam0)), 1f, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), 0f, 0f, func_1424(ENTITY::GET_ENTITY_COORDS(func_1186(uParam0), true), func_1183(uParam0)), 1065353216, 0, 0, 0);
 	}
 }
 
@@ -113378,7 +113378,7 @@ int func_915(var uParam0, var uParam1, var uParam2, int iParam3)
 	
 	func_1144(func_1186(uParam2), 0);
 	ENTITY::SET_ENTITY_RECORDS_COLLISIONS(func_1186(uParam2), 1);
-	OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_1186(uParam2), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1f);
+	OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_1186(uParam2), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1082130432);
 	bVar0 = func_463(uParam2) == 4;
 	fVar1 = func_925(&(uParam2->f_15[func_1265(uParam2) /*74*/]), uParam0, &(uParam2->f_1), bVar0, !bLocal_502, 0);
 	fVar2 = 1f;
@@ -113582,7 +113582,7 @@ void func_916(var uParam0, var uParam1, var uParam2)
 	func_917(uParam0, func_1307(uParam2, 16));
 	if (!func_444(sVar0))
 	{
-		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, func_1183(uParam0), 0f, 0f, func_1104(uParam0), 1f, 0, 0, 0);
+		GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD(sVar0, func_1183(uParam0), 0f, 0f, func_1104(uParam0), 1065353216, 0, 0, 0);
 	}
 }
 
@@ -113592,7 +113592,7 @@ void func_917(var uParam0, bool bParam1)
 	
 	if (!func_1081(uParam0) && ENTITY::DOES_ENTITY_EXIST(func_1186(uParam0)))
 	{
-		iVar0 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_golf_ball_trail", func_1186(uParam0), 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+		iVar0 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_golf_ball_trail", func_1186(uParam0), 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 		if (bParam1)
 		{
 			GRAPHICS::SET_PARTICLE_FX_LOOPED_COLOUR(iVar0, (240f / 255f), (200f / 255f), (80f / 255f), 0);
@@ -116270,7 +116270,7 @@ void func_994(var uParam0, var uParam1, var uParam2, int iParam3)
 			func_648(iParam3, 4096);
 			func_1144(func_1186(uParam1), 0);
 			ENTITY::SET_ENTITY_RECORDS_COLLISIONS(func_1186(uParam1), 1);
-			OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_1186(uParam1), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1f);
+			OBJECT::SET_OBJECT_PHYSICS_PARAMS(func_1186(uParam1), -1f, -1f, 0f, 0f, 0.01f, -1f, -1f, -1f, -1f, -1f, -1082130432);
 			uParam1->f_1 = 0;
 			uParam1->f_1.f_3 = func_870(uParam1, 0);
 			func_912(uParam1, iParam3);
@@ -116457,7 +116457,7 @@ int func_996(var uParam0, var uParam1, var uParam2, int iParam3)
 					CAM::DESTROY_CAM(iParam3->f_538, 0);
 				}
 				func_1033(&(uParam2->f_15[func_1265(uParam2) /*74*/]), iParam3, func_1104(uParam2), func_522(uParam1, func_514(uParam2)), 1, 0);
-				CAM::SET_CAM_ACTIVE(iParam3->f_538, 1);
+				CAM::SET_CAM_ACTIVE(iParam3->f_538, true);
 				STREAMING::_SET_FOCUS_AREA(CAM::GET_CAM_COORD(iParam3->f_538), 0f, 0f, 0f);
 				AUDIO::START_AUDIO_SCENE("GOLF_FLY_CAM");
 			}
@@ -116492,7 +116492,7 @@ int func_996(var uParam0, var uParam1, var uParam2, int iParam3)
 				func_1101(uParam2, &(uParam2->f_15[func_1265(uParam2) /*74*/]), iParam3, func_1104(uParam2));
 				func_1033(&(uParam2->f_15[func_1265(uParam2) /*74*/]), iParam3, func_1104(uParam2), func_522(uParam1, func_514(uParam2)), 1, 0);
 				iParam3->f_549 = 1f;
-				CAM::SET_CAM_ACTIVE(iParam3->f_538, 1);
+				CAM::SET_CAM_ACTIVE(iParam3->f_538, true);
 			}
 			CAM::SET_CAM_SPLINE_PHASE(iParam3->f_538, iParam3->f_549);
 			iParam3->f_549 = (iParam3->f_549 - 0.045f);
@@ -116507,7 +116507,7 @@ int func_996(var uParam0, var uParam1, var uParam2, int iParam3)
 				{
 					if (!CAM::IS_CAM_RENDERING(iParam3->f_536) && iParam3->f_574 == 0)
 					{
-						CAM::SET_CAM_ACTIVE(iParam3->f_536, 1);
+						CAM::SET_CAM_ACTIVE(iParam3->f_536, true);
 					}
 				}
 			}
@@ -116517,7 +116517,7 @@ int func_996(var uParam0, var uParam1, var uParam2, int iParam3)
 	{
 		if (!CAM::IS_CAM_RENDERING(iParam3->f_536) && iParam3->f_574 == 0)
 		{
-			CAM::SET_CAM_ACTIVE(iParam3->f_536, 1);
+			CAM::SET_CAM_ACTIVE(iParam3->f_536, true);
 		}
 	}
 	if (CAM::DOES_CAM_EXIST(iParam3->f_537) && CAM::DOES_CAM_EXIST(iParam3->f_536))
@@ -116562,7 +116562,7 @@ int func_996(var uParam0, var uParam1, var uParam2, int iParam3)
 			if (iParam3->f_550 <= 0f || iParam3->f_550 <= iParam3->f_551)
 			{
 				iParam3->f_574 = 0;
-				CAM::SET_CAM_ACTIVE(iParam3->f_536, 1);
+				CAM::SET_CAM_ACTIVE(iParam3->f_536, true);
 				CAM::DESTROY_CAM(iParam3->f_539, 0);
 				GRAPHICS::_0xA51C4B86B71652AE(1);
 				STREAMING::_SET_FOCUS_AREA(func_1183(uParam2), 0f, 0f, 0f);
@@ -117579,7 +117579,7 @@ void func_1033(var uParam0, int iParam1, float fParam2, vector3 vParam3, bool bP
 		{
 			CAM::SET_CAM_COORD(iParam1->f_537, vVar0);
 			CAM::POINT_CAM_AT_COORD(iParam1->f_537, vVar2 + vVar1);
-			CAM::SET_CAM_ACTIVE(iParam1->f_537, 1);
+			CAM::SET_CAM_ACTIVE(iParam1->f_537, true);
 		}
 		else
 		{
@@ -117600,7 +117600,7 @@ void func_1033(var uParam0, int iParam1, float fParam2, vector3 vParam3, bool bP
 				CAM::SET_CAM_ROT(iParam1->f_537, vVar8 + vVar7, 2);
 			}
 		}
-		CAM::SET_CAM_ACTIVE(iParam1->f_537, 1);
+		CAM::SET_CAM_ACTIVE(iParam1->f_537, true);
 	}
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	if (CAM::DOES_CAM_EXIST(iParam1->f_535))
@@ -117824,7 +117824,7 @@ int func_1038(vector3 vParam0, float fParam1, vector3 vParam2, var uParam3)
 void func_1039(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, bool bParam5, int iParam6, bool bParam7)
 {
 	vector3 vVar0;
-	float fVar1;
+	int iVar1;
 	
 	if (bParam5)
 	{
@@ -117834,8 +117834,8 @@ void func_1039(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, 
 	{
 		vVar0 = { func_522(uParam0, func_514(uParam1)) };
 	}
-	fVar1 = (func_1424(vVar0, func_1183(uParam1)) + 90f);
-	func_1156(&(uParam1->f_15[func_1265(uParam1) /*74*/]), uParam2, fVar1, 0, iParam3, iParam4, iParam6, bParam7);
+	iVar1 = (func_1424(vVar0, func_1183(uParam1)) + 90f);
+	func_1156(&(uParam1->f_15[func_1265(uParam1) /*74*/]), uParam2, iVar1, 0, iParam3, iParam4, iParam6, bParam7);
 }
 
 void func_1040(var uParam0, var uParam1, int iParam2, var uParam3, var uParam4)
@@ -118035,15 +118035,15 @@ int func_1050()
 
 void func_1051(var uParam0, int iParam1)
 {
-	float fVar0;
+	int iVar0;
 	vector3 vVar1;
 	vector3 vVar2;
 	int iVar3;
 	vector3 vVar4;
 	vector3 vVar5;
 	
-	fVar0 = func_1104(uParam0);
-	vVar1 = { Vector(-1f, -1f, -1f) * func_546(SYSTEM::COS(fVar0), SYSTEM::SIN(fVar0), 0f) };
+	iVar0 = func_1104(uParam0);
+	vVar1 = { Vector(-1f, -1f, -1f) * func_546(SYSTEM::COS(iVar0), SYSTEM::SIN(iVar0), 0f) };
 	vVar2 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) };
 	if ((!func_1055(iParam1, 1) && !func_1054()) && func_1309(uParam0) > 1)
 	{
@@ -120237,7 +120237,7 @@ int func_1099(var uParam0, var uParam1, var uParam2, int iParam3)
 		CAM::_0x0A9F2A468B328E74(iParam3->f_541, iParam3->f_543, 3500, 3);
 		CAM::_0x0A9F2A468B328E74(iParam3->f_541, iParam3->f_542, 3500, 3);
 		CAM::SET_CAM_SPLINE_PHASE(iParam3->f_541, 0f);
-		CAM::SET_CAM_ACTIVE(iParam3->f_541, 1);
+		CAM::SET_CAM_ACTIVE(iParam3->f_541, true);
 		CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 	}
 	if (CAM::GET_CAM_SPLINE_PHASE(iParam3->f_541) < 1f)
@@ -120371,7 +120371,7 @@ void func_1102(var uParam0, int iParam1, float fParam2, int iParam3)
 			{
 				CAM::SET_CAM_COORD(iParam1->f_536, vVar1);
 			}
-			CAM::SET_CAM_ACTIVE(iParam1->f_536, 1);
+			CAM::SET_CAM_ACTIVE(iParam1->f_536, true);
 			CAM::SET_CAM_FOV(iParam1->f_536, 35f);
 			CAM::POINT_CAM_AT_COORD(iParam1->f_536, func_670(uParam0) + Vector(0.5f, 0f, 0f));
 			break;
@@ -121702,7 +121702,7 @@ int func_1155(var uParam0)
 	return 0;
 }
 
-void func_1156(var uParam0, var uParam1, float fParam2, bool bParam3, int iParam4, int iParam5, int iParam6, bool bParam7)
+void func_1156(var uParam0, var uParam1, int iParam2, bool bParam3, int iParam4, int iParam5, int iParam6, bool bParam7)
 {
 	int iVar0;
 	vector3 vVar1;
@@ -121720,7 +121720,7 @@ void func_1156(var uParam0, var uParam1, float fParam2, bool bParam3, int iParam
 	}
 	iVar0 = func_825(uParam1, func_679(uParam0));
 	func_665(uParam0, 134217728);
-	func_1169(uParam0, fParam2);
+	func_1169(uParam0, iParam2);
 	vVar1 = { OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(func_670(uParam0), func_837(uParam0), func_1008(iVar0)) };
 	vVar2 = { ENTITY::GET_ENTITY_COORDS(func_1331(uParam0), true) };
 	if (bParam3)
@@ -121761,13 +121761,13 @@ void func_1156(var uParam0, var uParam1, float fParam2, bool bParam3, int iParam
 		AI::OPEN_SEQUENCE_TASK(&(uParam0->f_21));
 		if (func_1158() || func_1094(uParam0))
 		{
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, fParam2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, iParam2);
 			AI::TASK_PLAY_ANIM(0, "mini@golfai", "putt_approach_no_ball", 2f, -4f, -1, 0, 0f, 0, 0, 0);
 			AI::TASK_PLAY_ANIM(0, "mini@golfai", "putt_approach_no_ball", 4f, -4f, -1, 2, 0.999f, 0, 0, 0);
 		}
 		else
 		{
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, fParam2);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, vVar1, 1f, -1, 0.25f, 512, iParam2);
 		}
 		AI::CLOSE_SEQUENCE_TASK(uParam0->f_21);
 		AI::TASK_PERFORM_SEQUENCE(func_1331(uParam0), uParam0->f_21);
@@ -123417,7 +123417,7 @@ void func_1209(var uParam0, var uParam1, int iParam2, int iParam3, int iParam4, 
 			Stack.Push(func_514(uParam0));
 			Stack.Push(iVar0);
 			Call_Loc(iParam4);
-			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(StackVal, StackVal, StackVal, StackVal, 1f, -1, 0.25f, 0, 40000f);
+			AI::TASK_FOLLOW_NAV_MESH_TO_COORD(StackVal, StackVal, StackVal, StackVal, 1f, -1, 1048576000, 0, 1193033728);
 			Stack.Push(0);
 			Stack.Push(uParam1);
 			Stack.Push(func_514(uParam0));
@@ -126420,14 +126420,14 @@ void func_1335(var uParam0, var uParam1, var uParam2, var uParam3)
 				if (iVar0 == 1)
 				{
 					func_1316(&(uParam2->f_15[iVar0 /*74*/]), func_1284());
-					PED::SET_PED_CAN_SWITCH_WEAPON(uParam2->f_15[iVar0 /*74*/].f_2, 0);
+					PED::SET_PED_CAN_SWITCH_WEAPON(uParam2->f_15[iVar0 /*74*/].f_2, false);
 					func_1325(func_1331(&(uParam2->f_15[iVar0 /*74*/])), &(uParam3->f_232), 1, -1);
 					func_1323(func_1331(&(uParam2->f_15[iVar0 /*74*/])));
 				}
 				if (ENTITY::DOES_ENTITY_EXIST(func_1283()) && iVar0 == 2)
 				{
 					func_1316(&(uParam2->f_15[iVar0 /*74*/]), func_1283());
-					PED::SET_PED_CAN_SWITCH_WEAPON(uParam2->f_15[iVar0 /*74*/].f_2, 0);
+					PED::SET_PED_CAN_SWITCH_WEAPON(uParam2->f_15[iVar0 /*74*/].f_2, false);
 					func_1325(func_1331(&(uParam2->f_15[iVar0 /*74*/])), &(uParam3->f_297), 1, -1);
 					func_1323(func_1331(&(uParam2->f_15[iVar0 /*74*/])));
 				}
@@ -126643,7 +126643,7 @@ void func_1346(var uParam0, int iParam1, var uParam2, int iParam3)
 					vVar6 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), true) - vVar4 };
 					if (func_1053(vVar5, vVar6) > 0f)
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar3, 1f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD(PLAYER::PLAYER_PED_ID(), vVar3, 1f, -1, 1048576000, 0, 1193033728);
 					}
 					else
 					{
@@ -126728,7 +126728,7 @@ void func_1346(var uParam0, int iParam1, var uParam2, int iParam3)
 				}
 				else
 				{
-					CAM::SET_CAM_ACTIVE(iParam3->f_548, 1);
+					CAM::SET_CAM_ACTIVE(iParam3->f_548, true);
 					CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING((90f + ENTITY::GET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID())));
 					iVar2 = PED::CREATE_SYNCHRONIZED_SCENE(-1337.084f, 55.5505f, 58.957f, 0f, 0f, 0f, 2);
 					AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iVar2, "mini@golfclubhouse", "clubhouse_exit_plyr", 1000f, -2f, 0, 0, 1148846080, 0);
@@ -131322,11 +131322,11 @@ void func_1438(var uParam0, var uParam1, var uParam2, var uParam3, int iParam4, 
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(func_1284()) && !ENTITY::IS_ENTITY_DEAD(func_1284(), 0))
 		{
-			PED::SET_PED_CAN_SWITCH_WEAPON(func_1284(), 1);
+			PED::SET_PED_CAN_SWITCH_WEAPON(func_1284(), true);
 		}
 		if (ENTITY::DOES_ENTITY_EXIST(func_1283()) && !ENTITY::IS_ENTITY_DEAD(func_1283(), 0))
 		{
-			PED::SET_PED_CAN_SWITCH_WEAPON(func_1283(), 1);
+			PED::SET_PED_CAN_SWITCH_WEAPON(func_1283(), true);
 		}
 	}
 	if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
@@ -134797,11 +134797,11 @@ bool func_1621()
 	return Global_2448386.f_11;
 }
 
-void func_1622(float fParam0)
+void func_1622(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }
@@ -134824,11 +134824,11 @@ void func_1625()
 	func_1626(-1f);
 }
 
-void func_1626(float fParam0)
+void func_1626(int iParam0)
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 	{
-		NETWORK::NETWORK_SET_TALKER_PROXIMITY(fParam0);
+		NETWORK::NETWORK_SET_TALKER_PROXIMITY(iParam0);
 		NETWORK::NETWORK_SET_TEAM_ONLY_CHAT(0);
 	}
 }
@@ -136109,7 +136109,7 @@ void func_1724(int iParam0, var uParam1, int iParam2, bool bParam3, int iParam4,
 						}
 						else
 						{
-							NETWORKCASH::_NETWORK_PAY_TAXES(Global_1575074, &Var1, 0, 1);
+							NETWORKCASH::_NETWORK_PAY_TAXES(Global_1575074, &Var1, false, 1);
 						}
 					}
 				}
@@ -136130,7 +136130,7 @@ void func_1724(int iParam0, var uParam1, int iParam2, bool bParam3, int iParam4,
 					}
 					else
 					{
-						NETWORKCASH::_NETWORK_PAY_TAXES(Global_1575074, &Var1, 0, 1);
+						NETWORKCASH::_NETWORK_PAY_TAXES(Global_1575074, &Var1, false, 1);
 					}
 				}
 			}

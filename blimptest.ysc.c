@@ -177,7 +177,7 @@ void func_4(int iParam0)
 	{
 		if (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(*iParam0))
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*iParam0, 1, 0);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*iParam0, true, 0);
 		}
 		if (func_6(*iParam0))
 		{
@@ -246,7 +246,7 @@ void func_7(int iParam0)
 		}
 		if (!ENTITY::IS_ENTITY_A_MISSION_ENTITY(*iParam0))
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*iParam0, 1, 0);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(*iParam0, true, 0);
 		}
 		PED::DELETE_PED(iParam0);
 	}
@@ -395,9 +395,9 @@ void func_16()
 		if (func_5(iLocal_43))
 		{
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_43, 1);
-			PED::SET_PED_CONFIG_FLAG(iLocal_43, 118, 0);
-			PED::SET_PED_CONFIG_FLAG(iLocal_43, 29, 0);
-			PED::SET_PED_CONFIG_FLAG(iLocal_43, 116, 0);
+			PED::SET_PED_CONFIG_FLAG(iLocal_43, 118, false);
+			PED::SET_PED_CONFIG_FLAG(iLocal_43, 29, false);
+			PED::SET_PED_CONFIG_FLAG(iLocal_43, 116, false);
 		}
 	}
 	if (func_6(iLocal_40))

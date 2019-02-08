@@ -10280,7 +10280,7 @@ void func_93(int iParam0)
 
 void func_94(var uParam0, int iParam1, int iParam2, char* sParam3, int iParam4, int iParam5, int iParam6, bool bParam7, int iParam8, int iParam9, bool bParam10)
 {
-	var uVar0;
+	int iVar0;
 	int iVar1;
 	
 	uParam0->f_6 = 0;
@@ -10391,8 +10391,8 @@ void func_94(var uParam0, int iParam1, int iParam2, char* sParam3, int iParam4, 
 			{
 				return;
 			}
-			uVar0 = func_78(func_97(iParam1, uParam0->f_2), Global_71014, 0);
-			if (GAMEPLAY::IS_BIT_SET(uVar0, uParam0->f_1))
+			iVar0 = func_78(func_97(iParam1, uParam0->f_2), Global_71014, 0);
+			if (GAMEPLAY::IS_BIT_SET(iVar0, uParam0->f_1))
 			{
 				GAMEPLAY::SET_BIT(&(uParam0->f_6), 1);
 			}
@@ -11278,7 +11278,7 @@ int func_98(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4)
 	int iVar0;
 	int iVar1;
 	int iVar2;
-	var uVar3;
+	int iVar3;
 	
 	iVar0 = Global_71014;
 	if (iParam4 != -1)
@@ -11287,8 +11287,8 @@ int func_98(int iParam0, int iParam1, bool bParam2, bool bParam3, int iParam4)
 	}
 	if (func_79(iParam0, iParam1, &iVar2, &iVar1, bParam2, bParam3))
 	{
-		uVar3 = func_78(iVar2, iVar0, 0);
-		return GAMEPLAY::IS_BIT_SET(uVar3, iVar1);
+		iVar3 = func_78(iVar2, iVar0, 0);
+		return GAMEPLAY::IS_BIT_SET(iVar3, iVar1);
 	}
 	return 0;
 }
@@ -35585,12 +35585,12 @@ void func_265(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam
 	}
 }
 
-bool func_266(var uParam0, int iParam1, int iParam2)
+bool func_266(var uParam0, int iParam1, char* sParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED(uParam0);
 	if (iParam1 == 1)
 	{
-		UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+		UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	}
 	return UI::END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();
 }
@@ -36191,7 +36191,7 @@ void func_290()
 		PED::SET_PED_CONFIG_FLAG(iLocal_61, 29, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_61, 116, 1);
 		PED::SET_PED_CONFIG_FLAG(iLocal_61, 118, 1);
-		PED::SET_PED_CAN_BE_TARGETTED(iLocal_61, 1);
+		PED::SET_PED_CAN_BE_TARGETTED(iLocal_61, true);
 		AI::SET_PED_PATH_CAN_DROP_FROM_HEIGHT(iLocal_61, 0);
 		AI::SET_PED_PATH_CAN_USE_CLIMBOVERS(iLocal_61, 0);
 	}
@@ -37790,7 +37790,7 @@ void func_335(vector3 vParam0, int iParam1, int iParam2, int iParam3, int iParam
 
 Vector3 func_336(int iParam0)
 {
-	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(uParam0), 0);
+	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(iParam0), 0);
 }
 
 void func_337(bool bParam0)
@@ -39380,9 +39380,9 @@ void func_383(vector3 vParam0, float fParam1, vector3 vParam2, float fParam3, ve
 	}
 }
 
-int func_384(int iParam0, int iParam1, vector3 vParam2, var uParam3, char* sParam4, int iParam5)
+int func_384(int iParam0, int iParam1, vector3 vParam2, float fParam3, char* sParam4, int iParam5)
 {
-	if (func_385(iParam0, iParam1, vParam2, uParam3, 1))
+	if (func_385(iParam0, iParam1, vParam2, fParam3, 1))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(*iParam0))
 		{
@@ -39392,7 +39392,7 @@ int func_384(int iParam0, int iParam1, vector3 vParam2, var uParam3, char* sPara
 				PED::SET_PED_MONEY(*iParam0, 0);
 				if (iParam5 == 1)
 				{
-					PED::SET_PED_CAN_BE_TARGETTED(*iParam0, 0);
+					PED::SET_PED_CAN_BE_TARGETTED(*iParam0, false);
 				}
 			}
 			PED::SET_PED_NAME_DEBUG(*iParam0, sParam4);
@@ -39402,7 +39402,7 @@ int func_384(int iParam0, int iParam1, vector3 vParam2, var uParam3, char* sPara
 	return 0;
 }
 
-int func_385(int iParam0, int iParam1, vector3 vParam2, var uParam3, bool bParam4)
+int func_385(int iParam0, int iParam1, vector3 vParam2, float fParam3, bool bParam4)
 {
 	int iVar0;
 	
@@ -39416,7 +39416,7 @@ int func_385(int iParam0, int iParam1, vector3 vParam2, var uParam3, bool bParam
 			{
 				PED::DELETE_PED(iParam0);
 			}
-			*iParam0 = PED::CREATE_PED(26, iVar0, vParam2, uParam3, 0, 0);
+			*iParam0 = PED::CREATE_PED(26, iVar0, vParam2, fParam3, 0, 0);
 			PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*iParam0);
 			if (iVar0 == joaat("ig_lamardavis"))
 			{
@@ -45210,7 +45210,7 @@ void func_470(char* sParam0, int iParam1)
 
 int func_471(char* sParam0, int iParam1, int iParam2)
 {
-	var uVar0;
+	int iVar0;
 	struct<32> Var1;
 	int iVar2;
 	
@@ -45237,8 +45237,8 @@ int func_471(char* sParam0, int iParam1, int iParam2)
 		{
 			if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 0))
 			{
-				uVar0 = PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0);
-				if (ENTITY::IS_ENTITY_UPSIDEDOWN(uVar0))
+				iVar0 = PED::GET_VEHICLE_PED_IS_IN(PLAYER::PLAYER_PED_ID(), 0);
+				if (ENTITY::IS_ENTITY_UPSIDEDOWN(iVar0))
 				{
 					GAMEPLAY::SET_BIT(&(Global_93232.f_20), 5);
 				}

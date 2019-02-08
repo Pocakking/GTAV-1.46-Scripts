@@ -8553,9 +8553,9 @@ int func_208(int iParam0, int iParam1, vector3 vParam2, float fParam3, float fPa
 					if (func_209(&(Local_110.f_13[iParam0]), 26, iParam1, vParam2, fParam3, 1, 1, 1))
 					{
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), iParam5);
-						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1, 0f);
+						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1, 0);
 						PED::SET_PED_RANDOM_COMPONENT_VARIATION(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 0);
-						WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), joaat("weapon_carbinerifle"), 25000, 1);
+						WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), joaat("weapon_carbinerifle"), 25000, true);
 						fVar0 = (30f * 1f);
 						PED::SET_PED_ACCURACY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), SYSTEM::ROUND(fVar0));
 						PED::SET_PED_COMBAT_ABILITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
@@ -8567,7 +8567,7 @@ int func_208(int iParam0, int iParam1, vector3 vParam2, float fParam3, float fPa
 						ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 200, 0);
 						PED::SET_PED_AS_ENEMY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
 						PED::SET_PED_KEEP_TASK(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), true);
-						PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
+						PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), true);
 						PED::SET_PED_SPHERE_DEFENSIVE_AREA(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), vParam2, fParam4, 0, 0);
 						if (func_1077() == 2)
 						{
@@ -8769,7 +8769,7 @@ int func_211(int iParam0, int iParam1, vector3 vParam2, float fParam3, float fPa
 					if (func_209(&(Local_110.f_13[iParam0]), 26, iParam1, vParam2, fParam3, 1, 1, 1))
 					{
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), iParam5);
-						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1, 0f);
+						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1, 0);
 						if (func_1077() == 1)
 						{
 							PED::SET_PED_COMPONENT_VARIATION(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 3, 0, 0, 0);
@@ -8781,7 +8781,7 @@ int func_211(int iParam0, int iParam1, vector3 vParam2, float fParam3, float fPa
 						{
 							PED::SET_PED_RANDOM_COMPONENT_VARIATION(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 0);
 						}
-						WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), joaat("weapon_advancedrifle"), 25000, 1);
+						WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), joaat("weapon_advancedrifle"), 25000, true);
 						fVar0 = (30f * 1f);
 						PED::SET_PED_ACCURACY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), SYSTEM::ROUND(fVar0));
 						PED::SET_PED_COMBAT_ABILITY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
@@ -8793,7 +8793,7 @@ int func_211(int iParam0, int iParam1, vector3 vParam2, float fParam3, float fPa
 						ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 200, 0);
 						PED::SET_PED_AS_ENEMY(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
 						PED::SET_PED_KEEP_TASK(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), true);
-						PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), 1);
+						PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), true);
 						PED::SET_PED_SPHERE_DEFENSIVE_AREA(NETWORK::NET_TO_PED(Local_110.f_13[iParam0]), vParam2, fParam4, 0, 0);
 					}
 				}

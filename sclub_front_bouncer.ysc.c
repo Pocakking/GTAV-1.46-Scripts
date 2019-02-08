@@ -947,14 +947,14 @@ int func_21()
 	{
 		WEAPON::REMOVE_ALL_PED_WEAPONS(iLocal_101, 1);
 		WEAPON::SET_CURRENT_PED_WEAPON(iLocal_101, joaat("weapon_unarmed"), true);
-		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_101, 0);
+		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_101, false);
 		AI::TASK_COMBAT_PED(iLocal_101, PLAYER::PLAYER_PED_ID(), 0, 16);
 	}
 	else if (!(func_20() && !PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), 1)))
 	{
 		WEAPON::REMOVE_ALL_PED_WEAPONS(iLocal_101, 1);
 		WEAPON::SET_CURRENT_PED_WEAPON(iLocal_101, joaat("weapon_unarmed"), true);
-		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_101, 0);
+		PED::SET_PED_CAN_SWITCH_WEAPON(iLocal_101, false);
 		AI::TASK_COMBAT_PED(iLocal_101, PLAYER::PLAYER_PED_ID(), 0, 16);
 		func_18(8);
 	}

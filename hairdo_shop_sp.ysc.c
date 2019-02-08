@@ -3773,7 +3773,7 @@ void func_22(var uParam0)
 						func_696(uParam0, func_697(uParam0, 3, uParam0->f_489));
 						if (CAM::DOES_CAM_EXIST(uParam0->f_50[1 /*12*/]))
 						{
-							CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], 0);
+							CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], false);
 							CAM::DESTROY_CAM(uParam0->f_50[1 /*12*/], 0);
 						}
 					}
@@ -4946,7 +4946,7 @@ void func_24(var uParam0)
 	{
 		if (CAM::DOES_CAM_EXIST((*uParam0)[iVar0 /*12*/]))
 		{
-			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], 0);
+			CAM::SET_CAM_ACTIVE((*uParam0)[iVar0 /*12*/], false);
 		}
 		iVar0++;
 	}
@@ -39584,20 +39584,20 @@ int func_227(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_228(int iParam0, bool bParam1, bool bParam2, var uParam3)
+int func_228(int iParam0, bool bParam1, bool bParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && bParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && bParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && bParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && bParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -105858,8 +105858,8 @@ void func_663(var uParam0, bool bParam1)
 		CAM::SET_CAM_COORD(uParam0->f_50[1 /*12*/], OBJECT::_GET_OBJECT_OFFSET_FROM_COORDS(uParam0->f_536, uParam0->f_535, uParam0->f_539));
 		CAM::POINT_CAM_AT_COORD(uParam0->f_50[1 /*12*/], uParam0->f_536);
 		CAM::SET_CAM_FOV(uParam0->f_50[1 /*12*/], 47f);
-		CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], 1);
-		CAM::SET_CAM_ACTIVE(uParam0->f_50[0 /*12*/], 0);
+		CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], true);
+		CAM::SET_CAM_ACTIVE(uParam0->f_50[0 /*12*/], false);
 		uParam0->f_543 = (uParam0->f_535 + 120f);
 		uParam0->f_542 = (uParam0->f_535 - 150f);
 		uParam0->f_544 = 0f;
@@ -108130,7 +108130,7 @@ void func_696(var uParam0, char* sParam1)
 		uParam0->f_50[0 /*12*/] = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 	}
 	CAM::PLAY_CAM_ANIM(uParam0->f_50[0 /*12*/], sParam1, uParam0->f_487, vVar0, vVar1, 0, 2);
-	CAM::SET_CAM_ACTIVE(uParam0->f_50[0 /*12*/], 1);
+	CAM::SET_CAM_ACTIVE(uParam0->f_50[0 /*12*/], true);
 	CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 }
 
@@ -113408,7 +113408,7 @@ void func_853(var uParam0)
 				CAM::SET_CAM_COORD(uParam0->f_50[1 /*12*/], uParam0->f_157.f_11[0 /*3*/]);
 				CAM::SET_CAM_ROT(uParam0->f_50[1 /*12*/], uParam0->f_157.f_18[0 /*3*/], 2);
 				CAM::SET_CAM_FOV(uParam0->f_50[1 /*12*/], uParam0->f_157.f_25[0]);
-				CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], 1);
+				CAM::SET_CAM_ACTIVE(uParam0->f_50[1 /*12*/], true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			}
 			if (!PED::IS_PED_INJURED(uParam0->f_12))
@@ -113471,7 +113471,7 @@ void func_854(var uParam0)
 	{
 		if (CAM::IS_CAM_ACTIVE(uParam0->f_157.f_10))
 		{
-			CAM::SET_CAM_ACTIVE(uParam0->f_157.f_10, 0);
+			CAM::SET_CAM_ACTIVE(uParam0->f_157.f_10, false);
 		}
 		CAM::DESTROY_CAM(uParam0->f_157.f_10, 0);
 	}
@@ -114429,7 +114429,7 @@ void func_875(var uParam0)
 				AI::CLEAR_PED_TASKS(uParam0->f_42);
 				AI::OPEN_SEQUENCE_TASK(&iVar3);
 				uParam0->f_490 = "customer_intro";
-				AI::TASK_PLAY_ANIM_ADVANCED(0, uParam0->f_487, uParam0->f_490, vVar0, vVar1, 1000f, -4f, -1, 1536, 0f, 2, 0);
+				AI::TASK_PLAY_ANIM_ADVANCED(0, uParam0->f_487, uParam0->f_490, vVar0, vVar1, 1000f, -4f, -1, 1536, 0, 2, 0);
 				AI::CLOSE_SEQUENCE_TASK(iVar3);
 				AI::TASK_PERFORM_SEQUENCE(uParam0->f_42, iVar3);
 				PED::_0x2208438012482A1A(uParam0->f_42, 0, 0);
@@ -115131,7 +115131,7 @@ void func_885(var uParam0)
 				{
 					if (func_976(*uParam0, &vVar1, &vVar2))
 					{
-						AI::TASK_PLAY_ANIM_ADVANCED(uParam0->f_42, uParam0->f_487, sVar8, vVar1, vVar2, 1000f, -8f, -1, 5641, 0f, 2, 0);
+						AI::TASK_PLAY_ANIM_ADVANCED(uParam0->f_42, uParam0->f_487, sVar8, vVar1, vVar2, 1000f, -8f, -1, 5641, 0, 2, 0);
 					}
 				}
 			}
@@ -116999,7 +116999,7 @@ void func_924(var uParam0)
 					}
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam0->f_42, true);
 					AI::TASK_LOOK_AT_ENTITY(uParam0->f_42, PLAYER::PLAYER_PED_ID(), -1, 2048, 2);
-					AI::TASK_PLAY_ANIM_ADVANCED(uParam0->f_42, "amb@prop_human_seat_chair@male@generic@react_cowering", "idle_front", vVar2.x, vVar2.y, (vVar2.z - fVar3), 0f, 0f, ENTITY::GET_ENTITY_HEADING(uParam0->f_42), 4f, -2f, -1, 1, 0f, 2, 0);
+					AI::TASK_PLAY_ANIM_ADVANCED(uParam0->f_42, "amb@prop_human_seat_chair@male@generic@react_cowering", "idle_front", vVar2.x, vVar2.y, (vVar2.z - fVar3), 0f, 0f, ENTITY::GET_ENTITY_HEADING(uParam0->f_42), 4f, -2f, -1, 1, 0, 2, 0);
 					PED::SET_PED_KEEP_TASK(uParam0->f_42, true);
 					ENTITY::SET_PED_AS_NO_LONGER_NEEDED(&(uParam0->f_42));
 				}

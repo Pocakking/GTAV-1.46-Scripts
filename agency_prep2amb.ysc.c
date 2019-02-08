@@ -10670,12 +10670,12 @@ void func_218()
 	}
 }
 
-bool func_219(char* sParam0, int iParam1, int iParam2)
+bool func_219(char* sParam0, int iParam1, char* sParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED(sParam0);
 	if (iParam1 == 1)
 	{
-		UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+		UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	}
 	return UI::END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();
 }

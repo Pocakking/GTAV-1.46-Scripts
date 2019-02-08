@@ -56,7 +56,7 @@ void func_1()
 	{
 		if (!Global_89822)
 		{
-			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_20, 1, 1);
+			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_20, true, 1);
 			if (AI::GET_SCRIPT_TASK_STATUS(iLocal_20, 1435919172) != 7)
 			{
 				AI::CLEAR_PED_TASKS(iLocal_20);
@@ -327,7 +327,7 @@ int func_8(var uParam0)
 				{
 					if (PED::IS_PED_IN_ANY_VEHICLE(Global_90696[iLocal_18], 0) || !ENTITY::IS_ENTITY_ATTACHED(Global_90696[iLocal_18]))
 					{
-						if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(Global_90696[iLocal_18], 1), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), 1) < 10f)
+						if (GAMEPLAY::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(Global_90696[iLocal_18], 1), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 0), true) < 10f)
 						{
 							iLocal_19 = func_5(Global_90696[iLocal_18]);
 							if ((iLocal_19 == 0 || iLocal_19 == 2) || iLocal_19 == 1)

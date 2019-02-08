@@ -977,7 +977,7 @@ void __EntryFunction__()
 					func_12(&uLocal_37, 0);
 					if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 					{
-						AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), 0);
+						AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), false);
 					}
 					STREAMING::REMOVE_ANIM_DICT(&Local_264);
 					func_11();
@@ -1016,7 +1016,7 @@ void __EntryFunction__()
 				func_42(&cVar2);
 				if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 				{
-					AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), 1);
+					AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), true);
 				}
 				func_85();
 				func_95(1, 1);
@@ -3180,7 +3180,7 @@ void func_107(int iParam0)
 	func_84();
 	if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 	{
-		AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), 0);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(PLAYER::PLAYER_PED_ID(), false);
 	}
 	SCRIPT::TERMINATE_THIS_THREAD();
 }

@@ -12809,11 +12809,11 @@ int func_377()
 	return iVar1;
 }
 
-bool func_378(char* sParam0, int iParam1, int iParam2)
+bool func_378(char* sParam0, char* sParam1, char* sParam2)
 {
 	UI::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	return UI::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
@@ -18896,11 +18896,11 @@ void func_519(int iParam0)
 	}
 }
 
-void func_520(char* sParam0, int iParam1, int iParam2, int iParam3)
+void func_520(char* sParam0, char* sParam1, char* sParam2, int iParam3)
 {
 	UI::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam1);
-	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(iParam2);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam1);
+	UI::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	UI::END_TEXT_COMMAND_DISPLAY_HELP(0, 0, 0, iParam3);
 }
 
@@ -20483,7 +20483,7 @@ void func_591(var uParam0)
 
 struct<4> func_592(int iParam0)
 {
-	struct<4> Var0;
+	char cVar0[32];
 	
 	if (func_12(iParam0, 0, 1))
 	{
@@ -20494,26 +20494,26 @@ struct<4> func_592(int iParam0)
 			{
 				if (!NETWORK::_0xB57A49545BA53CE7(&Global_2503649))
 				{
-					return Var0;
+					return cVar0;
 				}
 			}
 		}
 		else if (!NETWORK::_0x72D918C99BCACC54(0))
 		{
-			return Var0;
+			return cVar0;
 		}
 		if (func_596(&Global_2503649))
 		{
 			Global_2503579 = { func_594(iParam0) };
-			func_593(&Global_2503579, &Var0);
+			func_593(&Global_2503579, &cVar0);
 		}
 	}
-	return Var0;
+	return cVar0;
 }
 
-void func_593(var uParam0, var uParam1)
+void func_593(var uParam0, char* sParam1)
 {
-	NETWORK::_0xF45352426FF3A4F0(uParam0, 35, uParam1);
+	NETWORK::_0xF45352426FF3A4F0(uParam0, 35, sParam1);
 }
 
 struct<35> func_594(int iParam0)

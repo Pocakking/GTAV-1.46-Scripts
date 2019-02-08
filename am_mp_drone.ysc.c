@@ -7691,7 +7691,7 @@ void func_264()
 				}
 				else
 				{
-					FIRE::ADD_EXPLOSION(Local_147.f_71, 72, 0.5f, 1, 0, 1f, 0);
+					FIRE::ADD_EXPLOSION(Local_147.f_71, 72, 0.5f, 1, 0, 1065353216, 0);
 				}
 				CONTROLS::SET_PAD_SHAKE(0, 300, 200);
 				NETWORK::SET_NETWORK_ID_CAN_MIGRATE(Local_147.f_76, 1);
@@ -10574,7 +10574,7 @@ void func_381(bool bParam0)
 					}
 					else
 					{
-						FIRE::ADD_EXPLOSION(Local_147.f_71, 72, 0.5f, 1, 0, 1f, 0);
+						FIRE::ADD_EXPLOSION(Local_147.f_71, 72, 0.5f, 1, 0, 1065353216, 0);
 					}
 					CONTROLS::SET_PAD_SHAKE(0, 300, 200);
 					GAMEPLAY::SET_BIT(&(Local_147.f_6), 2);

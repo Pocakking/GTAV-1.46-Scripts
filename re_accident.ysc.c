@@ -1144,7 +1144,7 @@ void func_22()
 					iLocal_89 = OBJECT::CREATE_OBJECT(-415509317, vLocal_274.x, (vLocal_274.y + 0.5f), (vLocal_274.z - 0.25f), true, true, false);
 					ENTITY::SET_ENTITY_HEADING(iLocal_89, 75f);
 					ENTITY::SET_ENTITY_PROOFS(iLocal_89, false, true, true, false, false, false, 0, false);
-					iLocal_279 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sparking_generator", iLocal_89, 0f, 0f, 0.2f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+					iLocal_279 = GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("scr_sparking_generator", iLocal_89, 0f, 0f, 0.2f, 0f, 0f, 0f, 1f, 0, 0, 0);
 					ENTITY::FREEZE_ENTITY_POSITION(iLocal_89, true);
 					func_96(&uLocal_108, "CONACAU", "CONAC_CHAT", 4, 0, 0, 0, 0);
 					iLocal_101 = GAMEPLAY::GET_GAME_TIMER();
@@ -2120,13 +2120,13 @@ void func_46()
 				{
 					AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000, 0, 2);
 					AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -476.3904f, -986.836f, 22.5569f, 3f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -476.3904f, -986.836f, 22.5569f, 3f, -1, 1048576000, 0, 1193033728);
 				}
 				else
 				{
 					AI::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), 3000, 0, 2);
 					AI::TASK_LEAVE_ANY_VEHICLE(0, 0, 0);
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -476.3904f, -986.836f, 22.5569f, 3f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(0, -476.3904f, -986.836f, 22.5569f, 3f, -1, 1048576000, 0, 1193033728);
 				}
 				AI::CLOSE_SEQUENCE_TASK(iLocal_107);
 				AI::TASK_PERFORM_SEQUENCE(iLocal_78, iLocal_107);
@@ -4109,7 +4109,7 @@ void func_91()
 			CAM::SHAKE_CAM(iLocal_276, "HAND_SHAKE", 0.3f);
 			CAM::SHAKE_CAM(iLocal_277, "HAND_SHAKE", 0.3f);
 			func_93();
-			CAM::SET_CAM_ACTIVE(iLocal_276, 1);
+			CAM::SET_CAM_ACTIVE(iLocal_276, true);
 			CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 			SYSTEM::WAIT(500);
 			CAM::SET_CAM_ACTIVE_WITH_INTERP(iLocal_277, iLocal_276, 3500, 1, 1);
@@ -4169,7 +4169,7 @@ void func_91()
 					OBJECT::_0xE7E4C198B0185900(iLocal_88[0], 9, 0);
 					OBJECT::_0xE7E4C198B0185900(iLocal_88[0], 12, 0);
 					OBJECT::_0xE7E4C198B0185900(iLocal_88[0], 17, 0);
-					GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_reconstruct_pipefall_debris", iLocal_88[0], 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
+					GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_reconstruct_pipefall_debris", iLocal_88[0], 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 				}
 				iLocal_104 = GAMEPLAY::GET_GAME_TIMER();
 				iLocal_72 = 4;
@@ -4205,7 +4205,7 @@ void func_91()
 						AI::TASK_CLEAR_LOOK_AT(iLocal_78);
 					}
 					AI::TASK_PLAY_ANIM(iLocal_78, "re@construction", "idle_panic", 8f, -8f, -1, 16, 0f, 0, 0, 0);
-					GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_reconstruct_pipe_impact", iLocal_80, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
+					GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_ENTITY("scr_reconstruct_pipe_impact", iLocal_80, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
 					func_24(&uLocal_108, "CONACAU", "CONAC_SCREAM", 4, 0, 0, 0);
 					if (CAM::DOES_CAM_EXIST(iLocal_276) && CAM::DOES_CAM_EXIST(iLocal_277))
 					{
@@ -4276,7 +4276,7 @@ void func_91()
 				AI::TASK_CLEAR_LOOK_AT(iLocal_78);
 				AI::TASK_PLAY_ANIM(iLocal_78, "re@construction", "idle_panic", 8f, -8f, -1, 1, 0f, 0, 0, 0);
 			}
-			CAM::SET_CAM_ACTIVE(iLocal_276, 0);
+			CAM::SET_CAM_ACTIVE(iLocal_276, false);
 			CAM::RENDER_SCRIPT_CAMS(false, false, 3000, 1, 0, 0);
 			CAM::DESTROY_CAM(iLocal_276, 0);
 			CAM::DESTROY_CAM(iLocal_277, 0);

@@ -23,14 +23,14 @@ void __EntryFunction__()
 			{
 				if (VEHICLE::IS_VEHICLE_DRIVEABLE(iLocal_0, 0))
 				{
-					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_0, 0, 1);
+					ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_0, false, 1);
 					ENTITY::FREEZE_ENTITY_POSITION(iLocal_0, true);
-					ENTITY::SET_ENTITY_PROOFS(iLocal_0, 1, 1, 1, 1, 1, 0, 0, 0);
+					ENTITY::SET_ENTITY_PROOFS(iLocal_0, true, true, true, true, true, 0, 0, 0);
 					if (ENTITY::DOES_ENTITY_EXIST(iLocal_1))
 					{
-						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_1, 0, 1);
+						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(iLocal_1, false, 1);
 						ENTITY::FREEZE_ENTITY_POSITION(iLocal_1, true);
-						ENTITY::SET_ENTITY_PROOFS(iLocal_1, 1, 1, 1, 1, 1, 0, 0, 0);
+						ENTITY::SET_ENTITY_PROOFS(iLocal_1, true, true, true, true, true, 0, 0, 0);
 					}
 					GAMEPLAY::SET_BIT(&iLocal_2, 0);
 				}

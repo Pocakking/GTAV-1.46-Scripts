@@ -67672,20 +67672,20 @@ int func_419(int iParam0, int iParam1)
 	return 0;
 }
 
-int func_420(int iParam0, int iParam1, int iParam2, var uParam3)
+int func_420(int iParam0, int iParam1, int iParam2, int iParam3)
 {
 	int iVar0;
 	int iVar1;
 	var uVar2;
 	int iVar3;
 	
-	*uParam3 = -1;
+	*iParam3 = -1;
 	iVar0 = DLC1::_0xC17AD0E5752BECDA(iParam0);
 	iVar1 = 0;
 	while (iVar1 < iVar0)
 	{
-		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, uParam3, &uVar2, &iVar3);
-		if ((((iVar3 == 11 && *uParam3 != 0) && *uParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*uParam3, -1325143745, 0))
+		DLC1::GET_VARIANT_COMPONENT(iParam0, iVar1, iParam3, &uVar2, &iVar3);
+		if ((((iVar3 == 11 && *iParam3 != 0) && *iParam3 != 1849449579) && iParam1 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1889900289, 0)) && iParam2 == DLC1::_0x341DE7ED1D2A1BFD(*iParam3, -1325143745, 0))
 		{
 			return 1;
 		}
@@ -102325,7 +102325,7 @@ void func_559(int iParam0, int iParam1)
 		
 		case 6:
 			PED::SET_PED_COMBAT_ATTRIBUTES(*iParam0, 46, true);
-			WEAPON::GIVE_DELAYED_WEAPON_TO_PED(*iParam0, joaat("weapon_cougar"), -1, 1);
+			WEAPON::GIVE_DELAYED_WEAPON_TO_PED(*iParam0, joaat("weapon_cougar"), -1, true);
 			AI::TASK_GO_TO_ENTITY(*iParam0, PLAYER::PLAYER_PED_ID(), -1, 10f, 1f, 1073741824, 0);
 			iParam0->f_12 = 7;
 			break;
@@ -103062,7 +103062,7 @@ void func_583(var uParam0, int iParam1, int iParam2)
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(*uParam0, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, 0, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 1, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 1, false);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 100, 0);
 		PED::_0x576594E8D64375E2(*uParam0, 1);
 		ENTITY::SET_ENTITY_LOAD_COLLISION_FLAG(*uParam0, true, 1);
@@ -106816,7 +106816,7 @@ void func_677()
 						{
 							if (GAMEPLAY::GET_GAME_TIMER() > iVar9 + 20000)
 							{
-								GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("ent_amb_insect_plane", iVar3, 0f, 0f, 0f, 0f, 0f, 0f, 1065353216, 0, 0, 0);
+								GRAPHICS::START_PARTICLE_FX_LOOPED_ON_ENTITY("ent_amb_insect_plane", iVar3, 0f, 0f, 0f, 0f, 0f, 0f, 1f, 0, 0, 0);
 								DECORATOR::DECOR_REMOVE(iVar3, "hunt_kill_time");
 							}
 						}
@@ -108825,7 +108825,7 @@ void func_716(int iParam0)
 					{
 						Local_55[Local_53[iParam0 /*36*/].f_27 /*5*/].f_3 = 1;
 					}
-					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Local_53[iParam0 /*36*/], Local_55[Local_53[iParam0 /*36*/].f_27 /*5*/], 1f, -1, 0.25f, 0, 40000f);
+					AI::TASK_FOLLOW_NAV_MESH_TO_COORD(Local_53[iParam0 /*36*/], Local_55[Local_53[iParam0 /*36*/].f_27 /*5*/], 1f, -1, 1048576000, 0, 1193033728);
 					Local_53[iParam0 /*36*/].f_26 = Local_53[iParam0 /*36*/].f_25;
 					Local_53[iParam0 /*36*/].f_16 = 7;
 				}
@@ -109233,7 +109233,7 @@ void func_724(var uParam0, int iParam1, int iParam2)
 	{
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(*uParam0, true);
 		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, 0, false);
-		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 1, 0);
+		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 1, false);
 		ENTITY::SET_ENTITY_HEALTH(*uParam0, 100, 0);
 		PED::_0x576594E8D64375E2(*uParam0, 1);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(*uParam0, iLocal_52);
@@ -110561,7 +110561,7 @@ void func_757(int iParam0)
 				iLocal_392 = PED::CREATE_SYNCHRONIZED_SCENE(vVar0, vVar1, 2);
 				iLocal_393 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 				CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_393, iLocal_392, "_Trevor_cam", "oddjobs@hunterIntro");
-				CAM::SET_CAM_ACTIVE(iLocal_393, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_393, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				func_497(-1703.123f, 4665.463f, 21.2f, -1704.077f, 4660.555f, 25.4f, 7f, -1710.823f, 4656.964f, 21.8008f, 82.9948f, 1, 1, 1, 0, 0);
 				AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_392, "oddjobs@hunterIntro", "_Trevor", 1000f, -2f, 0, 0, 1148846080, 0);
@@ -110621,7 +110621,7 @@ void func_757(int iParam0)
 				PED::_SET_SYNCHRONIZED_SCENE_OCCLUSION_PORTAL(iLocal_392, false);
 				iLocal_393 = CAM::CREATE_CAM("DEFAULT_ANIMATED_CAMERA", false);
 				CAM::PLAY_SYNCHRONIZED_CAM_ANIM(iLocal_393, iLocal_392, "_Trevor_cam", "oddjobs@hunterOutro");
-				CAM::SET_CAM_ACTIVE(iLocal_393, 1);
+				CAM::SET_CAM_ACTIVE(iLocal_393, true);
 				CAM::RENDER_SCRIPT_CAMS(true, false, 3000, 1, 0, 0);
 				AI::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_392, "oddjobs@hunterOutro", "_Trevor", 1000f, -2f, 0, 0, 1148846080, 0);
 				PED::_0x129466ED55140F8D(PLAYER::PLAYER_PED_ID(), 1);
@@ -113333,28 +113333,28 @@ void func_823(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_824(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_826(iParam0, &Var0);
-		MemCopy(&cVar1, {func_796(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_825(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_796(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_825(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_825(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_825(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 

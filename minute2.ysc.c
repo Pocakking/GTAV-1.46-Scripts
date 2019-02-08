@@ -30552,28 +30552,28 @@ void func_176(int iParam0, int iParam1, int iParam2, int iParam3)
 void func_177(int iParam0, int iParam1, int iParam2)
 {
 	struct<4> Var0;
-	char[] cVar1[8];
+	char* sVar1;
 	
 	if (iParam0 != -1)
 	{
 		func_179(iParam0, &Var0);
-		MemCopy(&cVar1, {func_174(iParam0)}, 4);
-		STATS::PLAYSTATS_MISSION_CHECKPOINT(&cVar1, 0, Global_93269, 0);
-		func_178(&cVar1, Var0.f_3, Global_93269, iParam1, iParam2);
+		MemCopy(&sVar1, {func_174(iParam0)}, 4);
+		STATS::PLAYSTATS_MISSION_CHECKPOINT(&sVar1, 0, Global_93269, 0);
+		func_178(&sVar1, Var0.f_3, Global_93269, iParam1, iParam2);
 	}
 }
 
-void func_178(char[4] cParam0, int iParam1, int iParam2, int iParam3, int iParam4)
+void func_178(char* sParam0, int iParam1, int iParam2, int iParam3, int iParam4)
 {
 	if (GAMEPLAY::IS_STRING_NULL_OR_EMPTY(&Global_90397))
 	{
 		return;
 	}
-	if (GAMEPLAY::COMPARE_STRINGS(cParam0, &Global_90397, 0, -1) != 0)
+	if (GAMEPLAY::COMPARE_STRINGS(sParam0, &Global_90397, 0, -1) != 0)
 	{
 		return;
 	}
-	STATS::PLAYSTATS_MISSION_OVER(cParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
+	STATS::PLAYSTATS_MISSION_OVER(sParam0, iParam1, iParam2, iParam3, iParam4, Global_87504);
 	StringCopy(&Global_90397, "", 64);
 }
 
@@ -40914,7 +40914,7 @@ void func_354()
 						{
 							if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], -1758697641) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], -1758697641) != 0)
 							{
-								AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[1], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[1], 0f, -4.5f, 0f), iLocal_61, 2f, false, 2.5f, 1082130432, true, 0, 0, -957453492, 20000);
+								AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[1], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[1], 0f, -4.5f, 0f), iLocal_61, 2f, false, 2.5f, 4f, true, 0, 0, -957453492, 20000);
 							}
 						}
 						else if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], 1630799643) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], 1630799643) != 0)
@@ -41034,7 +41034,7 @@ void func_354()
 					{
 						if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], -1758697641) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], -1758697641) != 0)
 						{
-							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[1], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[1], 0f, -4.5f, 0f), iLocal_60[iLocal_386], 2f, false, 2.5f, 1082130432, true, 0, 0, -957453492, 20000);
+							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[1], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[1], 0f, -4.5f, 0f), iLocal_60[iLocal_386], 2f, false, 2.5f, 4f, true, 0, 0, -957453492, 20000);
 						}
 					}
 					else if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], 1630799643) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[1], 1630799643) != 0)
@@ -41179,7 +41179,7 @@ void func_356()
 					{
 						if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[0], -1758697641) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[0], -1758697641) != 0)
 						{
-							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[0], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[0], 0f, -4.5f, 0f), iLocal_60[iLocal_386], 2f, false, 2.5f, 1082130432, true, 0, 0, -957453492, 20000);
+							AI::TASK_GO_TO_COORD_WHILE_AIMING_AT_ENTITY(Local_54.f_28[0], ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(Local_54.f_28[0], 0f, -4.5f, 0f), iLocal_60[iLocal_386], 2f, false, 2.5f, 4f, true, 0, 0, -957453492, 20000);
 						}
 					}
 					else if (AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[0], 1630799643) != 1 && AI::GET_SCRIPT_TASK_STATUS(Local_54.f_28[0], 1630799643) != 0)
@@ -46528,7 +46528,7 @@ void func_439()
 					PED::SET_PED_COMPONENT_VARIATION(iLocal_61, 4, 0, 0, 0);
 					PED::SET_PED_COMPONENT_VARIATION(iLocal_61, 6, 1, 0, 0);
 					PED::SET_PED_COMPONENT_VARIATION(iLocal_61, 8, 1, 0, 0);
-					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_61, 1, 0f);
+					ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_61, 1, 0);
 					PED::SET_PED_CONFIG_FLAG(iLocal_61, 281, true);
 					PED::SET_PED_CONFIG_FLAG(iLocal_61, 32, false);
 					PED::SET_PED_CONFIG_FLAG(iLocal_61, 29, false);
@@ -46539,7 +46539,7 @@ void func_439()
 					{
 						PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(iLocal_61, 0);
 					}
-					PED::SET_PED_DIES_WHEN_INJURED(iLocal_61, 0);
+					PED::SET_PED_DIES_WHEN_INJURED(iLocal_61, false);
 					AI::TASK_SET_DECISION_MAKER(iLocal_61, -1143637011);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_61, true);
 					ENTITY::SET_ENTITY_HEALTH(iLocal_61, 300, 0);
@@ -46553,7 +46553,7 @@ void func_439()
 				}
 				STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(joaat("s_m_m_migrant_01"));
 			}
-			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_60[iLocal_386], 1, 0f);
+			ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(iLocal_60[iLocal_386], 1, 0);
 			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_60[iLocal_386], 20, true);
 			PED::SET_PED_CONFIG_FLAG(iLocal_60[iLocal_386], 281, true);
 			PED::SET_PED_CONFIG_FLAG(iLocal_60[iLocal_386], 32, false);

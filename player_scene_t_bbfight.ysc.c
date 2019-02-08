@@ -1207,7 +1207,7 @@ int func_22(int iParam0, int iParam1)
 								{
 									vLocal_285[iVar0 /*3*/] = { Vector(5.9049f, -717.1404f, -1908.287f) - vLocal_283 };
 								}
-								AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 1f, -1, 0.25f, 0, 40000f);
+								AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 1f, -1, 1048576000, 0, 1193033728);
 								PED::FORCE_PED_MOTION_STATE((*iParam0)[iVar0], -668482597, false, 0, 0);
 								AI::TASK_CLEAR_LOOK_AT((*iParam0)[iVar0]);
 								SYSTEM::WAIT(0);
@@ -1287,7 +1287,7 @@ int func_22(int iParam0, int iParam1)
 					}
 					if (!AI::GET_SCRIPT_TASK_STATUS((*iParam0)[iVar0], 713668775) == 1 && !AI::GET_SCRIPT_TASK_STATUS((*iParam0)[iVar0], 713668775) == 0)
 					{
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vVar15, 0.5f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vVar15, 0.5f, -1, 1048576000, 0, 1193033728);
 						break;
 					}
 					break;
@@ -1322,7 +1322,7 @@ int func_22(int iParam0, int iParam1)
 						PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, iLocal_279, 1862763509);
 						PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, 1862763509, iLocal_279);
 						AI::CLEAR_PED_TASKS((*iParam0)[iVar0]);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 0.5f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 0.5f, -1, 1048576000, 0, 1193033728);
 						(*iParam1)[iVar0] = 1;
 					}
 					if (func_23((*iParam0)[iVar0], 15f))
@@ -1330,7 +1330,7 @@ int func_22(int iParam0, int iParam1)
 						PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, iLocal_279, 1862763509);
 						PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, 1862763509, iLocal_279);
 						AI::CLEAR_PED_TASKS((*iParam0)[iVar0]);
-						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 0.5f, -1, 0.25f, 0, 40000f);
+						AI::TASK_FOLLOW_NAV_MESH_TO_COORD((*iParam0)[iVar0], vLocal_283 + vLocal_285[iVar0 /*3*/], 0.5f, -1, 1048576000, 0, 1193033728);
 						(*iParam1)[iVar0] = 1;
 					}
 					break;

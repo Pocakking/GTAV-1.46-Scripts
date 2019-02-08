@@ -7811,7 +7811,7 @@ void func_169(int iParam0)
 					{
 						if (!ENTITY::IS_ENTITY_DEAD(NETWORK::NET_TO_PED(Local_338.f_73[iVar0 /*15*/]), 0))
 						{
-							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_338.f_73[iVar0 /*15*/]), 1);
+							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_338.f_73[iVar0 /*15*/]), true);
 							func_170(NETWORK::NET_TO_PED(Local_338.f_73[iVar0 /*15*/]), "PROVOKE_GENERIC", 34);
 						}
 					}
@@ -7834,7 +7834,7 @@ void func_169(int iParam0)
 						if (!ENTITY::IS_ENTITY_DEAD(NETWORK::NET_TO_PED(Local_338.f_73[iVar1 /*15*/]), 0))
 						{
 							func_170(NETWORK::NET_TO_PED(Local_338.f_73[iVar1 /*15*/]), "SHOUT_INSULT", 34);
-							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_338.f_73[iVar1 /*15*/]), 0);
+							AUDIO::STOP_PED_SPEAKING(NETWORK::NET_TO_PED(Local_338.f_73[iVar1 /*15*/]), false);
 						}
 					}
 				}
@@ -32008,7 +32008,7 @@ void func_585(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33000,7 +33000,7 @@ void func_595(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 1);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iParam1, 43, true);
@@ -33014,7 +33014,7 @@ void func_596(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33032,7 +33032,7 @@ void func_597(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33050,7 +33050,7 @@ void func_598(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33066,7 +33066,7 @@ void func_599(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33082,7 +33082,7 @@ void func_600(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -33099,7 +33099,7 @@ void func_601(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 1);
@@ -33117,7 +33117,7 @@ void func_602(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 1);
@@ -33141,7 +33141,7 @@ void func_604(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -33158,7 +33158,7 @@ void func_605(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -33175,7 +33175,7 @@ void func_606(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 1);
@@ -33201,7 +33201,7 @@ void func_607(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33218,7 +33218,7 @@ void func_608(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33234,7 +33234,7 @@ void func_609(int iParam0, int iParam1, bool bParam2)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 146, true);
 	PED::SET_PED_KEEP_TASK(iParam1, true);
@@ -33319,7 +33319,7 @@ void func_611(int iParam0, int iParam1)
 		PED::SET_PED_CONFIG_FLAG(iParam1, 281, true);
 		ENTITY::SET_ENTITY_MAX_HEALTH(iParam1, 1000);
 		ENTITY::SET_ENTITY_HEALTH(iParam1, 1000, 0);
-		AUDIO::STOP_PED_SPEAKING(iParam1, 1);
+		AUDIO::STOP_PED_SPEAKING(iParam1, true);
 		ENTITY::SET_ENTITY_PROOFS(iParam1, false, true, false, false, false, false, 0, false);
 	}
 }
@@ -33328,7 +33328,7 @@ void func_612(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, true, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
@@ -33351,7 +33351,7 @@ void func_613(int iParam0, int iParam1, bool bParam2)
 	{
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
 	}
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 0);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iParam1, 43, true);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(iParam1, 1);
@@ -33449,7 +33449,7 @@ void func_616(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -33504,7 +33504,7 @@ void func_617(int iParam0, int iParam1, bool bParam2)
 	{
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
 	}
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -33540,7 +33540,7 @@ void func_617(int iParam0, int iParam1, bool bParam2)
 		PED::SET_PED_CONFIG_FLAG(iParam1, 372, true);
 		PED::SET_PED_PLAYS_HEAD_ON_HORN_ANIM_WHEN_DIES_IN_VEHICLE(iParam1, 0);
 		PED::SET_PED_CONFIG_FLAG(iParam1, 46, true);
-		AUDIO::DISABLE_PED_PAIN_AUDIO(iParam1, 1);
+		AUDIO::DISABLE_PED_PAIN_AUDIO(iParam1, true);
 		PED::STOP_PED_WEAPON_FIRING_WHEN_DROPPED(iParam1);
 	}
 	if ((((((((((((((((((((((((((((((((((func_128(iParam0, 5) || func_128(iParam0, 14)) || func_128(iParam0, 15)) || func_128(iParam0, 16)) || func_128(iParam0, 17)) || func_128(iParam0, 18)) || func_128(iParam0, 19)) || func_128(iParam0, 20)) || func_128(iParam0, 21)) || func_128(iParam0, 22)) || func_128(iParam0, 23)) || func_128(iParam0, 24)) || func_128(iParam0, 25)) || func_128(iParam0, 26)) || func_128(iParam0, 27)) || func_153(iParam0, 6)) || func_153(iParam0, 7)) || func_153(iParam0, 8)) || func_153(iParam0, 9)) || func_583(iParam0, 0)) || func_583(iParam0, 1)) || func_583(iParam0, 2)) || func_583(iParam0, 3)) || func_583(iParam0, 4)) || func_583(iParam0, 5)) || func_153(iParam0, 10)) || func_153(iParam0, 11)) || func_153(iParam0, 12)) || func_153(iParam0, 13)) || func_2(iParam0, 13)) || func_2(iParam0, 14)) || func_129(iParam0, 20)) || func_129(iParam0, 21)) || func_129(iParam0, 22)) || func_129(iParam0, 23))
@@ -33580,7 +33580,7 @@ void func_620(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -39644,7 +39644,7 @@ void func_638(int iParam0)
 								Local_338.f_512 = 0f;
 								Local_338.f_508 = -1;
 								Local_338.f_513 = 0;
-								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_338.f_73[iParam0 /*15*/]), 1);
+								PED::SET_PED_DIES_WHEN_INJURED(NETWORK::NET_TO_PED(Local_338.f_73[iParam0 /*15*/]), true);
 								if (!ENTITY::IS_ENTITY_DEAD(NETWORK::NET_TO_ENT(Local_338.f_73[iParam0 /*15*/]), 0))
 								{
 									vVar1 = { ENTITY::GET_ENTITY_COORDS(NETWORK::NET_TO_ENT(Local_338.f_73[iParam0 /*15*/]), true) };
@@ -40031,7 +40031,7 @@ void func_638(int iParam0)
 void func_639(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, false, true);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iParam1, 5, true);
 	PED::SET_PED_KEEP_TASK(iParam1, true);
@@ -40041,7 +40041,7 @@ void func_639(int iParam0, int iParam1)
 void func_640(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_COMBAT_ATTRIBUTES(iParam1, 17, true);
@@ -40055,11 +40055,11 @@ void func_641(int iParam0, int iParam1)
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 		if (!func_574(iParam0, 18))
 		{
-			PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+			PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 		}
 		else
 		{
-			PED::SET_PED_DIES_WHEN_INJURED(iParam1, 0);
+			PED::SET_PED_DIES_WHEN_INJURED(iParam1, false);
 		}
 		WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 		PED::SET_PED_KEEP_TASK(iParam1, true);
@@ -40070,7 +40070,7 @@ void func_642(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, true);
 	PED::_0x52D59AB61DDC05DD(iParam1, 0);
@@ -40084,7 +40084,7 @@ void func_643(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_sawnoffshotgun"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -40156,7 +40156,7 @@ void func_647(int iParam0, int iParam1)
 	iVar0 = func_619(iParam0);
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, func_594(iParam0));
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, func_587(iParam0), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, func_586(iParam0));
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -40246,7 +40246,7 @@ void func_652(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_carbinerifle"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -40263,7 +40263,7 @@ void func_653(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_carbinerifle"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -40280,7 +40280,7 @@ void func_654(int iParam0, int iParam1)
 {
 	PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iParam1, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(iParam1, Global_1574984);
-	PED::SET_PED_DIES_WHEN_INJURED(iParam1, 1);
+	PED::SET_PED_DIES_WHEN_INJURED(iParam1, true);
 	WEAPON::GIVE_WEAPON_TO_PED(iParam1, joaat("weapon_pistol"), 9999999, false, true);
 	PED::SET_PED_COMBAT_MOVEMENT(iParam1, 3);
 	PED::SET_PED_CONFIG_FLAG(iParam1, 42, false);
@@ -50513,7 +50513,7 @@ int func_763(int iParam0)
 				ENTITY::ATTACH_ENTITY_TO_ENTITY(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), NETWORK::NET_TO_OBJ(Local_338.f_33[iParam0]), 0, 0f, 0f, 0f, 0f, 0f, 0f, 0, 0, 0, 0, 2, 1);
 				OBJECT::SET_ACTIVATE_OBJECT_PHYSICS_AS_SOON_AS_IT_IS_UNFROZEN(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), 1);
 				ENTITY::_SET_ENTITY_REGISTER(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), false);
-				ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), "P_cargo_chute_S_deploy", "P_cargo_chute_S", 1000f, 0, 0, 0, 0, 0);
+				ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), "P_cargo_chute_S_deploy", "P_cargo_chute_S", 1000f, 0, 0, 0, 0f, 0);
 				ENTITY::FORCE_ENTITY_AI_AND_ANIMATION_UPDATE(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]));
 				ENTITY::SET_ENTITY_LOD_DIST(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), 1200);
 				func_34(&(Local_338.f_537[iParam0 /*2*/]));
@@ -87872,7 +87872,7 @@ void func_1750()
 			iVar0 = func_1751();
 			if (ENTITY::DOES_ENTITY_EXIST(iVar0))
 			{
-				AUDIO::PLAY_PAIN(iVar0, 27, 0, 0);
+				AUDIO::PLAY_PAIN(iVar0, 27, 0f, 0);
 			}
 			func_34(&(Local_225[3 /*2*/]));
 		}
@@ -89123,7 +89123,7 @@ int func_1779()
 		if (func_1781())
 		{
 			GRAPHICS::_USE_PARTICLE_FX_ASSET_NEXT_CALL("scr_bike_contact");
-			if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_contact_sniper_kill", vLocal_336, vLocal_337, 1f, 0, 0, 0))
+			if (GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_contact_sniper_kill", vLocal_336, vLocal_337, 1065353216, 0, 0, 0))
 			{
 				STREAMING::_REMOVE_NAMED_PTFX_ASSET("scr_bike_contact");
 				func_1780(19);
@@ -98538,10 +98538,10 @@ void func_1910()
 									else
 									{
 										AI::TASK_SMART_FLEE_COORD(iVar1, func_439(func_106(), Local_338.f_3, 1, 0, 0), 10000f, 999999, 0, 0);
-										PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 256, 1);
+										PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 256, true);
 									}
-									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 2, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 65536, 1);
+									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 2, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 65536, true);
 								}
 							}
 						}
@@ -98623,9 +98623,9 @@ void func_1910()
 									PED::SET_PED_COMBAT_ATTRIBUTES(iVar1, 5, false);
 									PED::SET_PED_COMBAT_ATTRIBUTES(iVar1, 17, true);
 									PED::SET_PED_COMBAT_ATTRIBUTES(iVar1, 1, true);
-									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 1024, 1);
-									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 32768, 0);
-									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 2, 1);
+									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 1024, true);
+									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 32768, false);
+									PED::SET_PED_FLEE_ATTRIBUTES(iVar1, 2, true);
 									vVar7 = { func_1937(iVar0) };
 									AI::TASK_SMART_FLEE_COORD(iVar1, vVar7, 10000f, 999999, 0, 0);
 								}
@@ -98647,7 +98647,7 @@ void func_1910()
 							{
 								if (func_113(Local_338.f_73[iVar0 /*15*/]))
 								{
-									AUDIO::STOP_PED_SPEAKING(iVar1, 0);
+									AUDIO::STOP_PED_SPEAKING(iVar1, false);
 									if (func_1936(Local_338.f_730, 5000, 0))
 									{
 										AUDIO::PLAY_PAIN(iVar1, 26, 0f, 1);
@@ -99029,7 +99029,7 @@ void func_1910()
 								AI::CLEAR_PED_TASKS(iVar1);
 								PED::SET_PED_KEEP_TASK(iVar1, false);
 								func_1911(iVar0, 100f);
-								PED::SET_PED_DIES_WHEN_INJURED(iVar1, 1);
+								PED::SET_PED_DIES_WHEN_INJURED(iVar1, true);
 								func_181(&(Local_338.f_73[iVar0 /*15*/]));
 							}
 						}
@@ -104417,7 +104417,7 @@ void func_2031(int iParam0)
 							{
 								if (func_2032(iParam0))
 								{
-									ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), "P_cargo_chute_S_crumple", "P_cargo_chute_S", 1000f, 0, 1, 0, 0, 0);
+									ENTITY::PLAY_ENTITY_ANIM(NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), "P_cargo_chute_S_crumple", "P_cargo_chute_S", 1000f, 0, 1, 0, 0f, 0);
 									AUDIO::PLAY_SOUND_FROM_ENTITY(-1, "Parachute_Land", NETWORK::NET_TO_OBJ(Local_338.f_528[iParam0]), "DLC_Exec_Air_Drop_Sounds", 1, 0);
 									GAMEPLAY::SET_BIT(&(Local_378[NETWORK::PARTICIPANT_ID_TO_INT() /*34*/].f_7[iParam0]), 0);
 								}
